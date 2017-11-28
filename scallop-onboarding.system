@@ -1,0 +1,8 @@
+[Unit]
+Description=Onboarding for Scallop systems
+
+[Service]
+ExecStart=/usr/bin/scallop --onboarding
+
+[Install]
+WantedBy=multi-user.target
