@@ -801,7 +801,7 @@
          <item>
           <widget class="QLabel" name="installingUpdatesLabel">
            <property name="text">
-            <string>Installing Updates. Don't turn off this device or disconnenct form the internet.</string>
+            <string>Installing Updates. Don't turn off this device or disconnect from the Internet.</string>
            </property>
           </widget>
          </item>
@@ -908,6 +908,20 @@
    </slots>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>changeLanguageButton</tabstop>
+  <tabstop>updateNow</tabstop>
+  <tabstop>updateLater</tabstop>
+  <tabstop>timezoneList</tabstop>
+  <tabstop>fullName</tabstop>
+  <tabstop>username</tabstop>
+  <tabstop>password</tabstop>
+  <tabstop>passwordConfirm</tabstop>
+  <tabstop>hostname</tabstop>
+  <tabstop>timezoneCityList</tabstop>
+  <tabstop>backButton</tabstop>
+  <tabstop>nextButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

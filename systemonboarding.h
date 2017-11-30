@@ -69,6 +69,16 @@ class SystemOnboarding : public QMainWindow
 
         void on_hostname_textEdited(const QString &arg1);
 
+        void on_fullName_returnPressed();
+
+        void on_username_returnPressed();
+
+        void on_password_returnPressed();
+
+        void on_passwordConfirm_returnPressed();
+
+        void on_hostname_returnPressed();
+
     signals:
         void updatesComplete();
 

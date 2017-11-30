@@ -150,9 +150,11 @@ void SystemOnboarding::on_pages_currentChanged(int arg1)
     ui->backButton->setEnabled(true);
     ui->nextButton->setEnabled(true);
     ui->nextButton->setText(tr("Next"));
+    ui->menubar->setVisible(false);
 
     switch (arg1) {
         case 0: {
+            ui->menubar->setVisible(true);
             ui->backButton->setVisible(false);
             ui->nextButton->setText(tr("Get Started"));
             break;
@@ -173,7 +175,7 @@ void SystemOnboarding::on_pages_currentChanged(int arg1)
             break;
         }
         case 4: { //Timezone page
-            ui->nextButton->setVisible(false);
+            ui->nextButton->setEnabled(false);
             break;
         }
         case 5: { //Update Page
@@ -219,17 +221,17 @@ void SystemOnboarding::on_updateNow_clicked()
         } else {
             ui->updateCheckDescription->setText(tr("Updates are available and they'll be installed in the background."));
             ui->installingUpdatesLabel->setVisible(true);
-        }
 
-        QProcess* updater = new QProcess();
-        updater->start("pacman -Syu --noconfirm");
-        connect(updater, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), [=](int exitCode, QProcess::ExitStatus exitStatus) {
-            ui->installingUpdatesLabel->setVisible(false);
-            updater->deleteLater();
-            updating = false;
-            emit updatesComplete();
-        });
-        updating = true;
+            QProcess* updater = new QProcess();
+            connect(updater, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), [=](int exitCode, QProcess::ExitStatus exitStatus) {
+                ui->installingUpdatesLabel->setVisible(false);
+                updater->deleteLater();
+                updating = false;
+                emit updatesComplete();
+            });
+            updating = true;
+            updater->start("pacman -Syu --noconfirm");
+        }
 
         updateChecker->deleteLater();
     });
@@ -385,4 +387,29 @@ void SystemOnboarding::finishOnboarding() {
 void SystemOnboarding::on_hostname_textEdited(const QString &arg1)
 {
     checkUserPage();
+}
+
+void SystemOnboarding::on_fullName_returnPressed()
+{
+    ui->nextButton->click();
+}
+
+void SystemOnboarding::on_username_returnPressed()
+{
+    ui->nextButton->click();
+}
+
+void SystemOnboarding::on_password_returnPressed()
+{
+    ui->nextButton->click();
+}
+
+void SystemOnboarding::on_passwordConfirm_returnPressed()
+{
+    ui->nextButton->click();
+}
+
+void SystemOnboarding::on_hostname_returnPressed()
+{
+    ui->nextButton->click();
 }

@@ -1287,7 +1287,7 @@
        <item>
         <widget class="QLabel" name="rankingMirrorsLabel">
          <property name="text">
-          <string>Testing servers. Don't disconnect from the internet.</string>
+          <string>Testing servers. Don't disconnect from the Internet.</string>
          </property>
         </widget>
        </item>
