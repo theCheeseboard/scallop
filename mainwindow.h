@@ -118,6 +118,8 @@ private slots:
 
     void on_networkwidget_networkAvailable(bool );
 
+    void startInstall();
+
     private:
     Ui::MainWindow *ui;
 

@@ -2,7 +2,8 @@
 Description=Onboarding for Scallop systems
 
 [Service]
-ExecStart=/usr/bin/scallop --onboarding
+ExecStart=/usr/bin/scallop --onboard
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target

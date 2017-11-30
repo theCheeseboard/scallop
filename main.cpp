@@ -92,6 +92,19 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
 
+    {
+        //Start KScreen
+        QProcess* kded = new QProcess;
+        kded->start("kded5");
+        kded->waitForStarted();
+
+        QDBusMessage kscreen = QDBusMessage::createMethodCall("org.kde.kded5", "/kded", "org.kde.kded5", "loadModule");
+        QVariantList args;
+        args.append("kscreen");
+        kscreen.setArguments(args);
+        QDBusConnection::sessionBus().call(kscreen);
+    }
+
     //Load branding details
     QSettings brandingSettings("/etc/scallop/branding.conf");
     brandingSettings.beginGroup("branding");
@@ -116,6 +129,10 @@ int main(int argc, char *argv[])
         w->show();
     } else if (a.arguments().contains("--onboard")) {
         //OEM Onboarding mode
+        //Start KWin
+        QProcess::startDetached("kwin_x11");
+
+        //Open the Onboarding window
         SystemOnboarding* w = new SystemOnboarding;
         w->showFullScreen();
     } else if (a.arguments().contains("--reset")) {

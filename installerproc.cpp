@@ -292,9 +292,10 @@ void InstallerProc::run() {
         progressUpdate(tr("Configuring services..."));
         QProcess::execute("arch-chroot /mnt systemctl enable NetworkManager");
         QProcess::execute("arch-chroot /mnt systemctl enable bluetooth");
-        QProcess::execute("arch-chroot /mnt systemctl enable sddm-plymouth");
         if (oemMode) {
             QProcess::execute("arch-chroot /mnt systemctl enable scallop-onboarding");
+        } else {
+            QProcess::execute("arch-chroot /mnt systemctl enable sddm-plymouth");
         }
     }
 

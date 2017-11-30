@@ -221,25 +221,18 @@ void MainWindow::on_pages_currentChanged(int arg1)
         }
 
         case 5: { //Start the installation on /mnt!
-            installProcess->setDisk(ui->driveBox->currentData().toString());
-            installProcess->setOemMode(this->oemMode);
-            connect(installProcess, &InstallerProc::progressUpdate, [=](QString text) {
-                ui->statusLabel->setText(text);
-            });
-            connect(installProcess, &InstallerProc::progressBarUpdate, [=](int value, int maximum) {
-                ui->progressBar->setMaximum(maximum);
-                ui->progressBar->setValue(value);
-            });
-            connect(installProcess, SIGNAL(finished()), this, SLOT(finishedInstallation()));
-            connect(installProcess, SIGNAL(error(QString,bool,bool)), this, SLOT(installerError(QString,bool,bool)));
-            installProcess->start();
+            startInstall();
             ui->backButton->setEnabled(false);
             ui->nextButton->setEnabled(false);
             break;
         }
 
         case 6: {
-            installProcess->setUserInformation(ui->FullName->text(), ui->UserName->text(), ui->Password->text(), ui->Hostname->text());
+            if (this->oemMode) { //Check if we're installing in OEM mode
+                startInstall(); //Start installation
+            } else {
+                installProcess->setUserInformation(ui->FullName->text(), ui->UserName->text(), ui->Password->text(), ui->Hostname->text());
+            }
             ui->backButton->setVisible(false);
             ui->nextButton->setVisible(false);
             break;
@@ -257,6 +250,21 @@ void MainWindow::on_pages_currentChanged(int arg1)
             break;
         }
     }
+}
+
+void MainWindow::startInstall() {
+    installProcess->setDisk(ui->driveBox->currentData().toString());
+    installProcess->setOemMode(this->oemMode);
+    connect(installProcess, &InstallerProc::progressUpdate, [=](QString text) {
+        ui->statusLabel->setText(text);
+    });
+    connect(installProcess, &InstallerProc::progressBarUpdate, [=](int value, int maximum) {
+        ui->progressBar->setMaximum(maximum);
+        ui->progressBar->setValue(value);
+    });
+    connect(installProcess, SIGNAL(finished()), this, SLOT(finishedInstallation()));
+    connect(installProcess, SIGNAL(error(QString,bool,bool)), this, SLOT(installerError(QString,bool,bool)));
+    installProcess->start();
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *mevent) {

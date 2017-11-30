@@ -85,5 +85,5 @@ unix {
 }
 
 DISTFILES += \
-    scallop-onboarding.system \
-    scallop-reset.system
+    scallop-onboarding.service \
+    scallop-reset.service
