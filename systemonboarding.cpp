@@ -20,6 +20,8 @@ SystemOnboarding::SystemOnboarding(QWidget *parent) :
 
     ui->nextButton->setText(tr("Get Started"));
     ui->backButton->setVisible(false);
+    ui->updateCheckFrame->setVisible(false);
+    ui->installingUpdatesLabel->setVisible(false);
 
     //Set up timezone panel
     ui->timezoneList->clear();
@@ -61,6 +63,15 @@ SystemOnboarding::~SystemOnboarding()
 
 void SystemOnboarding::on_nextButton_clicked()
 {
+    if (ui->pages->currentIndex() == 0) {
+        //Check internet connection
+        if (ui->networkwidget->hasConnection()) {
+            ui->pages->setCurrentIndex(2);
+        } else {
+            ui->pages->setCurrentIndex(1);
+        }
+        return;
+    }
     ui->pages->setCurrentIndex(ui->pages->currentIndex() + 1);
 }
 
@@ -114,7 +125,61 @@ void SystemOnboarding::on_pages_currentChanged(int arg1)
             break;
         }
         case 1: {
-
+            ui->nextButton->setText(tr("Skip"));
+            break;
+        }
+        case 2: {
+            if (ui->updateCheckProgressBar->isVisible()) {
+                ui->nextButton->setVisible(false);
+            }
+            break;
         }
     }
+}
+
+void SystemOnboarding::on_networkwidget_networkAvailable(bool available)
+{
+    if (available && ui->pages->currentIndex() == 1) {
+        ui->pages->setCurrentIndex(2);
+    }
+}
+
+void SystemOnboarding::on_updateLater_clicked()
+{
+    ui->pages->setCurrentIndex(3);
+}
+
+void SystemOnboarding::on_updateNow_clicked()
+{
+    ui->backButton->setVisible(false);
+    ui->nextButton->setVisible(false);
+
+    QProcess* updateChecker = new QProcess();
+    updateChecker->start("checkupdates");
+    connect(updateChecker, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), [=](int exitCode, QProcess::ExitStatus exitStatus) {
+        QStringList updates = QString(updateChecker->readAll()).split("\n");
+        updates.removeAll("");
+        ui->updateCheckProgressBar->setVisible(false);
+        ui->nextButton->setVisible(true);
+        ui->backButton->setVisible(true);
+
+        if (updates.count() == 0) {
+            ui->updateCheckDescription->setText(tr("There aren't any updates available."));
+        } else {
+            ui->updateCheckDescription->setText(tr("Updates are available and they'll be installed in the background."));
+            ui->installingUpdatesLabel->setVisible(true);
+        }
+
+        QProcess* updater = new QProcess();
+        updater->start("pacman -Syu --noconfirm");
+        connect(updater, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), [=](int exitCode, QProcess::ExitStatus exitStatus) {
+            ui->installingUpdatesLabel->setVisible(false);
+            updater->deleteLater();
+        });
+
+        updateChecker->deleteLater();
+    });
+
+    ui->updateCheckButtons->setVisible(false);
+    ui->updateCheckFrame->setVisible(true);
 }

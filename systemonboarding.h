@@ -11,6 +11,8 @@
 #include <QJsonObject>
 #include <QFile>
 #include <QJsonArray>
+#include <QProcess>
+#include <QProgressBar>
 #include "branding.h"
 
 namespace Ui {
@@ -34,7 +36,13 @@ private slots:
 
     void on_pages_currentChanged(int arg1);
 
-private:
+    void on_networkwidget_networkAvailable(bool );
+
+    void on_updateLater_clicked();
+
+    void on_updateNow_clicked();
+
+    private:
     Ui::SystemOnboarding *ui;
 
     QJsonObject timezoneData;

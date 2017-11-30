@@ -38,6 +38,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->backButton->setVisible(false);
     ui->nextButton->setVisible(false);
     ui->rankingMirrorsLabel->setVisible(false);
+    ui->PowerOffButton->setProperty("type", "destructive");
+    ui->RebootButton->setProperty("type", "destructive");
 
     //Immediately start ranking mirrors
     QFile::copy("/etc/pacman.d/mirrorlist", QDir::homePath() + "/.mirrors");
@@ -105,7 +107,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_nextButton_clicked()
 {
-    if (ui->pages->currentIndex() == 4) {
+    if (ui->pages->currentIndex() == 4 && oemMode) {
+        ui->pages->setCurrentIndex(6);
+        return;
+    } else if (ui->pages->currentIndex() == 5) {
         if (ui->Password->text() != ui->PasswordConfirm->text()) {
             QMessageBox::warning(this, tr("Passwords don't match"), tr("The passwords don't match. Try again."));
             return;
@@ -217,6 +222,7 @@ void MainWindow::on_pages_currentChanged(int arg1)
 
         case 5: { //Start the installation on /mnt!
             installProcess->setDisk(ui->driveBox->currentData().toString());
+            installProcess->setOemMode(this->oemMode);
             connect(installProcess, &InstallerProc::progressUpdate, [=](QString text) {
                 ui->statusLabel->setText(text);
             });
@@ -358,6 +364,18 @@ void MainWindow::on_Hostname_textEdited(const QString &arg1)
 
 void MainWindow::on_installTSOS_clicked()
 {
+    if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
+        //Install in OEM Mode
+        tToast* toast = new tToast();
+        toast->setTitle("OEM Mode");
+        toast->setText("Installing theShell OS in OEM Mode");
+        connect(toast, SIGNAL(dismissed()), toast, SLOT(deleteLater()));
+        toast->show(this);
+        oemMode = true;
+    } else {
+        oemMode = false;
+    }
+
     //Check internet connection
     if (ui->networkwidget->hasConnection()) {
         ui->pages->setCurrentIndex(2);

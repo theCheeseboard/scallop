@@ -248,30 +248,31 @@ void InstallerProc::run() {
         grubConfig.close();
     }
 
+    if (!oemMode) {
+        progressUpdate(tr("Waiting for input..."));
+        while (!userInformationReady) {
+            QThread::sleep(3);
+        }
 
-    progressUpdate(tr("Waiting for input..."));
-    while (!userInformationReady) {
-        QThread::sleep(3);
-    }
+        {
+            progressUpdate(tr("Configuring users..."));
 
-    {
-        progressUpdate(tr("Configuring users..."));
+            QProcess::execute("useradd -R /mnt -g wheel -m " + userName);
+            QProcess::execute("arch-chroot /mnt chfn -f \"" + fullName + "\" " + userName);
 
-        QProcess::execute("useradd -R /mnt -g wheel -m " + userName);
-        QProcess::execute("arch-chroot /mnt chfn -f \"" + fullName + "\" " + userName);
+            QProcess chpasswd;
+            chpasswd.start("chpasswd -R /mnt");
+            chpasswd.write(QString("root:" + password + "\n").toUtf8());
+            chpasswd.write(QString(userName + ":" + password + "\n").toUtf8());
+            chpasswd.closeWriteChannel();
+            chpasswd.waitForFinished(-1);
 
-        QProcess chpasswd;
-        chpasswd.start("chpasswd -R /mnt");
-        chpasswd.write(QString("root:" + password + "\n").toUtf8());
-        chpasswd.write(QString(userName + ":" + password + "\n").toUtf8());
-        chpasswd.closeWriteChannel();
-        chpasswd.waitForFinished(-1);
-
-        progressUpdate("Configuring Hostname...");
-        QFile hostnameFile("/mnt/etc/hostname");
-        hostnameFile.open(QFile::WriteOnly);
-        hostnameFile.write(hostname.toUtf8());
-        hostnameFile.close();
+            progressUpdate("Configuring Hostname...");
+            QFile hostnameFile("/mnt/etc/hostname");
+            hostnameFile.open(QFile::WriteOnly);
+            hostnameFile.write(hostname.toUtf8());
+            hostnameFile.close();
+        }
     }
 
     {
@@ -292,6 +293,9 @@ void InstallerProc::run() {
         QProcess::execute("arch-chroot /mnt systemctl enable NetworkManager");
         QProcess::execute("arch-chroot /mnt systemctl enable bluetooth");
         QProcess::execute("arch-chroot /mnt systemctl enable sddm-plymouth");
+        if (oemMode) {
+            QProcess::execute("arch-chroot /mnt systemctl enable scallop-onboarding");
+        }
     }
 
     {
@@ -382,4 +386,8 @@ void InstallerProc::cont(bool retry) {
 
 void InstallerProc::setDoUpdates(bool doUpdates) {
     this->doUpdates = doUpdates;
+}
+
+void InstallerProc::setOemMode(bool oemMode) {
+    this->oemMode = oemMode;
 }

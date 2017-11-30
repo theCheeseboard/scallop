@@ -129,6 +129,8 @@ private slots:
 
     QString currentLocale = "en_US";
 
+    bool oemMode = false;
+
     void mousePressEvent(QMouseEvent* event);
     void mouseReleaseEvent(QMouseEvent* event);
 };

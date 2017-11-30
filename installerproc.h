@@ -28,6 +28,7 @@ public slots:
     void setUserInformation(QString fullName, QString userName, QString password, QString hostname);
     void setMirrorlist(QString mirrorlist);
     void setDoUpdates(bool doUpdates);
+    void setOemMode(bool oemMode);
 
     void cont(bool retry);
 
@@ -36,6 +37,7 @@ private:
 
     bool userInformationReady = false;
     bool doUpdates = true;
+    bool oemMode;
     QString fullName, userName, password, hostname, mirrorlist = "";
     QEventLoop* waiter;
 };
