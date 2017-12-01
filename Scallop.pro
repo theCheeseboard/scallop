@@ -72,18 +72,18 @@ TRANSLATIONS += translations/vi_VN.ts \
     translations/da_DK.ts \
     translations/lt_LT.ts
 
+DISTFILES += \
+    scallop-onboarding.service \
+    scallop-reset.service
+
 unix {
     target.path = /usr/bin/
 
     translations.files = translations/*
-    translations.path = /usr/share/scallop/translations
+    translations.path = /usr/share/scallop/translations/
 
-    systemd.files = scallop-onboarding.system
-    systemd.path = /usr/lib/systemd/system
+    systemd.files = scallop-onboarding.service scallop-reset.service
+    systemd.path = /usr/lib/systemd/system/
 
     INSTALLS += target translations systemd
 }
-
-DISTFILES += \
-    scallop-onboarding.service \
-    scallop-reset.service
