@@ -15,8 +15,8 @@ void InstallerProc::run() {
 
     { //Start unsquashing the filesystem.
         unsquash:
-        progressUpdate(tr("Unsquashing filesystem to disk. This could take a while."));
-        progressBarUpdate(0, 0);
+        emit progressUpdate(tr("Unsquashing filesystem to disk. This could take a while."));
+        emit progressBarUpdate(0, 0);
         QProcess* unsquashProcess = new QProcess;
         connect(unsquashProcess, &QProcess::readyRead, [=] {
             //Read the last segment

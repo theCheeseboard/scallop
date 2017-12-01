@@ -120,6 +120,10 @@ private slots:
 
     void startInstall();
 
+    void progressBarUpdate(int current, int max);
+
+    void progressUpdate(QString text);
+
     private:
     Ui::MainWindow *ui;
 

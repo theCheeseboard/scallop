@@ -74,7 +74,7 @@
       </font>
      </property>
      <property name="text">
-      <string>This is the final step before your drive is erased. When you click on &quot;Format Drive and Continue&quot; your drive will be permantly erased and set up to install theShell OS.</string>
+      <string>This is the final step before your drive is erased. When you click on &quot;Format Drive and Continue&quot; your drive will be permanently erased and set up to install theShell OS.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

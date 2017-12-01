@@ -255,16 +255,27 @@ void MainWindow::on_pages_currentChanged(int arg1)
 void MainWindow::startInstall() {
     installProcess->setDisk(ui->driveBox->currentData().toString());
     installProcess->setOemMode(this->oemMode);
-    connect(installProcess, &InstallerProc::progressUpdate, [=](QString text) {
+    /*connect(installProcess, &InstallerProc::progressUpdate, [=](QString text) {
         ui->statusLabel->setText(text);
-    });
-    connect(installProcess, &InstallerProc::progressBarUpdate, [=](int value, int maximum) {
+    });*/
+    /*connect(installProcess, &InstallerProc::progressBarUpdate, [=](int value, int maximum) {
         ui->progressBar->setMaximum(maximum);
         ui->progressBar->setValue(value);
-    });
+    });*/
+    connect(installProcess, SIGNAL(progressUpdate(QString)), this, SLOT(progressUpdate(QString)));
+    connect(installProcess, SIGNAL(progressBarUpdate(int,int)), this, SLOT(progressBarUpdate(int,int)));
     connect(installProcess, SIGNAL(finished()), this, SLOT(finishedInstallation()));
     connect(installProcess, SIGNAL(error(QString,bool,bool)), this, SLOT(installerError(QString,bool,bool)));
     installProcess->start();
+}
+
+void MainWindow::progressBarUpdate(int current, int max) {
+    ui->progressBar->setMaximum(max);
+    ui->progressBar->setValue(current);
+}
+
+void MainWindow::progressUpdate(QString text) {
+    ui->statusLabel->setText(text);
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *mevent) {
