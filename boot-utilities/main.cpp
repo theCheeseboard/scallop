@@ -24,6 +24,7 @@
 #include <Wm/desktopwm.h>
 
 int main(int argc, char* argv[]) {
+    qputenv("QT_QPA_PLATFORMTHEME", "thedesk-platform");
     QApplication a(argc, argv);
 
     DesktopWm::instance();

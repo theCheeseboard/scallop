@@ -12,13 +12,16 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    powerpopover.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    powerpopover.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    powerpopover.ui
 
 unix:!macx {
     # Include the-libs build tools

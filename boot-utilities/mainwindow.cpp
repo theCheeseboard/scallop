@@ -25,11 +25,15 @@
 #include <QPainter>
 #include <QGraphicsOpacityEffect>
 #include <Wm/desktopwm.h>
+#include <TimeDate/desktoptimedate.h>
 #include <Background/backgroundcontroller.h>
 #include <tvariantanimation.h>
+#include <tpopover.h>
+#include "powerpopover.h"
 
 struct MainWindowPrivate {
     QGraphicsOpacityEffect* effect;
+    QGraphicsOpacityEffect* exitEffect;
     BackgroundController* bg;
     QPixmap background;
 };
@@ -40,9 +44,21 @@ MainWindow::MainWindow(QWidget* parent)
     ui->setupUi(this);
 
     d = new MainWindowPrivate();
+
     d->effect = new QGraphicsOpacityEffect();
     d->effect->setOpacity(1);
     ui->frame->setGraphicsEffect(d->effect);
+
+    d->exitEffect = new QGraphicsOpacityEffect();
+    d->exitEffect->setOpacity(1);
+    ui->exitButton->setGraphicsEffect(d->exitEffect);
+
+    QPalette pal = ui->bar->palette();
+    pal.setColor(QPalette::WindowText, Qt::white);
+    ui->bar->setPalette(pal);
+
+    DesktopTimeDate::makeTimeLabel(ui->clock, DesktopTimeDate::Time);
+    DesktopTimeDate::makeTimeLabel(ui->date, DesktopTimeDate::StandardDate);
 
     //Get distribution information
     QString osreleaseFile = "";
@@ -79,6 +95,8 @@ MainWindow::MainWindow(QWidget* parent)
     d->bg = new BackgroundController(BackgroundController::Desktop);
     connect(d->bg, &BackgroundController::currentBackgroundChanged, this, &MainWindow::updateBackground);
     updateBackground();
+
+    ui->centralwidget->installEventFilter(this);
 }
 
 MainWindow::~MainWindow() {
@@ -87,7 +105,14 @@ MainWindow::~MainWindow() {
 
 
 void MainWindow::on_exitButton_clicked() {
-    QApplication::exit();
+    PowerPopover* powerPopover = new PowerPopover();
+    tPopover* popover = new tPopover(powerPopover);
+    popover->setPopoverWidth(SC_DPI(400));
+    connect(powerPopover, &PowerPopover::done, popover, &tPopover::dismiss);
+    connect(popover, &tPopover::dismissed, powerPopover, &PowerPopover::deleteLater);
+    connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
+    popover->show(this);
+    powerPopover->setFocus();
 }
 
 void MainWindow::on_installButton_clicked() {
@@ -101,6 +126,9 @@ void MainWindow::on_installButton_clicked() {
 }
 
 void MainWindow::setUtilitiesAvailable(bool utilitiesAvailable) {
+    ui->frame->setVisible(true);
+    ui->exitButton->setVisible(true);
+
     tVariantAnimation* anim = new tVariantAnimation();
     anim->setStartValue(d->effect->opacity());
     anim->setEndValue(utilitiesAvailable ? 1.0 : 0.0);
@@ -108,6 +136,11 @@ void MainWindow::setUtilitiesAvailable(bool utilitiesAvailable) {
     anim->setEasingCurve(QEasingCurve::OutCubic);
     connect(anim, &tVariantAnimation::valueChanged, this, [ = ](QVariant value) {
         d->effect->setOpacity(value.toReal());
+        d->exitEffect->setOpacity(value.toReal());
+    });
+    connect(anim, &tVariantAnimation::finished, this, [ = ] {
+        ui->frame->setVisible(utilitiesAvailable);
+        ui->exitButton->setVisible(utilitiesAvailable);
     });
     anim->start();
 }
@@ -115,15 +148,32 @@ void MainWindow::setUtilitiesAvailable(bool utilitiesAvailable) {
 void MainWindow::updateBackground() {
     d->bg->getCurrentBackground(this->size())->then([ = ](BackgroundController::BackgroundData backgroundData) {
         d->background = backgroundData.px;
-        this->update();
+        ui->centralwidget->update();
     });
-}
-
-void MainWindow::paintEvent(QPaintEvent* event) {
-    QPainter painter(this);
-    painter.drawPixmap(QRect(0, 0, this->width(), this->height()), d->background);
 }
 
 void MainWindow::on_terminalButton_clicked() {
     QProcess::startDetached("theterminal", {});
+}
+
+bool MainWindow::eventFilter(QObject* watched, QEvent* event) {
+    if (event->type() == QEvent::Paint) {
+        QPainter painter(ui->centralwidget);
+        painter.drawPixmap(QRect(0, 0, this->width(), this->height()), d->background);
+
+        QLinearGradient grad;
+        grad.setStart(0, 0);
+        grad.setFinalStop(0, ui->bar->height() * 2);
+        grad.setColorAt(0, QColor(0, 0, 0, 127));
+        grad.setColorAt(1, QColor(0, 0, 0, 0));
+
+        painter.setPen(Qt::transparent);
+        painter.setBrush(grad);
+        painter.drawRect(0, 0, this->width(), this->height());
+    }
+    return false;
+}
+
+void MainWindow::resizeEvent(QResizeEvent* event) {
+    updateBackground();
 }

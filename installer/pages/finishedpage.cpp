@@ -51,13 +51,17 @@ void FinishedPage::on_startOverButton_clicked() {
 }
 
 void FinishedPage::on_rebootButton_2_clicked() {
-
+    ui->rebootButton->click();
 }
 
 void FinishedPage::on_rebootButton_clicked() {
-
+    QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", "Reboot");
+    message.setArguments({true});
+    QDBusConnection::systemBus().call(message);
 }
 
 void FinishedPage::on_powerOffButton_clicked() {
-
+    QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", "PowerOff");
+    message.setArguments({true});
+    QDBusConnection::systemBus().call(message);
 }

@@ -17,45 +17,34 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef POWERPOPOVER_H
+#define POWERPOPOVER_H
 
-#include <QMainWindow>
+#include <QWidget>
 
-QT_BEGIN_NAMESPACE
 namespace Ui {
-    class MainWindow;
+    class PowerPopover;
 }
-QT_END_NAMESPACE
 
-struct MainWindowPrivate;
-class MainWindow : public QMainWindow {
+class PowerPopover : public QWidget {
         Q_OBJECT
 
     public:
-        MainWindow(QWidget* parent = nullptr);
-        ~MainWindow();
+        explicit PowerPopover(QWidget* parent = nullptr);
+        ~PowerPopover();
 
     private slots:
-        void on_exitButton_clicked();
+        void on_powerOffButton_clicked();
 
-        void on_installButton_clicked();
+        void on_rebootButton_clicked();
 
-        void on_terminalButton_clicked();
+        void on_titleLabel_backButtonClicked();
+
+    signals:
+        void done();
 
     private:
-        Ui::MainWindow* ui;
-        MainWindowPrivate* d;
-
-        void setUtilitiesAvailable(bool utilitiesAvailable);
-        void updateBackground();
-
-        // QObject interface
-    public:
-        bool eventFilter(QObject* watched, QEvent* event);
-
-        // QWidget interface
-    protected:
-        void resizeEvent(QResizeEvent* event);
+        Ui::PowerPopover* ui;
 };
-#endif // MAINWINDOW_H
+
+#endif // POWERPOPOVER_H
