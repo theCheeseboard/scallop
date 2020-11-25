@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=XSession
+Exec=/usr/bin/scallop-boot-utilities
+TryExec=/usr/bin/scallop-boot-utilities
+DesktopNames=Scallop Recovery
+Name=Scallop Recovery
+Comment=Recovery Tools
