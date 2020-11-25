@@ -19,6 +19,7 @@
  * *************************************/
 #include "mainwindow.h"
 
+#include <QProcess>
 #include <QApplication>
 #include <Wm/desktopwm.h>
 
@@ -26,6 +27,8 @@ int main(int argc, char* argv[]) {
     QApplication a(argc, argv);
 
     DesktopWm::instance();
+
+    QProcess::startDetached("kwin_x11", {});
 
     MainWindow w;
     w.showFullScreen();
