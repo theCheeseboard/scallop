@@ -2,4 +2,6 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     boot-utilities \
-    installer
+    installer \
+    onboarding \
+    onboarding-service

@@ -1,0 +1,11 @@
+polkit.addRule(function(action, subject) {
+    let actionIds = [
+        "org.freedesktop.accounts.user-administration",
+        "org.freedesktop.login1.power-off",
+        "org.freedesktop.login1.reboot",
+        "org.freedesktop.login1.suspend"
+    ];
+    if (subject.isInGroup("setup") && actionIds.includes(action.id)) {
+        return polkit.Result.YES;
+    }
+});

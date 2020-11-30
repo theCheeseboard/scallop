@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=XSession
+Exec=/usr/bin/scallop-onboarding
+TryExec=/usr/bin/scallop-onboarding
+DesktopNames=Scallop Onboarding
+Name=Scallop Onboarding
+Comment=First time setup of a device
