@@ -4,22 +4,24 @@
 <context>
     <name>BootloaderState</name>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="37"/>
+        <location filename="../install/bootloaderstate.cpp" line="38"/>
         <source>Configuring Bootloader...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="43"/>
+        <location filename="../install/bootloaderstate.cpp" line="44"/>
         <source>Failed to create the GRUB Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="60"/>
+        <location filename="../install/bootloaderstate.cpp" line="61"/>
+        <location filename="../install/bootloaderstate.cpp" line="93"/>
         <source>Installing the bootloader...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="67"/>
+        <location filename="../install/bootloaderstate.cpp" line="68"/>
+        <location filename="../install/bootloaderstate.cpp" line="100"/>
         <source>Failed to install GRUB</source>
         <translation type="unfinished"></translation>
     </message>

@@ -127,10 +127,6 @@ int main(int argc, char* argv[]) {
     }
 
     //Start up the display manager as usual
-//    QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.systemd1", "/org/freedesktop/systemd1", "org.freedesktop.systemd1.Manager", "StartUnit");
-//    message.setArguments({"lightdm.service", "replace"});
-//    QDBusConnection::systemBus().call(message);
-
     QProcess dmProc;
     dmProc.setProcessChannelMode(QProcess::ForwardedChannels);
     dmProc.start("lightdm", QStringList());

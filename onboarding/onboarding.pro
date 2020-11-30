@@ -11,17 +11,20 @@ CONFIG += c++11
 
 SOURCES += \
     OnboardingPages/onboardingcompleteoobe.cpp \
+    OnboardingPages/onboardinghostname.cpp \
     endsession.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     OnboardingPages/onboardingcompleteoobe.h \
+    OnboardingPages/onboardinghostname.h \
     endsession.h \
     mainwindow.h
 
 FORMS += \
     OnboardingPages/onboardingcompleteoobe.ui \
+    OnboardingPages/onboardinghostname.ui \
     endsession.ui \
     mainwindow.ui
 
@@ -52,3 +55,5 @@ DISTFILES += \
     defaults.conf \
     lightdm-configuration.conf \
     scallop-onboarding.desktop
+
+RESOURCES +=

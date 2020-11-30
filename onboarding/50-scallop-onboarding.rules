@@ -6,7 +6,9 @@ polkit.addRule(function(action, subject) {
         "org.freedesktop.login1.suspend",
         "org.freedesktop.timedate1.set-timezone",
         "org.freedesktop.timedate1.set-time",
-        "org.freedesktop.timedate1.set-ntp"
+        "org.freedesktop.timedate1.set-ntp",
+        "org.freedesktop.hostname1.set-hostname",
+        "org.freedesktop.hostname1.set-static-hostname"
     ];
     if (subject.isInGroup("setup") && actionIds.includes(action.id)) {
         return polkit.Result.YES;

@@ -30,10 +30,12 @@
 #include <onboarding/onboardingcontroller.h>
 #include <unistd.h>
 #include <pwd.h>
+#include <grp.h>
 
 #include "endsession.h"
 
 #include "OnboardingPages/onboardingcompleteoobe.h"
+#include "OnboardingPages/onboardinghostname.h"
 
 #include <tlogger.h>
 
@@ -45,7 +47,7 @@ int main(int argc, char* argv[]) {
 
     struct passwd* setupUserInformation = getpwnam("setup");
 
-    setgid(setupUserInformation->pw_gid);
+    initgroups(setupUserInformation->pw_name, setupUserInformation->pw_gid);
     setuid(setupUserInformation->pw_uid);
     qputenv("HOME", setupUserInformation->pw_dir);
 
@@ -64,8 +66,7 @@ int main(int argc, char* argv[]) {
     }
 
     QProcess pulseProc;
-//    pulseProc.start("start-pulseaudio-x11", QStringList());
-    pulseProc.start("pulseaudio", {"--daemonize"});
+    pulseProc.start("pulseaudio", QStringList());
     pulseProc.waitForStarted();
 
     tApplication a(argc, argv);
@@ -104,6 +105,7 @@ int main(int argc, char* argv[]) {
     });
     QObject::connect(StateManager::onboardingManager(), &OnboardingManager::onboardingRequired, [ = ] {
         StateManager::onboardingManager()->addOnboardingStep(new OnboardingCompleteOobe());
+        StateManager::onboardingManager()->addOnboardingStep(new OnboardingHostname());
 
         StateManager::onboardingManager()->setDateVisible(false);
     });

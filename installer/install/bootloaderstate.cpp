@@ -22,6 +22,7 @@
 #include <QTextStream>
 #include <QProcess>
 #include <QFinalState>
+#include <QJsonObject>
 #include "installerdata.h"
 
 BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
@@ -75,6 +76,36 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
         this->setInitialState(installEfiState);
         installEfiState->addTransition(this, &BootloaderState::nextState, configState);
     } else {
-        //TODO: Non EFI systems
+        QState* installEfiState = new QState();
+        connect(installEfiState, &QState::entered, this, [ = ] {
+            QString bootloaderDisk;
+            QJsonObject diskDetails = InstallerData::value("disk").toObject();
+            if (diskDetails.value("type").toString() == QStringLiteral("whole-disk")) {
+                //Install on the disk we're installing the OS on
+                bootloaderDisk = diskDetails.value("block").toString();
+            }
+
+
+            QString systemRoot = InstallerData::valueTemp("systemRoot").toString();
+            QList<QPair<QString, QString>> mounts = InstallerData::valueTemp("mounts").value<QList<QPair<QString, QString>>>();
+
+            //Install GRUB as BIOS
+            QTextStream(stdout) << tr("Installing the bootloader...") << "\n";
+
+            QProcess* proc = new QProcess();
+            connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [ = ](int exitCode, QProcess::ExitStatus exitStatus) {
+                if (exitCode == 0) {
+                    emit nextState();
+                } else {
+                    QTextStream(stderr) << tr("Failed to install GRUB") << "\n";
+                    emit failure();
+                }
+            });
+            proc->start("arch-chroot", {systemRoot, "grub-install", "--target=i386-pc", bootloaderDisk});
+        });
+
+        this->addState(installEfiState);
+        this->setInitialState(installEfiState);
+        installEfiState->addTransition(this, &BootloaderState::nextState, configState);
     }
 }

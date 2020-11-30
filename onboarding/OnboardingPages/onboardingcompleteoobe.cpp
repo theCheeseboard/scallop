@@ -20,15 +20,49 @@
 #include "onboardingcompleteoobe.h"
 #include "ui_onboardingcompleteoobe.h"
 
+#include <QFile>
 #include <statemanager.h>
 #include <onboardingmanager.h>
+#include <the-libs_global.h>
 
 OnboardingCompleteOobe::OnboardingCompleteOobe(QWidget* parent) :
     OnboardingPage(parent),
     ui(new Ui::OnboardingCompleteOobe) {
     ui->setupUi(this);
 
-    ui->thankYouMessage->setText(tr("We hope you enjoy using %1").arg("OPERATING SYSTEM NAME"));
+    //Get distribution information
+    QString osreleaseFile = "";
+    if (QFile("/etc/os-release").exists()) {
+        osreleaseFile = "/etc/os-release";
+    } else if (QFile("/usr/lib/os-release").exists()) {
+        osreleaseFile = "/usr/lib/os-release";
+    }
+
+    if (osreleaseFile != "") {
+        QMap<QString, QString> values;
+
+        QFile information(osreleaseFile);
+        information.open(QFile::ReadOnly);
+
+        while (!information.atEnd()) {
+            QString line = information.readLine().trimmed();
+            int equalsIndex = line.indexOf("=");
+
+            QString key = line.left(equalsIndex);
+            QString value = line.mid(equalsIndex + 1);
+            if (value.startsWith("\"") && value.endsWith("\"")) value = value.mid(1, value.count() - 2);
+            values.insert(key, value);
+        }
+        information.close();
+
+        ui->thankYouMessage->setText(tr("We hope you enjoy using %1!").arg(values.value("PRETTY_NAME", tr("your new device"))));
+
+        //Attempt to find a sane icon for the OS logo
+        //Arch (and by extension, Cactus) puts it under /usr/share/pixmaps so we search there too
+        ui->iconLabel->setPixmap(QIcon::fromTheme(values.value("LOGO"), QIcon(QStringLiteral("/usr/share/pixmaps/%1.svg").arg(values.value("LOGO")))).pixmap(SC_DPI_T(QSize(128, 128), QSize)));
+    } else {
+        ui->thankYouMessage->setText(tr("We hope you enjoy using %1!").arg(tr("your new device")));
+    }
 }
 
 OnboardingCompleteOobe::~OnboardingCompleteOobe() {
