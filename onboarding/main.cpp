@@ -33,12 +33,16 @@
 
 #include "endsession.h"
 
-#include "OnboardingPages/onboardingtimezone.h"
 #include "OnboardingPages/onboardingcompleteoobe.h"
 
 #include <tlogger.h>
 
 int main(int argc, char* argv[]) {
+    if (getuid() != 0) {
+        QTextStream(stdout) << "This program must be run as root.\n";
+        return 1;
+    }
+
     struct passwd* setupUserInformation = getpwnam("setup");
 
     setgid(setupUserInformation->pw_gid);
@@ -99,7 +103,6 @@ int main(int argc, char* argv[]) {
         EndSession::showDialog();
     });
     QObject::connect(StateManager::onboardingManager(), &OnboardingManager::onboardingRequired, [ = ] {
-        StateManager::onboardingManager()->addOnboardingStep(new OnboardingTimeZone());
         StateManager::onboardingManager()->addOnboardingStep(new OnboardingCompleteOobe());
 
         StateManager::onboardingManager()->setDateVisible(false);

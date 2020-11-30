@@ -11,20 +11,17 @@ CONFIG += c++11
 
 SOURCES += \
     OnboardingPages/onboardingcompleteoobe.cpp \
-    OnboardingPages/onboardingtimezone.cpp \
     endsession.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     OnboardingPages/onboardingcompleteoobe.h \
-    OnboardingPages/onboardingtimezone.h \
     endsession.h \
     mainwindow.h
 
 FORMS += \
     OnboardingPages/onboardingcompleteoobe.ui \
-    OnboardingPages/onboardingtimezone.ui \
     endsession.ui \
     mainwindow.ui
 
