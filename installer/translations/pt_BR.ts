@@ -36,12 +36,12 @@
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="277"/>
         <source>Editing Partitions</source>
-        <translation>Editar Partições</translation>
+        <translation>Editando Partições</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="287"/>
         <source>Once you&apos;re done, close the partition editor and come back here.</source>
-        <translation>Quando você terminar, feche o editor de partições e voltar aqui.</translation>
+        <translation>Quando você terminar, feche o editor de partições e volte aqui.</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.cpp" line="53"/>
@@ -430,7 +430,7 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
     <message>
         <location filename="../popovers/mountpointpopover.cpp" line="43"/>
         <source>Common Mount Points</source>
-        <translation>Montos de Pount Comuns</translation>
+        <translation>Pontos de Mount Comuns</translation>
     </message>
 </context>
 <context>
@@ -451,7 +451,7 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
     <message>
         <location filename="../pages/progresspage.ui" line="45"/>
         <source>Sit back and relax. We&apos;ll let you know when we&apos;re done.</source>
-        <translation>Por favor, aguarde. Nós te falaremos quando terminarmos.</translation>
+        <translation>Por favor, aguarde. Avisaremos você quando terminarmos.</translation>
     </message>
     <message>
         <location filename="../pages/progresspage.cpp" line="31"/>
@@ -483,7 +483,7 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
         <location filename="../install/unsquashstate.cpp" line="33"/>
         <location filename="../install/unsquashstate.cpp" line="44"/>
         <source>Unsquashing Filesystem</source>
-        <translation>Unsquashing o Filesystem</translation>
+        <translation>Fazendo Unsquashing do Filesystem</translation>
     </message>
     <message>
         <location filename="../install/unsquashstate.cpp" line="52"/>
