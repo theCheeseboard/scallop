@@ -9,6 +9,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../pages/advanceddiskpopover.ui" line="81"/>
+        <source>Set mount points for each partition you want to mount.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../pages/advanceddiskpopover.ui" line="178"/>
         <source>BOOTLOADER</source>
         <translation type="unfinished"></translation>

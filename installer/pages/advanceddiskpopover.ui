@@ -78,7 +78,7 @@
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
-            <string notr="true">Set mount points for each partition you want to mount.</string>
+            <string>Set mount points for each partition you want to mount.</string>
            </property>
           </widget>
          </item>

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US" language="vi_VN">
+<TS version="2.1" language="vi_VN" sourcelanguage="en_US">
 <context>
     <name>AdvancedDiskPopover</name>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="57"/>
         <source>Advanced Disk Management</source>
         <translation>Quản lý đĩa nâng cao</translation>
+    </message>
+    <message>
+        <location filename="../pages/advanceddiskpopover.ui" line="81"/>
+        <source>Set mount points for each partition you want to mount.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="178"/>
