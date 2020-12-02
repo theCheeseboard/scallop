@@ -6,7 +6,7 @@
     <message>
         <location filename="../languagepopover.ui" line="57"/>
         <source>Select a locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle ein Gebietsschema</translation>
     </message>
 </context>
 <context>
@@ -14,48 +14,48 @@
     <message>
         <location filename="../mainwindow.ui" line="122"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="148"/>
         <source>Emergency</source>
-        <translation type="unfinished"></translation>
+        <translation>Notfall</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="180"/>
         <source>Manage Disks</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenträger Verwalten</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="187"/>
         <source>View Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateien Anzeigen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="194"/>
         <source>Open Terminal</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminal Öffnen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="103"/>
         <source>Available installation and recovery tools are shown below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verfügbare Installations- und Wiederherstellungswerkzeuge werden unten angezeigt.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="173"/>
         <location filename="../mainwindow.cpp" line="91"/>
         <source>Install %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Installiere %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="89"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="90"/>
         <source>Welcome to %1!</source>
-        <translation type="unfinished"></translation>
+        <translation>Willkommen zu %1!</translation>
     </message>
 </context>
 <context>
@@ -63,17 +63,17 @@
     <message>
         <location filename="../powerpopover.ui" line="35"/>
         <source>Power Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Energieoptionen</translation>
     </message>
     <message>
         <location filename="../powerpopover.ui" line="42"/>
         <source>What do you want to do now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Was willst du jetzt tun?</translation>
     </message>
     <message>
         <location filename="../powerpopover.ui" line="52"/>
         <source>Power Off</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausschalten</translation>
     </message>
     <message>
         <location filename="../powerpopover.ui" line="59"/>
@@ -83,7 +83,7 @@
     <message>
         <location filename="../powerpopover.ui" line="69"/>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Neustarten</translation>
     </message>
     <message>
         <location filename="../powerpopover.ui" line="76"/>
