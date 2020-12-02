@@ -11,9 +11,11 @@ TARGET = scallop-install-system
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    diskmodel.cpp \
     flowcontroller.cpp \
     install/bootloaderstate.cpp \
     install/diskmanagementstate.cpp \
+    install/fstabstate.cpp \
     install/installmanager.cpp \
     install/mountstate.cpp \
     install/unsquashstate.cpp \
@@ -22,18 +24,22 @@ SOURCES += \
     main.cpp \
     mainwidget.cpp \
     mainwindow.cpp \
+    pages/advanceddiskpopover.cpp \
     pages/diskpage.cpp \
     pages/finishedpage.cpp \
     pages/issuespage.cpp \
     pages/progresspage.cpp \
     pages/readypage.cpp \
     pages/welcomepage.cpp \
-    popovers/eraseconfirmpopover.cpp
+    popovers/eraseconfirmpopover.cpp \
+    popovers/mountpointpopover.cpp
 
 HEADERS += \
+    diskmodel.h \
     flowcontroller.h \
     install/bootloaderstate.h \
     install/diskmanagementstate.h \
+    install/fstabstate.h \
     install/installmanager.h \
     install/mountstate.h \
     install/unsquashstate.h \
@@ -41,24 +47,28 @@ HEADERS += \
     installipcmanager.h \
     mainwidget.h \
     mainwindow.h \
+    pages/advanceddiskpopover.h \
     pages/diskpage.h \
     pages/finishedpage.h \
     pages/issuespage.h \
     pages/progresspage.h \
     pages/readypage.h \
     pages/welcomepage.h \
-    popovers/eraseconfirmpopover.h
+    popovers/eraseconfirmpopover.h \
+    popovers/mountpointpopover.h
 
 FORMS += \
     mainwidget.ui \
     mainwindow.ui \
+    pages/advanceddiskpopover.ui \
     pages/diskpage.ui \
     pages/finishedpage.ui \
     pages/issuespage.ui \
     pages/progresspage.ui \
     pages/readypage.ui \
     pages/welcomepage.ui \
-    popovers/eraseconfirmpopover.ui
+    popovers/eraseconfirmpopover.ui \
+    popovers/mountpointpopover.ui
 
 
 unix:!macx {
@@ -69,8 +79,11 @@ unix:!macx {
 
     target.path = /usr/bin
 
-#    icon.path = /usr/share/icons/hicolor/scalable/apps/
-#    icon.files = icons/scallop.svg
+    icon.path = /usr/share/icons/hicolor/scalable/apps/
+    icon.files = icons/scallop-installer.svg
 
-    INSTALLS += target
+    INSTALLS += target icon
 }
+
+RESOURCES += \
+    resources.qrc

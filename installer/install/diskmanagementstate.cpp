@@ -43,10 +43,6 @@ DiskManagementState::DiskManagementState(QState* parent) : QStateMachine(parent)
 
     QFinalState* finishedState = new QFinalState();
     connect(finishedState, &QFinalState::entered, this, [ = ] {
-        //Sort the mounts by length
-        std::sort(d->mounts.begin(), d->mounts.end(), [ = ](QPair<QString, QString> first, QPair<QString, QString> second) {
-            return first.first.length() < second.second.length();
-        });
         InstallerData::insertTemp("mounts", QVariant::fromValue(d->mounts));
     });
 
@@ -92,7 +88,7 @@ DiskManagementState::DiskManagementState(QState* parent) : QStateMachine(parent)
                 });
             } else {
                 //Create a BIOS Boot partition
-                partitionTable->createPartition(0, 1048576 /* 1 MB */, "21686148-6449-6E6F-744E-656564454649" /* EFI System */, "biosboot", {})->then([ = ](QDBusObjectPath object) {
+                partitionTable->createPartition(0, 1048576 /* 1 MB */, "21686148-6449-6E6F-744E-656564454649" /* BIOS Boot */, "biosboot", {})->then([ = ](QDBusObjectPath object) {
                     DiskObject* bootObject = DriveObjectManager::diskForPath(object);
                     d->disks.insert("firmwareboot", bootObject);
 
@@ -141,6 +137,16 @@ DiskManagementState::DiskManagementState(QState* parent) : QStateMachine(parent)
         partitionTableState->addTransition(this, &DiskManagementState::nextState, bootPartition);
         bootPartition->addTransition(this, &DiskManagementState::nextState, rootPartition);
         rootPartition->addTransition(this, &DiskManagementState::nextState, finishedState);
+    } else if (d->diskDetails.value("type").toString() == QStringLiteral("mount-list")) {
+        //Figure out the mounts
+        QJsonArray mounts = d->diskDetails.value("mounts").toArray();
+        for (QJsonValue mount : mounts) {
+            QJsonObject mountObject = mount.toObject();
+            d->mounts.append({mountObject.value("mountPoint").toString(), mountObject.value("block").toString()});
+        }
+
+        this->addState(finishedState);
+        this->setInitialState(finishedState);
     }
 }
 

@@ -31,6 +31,7 @@
 #include "diskmanagementstate.h"
 #include "mountstate.h"
 #include "unsquashstate.h"
+#include "fstabstate.h"
 #include "bootloaderstate.h"
 
 struct InstallManagerPrivate {
@@ -66,6 +67,7 @@ InstallManager::InstallManager(QObject* parent) : QObject(parent) {
     DiskManagementState* diskState = new DiskManagementState();
     MountState* mountState = new MountState();
     UnsquashState* unsquashState = new UnsquashState();
+    FstabState* fstabState = new FstabState();
     BootloaderState* bootloaderState = new BootloaderState();
     QState* cleanupState = new QState();
     QFinalState* finalState = new QFinalState();
@@ -74,7 +76,8 @@ InstallManager::InstallManager(QObject* parent) : QObject(parent) {
 
     diskState->addTransition(diskState, &DiskManagementState::finished, mountState);
     mountState->addTransition(mountState, &MountState::finished, unsquashState);
-    unsquashState->addTransition(unsquashState, &UnsquashState::finished, bootloaderState);
+    unsquashState->addTransition(unsquashState, &UnsquashState::finished, fstabState);
+    fstabState->addTransition(fstabState, &FstabState::finished, bootloaderState);
     bootloaderState->addTransition(bootloaderState, &BootloaderState::finished, cleanupState);
 
     diskState->addTransition(diskState, &DiskManagementState::failure, errorCleanupState);
@@ -85,6 +88,7 @@ InstallManager::InstallManager(QObject* parent) : QObject(parent) {
     d->stateMachine->addState(diskState);
     d->stateMachine->addState(mountState);
     d->stateMachine->addState(unsquashState);
+    d->stateMachine->addState(fstabState);
     d->stateMachine->addState(bootloaderState);
     d->stateMachine->addState(cleanupState);
     d->stateMachine->addState(finalState);
@@ -124,7 +128,8 @@ void InstallManager::cleanup() {
         emit cleanupDone();
     } else {
         QDir sysRoot(sysRootPath);
-        QFile seedFile(sysRoot.absoluteFilePath("/etc/scallop/seeded-settings"));
+        sysRoot.mkpath("etc/scallop");
+        QFile seedFile(sysRoot.absoluteFilePath("etc/scallop/seeded-settings"));
         seedFile.open(QFile::WriteOnly);
         seedFile.write("[Scallop]\n");
         seedFile.write(("language=" + InstallerData::value("language").toString()).toUtf8());

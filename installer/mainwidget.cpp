@@ -43,7 +43,7 @@ MainWidget::MainWidget(QWidget* parent) :
     ui->setupUi(this);
 
     d = new MainWidgetPrivate();
-    this->setFixedSize(SC_DPI_T(QSize(800, 600), QSize));
+//    this->setFixedSize(SC_DPI_T(QSize(800, 600), QSize));
     ui->stackedWidget->setCurrentAnimation(tStackedWidget::SlideHorizontal);
 
     QShortcut* debugLogShortcut = new QShortcut(QKeySequence(Qt::ControlModifier | Qt::Key_L), this);

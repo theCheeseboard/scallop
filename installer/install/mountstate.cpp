@@ -40,21 +40,37 @@ MountState::~MountState() {
 void MountState::onEntry(QEvent* event) {
     //Add states
     QList<QPair<QString, QString>> mounts = InstallerData::valueTemp("mounts").value<QList<QPair<QString, QString>>>();
+
+    //Sort the mounts by length
+    std::sort(mounts.begin(), mounts.end(), [ = ](QPair<QString, QString> first, QPair<QString, QString> second) {
+        return first.first.length() < second.first.length();
+    });
+
     InstallerData::insertTemp("systemRoot", d->mountDir.path());
 
     QState* previousState = nullptr;
     for (QPair<QString, QString> mount : mounts) {
         QState* state = new QState();
         connect(state, &QState::entered, this, [ = ] {
-            DiskObject* mountDrive = DriveObjectManager::diskForPath(QDBusObjectPath(mount.second));
+            DiskObject* mountDrive;
+
+            if (mount.second.startsWith("/org/freedesktop/UDisks2")) {
+                mountDrive = DriveObjectManager::diskForPath(QDBusObjectPath(mount.second));
+            } else {
+                mountDrive = DriveObjectManager::diskByBlockName(mount.second);
+            }
+
             QString mountPath = d->mountDir.path() + "/" + mount.first;
+            QString block = mountDrive->interface<BlockInterface>()->blockName();
 
             QDir::root().mkpath(mountPath);
 
             //Mount the drive
+            QTextStream(stderr) << tr("Mounting:") << " " << block << " -> " << mountPath << "\n";
+
             QProcess* proc = new QProcess();
             proc->setProcessChannelMode(QProcess::ForwardedChannels);
-            proc->start("mount", {mountDrive->interface<BlockInterface>()->blockName(), mountPath});
+            proc->start("mount", {block, mountPath});
             connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [ = ](int exitCode, QProcess::ExitStatus exitStatus) {
                 if (exitCode == 0) {
                     emit mountNext();

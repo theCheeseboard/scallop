@@ -40,8 +40,14 @@ class DiskPage : public QWidget {
 
         void on_listWidget_currentRowChanged(int currentRow);
 
+        void on_showAllDrivesBox_toggled(bool checked);
+
+        void on_advancedButton_clicked();
+
     private:
         Ui::DiskPage* ui;
+
+        void reloadDisks();
 };
 
 #endif // DISKPAGE_H

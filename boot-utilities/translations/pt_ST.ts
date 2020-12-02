@@ -2,19 +2,37 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="st_ZA" sourcelanguage="en_US">
 <context>
+    <name>LanguagePopover</name>
+    <message>
+        <location filename="../languagepopover.ui" line="57"/>
+        <source>Select a locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="14"/>
-        <source>MainWindow</source>
+        <location filename="../mainwindow.ui" line="122"/>
+        <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="124"/>
+        <location filename="../mainwindow.ui" line="148"/>
+        <source>Emergency</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="180"/>
         <source>Manage Disks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="131"/>
+        <location filename="../mainwindow.ui" line="187"/>
+        <source>View Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="194"/>
         <source>Open Terminal</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24,29 +42,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="117"/>
-        <location filename="../mainwindow.cpp" line="90"/>
+        <location filename="../mainwindow.ui" line="173"/>
+        <location filename="../mainwindow.cpp" line="91"/>
         <source>Install %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="88"/>
+        <location filename="../mainwindow.cpp" line="89"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="89"/>
+        <location filename="../mainwindow.cpp" line="90"/>
         <source>Welcome to %1!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PowerPopover</name>
-    <message>
-        <location filename="../powerpopover.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../powerpopover.ui" line="35"/>
         <source>Power Options</source>

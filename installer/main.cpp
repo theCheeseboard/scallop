@@ -25,6 +25,8 @@
 
 int main(int argc, char* argv[]) {
     tApplication a(argc, argv);
+    a.setShareDir("/usr/share/scallop/install-system");
+    a.installTranslators();
 
     QCommandLineParser parser;
     parser.addOption({"install", "Install the system using a descriptor of the install process."});

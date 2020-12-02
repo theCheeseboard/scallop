@@ -23,29 +23,52 @@
 #include <QCloseEvent>
 #include <QShortcut>
 #include <QMessageBox>
+#include <QScreen>
+#include <tcsdtools.h>
 #include "installerdata.h"
+
+struct MainWindowPrivate {
+    tCsdTools csd;
+};
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    this->setFixedSize(ui->frame->sizeHint());
     this->setWindowTitle(tr("Install %1").arg(InstallerData::systemName()));
+
+    QRect geometry;
+    geometry.setSize((SC_DPI_T(QSize(800, 600), QSize)));
+    geometry.moveCenter(QApplication::screens().first()->geometry().center());
+    this->setGeometry(geometry);
+    this->setFixedSize(geometry.size());
+
+    d = new MainWindowPrivate();
+    d->csd.installMoveAction(ui->topWidget);
+    d->csd.installResizeAction(this);
+
+    QToolButton* closeButton = new QToolButton();
+    closeButton->setIcon(QIcon(":/tcsdtools/close.svg"));
+    closeButton->setIconSize(SC_DPI_T(QSize(24, 24), QSize));
+    connect(closeButton, &QToolButton::clicked, this, [ = ] {
+        this->close();
+    });
+
+    if (tCsdGlobal::windowControlsEdge() == tCsdGlobal::Left) {
+        ui->leftCsdLayout->addWidget(closeButton);
+    } else {
+        ui->rightCsdLayout->addWidget(closeButton);
+    }
+
+    ui->menuButton->setIcon(QIcon::fromTheme("scallop-installer", QIcon(":/icons/scallop-installer.svg")));
+    ui->menuButton->setIconSize(SC_DPI_T(QSize(24, 24), QSize));
 }
 
 MainWindow::~MainWindow() {
     delete ui;
+    delete d;
 }
-
-void MainWindow::resizeEvent(QResizeEvent* event) {
-    if (this->size() == ui->frame->sizeHint()) {
-        ui->frame->setFrameShape(QFrame::NoFrame);
-    } else {
-        ui->frame->setFrameShape(QFrame::StyledPanel);
-    }
-}
-
 
 void MainWindow::closeEvent(QCloseEvent* event) {
     switch (ui->mainWidget->closeAction()) {
@@ -62,7 +85,5 @@ void MainWindow::closeEvent(QCloseEvent* event) {
         case MainWidget::Close:
             event->accept();
             break;
-
     }
-
 }

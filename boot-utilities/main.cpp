@@ -20,16 +20,19 @@
 #include "mainwindow.h"
 
 #include <QProcess>
-#include <QApplication>
+#include <tapplication.h>
 #include <Wm/desktopwm.h>
 
 int main(int argc, char* argv[]) {
     qputenv("QT_QPA_PLATFORMTHEME", "thedesk-platform");
-    QApplication a(argc, argv);
+    tApplication a(argc, argv);
+    a.setShareDir("/usr/share/scallop/boot-utilities");
+    a.installTranslators();
 
     DesktopWm::instance();
 
     QProcess::startDetached("kwin_x11", {});
+    QProcess::startDetached("/usr/lib/td-polkitagent", {});
 
     MainWindow w;
     w.showFullScreen();

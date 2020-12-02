@@ -1,5 +1,6 @@
 QT       += core gui thelib
 TARGET = scallop-onboarding
+SHARE_APP_NAME = scallop/onboarding
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,22 +14,22 @@ SOURCES += \
     OnboardingPages/onboardingcompleteoobe.cpp \
     OnboardingPages/onboardinghostname.cpp \
     endsession.cpp \
-    main.cpp \
-    mainwindow.cpp
+    main.cpp
 
 HEADERS += \
     OnboardingPages/onboardingcompleteoobe.h \
     OnboardingPages/onboardinghostname.h \
-    endsession.h \
-    mainwindow.h
+    endsession.h
 
 FORMS += \
     OnboardingPages/onboardingcompleteoobe.ui \
     OnboardingPages/onboardinghostname.ui \
-    endsession.ui \
-    mainwindow.ui
+    endsession.ui
 
 unix:!macx {
+    # Include the-libs build tools
+    include(/usr/share/the-libs/pri/buildmaster.pri)
+
     LIBS += -lthedesk
     INCLUDEPATH += $$[QT_INSTALL_HEADERS]/libthedesk
 

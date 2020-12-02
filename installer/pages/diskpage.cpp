@@ -29,9 +29,10 @@
 #include <DriveObjects/partitiontableinterface.h>
 #include <driveobjectmanager.h>
 #include <tpopover.h>
-#include "popovers/eraseconfirmpopover.h"
+#include <QMessageBox>
 #include "flowcontroller.h"
 #include "installerdata.h"
+#include "advanceddiskpopover.h"
 
 DiskPage::DiskPage(QWidget* parent) :
     QWidget(parent),
@@ -41,17 +42,7 @@ DiskPage::DiskPage(QWidget* parent) :
     ui->titleLabel->setBackButtonShown(true);
     ui->descriptionLabel->setText(tr("Select a location to install %1 to.").arg(InstallerData::systemName()));
 
-    for (DiskObject* disk : DriveObjectManager::rootDisks()) {
-        if (disk->interface<BlockInterface>()->drive() && disk->interface<BlockInterface>()->drive()->isOpticalDrive()) continue;
-        if (disk->interface<BlockInterface>()->drive() && disk->interface<BlockInterface>()->drive()->isRemovable()) continue;
-        if (disk->interface<LoopInterface>()) continue;
-
-        QListWidgetItem* item = new QListWidgetItem();
-        item->setText(QStringLiteral("%1 (%2) · %3").arg(disk->displayName()).arg(disk->interface<BlockInterface>()->blockName()).arg(QLocale().formattedDataSize(disk->interface<BlockInterface>()->size())));
-        item->setData(Qt::UserRole, disk->interface<BlockInterface>()->blockName());
-        item->setIcon(disk->icon());
-        ui->listWidget->addItem(item);
-    }
+    reloadDisks();
 }
 
 DiskPage::~DiskPage() {
@@ -59,6 +50,21 @@ DiskPage::~DiskPage() {
 }
 
 void DiskPage::on_nextButton_clicked() {
+    QJsonObject diskInfo = InstallerData::value("disk").toObject();
+    if (diskInfo.value("type").toString() == QStringLiteral("whole-disk")) {
+        DiskObject* disk = DriveObjectManager::diskByBlockName(diskInfo.value("block").toString());
+
+        bool allowDisk = true;
+        if (disk->interface<BlockInterface>()->drive() && disk->interface<BlockInterface>()->drive()->isOpticalDrive()) allowDisk = false;
+        if (disk->interface<BlockInterface>()->drive() && disk->interface<BlockInterface>()->drive()->isRemovable()) allowDisk = false;
+        if (disk->interface<LoopInterface>()) allowDisk = false;
+
+        if (!allowDisk) {
+            //Warn the user
+            if (QMessageBox::warning(this, tr("Nonstandard Disk"), tr("You are installing %1 to a nonstandard disk. Installation is likely to fail. Do you wish to attempt to install to this disk anyway?").arg(InstallerData::systemName()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::No) return;
+        }
+    }
+
     FlowController::instance()->nextPage();
 }
 
@@ -68,6 +74,7 @@ void DiskPage::on_titleLabel_backButtonClicked() {
 
 void DiskPage::on_listWidget_currentRowChanged(int currentRow) {
     QListWidgetItem* item = ui->listWidget->item(currentRow);
+
     if (item) {
         InstallerData::insert("disk", QJsonObject({
             {"type", QStringLiteral("whole-disk")},
@@ -77,4 +84,42 @@ void DiskPage::on_listWidget_currentRowChanged(int currentRow) {
     } else {
         ui->nextButton->setEnabled(false);
     }
+}
+
+void DiskPage::on_showAllDrivesBox_toggled(bool checked) {
+    reloadDisks();
+}
+
+void DiskPage::reloadDisks() {
+    ui->listWidget->clear();
+    for (DiskObject* disk : DriveObjectManager::rootDisks()) {
+        if (!ui->showAllDrivesBox->isChecked()) {
+            if (disk->interface<BlockInterface>()->drive() && disk->interface<BlockInterface>()->drive()->isOpticalDrive()) continue;
+            if (disk->interface<BlockInterface>()->drive() && disk->interface<BlockInterface>()->drive()->isRemovable()) continue;
+            if (disk->interface<LoopInterface>()) continue;
+        }
+
+        QListWidgetItem* item = new QListWidgetItem();
+        item->setText(QStringLiteral("%1 (%2) · %3").arg(disk->displayName()).arg(disk->interface<BlockInterface>()->blockName()).arg(QLocale().formattedDataSize(disk->interface<BlockInterface>()->size())));
+        item->setData(Qt::UserRole, disk->interface<BlockInterface>()->blockName());
+        item->setIcon(disk->icon());
+        ui->listWidget->addItem(item);
+    }
+}
+
+void DiskPage::on_advancedButton_clicked() {
+    //Open advanced disk pane
+    AdvancedDiskPopover* advancedDisks = new AdvancedDiskPopover();
+    tPopover* popover = new tPopover(advancedDisks);
+    popover->setPopoverWidth(-1);
+    popover->setPopoverSide(tPopover::Bottom);
+    connect(advancedDisks, &AdvancedDiskPopover::rejected, popover, &tPopover::dismiss);
+    connect(advancedDisks, &AdvancedDiskPopover::accepted, popover, [ = ](QJsonObject diskInformation) {
+        popover->dismiss();
+        InstallerData::insert("disk", diskInformation);
+        on_nextButton_clicked();
+    });
+    connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
+    connect(popover, &tPopover::dismissed, advancedDisks, &AdvancedDiskPopover::deleteLater);
+    popover->show(this->window());
 }

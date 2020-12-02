@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/scallop-installer.svg</file>
+    </qresource>
+</RCC>

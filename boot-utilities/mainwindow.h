@@ -43,6 +43,12 @@ class MainWindow : public QMainWindow {
 
         void on_terminalButton_clicked();
 
+        void on_disksButton_clicked();
+
+        void on_viewFilesButton_clicked();
+
+        void on_languageButton_clicked();
+
     private:
         Ui::MainWindow* ui;
         MainWindowPrivate* d;

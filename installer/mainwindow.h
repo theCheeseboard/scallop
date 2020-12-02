@@ -28,6 +28,7 @@ namespace Ui {
 }
 QT_END_NAMESPACE
 
+struct MainWindowPrivate;
 class MainWindow : public QMainWindow {
         Q_OBJECT
 
@@ -37,8 +38,7 @@ class MainWindow : public QMainWindow {
 
     private:
         Ui::MainWindow* ui;
-
-        void resizeEvent(QResizeEvent* event);
+        MainWindowPrivate* d;
 
         // QWidget interface
     protected:

@@ -2,104 +2,175 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="et_EE" sourcelanguage="en_US">
 <context>
+    <name>AdvancedDiskPopover</name>
+    <message>
+        <location filename="../pages/advanceddiskpopover.ui" line="57"/>
+        <source>Advanced Disk Management</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/advanceddiskpopover.ui" line="178"/>
+        <source>BOOTLOADER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/advanceddiskpopover.ui" line="185"/>
+        <source>Install bootloader onto this device:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/advanceddiskpopover.ui" line="218"/>
+        <source>Edit Partitions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/advanceddiskpopover.ui" line="242"/>
+        <source>Use this configuration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/advanceddiskpopover.ui" line="277"/>
+        <source>Editing Partitions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/advanceddiskpopover.ui" line="287"/>
+        <source>Once you&apos;re done, close the partition editor and come back here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/advanceddiskpopover.cpp" line="53"/>
+        <source>To continue, you&apos;ll need to set at least a partition for %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BootloaderState</name>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="38"/>
+        <location filename="../install/bootloaderstate.cpp" line="39"/>
         <source>Configuring Bootloader...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="44"/>
+        <location filename="../install/bootloaderstate.cpp" line="45"/>
         <source>Failed to create the GRUB Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="61"/>
-        <location filename="../install/bootloaderstate.cpp" line="93"/>
+        <location filename="../install/bootloaderstate.cpp" line="66"/>
+        <location filename="../install/bootloaderstate.cpp" line="110"/>
         <source>Installing the bootloader...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="68"/>
-        <location filename="../install/bootloaderstate.cpp" line="100"/>
+        <location filename="../install/bootloaderstate.cpp" line="73"/>
+        <location filename="../install/bootloaderstate.cpp" line="117"/>
         <source>Failed to install GRUB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/bootloaderstate.cpp" line="104"/>
+        <source>Installing bootloader to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/bootloaderstate.cpp" line="125"/>
+        <source>Skipping bootloader installation as requested by user</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DiskManagementState</name>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="58"/>
+        <location filename="../install/diskmanagementstate.cpp" line="54"/>
         <source>Erasing disk %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="64"/>
+        <location filename="../install/diskmanagementstate.cpp" line="60"/>
         <source>Failed to erase the disk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="73"/>
+        <location filename="../install/diskmanagementstate.cpp" line="69"/>
         <source>Creating Boot Partition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="90"/>
-        <location filename="../install/diskmanagementstate.cpp" line="104"/>
+        <location filename="../install/diskmanagementstate.cpp" line="86"/>
+        <location filename="../install/diskmanagementstate.cpp" line="100"/>
         <source>Failed to create the boot partition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="118"/>
+        <location filename="../install/diskmanagementstate.cpp" line="114"/>
         <source>Creating Root Partition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="130"/>
+        <location filename="../install/diskmanagementstate.cpp" line="126"/>
         <source>Failed to create the root partition</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DiskModel</name>
+    <message>
+        <location filename="../diskmodel.cpp" line="141"/>
+        <source>Disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../diskmodel.cpp" line="143"/>
+        <source>Mount Point</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DiskPage</name>
     <message>
-        <location filename="../pages/diskpage.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../pages/diskpage.ui" line="35"/>
         <source>Where to today?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.ui" line="85"/>
+        <location filename="../pages/diskpage.ui" line="99"/>
+        <source>Show all drives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/diskpage.ui" line="106"/>
         <source>All data on the selected disk will be erased, so make sure you&apos;re selecting the correct disk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.ui" line="126"/>
+        <location filename="../pages/diskpage.ui" line="146"/>
         <source>Advanced...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.ui" line="136"/>
+        <location filename="../pages/diskpage.ui" line="156"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.cpp" line="42"/>
+        <location filename="../pages/diskpage.cpp" line="43"/>
         <source>Select a location to install %1 to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/diskpage.cpp" line="64"/>
+        <source>Nonstandard Disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/diskpage.cpp" line="64"/>
+        <source>You are installing %1 to a nonstandard disk. Installation is likely to fail. Do you wish to attempt to install to this disk anyway?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>EraseConfirmPopover</name>
-    <message>
-        <location filename="../popovers/eraseconfirmpopover.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../popovers/eraseconfirmpopover.ui" line="51"/>
         <source>THIS IS IT</source>
@@ -123,11 +194,6 @@
 </context>
 <context>
     <name>FinishedPage</name>
-    <message>
-        <location filename="../pages/finishedpage.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../pages/finishedpage.ui" line="57"/>
         <source>Installation Completed Successfully</source>
@@ -175,13 +241,26 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/finishedpage.ui" line="296"/>
+        <location filename="../pages/finishedpage.ui" line="297"/>
         <source>Start Over</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/finishedpage.cpp" line="31"/>
         <source>Sorry, we couldn&apos;t install %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FstabState</name>
+    <message>
+        <location filename="../install/fstabstate.cpp" line="34"/>
+        <source>Generating fstab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/fstabstate.cpp" line="43"/>
+        <source>Wrote fstab to</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -196,17 +275,17 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
 <context>
     <name>InstallManager</name>
     <message>
-        <location filename="../install/installmanager.cpp" line="98"/>
+        <location filename="../install/installmanager.cpp" line="102"/>
         <source>Installation complete!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/installmanager.cpp" line="103"/>
+        <location filename="../install/installmanager.cpp" line="107"/>
         <source>Installation failed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/installmanager.cpp" line="119"/>
+        <location filename="../install/installmanager.cpp" line="123"/>
         <source>Finishing up...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -222,11 +301,6 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
 </context>
 <context>
     <name>IssuesPage</name>
-    <message>
-        <location filename="../pages/issuespage.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../pages/issuespage.ui" line="35"/>
         <source>Issues</source>
@@ -299,48 +373,66 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     </message>
 </context>
 <context>
-    <name>MainWidget</name>
-    <message>
-        <location filename="../mainwidget.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="34"/>
+        <location filename="../mainwindow.cpp" line="39"/>
         <source>Install %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="53"/>
+        <location filename="../mainwindow.cpp" line="76"/>
         <source>Exit?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="53"/>
+        <location filename="../mainwindow.cpp" line="76"/>
         <source>%1 is not completely installed. Do you still want to exit?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="59"/>
+        <location filename="../mainwindow.cpp" line="82"/>
         <source>Installation is ongoing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="59"/>
+        <location filename="../mainwindow.cpp" line="82"/>
         <source>Sorry, installation cannot be cancelled at this stage.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>ProgressPage</name>
+    <name>MountPointPopover</name>
     <message>
-        <location filename="../pages/progresspage.ui" line="14"/>
-        <source>Form</source>
+        <location filename="../popovers/mountpointpopover.ui" line="35"/>
+        <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../popovers/mountpointpopover.ui" line="45"/>
+        <source>Mount Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/mountpointpopover.ui" line="72"/>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/mountpointpopover.cpp" line="43"/>
+        <source>Common Mount Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MountState</name>
+    <message>
+        <location filename="../install/mountstate.cpp" line="69"/>
+        <source>Mounting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ProgressPage</name>
     <message>
         <location filename="../pages/progresspage.ui" line="35"/>
         <source>Installing</source>
@@ -359,11 +451,6 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
 </context>
 <context>
     <name>ReadyPage</name>
-    <message>
-        <location filename="../pages/readypage.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../pages/readypage.ui" line="35"/>
         <source>Preparing for lift-off...</source>
@@ -397,27 +484,12 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
 <context>
     <name>WelcomePage</name>
     <message>
-        <location filename="../pages/welcomepage.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../pages/welcomepage.ui" line="48"/>
         <source>Let&apos;s get going!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/welcomepage.ui" line="57"/>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pages/welcomepage.ui" line="83"/>
-        <source>Emergency</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pages/welcomepage.ui" line="123"/>
         <source>Let&apos;s go!</source>
         <translation type="unfinished"></translation>
     </message>

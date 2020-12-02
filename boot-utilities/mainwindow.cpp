@@ -30,6 +30,7 @@
 #include <tvariantanimation.h>
 #include <tpopover.h>
 #include "powerpopover.h"
+#include "languagepopover.h"
 
 struct MainWindowPrivate {
     QGraphicsOpacityEffect* effect;
@@ -176,4 +177,31 @@ bool MainWindow::eventFilter(QObject* watched, QEvent* event) {
 
 void MainWindow::resizeEvent(QResizeEvent* event) {
     updateBackground();
+}
+
+void MainWindow::on_disksButton_clicked() {
+    QProcess::startDetached("thefrisbee", {});
+}
+
+void MainWindow::on_viewFilesButton_clicked() {
+    QProcess::startDetached("thefile", {});
+}
+
+void MainWindow::on_languageButton_clicked() {
+    LanguagePopover* powerPopover = new LanguagePopover();
+    tPopover* popover = new tPopover(powerPopover);
+    popover->setPopoverWidth(SC_DPI(400));
+    connect(powerPopover, &LanguagePopover::rejected, popover, &tPopover::dismiss);
+    connect(powerPopover, &LanguagePopover::accepted, popover, [ = ](QLocale locale) {
+        QLocale::setDefault(locale);
+
+        QString localeName = locale.name() + ".UTF-8";
+        qputenv("LANG", localeName.toUtf8());
+        qputenv("LANGUAGE", localeName.toUtf8());
+        popover->dismiss();
+    });
+    connect(popover, &tPopover::dismissed, powerPopover, &LanguagePopover::deleteLater);
+    connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
+    popover->show(this);
+    powerPopover->setFocus();
 }

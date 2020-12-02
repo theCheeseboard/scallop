@@ -73,6 +73,8 @@ int main(int argc, char* argv[]) {
     a.setOrganizationName("theSuite");
     a.setOrganizationDomain("vicr123.com");
     a.setApplicationName("theDesk");
+    a.setShareDir("/usr/share/scallop/onboarding");
+    a.installTranslators();
 
     QProcess kwinProc;
     kwinProc.start("kwin_x11", QStringList());

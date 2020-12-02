@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string notr="true">MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -112,6 +112,62 @@
           <number>0</number>
          </property>
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QToolButton" name="languageButton">
+             <property name="text">
+              <string>Language</string>
+             </property>
+             <property name="icon">
+              <iconset theme="preferences-system-locale">
+               <normaloff>../../thedesk/desktop/onboarding</normaloff>../../thedesk/desktop/onboarding</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextUnderIcon</enum>
+             </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="emergencyButton_3">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Emergency</string>
+             </property>
+             <property name="icon">
+              <iconset theme="call-start">
+               <normaloff>../../thedesk/desktop/onboarding</normaloff>../../thedesk/desktop/onboarding</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextUnderIcon</enum>
+             </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
           <widget class="QPushButton" name="installButton">
            <property name="text">
             <string>Install %1</string>
@@ -122,6 +178,13 @@
           <widget class="QPushButton" name="disksButton">
            <property name="text">
             <string>Manage Disks</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="viewFilesButton">
+           <property name="text">
+            <string>View Files</string>
            </property>
           </widget>
          </item>
