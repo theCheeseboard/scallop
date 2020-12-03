@@ -364,7 +364,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../pages/issuespage.cpp" line="109"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Weiter</translation>
     </message>
     <message>
         <location filename="../pages/issuespage.cpp" line="112"/>
@@ -415,7 +415,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../popovers/mountpointpopover.ui" line="45"/>
         <source>Mount Point</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Einhängungspunkt</translation>
     </message>
     <message>
         <location filename="../popovers/mountpointpopover.ui" line="72"/>
@@ -469,7 +469,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../pages/readypage.cpp" line="40"/>
         <source>Install %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Installiere %1</translation>
     </message>
 </context>
 <context>
