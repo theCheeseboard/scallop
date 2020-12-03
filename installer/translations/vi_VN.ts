@@ -11,7 +11,7 @@
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="81"/>
         <source>Set mount points for each partition you want to mount.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn một điểm gắn kết cho các phân vùng bạn muốn gắn.</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="178"/>
