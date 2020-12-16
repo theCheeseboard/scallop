@@ -71,7 +71,7 @@
     <message>
         <location filename="../install/bootloaderstate.cpp" line="95"/>
         <source>Failed to install systemd-boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemd-boot yüklenemedi</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="140"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../pages/diskpage.ui" line="159"/>
         <source>Advanced Partitioning Selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Gelişmiş Bölümleme Seçildi</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="194"/>
         <source>Use Automatic Partitioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Otomatik Bölümlemeyi Kullanın</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="264"/>
@@ -181,7 +181,7 @@
     <message>
         <location filename="../pages/diskpage.cpp" line="44"/>
         <source>You&apos;re using a custom disk configuration to install %1</source>
-        <translation type="unfinished"></translation>
+        <translation>% 1&apos;i yüklemek için özel bir disk yapılandırması kullanıyorsunuz</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.cpp" line="68"/>
@@ -199,57 +199,57 @@
     <message>
         <location filename="../pages/encryptpage.ui" line="35"/>
         <source>Disk Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk Şifreleme</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.ui" line="59"/>
         <source>Enabling disk encryption is highly recommended. If you&apos;re unsure about disk encryption, some information is presented to you below. You should review this information before proceeding to ensure that you make an informed choice.</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk şifrelemenin etkinleştirilmesi şiddetle tavsiye edilir. Disk şifreleme konusunda emin değilseniz, aşağıda size bazı bilgiler sunulmuştur. Bilinçli bir seçim yaptığınızdan emin olmak için devam etmeden önce bu bilgileri gözden geçirmelisiniz.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.ui" line="142"/>
         <source>Don&apos;t Use Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifreleme Kullanma</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="38"/>
         <source>Your data will be protected</source>
-        <translation type="unfinished"></translation>
+        <translation>Verileriniz korunacak</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="39"/>
         <source>The installation disk will not be accessible by anyone without the password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurulum diskine şifre olmadan kimse erişemez.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="42"/>
         <source>Performance may be affected</source>
-        <translation type="unfinished"></translation>
+        <translation>Performans etkilenebilir</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="43"/>
         <source>Your disk may be ever so slightly slower while disk encryption is enabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk şifreleme etkinken diskiniz hiç bu kadar yavaş olmayabilir.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="46"/>
         <source>It&apos;s now or never</source>
-        <translation type="unfinished"></translation>
+        <translation>Ya şimdi ya da asla</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="47"/>
         <source>Once disk encryption is enabled, it can&apos;t be disabled. It also can&apos;t be enabled later, unless you reinstall %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk şifreleme etkinleştirildikten sonra devre dışı bırakılamaz. Ayrıca% 1&apos;i yeniden yüklemediğiniz sürece daha sonra etkinleştirilemez.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="50"/>
         <source>Remember the password</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifreyi hatırla</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="51"/>
         <source>It&apos;ll be required each time this device is powered on.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu cihaz her açıldığında gerekli olacaktır.</translation>
     </message>
 </context>
 <context>
@@ -257,47 +257,47 @@
     <message>
         <location filename="../popovers/encryptpopover.ui" line="35"/>
         <source>Disk Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk Şifreleme</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="68"/>
         <source>ENCRYPTION PASSWORD</source>
-        <translation type="unfinished"></translation>
+        <translation>ŞİFRELEME ŞİFRESİ</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="75"/>
         <source>Choose a good password and remember it.</source>
-        <translation type="unfinished"></translation>
+        <translation>İyi bir şifre seçin ve hatırlayın.</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="117"/>
         <source>Anyone using this device will need to know this password to start it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu cihazı kullanan herkesin, başlatmak için bu şifreyi bilmesi gerekir.</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="96"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifre</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="110"/>
         <source>Confirm Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifreyi Onayla</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="85"/>
         <source>Encrypt this Installation</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu Kurulumu Şifrele</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.cpp" line="35"/>
         <source>Heads up!</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikkat et!</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.cpp" line="36"/>
         <source>It is imperative that you remember this password. You &lt;b&gt;WILL&lt;/b&gt; lose your data if you forget it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu şifreyi hatırlamanız zorunludur. Unutursanız verilerinizi &lt;b&gt;KAYBEDERSINIZ&lt;/b&gt;.</translation>
     </message>
 </context>
 <context>
