@@ -71,7 +71,7 @@
     <message>
         <location filename="../install/bootloaderstate.cpp" line="95"/>
         <source>Failed to install systemd-boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể cài đặt systemd-boot</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="140"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../pages/diskpage.ui" line="159"/>
         <source>Advanced Partitioning Selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Phân vùng đĩa nâng cao</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="194"/>
         <source>Use Automatic Partitioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Sử dụng phân vùng đĩa tự động</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="264"/>
@@ -181,7 +181,7 @@
     <message>
         <location filename="../pages/diskpage.cpp" line="44"/>
         <source>You&apos;re using a custom disk configuration to install %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn đang dùng một cấu hình ổ đĩa tùy chỉnh để cài đặt %1</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.cpp" line="68"/>
@@ -199,57 +199,57 @@
     <message>
         <location filename="../pages/encryptpage.ui" line="35"/>
         <source>Disk Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Mã hóa ổ đĩa</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.ui" line="59"/>
         <source>Enabling disk encryption is highly recommended. If you&apos;re unsure about disk encryption, some information is presented to you below. You should review this information before proceeding to ensure that you make an informed choice.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chúng tôi thực sự khuyến khích bạn kích hoạt mã hóa đĩa. Nếu bạn không biết mã hóa đĩa làm gì, thông tin về mã hóa để dưới đay. Bạn nên đọc thông tin này trước khi bạn tiếp tục để đảm bảo rằng bạn đã đưa ra lựa chọn sáng suốt.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.ui" line="142"/>
         <source>Don&apos;t Use Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Không kích hoạt mã hóa đĩa</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="38"/>
         <source>Your data will be protected</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu của bạn sẽ bị bảo vệ</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="39"/>
         <source>The installation disk will not be accessible by anyone without the password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ổ đĩa bạn sử dụng để cài đặt không thể bị truy cập bởi những ai không có mật khẩu.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="42"/>
         <source>Performance may be affected</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiệu suất có thể bị ảnh hưởng</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="43"/>
         <source>Your disk may be ever so slightly slower while disk encryption is enabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Đĩa của bạn có thể hay chậm một chút khi mã hóa kích hoạt.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="46"/>
         <source>It&apos;s now or never</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn ngay hoặc không bao giờ</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="47"/>
         <source>Once disk encryption is enabled, it can&apos;t be disabled. It also can&apos;t be enabled later, unless you reinstall %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sau khi mã hóa đĩa được bật, nó không thể bị vô hiệu. Nó cũng không thể được bật sau này, trừ khi bạn cài %1 lại.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="50"/>
         <source>Remember the password</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhớ mật khẩu</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="51"/>
         <source>It&apos;ll be required each time this device is powered on.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn cần nó mỗi lần thiết bị này bật lên.</translation>
     </message>
 </context>
 <context>
@@ -257,47 +257,47 @@
     <message>
         <location filename="../popovers/encryptpopover.ui" line="35"/>
         <source>Disk Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Mã hóa ổ đĩa</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="68"/>
         <source>ENCRYPTION PASSWORD</source>
-        <translation type="unfinished"></translation>
+        <translation>MẬT KHẨU MÃ HÓA</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="75"/>
         <source>Choose a good password and remember it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn một mật khẩu tốt và nhớ nó.</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="117"/>
         <source>Anyone using this device will need to know this password to start it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bất kỳ ai sử dụng thiết bị này sẽ cần biết mật khẩu này để bật nó.</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="96"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Mật khẩu</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="110"/>
         <source>Confirm Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Xác nhận mật khẩu</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="85"/>
         <source>Encrypt this Installation</source>
-        <translation type="unfinished"></translation>
+        <translation>Kích hoạt mã hóa cho bản cài đặt này</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.cpp" line="35"/>
         <source>Heads up!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhớ đây!</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.cpp" line="36"/>
         <source>It is imperative that you remember this password. You &lt;b&gt;WILL&lt;/b&gt; lose your data if you forget it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Đó là rất quan trọng bạn nhớ mật khẩu này. Bạn &lt;b&gt;CHẮC CHẮN&lt;/b&gt; sẽ mất dữ liệu nếu bạn quên nó.</translation>
     </message>
 </context>
 <context>
