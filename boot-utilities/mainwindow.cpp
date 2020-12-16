@@ -29,6 +29,7 @@
 #include <Background/backgroundcontroller.h>
 #include <tvariantanimation.h>
 #include <tpopover.h>
+#include <tapplication.h>
 #include "powerpopover.h"
 #include "languagepopover.h"
 
@@ -37,6 +38,8 @@ struct MainWindowPrivate {
     QGraphicsOpacityEffect* exitEffect;
     BackgroundController* bg;
     QPixmap background;
+
+    QTranslator* localTranslator;
 };
 
 MainWindow::MainWindow(QWidget* parent)
@@ -54,6 +57,9 @@ MainWindow::MainWindow(QWidget* parent)
     d->exitEffect->setOpacity(1);
     ui->exitButton->setGraphicsEffect(d->exitEffect);
 
+    d->localTranslator = new QTranslator();
+    updateTranslations(QLocale());
+
     QPalette pal = ui->bar->palette();
     pal.setColor(QPalette::WindowText, Qt::white);
     ui->bar->setPalette(pal);
@@ -61,35 +67,7 @@ MainWindow::MainWindow(QWidget* parent)
     DesktopTimeDate::makeTimeLabel(ui->clock, DesktopTimeDate::Time);
     DesktopTimeDate::makeTimeLabel(ui->date, DesktopTimeDate::StandardDate);
 
-    //Get distribution information
-    QString osreleaseFile = "";
-    if (QFile("/etc/os-release").exists()) {
-        osreleaseFile = "/etc/os-release";
-    } else if (QFile("/usr/lib/os-release").exists()) {
-        osreleaseFile = "/usr/lib/os-release";
-    }
-
-    if (osreleaseFile != "") {
-        QMap<QString, QString> values;
-
-        QFile information(osreleaseFile);
-        information.open(QFile::ReadOnly);
-
-        while (!information.atEnd()) {
-            QString line = information.readLine().trimmed();
-            int equalsIndex = line.indexOf("=");
-
-            QString key = line.left(equalsIndex);
-            QString value = line.mid(equalsIndex + 1);
-            if (value.startsWith("\"") && value.endsWith("\"")) value = value.mid(1, value.count() - 2);
-            values.insert(key, value);
-        }
-        information.close();
-
-        QString systemName = values.value("PRETTY_NAME", tr("Unknown"));
-        ui->titleLabel->setText(tr("Welcome to %1!").arg(systemName));
-        ui->installButton->setText(tr("Install %1").arg(systemName));
-    }
+    updateLabels();
 
     DesktopWm::setSystemWindow(this, DesktopWm::SystemWindowTypeDesktop);
 
@@ -153,6 +131,44 @@ void MainWindow::updateBackground() {
     });
 }
 
+void MainWindow::updateLabels() {
+
+    //Get distribution information
+    QString osreleaseFile = "";
+    if (QFile("/etc/os-release").exists()) {
+        osreleaseFile = "/etc/os-release";
+    } else if (QFile("/usr/lib/os-release").exists()) {
+        osreleaseFile = "/usr/lib/os-release";
+    }
+
+    if (osreleaseFile != "") {
+        QMap<QString, QString> values;
+
+        QFile information(osreleaseFile);
+        information.open(QFile::ReadOnly);
+
+        while (!information.atEnd()) {
+            QString line = information.readLine().trimmed();
+            int equalsIndex = line.indexOf("=");
+
+            QString key = line.left(equalsIndex);
+            QString value = line.mid(equalsIndex + 1);
+            if (value.startsWith("\"") && value.endsWith("\"")) value = value.mid(1, value.count() - 2);
+            values.insert(key, value);
+        }
+        information.close();
+
+        QString systemName = values.value("PRETTY_NAME", tr("Unknown"));
+        ui->titleLabel->setText(tr("Welcome to %1!").arg(systemName));
+        ui->installButton->setText(tr("Install %1").arg(systemName));
+    }
+}
+
+void MainWindow::updateTranslations(QLocale locale) {
+    d->localTranslator->load(locale.name(), tApplication::shareDir() + "/translations");
+    tApplication::installTranslator(d->localTranslator);
+}
+
 void MainWindow::on_terminalButton_clicked() {
     QProcess::startDetached("theterminal", {});
 }
@@ -198,10 +214,22 @@ void MainWindow::on_languageButton_clicked() {
         QString localeName = locale.name() + ".UTF-8";
         qputenv("LANG", localeName.toUtf8());
         qputenv("LANGUAGE", localeName.toUtf8());
+        static_cast<tApplication*>(tApplication::instance())->installTranslators();
+
+        updateTranslations(locale);
+
         popover->dismiss();
     });
     connect(popover, &tPopover::dismissed, powerPopover, &LanguagePopover::deleteLater);
     connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
     popover->show(this);
     powerPopover->setFocus();
+}
+
+
+void MainWindow::changeEvent(QEvent* event) {
+    if (event->type() == QEvent::LanguageChange) {
+        ui->retranslateUi(this);
+        updateLabels();
+    }
 }

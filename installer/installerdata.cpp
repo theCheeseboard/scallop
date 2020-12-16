@@ -77,6 +77,10 @@ QJsonValue InstallerData::value(QString key) {
     return instance()->d->data.value(key);
 }
 
+void InstallerData::remove(QString key) {
+    instance()->d->data.remove(key);
+}
+
 QString InstallerData::systemName() {
     return instance()->d->systemName;
 }

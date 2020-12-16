@@ -26,11 +26,13 @@ SOURCES += \
     mainwindow.cpp \
     pages/advanceddiskpopover.cpp \
     pages/diskpage.cpp \
+    pages/encryptpage.cpp \
     pages/finishedpage.cpp \
     pages/issuespage.cpp \
     pages/progresspage.cpp \
     pages/readypage.cpp \
     pages/welcomepage.cpp \
+    popovers/encryptpopover.cpp \
     popovers/eraseconfirmpopover.cpp \
     popovers/mountpointpopover.cpp
 
@@ -49,11 +51,13 @@ HEADERS += \
     mainwindow.h \
     pages/advanceddiskpopover.h \
     pages/diskpage.h \
+    pages/encryptpage.h \
     pages/finishedpage.h \
     pages/issuespage.h \
     pages/progresspage.h \
     pages/readypage.h \
     pages/welcomepage.h \
+    popovers/encryptpopover.h \
     popovers/eraseconfirmpopover.h \
     popovers/mountpointpopover.h
 
@@ -62,11 +66,13 @@ FORMS += \
     mainwindow.ui \
     pages/advanceddiskpopover.ui \
     pages/diskpage.ui \
+    pages/encryptpage.ui \
     pages/finishedpage.ui \
     pages/issuespage.ui \
     pages/progresspage.ui \
     pages/readypage.ui \
     pages/welcomepage.ui \
+    popovers/encryptpopover.ui \
     popovers/eraseconfirmpopover.ui \
     popovers/mountpointpopover.ui
 
@@ -82,7 +88,10 @@ unix:!macx {
     icon.path = /usr/share/icons/hicolor/scalable/apps/
     icon.files = icons/scallop-installer.svg
 
-    INSTALLS += target icon
+    sdbootconf.path = /usr/share/scallop/install-system
+    sdbootconf.files = systemd-boot-config/
+
+    INSTALLS += target icon sdbootconf
 }
 
 RESOURCES += \

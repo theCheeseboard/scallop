@@ -55,6 +55,8 @@ class MainWindow : public QMainWindow {
 
         void setUtilitiesAvailable(bool utilitiesAvailable);
         void updateBackground();
+        void updateLabels();
+        void updateTranslations(QLocale locale);
 
         // QObject interface
     public:
@@ -63,5 +65,6 @@ class MainWindow : public QMainWindow {
         // QWidget interface
     protected:
         void resizeEvent(QResizeEvent* event);
+        void changeEvent(QEvent* event);
 };
 #endif // MAINWINDOW_H

@@ -23,6 +23,8 @@
 #include <QProcess>
 #include <QFinalState>
 #include <QJsonObject>
+#include <QDir>
+#include <QDirIterator>
 #include "installerdata.h"
 
 BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
@@ -31,26 +33,46 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
 
     QState* configState = new QState();
     connect(configState, &QState::entered, this, [ = ] {
-        if (InstallerData::valueTemp("bootloaderInstalled").toBool()) {
-            QString systemRoot = InstallerData::valueTemp("systemRoot").toString();
-            QList<QPair<QString, QString>> mounts = InstallerData::valueTemp("mounts").value<QList<QPair<QString, QString>>>();
-
-            //Generate GRUB Config
+        QString systemRoot = InstallerData::valueTemp("systemRoot").toString();
+        if (InstallerData::isEfi()) {
             QTextStream(stdout) << tr("Configuring Bootloader...") << "\n";
-            QProcess* proc = new QProcess();
-            connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [ = ](int exitCode, QProcess::ExitStatus exitStatus) {
-                if (exitCode == 0) {
-                    emit nextState();
-                } else {
-                    QTextStream(stderr) << tr("Failed to create the GRUB Configuration File") << "\n";
-                    emit failure();
-                }
-                proc->deleteLater();
-            });
-            proc->start("arch-chroot", {systemRoot, "grub-mkconfig", "-o", "/boot/grub/grub.cfg"});
-        } else {
-            //Skip bootloader config generation
+
+            //Copy over bootloader files
+            QDir bootloaderFilesDir("/usr/share/scallop/install-system/systemd-boot-config");
+            QDir destinationDir(QDir(systemRoot).absoluteFilePath("boot/loader"));
+            QDirIterator bootloaderFiles(bootloaderFilesDir.path(), QDir::Files | QDir::NoDotAndDotDot, QDirIterator::Subdirectories);
+            while (bootloaderFiles.hasNext()) {
+                bootloaderFiles.next();
+                QString relativePath = bootloaderFilesDir.relativeFilePath(bootloaderFiles.filePath());
+                QString destination = destinationDir.absoluteFilePath(relativePath);
+
+                QTextStream(stderr) << bootloaderFiles.filePath() << " -> " << destinationDir.absoluteFilePath(relativePath) << "\n";
+                if (QFile::exists(destination)) QFile::remove(destination);
+                QFile::copy(bootloaderFiles.filePath(), destination);
+            }
+
             nextState();
+        } else {
+            if (InstallerData::valueTemp("bootloaderInstalled").toBool()) {
+                QList<QPair<QString, QString>> mounts = InstallerData::valueTemp("mounts").value<QList<QPair<QString, QString>>>();
+
+                //Generate GRUB Config
+                QTextStream(stdout) << tr("Configuring Bootloader...") << "\n";
+                QProcess* proc = new QProcess();
+                connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [ = ](int exitCode, QProcess::ExitStatus exitStatus) {
+                    if (exitCode == 0) {
+                        emit nextState();
+                    } else {
+                        QTextStream(stderr) << tr("Failed to create the GRUB Configuration File") << "\n";
+                        emit failure();
+                    }
+                    proc->deleteLater();
+                });
+                proc->start("arch-chroot", {systemRoot, "grub-mkconfig", "-o", "/boot/grub/grub.cfg"});
+            } else {
+                //Skip bootloader config generation
+                nextState();
+            }
         }
     });
     this->addState(configState);
@@ -70,11 +92,12 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
                 if (exitCode == 0) {
                     emit nextState();
                 } else {
-                    QTextStream(stderr) << tr("Failed to install GRUB") << "\n";
+                    QTextStream(stderr) << tr("Failed to install systemd-boot") << "\n";
                     emit failure();
                 }
             });
-            proc->start("arch-chroot", {systemRoot, "grub-install", "--target=x86_64-efi", "--efi-directory=/boot/efi", "--bootloader-id=grub"});
+//            proc->start("arch-chroot", {systemRoot, "grub-install", "--target=x86_64-efi", "--efi-directory=/boot", "--bootloader-id=grub"});
+            proc->start("arch-chroot", {systemRoot, "bootctl", "install"});
         });
 
         InstallerData::insertTemp("bootloaderInstalled", true);

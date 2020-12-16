@@ -52,34 +52,39 @@
 <context>
     <name>BootloaderState</name>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="39"/>
+        <location filename="../install/bootloaderstate.cpp" line="38"/>
+        <location filename="../install/bootloaderstate.cpp" line="60"/>
         <source>Configuring Bootloader...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="45"/>
+        <location filename="../install/bootloaderstate.cpp" line="66"/>
         <source>Failed to create the GRUB Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="66"/>
-        <location filename="../install/bootloaderstate.cpp" line="110"/>
+        <location filename="../install/bootloaderstate.cpp" line="88"/>
+        <location filename="../install/bootloaderstate.cpp" line="133"/>
         <source>Installing the bootloader...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="73"/>
-        <location filename="../install/bootloaderstate.cpp" line="117"/>
+        <location filename="../install/bootloaderstate.cpp" line="95"/>
+        <source>Failed to install systemd-boot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/bootloaderstate.cpp" line="140"/>
         <source>Failed to install GRUB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="104"/>
+        <location filename="../install/bootloaderstate.cpp" line="127"/>
         <source>Installing bootloader to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="125"/>
+        <location filename="../install/bootloaderstate.cpp" line="148"/>
         <source>Skipping bootloader installation as requested by user</source>
         <translation type="unfinished"></translation>
     </message>
@@ -87,33 +92,33 @@
 <context>
     <name>DiskManagementState</name>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="54"/>
+        <location filename="../install/diskmanagementstate.cpp" line="55"/>
         <source>Erasing disk %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="60"/>
+        <location filename="../install/diskmanagementstate.cpp" line="61"/>
         <source>Failed to erase the disk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="69"/>
+        <location filename="../install/diskmanagementstate.cpp" line="70"/>
         <source>Creating Boot Partition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="86"/>
-        <location filename="../install/diskmanagementstate.cpp" line="100"/>
+        <location filename="../install/diskmanagementstate.cpp" line="87"/>
+        <location filename="../install/diskmanagementstate.cpp" line="101"/>
         <source>Failed to create the boot partition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="114"/>
+        <location filename="../install/diskmanagementstate.cpp" line="122"/>
         <source>Creating Root Partition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="126"/>
+        <location filename="../install/diskmanagementstate.cpp" line="138"/>
         <source>Failed to create the root partition</source>
         <translation type="unfinished"></translation>
     </message>
@@ -139,22 +144,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.ui" line="99"/>
+        <location filename="../pages/diskpage.ui" line="121"/>
         <source>Show all drives</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.ui" line="106"/>
+        <location filename="../pages/diskpage.ui" line="128"/>
         <source>All data on the selected disk will be erased, so make sure you&apos;re selecting the correct disk.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.ui" line="146"/>
+        <location filename="../pages/diskpage.ui" line="159"/>
+        <source>Advanced Partitioning Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/diskpage.ui" line="194"/>
+        <source>Use Automatic Partitioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/diskpage.ui" line="264"/>
         <source>Advanced...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.ui" line="156"/>
+        <location filename="../pages/diskpage.ui" line="274"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
@@ -164,13 +179,124 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.cpp" line="64"/>
+        <location filename="../pages/diskpage.cpp" line="44"/>
+        <source>You&apos;re using a custom disk configuration to install %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/diskpage.cpp" line="68"/>
         <source>Nonstandard Disk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.cpp" line="64"/>
+        <location filename="../pages/diskpage.cpp" line="68"/>
         <source>You are installing %1 to a nonstandard disk. Installation is likely to fail. Do you wish to attempt to install to this disk anyway?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EncryptPage</name>
+    <message>
+        <location filename="../pages/encryptpage.ui" line="35"/>
+        <source>Disk Encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.ui" line="59"/>
+        <source>Enabling disk encryption is highly recommended. If you&apos;re unsure about disk encryption, some information is presented to you below. You should review this information before proceeding to ensure that you make an informed choice.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.ui" line="142"/>
+        <source>Don&apos;t Use Encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.cpp" line="38"/>
+        <source>Your data will be protected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.cpp" line="39"/>
+        <source>The installation disk will not be accessible by anyone without the password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.cpp" line="42"/>
+        <source>Performance may be affected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.cpp" line="43"/>
+        <source>Your disk may be ever so slightly slower while disk encryption is enabled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.cpp" line="46"/>
+        <source>It&apos;s now or never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.cpp" line="47"/>
+        <source>Once disk encryption is enabled, it can&apos;t be disabled. It also can&apos;t be enabled later, unless you reinstall %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.cpp" line="50"/>
+        <source>Remember the password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.cpp" line="51"/>
+        <source>It&apos;ll be required each time this device is powered on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EncryptPopover</name>
+    <message>
+        <location filename="../popovers/encryptpopover.ui" line="35"/>
+        <source>Disk Encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/encryptpopover.ui" line="68"/>
+        <source>ENCRYPTION PASSWORD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/encryptpopover.ui" line="75"/>
+        <source>Choose a good password and remember it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/encryptpopover.ui" line="117"/>
+        <source>Anyone using this device will need to know this password to start it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/encryptpopover.ui" line="96"/>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/encryptpopover.ui" line="110"/>
+        <source>Confirm Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/encryptpopover.ui" line="85"/>
+        <source>Encrypt this Installation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/encryptpopover.cpp" line="35"/>
+        <source>Heads up!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/encryptpopover.cpp" line="36"/>
+        <source>It is imperative that you remember this password. You &lt;b&gt;WILL&lt;/b&gt; lose your data if you forget it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -20,6 +20,7 @@
 #ifndef FLOWCONTROLLER_H
 #define FLOWCONTROLLER_H
 
+#include <functional>
 #include <QObject>
 
 class FlowController : public QObject {
@@ -34,6 +35,7 @@ class FlowController : public QObject {
         void previousPage();
 
         void setSkipPage(QWidget* page, bool skip);
+        void setSkipPage(QWidget* page, std::function<bool()> skip);
 };
 
 #endif // FLOWCONTROLLER_H

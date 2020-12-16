@@ -24,6 +24,7 @@
 #include <DriveObjects/blockinterface.h>
 #include <DriveObjects/partitiontableinterface.h>
 #include <DriveObjects/partitioninterface.h>
+#include <DriveObjects/encryptedinterface.h>
 #include <QDebug>
 #include "installerdata.h"
 
@@ -76,7 +77,7 @@ DiskManagementState::DiskManagementState(QState* parent) : QStateMachine(parent)
                 partitionTable->createPartitionAndFormat(0, 536870912 /* 512 MB */, "C12A7328-F81F-11D2-BA4B-00A0C93EC93B" /* EFI System */, "efi", {}, "vfat", {})->then([ = ](QDBusObjectPath object) {
                     DiskObject* bootObject = DriveObjectManager::diskForPath(object);
                     d->disks.insert("firmwareboot", bootObject);
-                    d->mounts.append({"/boot/efi", object.path()});
+                    d->mounts.append({"/boot", object.path()});
 
                     emit nextState();
                 })->error([ = ](QString message) {
@@ -101,7 +102,6 @@ DiskManagementState::DiskManagementState(QState* parent) : QStateMachine(parent)
                     QTextStream(stderr) << message << "\n";
                 });
             }
-
         });
 
         QState* rootPartition = new QState();
@@ -111,11 +111,23 @@ DiskManagementState::DiskManagementState(QState* parent) : QStateMachine(parent)
             DiskObject* bootObject = d->disks.value("firmwareboot");
             quint64 newOffset = bootObject->interface<PartitionInterface>()->offset() + bootObject->interface<PartitionInterface>()->size();
 
+            QVariantMap formatOptions;
+            QJsonObject luksConfig = InstallerData::value("luks").toObject();
+            if (luksConfig.contains("password")) {
+                //Encrypt this partition
+                formatOptions.insert("encrypt.passphrase", luksConfig.value("password").toString());
+                formatOptions.insert("encrypt.type", "luks1");
+            }
+
             QTextStream(stdout) << tr("Creating Root Partition") << "\n";
-            partitionTable->createPartitionAndFormat(newOffset, 0, "4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709" /* Linux Root */, "root", {}, "ext4", {})->then([ = ](QDBusObjectPath object) {
-                d->mounts.append({"/", object.path()});
+            partitionTable->createPartitionAndFormat(newOffset, 0, "4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709" /* Linux Root */, "root", {}, "ext4", formatOptions)->then([ = ](QDBusObjectPath object) {
 
                 DiskObject* rootObject = DriveObjectManager::diskForPath(object);
+                EncryptedInterface* encrypted = rootObject->interface<EncryptedInterface>();
+                if (encrypted) {
+                    rootObject = encrypted->cleartextDevice();
+                }
+                d->mounts.append({"/", rootObject->path().path()});
                 d->disks.insert("root", rootObject);
 
                 emit nextState();

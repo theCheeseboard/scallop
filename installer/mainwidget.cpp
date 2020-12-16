@@ -29,12 +29,14 @@
 #include "pages/welcomepage.h"
 #include "pages/issuespage.h"
 #include "pages/diskpage.h"
+#include "pages/encryptpage.h"
 #include "pages/readypage.h"
 #include "pages/progresspage.h"
 #include "pages/finishedpage.h"
 
 struct MainWidgetPrivate {
     QSet<QWidget*> skipped;
+    QMap<QWidget*, std::function<bool()>> skipFunctions;
 };
 
 MainWidget::MainWidget(QWidget* parent) :
@@ -53,7 +55,7 @@ MainWidget::MainWidget(QWidget* parent) :
 
     connect(FlowController::instance(), &FlowController::nextPage, this, [ = ] {
         int showPage = ui->stackedWidget->currentIndex() + 1;
-        while (d->skipped.contains(ui->stackedWidget->widget(showPage))) {
+        while (shouldSkipPage(showPage)) {
             showPage++;
         }
 
@@ -66,7 +68,7 @@ MainWidget::MainWidget(QWidget* parent) :
     });
     connect(FlowController::instance(), &FlowController::previousPage, this, [ = ] {
         int showPage = ui->stackedWidget->currentIndex() - 1;
-        while (d->skipped.contains(ui->stackedWidget->widget(showPage))) {
+        while (shouldSkipPage(showPage)) {
             showPage--;
         }
 
@@ -77,17 +79,21 @@ MainWidget::MainWidget(QWidget* parent) :
             ui->stackedWidget->setCurrentIndex(showPage);
         }
     });
-    connect(FlowController::instance(), &FlowController::setSkipPage, this, [ = ](QWidget * page, bool skip) {
+    connect(FlowController::instance(), QOverload<QWidget*, bool>::of(&FlowController::setSkipPage), this, [ = ](QWidget * page, bool skip) {
         if (skip) {
             d->skipped.insert(page);
         } else {
             d->skipped.remove(page);
         }
     });
+    connect(FlowController::instance(), QOverload<QWidget*, std::function<bool()>>::of(&FlowController::setSkipPage), this, [ = ](QWidget * page, std::function<bool()> function) {
+        d->skipFunctions.insert(page, function);
+    });
 
     ui->stackedWidget->addWidget(new WelcomePage());
     ui->stackedWidget->addWidget(new IssuesPage());
     ui->stackedWidget->addWidget(new DiskPage());
+    ui->stackedWidget->addWidget(new EncryptPage());
     ui->stackedWidget->addWidget(new ReadyPage());
     ui->stackedWidget->addWidget(new ProgressPage());
     ui->stackedWidget->addWidget(new FinishedPage());
@@ -106,6 +112,13 @@ MainWidget::CloseAction MainWidget::closeAction() {
     } else {
         return Confirm;
     }
+}
+
+bool MainWidget::shouldSkipPage(int page) {
+    QWidget* w = ui->stackedWidget->widget(page);
+    if (d->skipped.contains(w)) return true;
+    if (d->skipFunctions.contains(w) && d->skipFunctions.value(w)()) return true;
+    return false;
 }
 
 void MainWidget::on_exitButton_clicked() {

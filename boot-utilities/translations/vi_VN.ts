@@ -42,18 +42,17 @@
         <translation>Các tiện ích cho cài đặt và khôi phục sẽ hiện lên dưới đây.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="173"/>
-        <location filename="../mainwindow.cpp" line="91"/>
+        <location filename="../mainwindow.cpp" line="163"/>
         <source>Install %1</source>
         <translation>Cài đặt %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="89"/>
+        <location filename="../mainwindow.cpp" line="161"/>
         <source>Unknown</source>
         <translation>Không xác định</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="90"/>
+        <location filename="../mainwindow.cpp" line="162"/>
         <source>Welcome to %1!</source>
         <translation>Chào mừng bạn với %1!</translation>
     </message>

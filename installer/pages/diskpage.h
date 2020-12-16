@@ -44,6 +44,8 @@ class DiskPage : public QWidget {
 
         void on_advancedButton_clicked();
 
+        void on_useAutomaticPartitioningButton_clicked();
+
     private:
         Ui::DiskPage* ui;
 

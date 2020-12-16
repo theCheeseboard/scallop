@@ -32,6 +32,7 @@ class InstallerData : public QObject {
 
         static void insert(QString key, QJsonValue value);
         static QJsonValue value(QString key);
+        static void remove(QString key);
 
         static QByteArray exportData();
         static bool importData(QByteArray data);

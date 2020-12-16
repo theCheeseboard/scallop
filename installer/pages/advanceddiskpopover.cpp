@@ -48,7 +48,7 @@ AdvancedDiskPopover::AdvancedDiskPopover(QWidget* parent) :
     ui->titleLabel->setBackButtonShown(true);
 
     d->requiredPartitions.append("/");
-    if (InstallerData::isEfi()) d->requiredPartitions.append("/boot/efi");
+    if (InstallerData::isEfi()) d->requiredPartitions.append("/boot");
 
     ui->partitionRequirementsLabel->setText(tr("To continue, you'll need to set at least a partition for %1.").arg(QLocale().createSeparatedList(d->requiredPartitions)));
 

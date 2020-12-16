@@ -170,7 +170,7 @@
          <item>
           <widget class="QPushButton" name="installButton">
            <property name="text">
-            <string>Install %1</string>
+            <string notr="true">Install %1</string>
            </property>
           </widget>
          </item>

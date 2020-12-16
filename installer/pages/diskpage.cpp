@@ -41,6 +41,10 @@ DiskPage::DiskPage(QWidget* parent) :
 
     ui->titleLabel->setBackButtonShown(true);
     ui->descriptionLabel->setText(tr("Select a location to install %1 to.").arg(InstallerData::systemName()));
+    ui->advancedPartitioningLabel->setText(tr("You're using a custom disk configuration to install %1").arg(InstallerData::systemName()));
+
+    ui->stackedWidget->setCurrentAnimation(tStackedWidget::Fade);
+    ui->stackedWidget->setCurrentWidget(ui->wholeDiskPage, false);
 
     reloadDisks();
 }
@@ -118,8 +122,18 @@ void DiskPage::on_advancedButton_clicked() {
         popover->dismiss();
         InstallerData::insert("disk", diskInformation);
         on_nextButton_clicked();
+
+        ui->nextButton->setEnabled(true);
+        ui->stackedWidget->setCurrentWidget(ui->advancedDiskPage);
     });
     connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
     connect(popover, &tPopover::dismissed, advancedDisks, &AdvancedDiskPopover::deleteLater);
     popover->show(this->window());
+}
+
+void DiskPage::on_useAutomaticPartitioningButton_clicked() {
+    ui->listWidget->reset();
+    InstallerData::remove("disk");
+    ui->stackedWidget->setCurrentWidget(ui->wholeDiskPage);
+    ui->nextButton->setEnabled(false);
 }

@@ -42,6 +42,8 @@ class MainWidget : public QWidget {
 
         CloseAction closeAction();
 
+        bool shouldSkipPage(int page);
+
     private slots:
         void on_exitButton_clicked();
 
