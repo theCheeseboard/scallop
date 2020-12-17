@@ -44,7 +44,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="163"/>
         <source>Install %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Installeer %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="161"/>
