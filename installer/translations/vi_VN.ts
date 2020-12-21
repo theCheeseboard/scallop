@@ -488,22 +488,22 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
         <translation>Có vẻ như bạn đang cài đặt %1 vào một máy ảo. Vì vậy, hiệu suất trên hệ thống đã cài đặt có thể bị ảnh hưởng.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="109"/>
+        <location filename="../pages/issuespage.cpp" line="117"/>
         <source>Ignore and Continue</source>
         <translation>Bỏ qua và Tiếp tục</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="109"/>
+        <location filename="../pages/issuespage.cpp" line="117"/>
         <source>Next</source>
         <translation>Tiếp</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="112"/>
+        <location filename="../pages/issuespage.cpp" line="120"/>
         <source>We&apos;re unable to install %1 on this device right now. Solve the issues below and then give it another go.</source>
         <translation>Chúng tôi không thể cài đặt %1 vào thiết bị này ngay bây giờ. Giải quyết các vấn đề dưới đây, rồi thử lại.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="114"/>
+        <location filename="../pages/issuespage.cpp" line="122"/>
         <source>The following issues may impact the installation. You should solve them before we continue.</source>
         <translation>Các vấn đề dưới đây có thể ảnh hưởng việc cài đặt. Bạn nên giải quyết nó trước khi chúng tôi tiếp tục.</translation>
     </message>

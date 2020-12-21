@@ -488,22 +488,22 @@ Je kunt een debug-log openen met CTRL+L als je uit wilt zoeken wat er mis ging.<
         <translation>Het lijkt erop dat je %1 op een virtuele machine installeert. De prestaties op het geïnstalleerde systeem kunnen daarom slecht zijn.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="109"/>
+        <location filename="../pages/issuespage.cpp" line="117"/>
         <source>Ignore and Continue</source>
         <translation>Negeren en Verder Gaan</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="109"/>
+        <location filename="../pages/issuespage.cpp" line="117"/>
         <source>Next</source>
         <translation>Volgende</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="112"/>
+        <location filename="../pages/issuespage.cpp" line="120"/>
         <source>We&apos;re unable to install %1 on this device right now. Solve the issues below and then give it another go.</source>
         <translation>We kunnen %1 momenteel niet op dit apparaat installeren. Los de problemen hieronder op, en probeer het nog een keer.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="114"/>
+        <location filename="../pages/issuespage.cpp" line="122"/>
         <source>The following issues may impact the installation. You should solve them before we continue.</source>
         <translation>De volgende problemen kunnen invloed hebben op de installatie. Los ze op voordat je verder gaat.</translation>
     </message>

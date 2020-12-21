@@ -39,11 +39,11 @@ class IssuesPage : public QWidget {
 
         void on_nextButton_clicked();
 
+        void reloadIssues();
+
     private:
         Ui::IssuesPage* ui;
         IssuesPagePrivate* d;
-
-        void reloadIssues();
 };
 
 #endif // ISSUESPAGE_H

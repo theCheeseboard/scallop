@@ -483,22 +483,22 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="109"/>
+        <location filename="../pages/issuespage.cpp" line="117"/>
         <source>Ignore and Continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="109"/>
+        <location filename="../pages/issuespage.cpp" line="117"/>
         <source>Next</source>
         <translation type="unfinished">Weiter</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="112"/>
+        <location filename="../pages/issuespage.cpp" line="120"/>
         <source>We&apos;re unable to install %1 on this device right now. Solve the issues below and then give it another go.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="114"/>
+        <location filename="../pages/issuespage.cpp" line="122"/>
         <source>The following issues may impact the installation. You should solve them before we continue.</source>
         <translation type="unfinished"></translation>
     </message>

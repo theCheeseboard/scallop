@@ -65,6 +65,8 @@ IssuesPage::IssuesPage(QWidget* parent) :
     d->vmFrame->setState(tStatusFrame::Warning);
     ui->issuesLayout->addWidget(d->vmFrame);
 
+    QDBusConnection::systemBus().connect("org.freedesktop.UPower", "/org/freedesktop/UPower", "org.freedesktop.DBus.Properties", "PropertiesChanged", this, SLOT(reloadIssues()));
+
     reloadIssues();
 }
 
@@ -91,10 +93,16 @@ void IssuesPage::reloadIssues() {
     //TODO: Check for memory
     d->memoryFrame->setVisible(false);
 
-    //TODO: Check for power
-    d->powerFrame->setVisible(false);
+    //Check for power
+    QDBusInterface upowerInterface("org.freedesktop.UPower", "/org/freedesktop/UPower", "org.freedesktop.UPower", QDBusConnection::systemBus());
+    if (upowerInterface.property("OnBattery").toBool()) {
+        d->powerFrame->setVisible(true);
+        issues++;
+    } else {
+        d->powerFrame->setVisible(false);
+    }
 
-    //TODO: Check for VM
+    //Check for VM
     QDBusInterface hostnameInterface("org.freedesktop.hostname1", "/org/freedesktop/hostname1", "org.freedesktop.hostname1", QDBusConnection::systemBus());
     if (hostnameInterface.property("Chassis").toString() == QStringLiteral("vm")) {
         d->vmFrame->setVisible(true);

@@ -488,22 +488,22 @@ Neyin yanlış gittiğini bulmanız gerekirse, CTRL+L ile bir hata ayıklama gü
         <translation>Görünüşe göre %1 sanal makineye kuruyorsunuz. Bunun sonucunda kurulu sistemdeki performans düşebilir.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="109"/>
+        <location filename="../pages/issuespage.cpp" line="117"/>
         <source>Ignore and Continue</source>
         <translation>Yoksay ve Devam Et</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="109"/>
+        <location filename="../pages/issuespage.cpp" line="117"/>
         <source>Next</source>
         <translation>Sonraki</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="112"/>
+        <location filename="../pages/issuespage.cpp" line="120"/>
         <source>We&apos;re unable to install %1 on this device right now. Solve the issues below and then give it another go.</source>
         <translation>Şu anda bu cihaza %1 yükleyemiyorum. Aşağıdaki sorunları çözün ve ardından tekrar deneyin.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="114"/>
+        <location filename="../pages/issuespage.cpp" line="122"/>
         <source>The following issues may impact the installation. You should solve them before we continue.</source>
         <translation>Aşağıdaki sorunlar kurulumu etkileyebilir. Devam etmeden önce onları çözmelisiniz.</translation>
     </message>
