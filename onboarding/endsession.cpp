@@ -23,6 +23,7 @@
 #include <tpopover.h>
 #include <transparentdialog.h>
 #include <statemanager.h>
+#include <tscrim.h>
 
 EndSession::EndSession(QWidget* parent) :
     QWidget(parent),
@@ -49,13 +50,15 @@ tPromise<void>* EndSession::showDialog() {
         dialog->setWindowFlag(Qt::WindowStaysOnTopHint);
         dialog->showFullScreen();
 
+        tScrim::scrimForWidget(dialog)->setBlurEnabled(false);
+
         QTimer::singleShot(500, [ = ] {
             EndSession* popoverContents = new EndSession();
 
             tPopover* popover = new tPopover(popoverContents);
             popover->setPopoverSide(tPopover::Bottom);
             popover->setPopoverWidth(popoverContents->heightForWidth(dialog->width()));
-            popover->setPerformBlur(false);
+//            popover->setPerformBlur(false);
             connect(popoverContents, &EndSession::done, popover, &tPopover::dismiss);
             connect(popover, &tPopover::dismissed, popoverContents, &EndSession::deleteLater);
             connect(popover, &tPopover::dismissed, [ = ] {
@@ -86,4 +89,8 @@ void EndSession::on_suspendButton_clicked() {
 
 void EndSession::on_exitButton_clicked() {
     qTerminate();
+}
+
+void EndSession::on_titleLabel_backButtonClicked() {
+    emit done();
 }

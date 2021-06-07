@@ -38,16 +38,13 @@ unix:!macx {
     lightdmconfig.path = /usr/share/scallop/onboarding/
     lightdmconfig.files = lightdm-configuration.conf
 
-    desktop.files = scallop-onboarding.desktop
-    desktop.path = /usr/share/scallop/onboarding/session
-
     defaults.files = defaults.conf
     defaults.path = /etc/scallop/onboarding
 
     polkit.files = 50-scallop-onboarding.rules
     polkit.path = /usr/share/polkit-1/rules.d/
 
-    INSTALLS += target system desktop defaults polkit
+    INSTALLS += target system defaults polkit
 }
 
 

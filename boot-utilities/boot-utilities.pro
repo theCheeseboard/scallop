@@ -30,7 +30,7 @@ unix:!macx {
     # Include the-libs build tools
     include(/usr/share/the-libs/pri/buildmaster.pri)
 
-    DEFINES += SYSTEM_LIBRARY_DIRECTORY=\\\"$$[QT_INSTALL_LIBS]\\\"
+    DEFINES += SYSTEM_LIBRARY_DIRECTORY=\\\"$$THELIBS_INSTALL_LIB\\\"
 
     target.path = /usr/bin
 

@@ -39,7 +39,7 @@
 #include <tlogger.h>
 
 int main(int argc, char* argv[]) {
-    if (getuid() != 0) {
+    if (geteuid() != 0) {
         QTextStream(stdout) << "This program must be run as root.\n";
         return 1;
     }
@@ -47,7 +47,13 @@ int main(int argc, char* argv[]) {
     struct passwd* setupUserInformation = getpwnam("setup");
 
     initgroups(setupUserInformation->pw_name, setupUserInformation->pw_gid);
-    setuid(setupUserInformation->pw_uid);
+    int uidSetReturn = setuid(setupUserInformation->pw_uid);
+    if (uidSetReturn != 0) {
+        //Bail
+        QTextStream(stdout) << "Could not drop privileges\n";
+        return 1;
+    }
+
     qputenv("HOME", setupUserInformation->pw_dir);
 
     QTemporaryDir runDir;
@@ -58,8 +64,7 @@ int main(int argc, char* argv[]) {
     dbus.start("dbus-launch", QStringList());
     dbus.waitForFinished();
     QString dbusOutput = dbus.readAll();
-    qDebug() << dbusOutput;
-    for (QString line : dbusOutput.split("\n")) {
+    for (const QString& line : dbusOutput.split("\n")) {
         QStringList parts = line.split("=");
         if (parts.count() == 2) qputenv(parts.first().toUtf8().data(), parts.at(1).toUtf8());
     }

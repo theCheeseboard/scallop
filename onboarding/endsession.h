@@ -49,6 +49,8 @@ class EndSession : public QWidget {
 
         void on_exitButton_clicked();
 
+        void on_titleLabel_backButtonClicked();
+
     private:
         Ui::EndSession* ui;
 };

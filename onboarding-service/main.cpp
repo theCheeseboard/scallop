@@ -56,6 +56,7 @@ QList<QDBusObjectPath> users() {
 }
 
 int main(int argc, char* argv[]) {
+    QCoreApplication::setSetuidAllowed(true);
     QCoreApplication a(argc, argv);
 
     bool haveUser = !users().isEmpty();
@@ -63,16 +64,12 @@ int main(int argc, char* argv[]) {
     if (!haveUser) {
         QTemporaryFile xauthFile;
         xauthFile.open();
+
+        QFile oldxauthFile(qgetenv("XAUTHORITY"));
+        oldxauthFile.open(QFile::ReadOnly);
+        xauthFile.write(oldxauthFile.readAll());
         xauthFile.close();
-
-        QProcess xProc;
-        xProc.start("X", {":0", "vt7"});
-
-        QThread::sleep(1);
-
-        QProcess xAuth;
-        xAuth.start("xauth", {"-f", xauthFile.fileName(), "generate", ":0"});
-        xAuth.waitForFinished();
+        oldxauthFile.close();
 
         QProcess chmod;
         chmod.start("chmod", {"+r", xauthFile.fileName()});
@@ -82,16 +79,13 @@ int main(int argc, char* argv[]) {
         QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
         env.insert("QT_QPA_PLATFORMTHEME", "thedesk-platform");
         env.insert("XAUTHORITY", xauthFile.fileName());
-        env.insert("DISPLAY", ":0");
+//        env.insert("DISPLAY", ":0");
 
         QProcess proc;
         proc.setProcessChannelMode(QProcess::ForwardedChannels);
         proc.setProcessEnvironment(env);
         proc.start("scallop-onboarding", QStringList());
         proc.waitForFinished(-1);
-
-        xProc.terminate();
-        xProc.waitForFinished(-1);
 
         if (proc.exitCode() != 0) return 0; //Bail
 
@@ -125,12 +119,6 @@ int main(int argc, char* argv[]) {
             chown.waitForFinished();
         }
     }
-
-    //Start up the display manager as usual
-    QProcess dmProc;
-    dmProc.setProcessChannelMode(QProcess::ForwardedChannels);
-    dmProc.start("lightdm", QStringList());
-    dmProc.waitForFinished(-1);
 
     return 0;
 }
