@@ -12,14 +12,9 @@ CONFIG -= app_bundle
 SOURCES += \
         main.cpp
 
-DISTFILES += \
-    scallop-onboarding-service.service
+DISTFILES +=
 
 unix:!macx {
     target.path = /usr/bin
-
-    system.path = /usr/lib/systemd/system/
-    system.files = scallop-onboarding-service.service
-
-    INSTALLS += target system
+    INSTALLS += target
 }
