@@ -32,7 +32,7 @@ unix:!macx {
     polkit.files = com.vicr123.scallop.reset.policy
 
     setuid.path = /
-    setuid.extra += chmod u+s $$THELIBS_INSTALL_BIN/$$TARGET
+    setuid.extra += chmod u+s $(INSTALL_ROOT)/$$THELIBS_INSTALL_BIN/$$TARGET
 
     INSTALLS += target setuid polkit
 }
