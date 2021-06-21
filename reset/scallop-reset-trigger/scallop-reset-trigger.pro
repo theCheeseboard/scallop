@@ -31,10 +31,7 @@ unix:!macx {
     polkit.path = $$THELIBS_INSTALL_PREFIX/share/polkit-1/actions
     polkit.files = com.vicr123.scallop.reset.policy
 
-    setuid.path = /
-    setuid.extra += chmod u+s $(INSTALL_ROOT)/$$THELIBS_INSTALL_BIN/$$TARGET
-
-    INSTALLS += target setuid polkit
+    INSTALLS += target polkit
 }
 
 DISTFILES += \
