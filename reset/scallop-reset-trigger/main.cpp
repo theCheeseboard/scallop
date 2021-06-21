@@ -25,6 +25,7 @@
 #include <QCommandLineParser>
 #include <QDBusConnection>
 #include <QDBusMessage>
+#include <QDir>
 #include <polkit-qt5-1/PolkitQt1/Authority>
 #include <polkit-qt5-1/PolkitQt1/Subject>
 
@@ -36,6 +37,7 @@ int main(int argc, char* argv[]) {
     parser.addHelpOption();
     parser.addOption({"trigger", "Reset the system upon reboot"});
     parser.addOption({"undo-trigger", "Don't reset the system upon reboot"});
+    parser.addOption({"root-filesystem", "Path to the root filesystem", "path"});
     parser.addOption({"reboot", "Also reboot the system"});
     parser.process(a);
 
@@ -47,7 +49,14 @@ int main(int argc, char* argv[]) {
         out.flush();
 
         if (PolkitQt1::Authority::instance()->checkAuthorizationSync("com.vicr123.scallop.reset.trigger-reset", subject, PolkitQt1::Authority::AllowUserInteraction) == PolkitQt1::Authority::Yes) {
-            QFile::link("/opt/cactus-recovery-media", "/system-update");
+            if (QDir("/var/lib/scallop-reset/offline").exists()) QDir("/var/lib/scallop-reset/offline").removeRecursively();
+
+            QDir::root().mkpath("/var/lib/scallop-reset/offline");
+
+            QString rootfs = parser.value("root-filesystem");
+            if (rootfs.isEmpty()) rootfs = SCALLOP_PACKAGED_LOCATION;
+            QFile::link(rootfs, "/var/lib/scallop-reset/offline/rootfs.squashfs");
+            QFile::link("/var/lib/scallop-reset/offline", "/system-update");
 
             if (parser.isSet("reboot")) {
                 //Reboot the system

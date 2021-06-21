@@ -2,6 +2,39 @@
 <!DOCTYPE TS>
 <TS version="2.1" sourcelanguage="en_US">
 <context>
+    <name>DownloadProgress</name>
+    <message>
+        <location filename="../downloadprogress.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../downloadprogress.ui" line="58"/>
+        <source>Preparing to Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../downloadprogress.ui" line="73"/>
+        <source>We&apos;re preparing this device to be reset. Stay connected to the Internet. This will take a while.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../downloadprogress.cpp" line="60"/>
+        <source>Reset Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../downloadprogress.cpp" line="60"/>
+        <source>We weren&apos;t able to download the recovery image. Please try again later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../downloadprogress.cpp" line="67"/>
+        <source>Downloaded %1 of %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FinalResetPopover</name>
     <message>
         <location filename="../finalresetpopover.ui" line="14"/>
@@ -58,13 +91,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="62"/>
         <location filename="../mainwindow.cpp" line="64"/>
+        <location filename="../mainwindow.cpp" line="66"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="67"/>
+        <location filename="../mainwindow.cpp" line="69"/>
         <source>**BUCKLE UP!**
 
 Resetting this device will erase all personal data **for all accounts.** This includes:

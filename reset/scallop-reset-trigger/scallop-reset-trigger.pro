@@ -12,6 +12,10 @@ CONFIG -= app_bundle
 SOURCES += \
         main.cpp
 
+equals(SCALLOP_PACKAGED_LOCATION, "") {
+    SCALLOP_PACKAGED_LOCATION="/opt/cactus-recovery-media/rootfs.squashfs"
+}
+
 unix:!macx {
     CONFIG += link_pkgconfig
     PKGCONFIG += polkit-qt5-1 polkit-qt5-agent-1
@@ -20,6 +24,7 @@ unix:!macx {
     include(/usr/share/the-libs/pri/buildmaster.pri)
 
     DEFINES += SYSTEM_LIBRARY_DIRECTORY=\\\"$$THELIBS_INSTALL_LIB\\\"
+    DEFINES += SCALLOP_PACKAGED_LOCATION=\\\"$$SCALLOP_PACKAGED_LOCATION\\\"
 
     target.path = $$THELIBS_INSTALL_BIN
 

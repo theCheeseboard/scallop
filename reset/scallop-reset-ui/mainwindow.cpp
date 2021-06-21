@@ -23,7 +23,9 @@
 #include <QProcess>
 #include <QFile>
 #include <tpopover.h>
+#include <QDir>
 #include "finalresetpopover.h"
+#include "downloadprogress.h"
 
 #include <polkit-qt5-1/PolkitQt1/Authority>
 #include <polkit-qt5-1/PolkitQt1/Subject>
@@ -100,10 +102,26 @@ void MainWindow::on_resetButton_clicked() {
         connect(jp, &FinalResetPopover::rejected, popover, &tPopover::dismiss);
         connect(jp, &FinalResetPopover::accepted, popover, [ = ] {
             //Perform the reset
-            QProcess* proc = new QProcess();
-            proc->start("scallop-reset-trigger", {"--trigger", "--reboot"});
+            bool requireDownload = !QFile::exists(SCALLOP_PACKAGED_LOCATION);
+            QStringList resetTriggerArgs = {"--trigger"};
 
-            popover->dismiss();
+            QString destFile;
+            if (requireDownload) {
+                destFile = QDir::home().absoluteFilePath(".scallop-reset-root.squashfs");
+                resetTriggerArgs.append("--root-filesystem");
+                resetTriggerArgs.append(destFile);
+            } else {
+                resetTriggerArgs.append("--reboot");
+            }
+
+            QProcess* proc = new QProcess();
+            proc->start("scallop-reset-trigger", resetTriggerArgs);
+
+            if (requireDownload) {
+                DownloadProgress* prog = new DownloadProgress(destFile);
+                prog->showFullScreen();
+                this->hide();
+            }
         });
         connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
         connect(popover, &tPopover::dismissed, jp, &FinalResetPopover::deleteLater);

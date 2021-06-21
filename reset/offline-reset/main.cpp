@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
     if (!checkSymlink.isSymLink()) return 0;
 
     //Ensure the symlink points to the correct place
-    if (checkSymlink.symLinkTarget() != "/opt/cactus-recovery-media") return 0;
+    if (checkSymlink.symLinkTarget() != "/var/lib/scallop-reset/offline") return 0;
 
     QFile::remove(checkSymlink.filePath());
 
@@ -63,8 +63,11 @@ int main(int argc, char* argv[]) {
     //Perform the system reset!
     QDir::root().mkpath("/tmp/scallop-reset-root");
 
+    QFile rootfs("/var/lib/scallop-reset/offline/rootfs.squashfs");
+    if (!rootfs.exists()) return 1;
+
     QProcess mountProc;
-    mountProc.start("mount", {"/opt/cactus-recovery-media/rootfs.squashfs", "/tmp/scallop-reset-root"});
+    mountProc.start("mount", {rootfs.fileName(), "/tmp/scallop-reset-root"});
     mountProc.waitForFinished();
 
     QStringList rsyncArgs = {
@@ -74,7 +77,7 @@ int main(int argc, char* argv[]) {
         "--delete"
     };
 
-    for (const QString& exclusion : QStringList({"/tmp", "/proc", "/sys", "/media", "/opt/cactus-recovery-media", "/boot", "/apps", "/host"})) {
+    for (const QString& exclusion : QStringList({"/tmp", "/proc", "/sys", "/media", "/boot", "/dev", "/apps", "/host"})) {
         rsyncArgs.append(QStringLiteral("--exclude=%1").arg(exclusion));
     }
 
