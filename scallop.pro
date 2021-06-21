@@ -4,4 +4,5 @@ SUBDIRS += \
     boot-utilities \
     installer \
     onboarding \
-    onboarding-service
+    onboarding-service \
+    reset
