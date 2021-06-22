@@ -19,11 +19,25 @@
  * *************************************/
 #include "mainwindow.h"
 
-#include <QApplication>
+#include <QDir>
+#include <tapplication.h>
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
+int main(int argc, char* argv[]) {
+    tApplication a(argc, argv);
+    a.setShareDir("/usr/share/scallop/reset/ui");
+    a.installTranslators();
+
+    a.setApplicationVersion("1.0");
+    a.setGenericName(QApplication::translate("main", "System Configuration Tool"));
+    a.setApplicationLicense(tApplication::Gpl3OrLater);
+    a.setCopyrightHolder("Victor Tran");
+    a.setCopyrightYear("2021");
+    a.setOrganizationName("theSuite");
+    a.setApplicationName("Scallop");
+    a.setDesktopFileName("com.vicr123.scallop.reset.ui");
+
+    a.registerCrashTrap();
+
     MainWindow w;
     w.show();
     return a.exec();

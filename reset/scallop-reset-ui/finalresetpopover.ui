@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string notr="true">Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -68,7 +68,8 @@
          <string>Reboot and reset this device</string>
         </property>
         <property name="icon">
-         <iconset theme="view-refresh"/>
+         <iconset theme="view-refresh">
+          <normaloff>.</normaloff>.</iconset>
         </property>
        </widget>
       </item>

@@ -4,11 +4,6 @@
 <context>
     <name>DownloadProgress</name>
     <message>
-        <location filename="../downloadprogress.ui" line="14"/>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../downloadprogress.ui" line="58"/>
         <source>Preparing to Reset</source>
         <translation type="unfinished"></translation>
@@ -36,11 +31,6 @@
 </context>
 <context>
     <name>FinalResetPopover</name>
-    <message>
-        <location filename="../finalresetpopover.ui" line="14"/>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../finalresetpopover.ui" line="51"/>
         <source>THIS IS IT</source>
@@ -109,6 +99,14 @@ Resetting this device will erase all personal data **for all accounts.** This in
 **READY TO DO THIS?**
 
 To get the ball rolling, we&apos;ll restart this device and start removing all the data on it. Once the reset is complete, a new copy of %1 will be installed. This process can take a while.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="../main.cpp" line="31"/>
+        <source>System Configuration Tool</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
