@@ -77,6 +77,10 @@ int main(int argc, char* argv[]) {
         "--delete"
     };
 
+    for (const QString& inclusion : QStringList({"/boot/vmlinuz-linux", "/boot/initramfs-linux.img", "/boot/initramfs-linux-fallback.img"})) {
+        rsyncArgs.append(QStringLiteral("--include=%1").arg(inclusion));
+    }
+
     for (const QString& exclusion : QStringList({"/tmp", "/proc", "/sys", "/media", "/boot", "/dev", "/apps", "/host"})) {
         rsyncArgs.append(QStringLiteral("--exclude=%1").arg(exclusion));
     }
@@ -114,6 +118,11 @@ int main(int argc, char* argv[]) {
     });
 
     a.exec();
+
+    //Attempt to generate a new initramfs
+    QProcess* mkinitProc = new QProcess();
+    mkinitProc->start("mkinitcpio", {"-p", "linux"});
+    mkinitProc->waitForFinished(-1);
 
     //Reboot the computer
     //Don't use systemd as it might not be working right now
