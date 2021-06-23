@@ -20,20 +20,53 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QScreen>
 #include <QProcess>
 #include <QFile>
 #include <tpopover.h>
 #include <QDir>
+#include <QToolButton>
+#include <tcsdtools.h>
 #include "finalresetpopover.h"
 #include "downloadprogress.h"
 
 #include <polkit-qt5-1/PolkitQt1/Authority>
 #include <polkit-qt5-1/PolkitQt1/Subject>
 
+struct MainWindowPrivate {
+    tCsdTools csd;
+};
+
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
+
+    QRect geometry;
+    geometry.setSize((SC_DPI_T(QSize(800, 600), QSize)));
+    geometry.moveCenter(QApplication::screens().first()->geometry().center());
+    this->setGeometry(geometry);
+    this->setFixedSize(geometry.size());
+
+    d = new MainWindowPrivate();
+    d->csd.installMoveAction(ui->topWidget);
+    d->csd.installResizeAction(this);
+
+    QToolButton* closeButton = new QToolButton();
+    closeButton->setIcon(QIcon(":/tcsdtools/close.svg"));
+    closeButton->setIconSize(SC_DPI_T(QSize(24, 24), QSize));
+    connect(closeButton, &QToolButton::clicked, this, [ = ] {
+        this->close();
+    });
+
+    if (tCsdGlobal::windowControlsEdge() == tCsdGlobal::Left) {
+        ui->leftCsdLayout->addWidget(closeButton);
+    } else {
+        ui->rightCsdLayout->addWidget(closeButton);
+    }
+
+    ui->menuButton->setIcon(QIcon::fromTheme("scallop-reset", QIcon(":/icons/scallop-reset.svg")));
+    ui->menuButton->setIconSize(SC_DPI_T(QSize(24, 24), QSize));
 
     //Get distribution information
     QString systemName;

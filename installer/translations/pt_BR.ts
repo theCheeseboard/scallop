@@ -443,67 +443,42 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
         <translation>Problemas</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.ui" line="131"/>
-        <source>You&apos;re ready to continue!</source>
-        <translation>Você pode continuar!</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="45"/>
-        <source>Disk Space</source>
-        <translation>Espaço em Disco</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="46"/>
-        <source>This device doesn&apos;t have enough disk space to install %1.</source>
-        <translation>Esse disco não tem espaço para instalar %1.</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="51"/>
-        <source>Memory</source>
-        <translation>Memória</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="52"/>
-        <source>This system does not meet the minimum memory requirement of %1. Performance on the installed system may suffer as a result.</source>
-        <translation>Esse sistema não atende ao mínimo de memória requerida, que é %1. A perfomance do sistema pode sofrer por causa disso.</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="57"/>
+        <location filename="../pages/issuespage.cpp" line="86"/>
         <source>Power</source>
         <translation>Bateria</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="58"/>
+        <location filename="../pages/issuespage.cpp" line="86"/>
         <source>It is highly recommended that you connect this device to power before you start installing.</source>
         <translation>É recomendado que você conecte esse dispositivo à tomada antes de começar.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="63"/>
+        <location filename="../pages/issuespage.cpp" line="92"/>
         <source>Virtual Machine</source>
         <translation>Máquina Virtual</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="64"/>
+        <location filename="../pages/issuespage.cpp" line="92"/>
         <source>Looks like you&apos;re installing %1 on a virtual machine. Performance on the installed system may suffer as a result.</source>
         <translation>Parece que você está instalando %1 em uma máquina virtual. A perfomance do sistema pode sofrer por causa disso.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="117"/>
+        <location filename="../pages/issuespage.cpp" line="47"/>
         <source>Ignore and Continue</source>
         <translation>Ignorar e Continuar</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="117"/>
+        <location filename="../pages/issuespage.cpp" line="47"/>
         <source>Next</source>
         <translation>Próximo</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="120"/>
+        <location filename="../pages/issuespage.cpp" line="53"/>
         <source>We&apos;re unable to install %1 on this device right now. Solve the issues below and then give it another go.</source>
         <translation>Não conseguimos instalar %1 nesse dispositivo. Resolva os problemas abaixo e tente outra vez.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="122"/>
+        <location filename="../pages/issuespage.cpp" line="55"/>
         <source>The following issues may impact the installation. You should solve them before we continue.</source>
         <translation>Os problemas seguintes podem impactar a instalação. Você deve resolver eles antes de continuarmos.</translation>
     </message>

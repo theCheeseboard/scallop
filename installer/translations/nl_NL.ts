@@ -443,67 +443,42 @@ Je kunt een debug-log openen met CTRL+L als je uit wilt zoeken wat er mis ging.<
         <translation>Problemen</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.ui" line="131"/>
-        <source>You&apos;re ready to continue!</source>
-        <translation>Je bent klaar om verder te gaan!</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="45"/>
-        <source>Disk Space</source>
-        <translation>Schijfruimte</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="46"/>
-        <source>This device doesn&apos;t have enough disk space to install %1.</source>
-        <translation>Dit apparaat heeft niet genoeg schijfruimte om %1 te installeren.</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="51"/>
-        <source>Memory</source>
-        <translation>Geheugen</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="52"/>
-        <source>This system does not meet the minimum memory requirement of %1. Performance on the installed system may suffer as a result.</source>
-        <translation>Dit systeem voldoet niet aan de minimale geheugeneis van %1. De prestaties van het geïnstalleerde systeem kunnen daarom slecht zijn.</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="57"/>
+        <location filename="../pages/issuespage.cpp" line="86"/>
         <source>Power</source>
         <translation>Stroom</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="58"/>
+        <location filename="../pages/issuespage.cpp" line="86"/>
         <source>It is highly recommended that you connect this device to power before you start installing.</source>
         <translation>Het is sterk aan te raden om dit apparaat aan te sluiten op stroom voordat je begint met installeren.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="63"/>
+        <location filename="../pages/issuespage.cpp" line="92"/>
         <source>Virtual Machine</source>
         <translation>Virtuele Machine</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="64"/>
+        <location filename="../pages/issuespage.cpp" line="92"/>
         <source>Looks like you&apos;re installing %1 on a virtual machine. Performance on the installed system may suffer as a result.</source>
         <translation>Het lijkt erop dat je %1 op een virtuele machine installeert. De prestaties op het geïnstalleerde systeem kunnen daarom slecht zijn.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="117"/>
+        <location filename="../pages/issuespage.cpp" line="47"/>
         <source>Ignore and Continue</source>
         <translation>Negeren en Verder Gaan</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="117"/>
+        <location filename="../pages/issuespage.cpp" line="47"/>
         <source>Next</source>
         <translation>Volgende</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="120"/>
+        <location filename="../pages/issuespage.cpp" line="53"/>
         <source>We&apos;re unable to install %1 on this device right now. Solve the issues below and then give it another go.</source>
         <translation>We kunnen %1 momenteel niet op dit apparaat installeren. Los de problemen hieronder op, en probeer het nog een keer.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="122"/>
+        <location filename="../pages/issuespage.cpp" line="55"/>
         <source>The following issues may impact the installation. You should solve them before we continue.</source>
         <translation>De volgende problemen kunnen invloed hebben op de installatie. Los ze op voordat je verder gaat.</translation>
     </message>

@@ -53,3 +53,6 @@ unix:!macx {
 
     INSTALLS += target
 }
+
+RESOURCES += \
+    resources.qrc

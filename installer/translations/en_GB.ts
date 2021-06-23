@@ -443,67 +443,42 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</t
         <translation>Issues</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.ui" line="131"/>
-        <source>You&apos;re ready to continue!</source>
-        <translation>You&apos;re ready to continue!</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="45"/>
-        <source>Disk Space</source>
-        <translation>Disk Space</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="46"/>
-        <source>This device doesn&apos;t have enough disk space to install %1.</source>
-        <translation>This device doesn&apos;t have enough disk space to install %1.</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="51"/>
-        <source>Memory</source>
-        <translation>Memory</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="52"/>
-        <source>This system does not meet the minimum memory requirement of %1. Performance on the installed system may suffer as a result.</source>
-        <translation>This system does not meet the minimum memory requirement of %1. Performance on the installed system may suffer as a result.</translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="57"/>
+        <location filename="../pages/issuespage.cpp" line="86"/>
         <source>Power</source>
         <translation>Power</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="58"/>
+        <location filename="../pages/issuespage.cpp" line="86"/>
         <source>It is highly recommended that you connect this device to power before you start installing.</source>
         <translation>It is highly recommended that you connect this device to power before you start installing.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="63"/>
+        <location filename="../pages/issuespage.cpp" line="92"/>
         <source>Virtual Machine</source>
         <translation>Virtual Machine</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="64"/>
+        <location filename="../pages/issuespage.cpp" line="92"/>
         <source>Looks like you&apos;re installing %1 on a virtual machine. Performance on the installed system may suffer as a result.</source>
         <translation>Looks like you&apos;re installing %1 on a virtual machine. Performance on the installed system may suffer as a result.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="117"/>
+        <location filename="../pages/issuespage.cpp" line="47"/>
         <source>Ignore and Continue</source>
         <translation>Ignore and Continue</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="117"/>
+        <location filename="../pages/issuespage.cpp" line="47"/>
         <source>Next</source>
         <translation>Next</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="120"/>
+        <location filename="../pages/issuespage.cpp" line="53"/>
         <source>We&apos;re unable to install %1 on this device right now. Solve the issues below and then give it another go.</source>
         <translation>We&apos;re unable to install %1 on this device right now. Solve the issues below and then give it another go.</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="122"/>
+        <location filename="../pages/issuespage.cpp" line="55"/>
         <source>The following issues may impact the installation. You should solve them before we continue.</source>
         <translation>The following issues may impact the installation. You should solve them before we continue.</translation>
     </message>

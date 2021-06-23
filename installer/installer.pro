@@ -81,6 +81,12 @@ unix:!macx {
     # Include the-libs build tools
     include(/usr/share/the-libs/pri/buildmaster.pri)
 
+    LIBS += -L$$OUT_PWD/../libscallop/ -lscallop
+    PRE_TARGETDEPS += $$OUT_PWD/../libscallop/libscallop.a
+
+    INCLUDEPATH += $$PWD/../libscallop
+    DEPENDPATH += $$PWD/../libscallop
+
     DEFINES += SYSTEM_LIBRARY_DIRECTORY=\\\"$$THELIBS_INSTALL_LIB\\\"
 
     target.path = /usr/bin

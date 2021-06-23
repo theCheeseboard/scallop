@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/scallop-reset.svg</file>
+    </qresource>
+</RCC>

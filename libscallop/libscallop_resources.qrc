@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libscallop">
+        <file>translations/en_US.qm</file>
+    </qresource>
+</RCC>
