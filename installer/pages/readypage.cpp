@@ -49,7 +49,7 @@ void ReadyPage::on_titleLabel_backButtonClicked() {
 }
 
 void ReadyPage::on_nextButton_clicked() {
-    if (InstallerData::value("disk").toObject().value("type").toString() == QStringLiteral("whole-disk")) {
+    if (InstallerData::value("diskType").toString() == QStringLiteral("whole-disk")) {
         //Perform final confirmations
         EraseConfirmPopover* jp = new EraseConfirmPopover();
         tPopover* popover = new tPopover(jp);

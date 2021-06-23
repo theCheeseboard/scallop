@@ -19,6 +19,7 @@
  * *************************************/
 #include "mainwindow.h"
 #include "install/installmanager.h"
+#include "probe/probemanager.h"
 
 #include <tapplication.h>
 #include <QCommandLineParser>
@@ -33,11 +34,16 @@ int main(int argc, char* argv[]) {
 
     QCommandLineParser parser;
     parser.addOption({"install", "Install the system using a descriptor of the install process."});
+    parser.addOption({"probe", "Probe a disk to determine the currently installed systems.", "disk"});
     parser.addHelpOption();
     parser.process(a);
 
     if (parser.isSet("install")) {
         InstallManager* i = new InstallManager();
+    } else if (parser.isSet("probe")) {
+        ProbeManager* p = new ProbeManager();
+        p->probe(parser.value("probe"));
+        return 0;
     } else {
         MainWindow* w = new MainWindow();
         w->show();

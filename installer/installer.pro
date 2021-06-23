@@ -26,6 +26,7 @@ SOURCES += \
     mainwindow.cpp \
     pages/advanceddiskpopover.cpp \
     pages/diskpage.cpp \
+    pages/disktypepage.cpp \
     pages/encryptpage.cpp \
     pages/finishedpage.cpp \
     pages/issuespage.cpp \
@@ -34,7 +35,9 @@ SOURCES += \
     pages/welcomepage.cpp \
     popovers/encryptpopover.cpp \
     popovers/eraseconfirmpopover.cpp \
-    popovers/mountpointpopover.cpp
+    popovers/mountpointpopover.cpp \
+    popovers/splitpopover.cpp \
+    probe/probemanager.cpp
 
 HEADERS += \
     diskmodel.h \
@@ -51,6 +54,7 @@ HEADERS += \
     mainwindow.h \
     pages/advanceddiskpopover.h \
     pages/diskpage.h \
+    pages/disktypepage.h \
     pages/encryptpage.h \
     pages/finishedpage.h \
     pages/issuespage.h \
@@ -59,13 +63,16 @@ HEADERS += \
     pages/welcomepage.h \
     popovers/encryptpopover.h \
     popovers/eraseconfirmpopover.h \
-    popovers/mountpointpopover.h
+    popovers/mountpointpopover.h \
+    popovers/splitpopover.h \
+    probe/probemanager.h
 
 FORMS += \
     mainwidget.ui \
     mainwindow.ui \
     pages/advanceddiskpopover.ui \
     pages/diskpage.ui \
+    pages/disktypepage.ui \
     pages/encryptpage.ui \
     pages/finishedpage.ui \
     pages/issuespage.ui \
@@ -74,7 +81,8 @@ FORMS += \
     pages/welcomepage.ui \
     popovers/encryptpopover.ui \
     popovers/eraseconfirmpopover.ui \
-    popovers/mountpointpopover.ui
+    popovers/mountpointpopover.ui \
+    popovers/splitpopover.ui
 
 
 unix:!macx {

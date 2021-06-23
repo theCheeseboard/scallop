@@ -43,7 +43,6 @@ IssuesPage::IssuesPage(QWidget* parent) :
     QDBusConnection::systemBus().connect("org.freedesktop.UPower", "/org/freedesktop/UPower", "org.freedesktop.DBus.Properties", "PropertiesChanged", this, SLOT(reloadIssues()));
 
     connect(ui->issuesWidget, &IssuesWidget::hasIssuesChanged, this, [ = ] {
-        FlowController::instance()->setSkipPage(this, !ui->issuesWidget->hasIssues());
         ui->nextButton->setText(ui->issuesWidget->hasIssues() ? tr("Ignore and Continue") : tr("Next"));
     });
     connect(ui->issuesWidget, &IssuesWidget::hasErrorIssueChanged, this, [ = ] {
@@ -55,8 +54,10 @@ IssuesPage::IssuesPage(QWidget* parent) :
             ui->descriptionLabel->setText(tr("The following issues may impact the installation. You should solve them before we continue."));
         }
     });
-    ui->issuesWidget->hasIssuesChanged();
-    ui->issuesWidget->hasErrorIssueChanged();
+
+    FlowController::instance()->setSkipPage(this, [ = ] {
+        return !ui->issuesWidget->hasIssues();
+    });
 
     reloadIssues();
 }
@@ -91,5 +92,4 @@ void IssuesPage::reloadIssues() {
     if (hostnameInterface.property("Chassis").toString() == QStringLiteral("vm")) {
         ui->issuesWidget->addIssue(tr("Virtual Machine"), tr("Looks like you're installing %1 on a virtual machine. Performance on the installed system may suffer as a result.").arg(InstallerData::systemName()), tStatusFrame::Warning);
     }
-
 }

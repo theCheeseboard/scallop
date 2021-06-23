@@ -53,7 +53,7 @@ EncryptPage::EncryptPage(QWidget* parent) :
 
     FlowController::instance()->setSkipPage(this, [ = ] {
         if (!InstallerData::isEfi()) return true; //Don't support encryption on non EFI systems for now
-        return InstallerData::value("disk").toObject().value("type").toString() != "whole-disk";
+        return InstallerData::value("diskType").toString() != QStringLiteral("whole-disk");
     });
 }
 

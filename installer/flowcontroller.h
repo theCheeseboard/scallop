@@ -34,6 +34,8 @@ class FlowController : public QObject {
         void nextPage();
         void previousPage();
 
+        void currentPageChanged(QWidget* page);
+
         void setSkipPage(QWidget* page, bool skip);
         void setSkipPage(QWidget* page, std::function<bool()> skip);
 };

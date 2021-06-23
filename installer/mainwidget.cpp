@@ -29,6 +29,7 @@
 #include "pages/welcomepage.h"
 #include "pages/issuespage.h"
 #include "pages/diskpage.h"
+#include "pages/disktypepage.h"
 #include "pages/encryptpage.h"
 #include "pages/readypage.h"
 #include "pages/progresspage.h"
@@ -90,9 +91,14 @@ MainWidget::MainWidget(QWidget* parent) :
         d->skipFunctions.insert(page, function);
     });
 
+    connect(ui->stackedWidget, &tStackedWidget::switchingFrame, this, [ = ](int page) {
+        emit FlowController::instance()->currentPageChanged(ui->stackedWidget->widget(page));
+    });
+
     ui->stackedWidget->addWidget(new WelcomePage());
     ui->stackedWidget->addWidget(new IssuesPage());
     ui->stackedWidget->addWidget(new DiskPage());
+    ui->stackedWidget->addWidget(new DiskTypePage());
     ui->stackedWidget->addWidget(new EncryptPage());
     ui->stackedWidget->addWidget(new ReadyPage());
     ui->stackedWidget->addWidget(new ProgressPage());

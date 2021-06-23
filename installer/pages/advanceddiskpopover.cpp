@@ -129,7 +129,6 @@ void AdvancedDiskPopover::on_acceptButton_clicked() {
     QMap<DiskObject*, QString> selectedMounts = d->disks->mountPoints();
 
     QJsonObject diskInformation;
-    diskInformation.insert("type", QStringLiteral("mount-list"));
 
     QJsonArray mounts;
     for (DiskObject* disk : selectedMounts.keys()) {

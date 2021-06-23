@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US" language="vi">
+<TS version="2.1" language="vi" sourcelanguage="en_US">
 <context>
     <name>DownloadProgress</name>
     <message>
@@ -56,38 +56,38 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
-        <location filename="../mainwindow.ui" line="55"/>
+        <location filename="../mainwindow.ui" line="125"/>
         <source>Reset this device</source>
         <translation>Đặt lại thiết bị</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="84"/>
+        <location filename="../mainwindow.ui" line="154"/>
         <source>Yes, reset this device</source>
         <translation>Có, đặt lại thiết bị này</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="87"/>
+        <location filename="../mainwindow.ui" line="157"/>
         <source>All data will be deleted and this device will restart.</source>
         <translation>Các dữ liệu sẽ bị xóa và thiết bị này sẽ khởi động lại.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="94"/>
+        <location filename="../mainwindow.ui" line="164"/>
         <source>No, don&apos;t reset this device</source>
         <translation>Không, đừng đặt lại thiết bị này</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="97"/>
+        <location filename="../mainwindow.ui" line="167"/>
         <source>Your data will be preserved.</source>
         <translation>Dữ liệu của bạn sẽ bị giữ.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="64"/>
-        <location filename="../mainwindow.cpp" line="66"/>
+        <location filename="../mainwindow.cpp" line="97"/>
+        <location filename="../mainwindow.cpp" line="99"/>
         <source>Unknown</source>
         <translation>Không xác định</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="69"/>
+        <location filename="../mainwindow.cpp" line="102"/>
         <source>**BUCKLE UP!**
 
 Resetting this device will erase all personal data **for all accounts.** This includes:

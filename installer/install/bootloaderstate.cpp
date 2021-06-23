@@ -37,6 +37,12 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
         if (InstallerData::isEfi()) {
             QTextStream(stdout) << tr("Configuring Bootloader...") << "\n";
 
+            //Read the machine ID
+            QFile machineIdFile(QDir(systemRoot).absoluteFilePath("etc/machine-id"));
+            machineIdFile.open(QFile::ReadOnly);
+            QString machineId = machineIdFile.readAll();
+            machineIdFile.close();
+
             //Copy over bootloader files
             QDir bootloaderFilesDir("/usr/share/scallop/install-system/systemd-boot-config");
             QDir destinationDir(QDir(systemRoot).absoluteFilePath("boot/loader"));
@@ -48,7 +54,18 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
 
                 QTextStream(stderr) << bootloaderFiles.filePath() << " -> " << destinationDir.absoluteFilePath(relativePath) << "\n";
                 if (QFile::exists(destination)) QFile::remove(destination);
-                QFile::copy(bootloaderFiles.filePath(), destination);
+
+                QFile input(bootloaderFiles.filePath());
+                input.open(QFile::ReadOnly);
+                QString contents = input.readAll();
+                input.close();
+
+                contents.replace("%{SYSTEM-NAME}", InstallerData::systemName()).replace("%{MACHINE-ID}", machineId);
+
+                QFile output(destination);
+                output.open(QFile::WriteOnly);
+                output.write(contents.toUtf8());
+                output.close();
             }
 
             nextState();
@@ -78,13 +95,31 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
     this->addState(configState);
     configState->addTransition(this, &BootloaderState::nextState, finalState);
 
+    QState* generateMachineIdState = new QState();
+    connect(generateMachineIdState, &QState::entered, this, [ = ] {
+        QString systemRoot = InstallerData::valueTemp("systemRoot").toString();
+
+        QTextStream(stdout) << tr("Generating machine ID...") << "\n";
+        QProcess* proc = new QProcess();
+        connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [ = ](int exitCode, QProcess::ExitStatus exitStatus) {
+            if (exitCode == 0) {
+                emit nextState();
+            } else {
+                QTextStream(stderr) << tr("Failed to install systemd-boot") << "\n";
+                emit failure();
+            }
+        });
+        proc->start("arch-chroot", {systemRoot, "systemd-machine-id-setup"});
+    });
+    this->addState(generateMachineIdState);
+    this->setInitialState(generateMachineIdState);
+
     if (InstallerData::isEfi()) {
         QState* installEfiState = new QState();
         connect(installEfiState, &QState::entered, this, [ = ] {
             QString systemRoot = InstallerData::valueTemp("systemRoot").toString();
-            QList<QPair<QString, QString>> mounts = InstallerData::valueTemp("mounts").value<QList<QPair<QString, QString>>>();
 
-            //Install GRUB as EFI
+            //Install sd-boot as EFI
             QTextStream(stdout) << tr("Installing the bootloader...") << "\n";
 
             QProcess* proc = new QProcess();
@@ -96,14 +131,13 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
                     emit failure();
                 }
             });
-//            proc->start("arch-chroot", {systemRoot, "grub-install", "--target=x86_64-efi", "--efi-directory=/boot", "--bootloader-id=grub"});
             proc->start("arch-chroot", {systemRoot, "bootctl", "install"});
         });
 
         InstallerData::insertTemp("bootloaderInstalled", true);
 
         this->addState(installEfiState);
-        this->setInitialState(installEfiState);
+        generateMachineIdState->addTransition(this, &BootloaderState::nextState, installEfiState);
         installEfiState->addTransition(this, &BootloaderState::nextState, configState);
     } else {
         QState* installMbrState = new QState();
@@ -111,10 +145,11 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
             bool installBootloader = true;
             QString bootloaderDisk;
             QJsonObject diskDetails = InstallerData::value("disk").toObject();
-            if (diskDetails.value("type").toString() == QStringLiteral("whole-disk")) {
+            QString diskType = InstallerData::value("diskType").toString();
+            if (diskType == QStringLiteral("whole-disk")) {
                 //Install on the disk we're installing the OS on
                 bootloaderDisk = diskDetails.value("block").toString();
-            } else if (diskDetails.value("type").toString() == QStringLiteral("mount-list")) {
+            } else if (diskType == QStringLiteral("mount-list")) {
                 //Install on the disk that was selected
                 if (diskDetails.contains("bootloaderDestination")) {
                     bootloaderDisk = diskDetails.value("bootloaderDestination").toString();
@@ -153,7 +188,7 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
         });
 
         this->addState(installMbrState);
-        this->setInitialState(installMbrState);
+        generateMachineIdState->addTransition(this, &BootloaderState::nextState, installMbrState);
         installMbrState->addTransition(this, &BootloaderState::nextState, configState);
     }
 }

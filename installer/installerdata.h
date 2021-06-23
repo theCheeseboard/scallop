@@ -21,6 +21,7 @@
 #define INSTALLERDATA_H
 
 #include <QObject>
+#include <QJsonValue>
 
 struct InstallerDataPrivate;
 class InstallerData : public QObject {
@@ -45,6 +46,7 @@ class InstallerData : public QObject {
         static bool isEfi();
 
     signals:
+        void installerDataChanged(QString key, QJsonValue value);
 
     private:
         InstallerDataPrivate* d;

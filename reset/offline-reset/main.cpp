@@ -81,7 +81,7 @@ int main(int argc, char* argv[]) {
         rsyncArgs.append(QStringLiteral("--include=%1").arg(inclusion));
     }
 
-    for (const QString& exclusion : QStringList({"/tmp", "/proc", "/sys", "/media", "/boot/*", "/dev", "/apps", "/host"})) {
+    for (const QString& exclusion : QStringList({"/tmp", "/proc", "/sys", "/media", "/boot/*", "/dev", "/apps", "/host", "/efi"})) {
         rsyncArgs.append(QStringLiteral("--exclude=%1").arg(exclusion));
     }
 

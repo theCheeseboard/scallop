@@ -55,7 +55,8 @@ DiskPage::~DiskPage() {
 
 void DiskPage::on_nextButton_clicked() {
     QJsonObject diskInfo = InstallerData::value("disk").toObject();
-    if (diskInfo.value("type").toString() == QStringLiteral("whole-disk")) {
+    QString diskType = InstallerData::value("diskType").toString();
+    if (diskType == QStringLiteral("whole-disk")) {
         DiskObject* disk = DriveObjectManager::diskByBlockName(diskInfo.value("block").toString());
 
         bool allowDisk = true;
@@ -81,9 +82,9 @@ void DiskPage::on_listWidget_currentRowChanged(int currentRow) {
 
     if (item) {
         InstallerData::insert("disk", QJsonObject({
-            {"type", QStringLiteral("whole-disk")},
             {"block", item->data(Qt::UserRole).toString()}
         }));
+        InstallerData::insert("diskType", QStringLiteral("whole-disk"));
         ui->nextButton->setEnabled(true);
     } else {
         ui->nextButton->setEnabled(false);
@@ -121,6 +122,7 @@ void DiskPage::on_advancedButton_clicked() {
     connect(advancedDisks, &AdvancedDiskPopover::accepted, popover, [ = ](QJsonObject diskInformation) {
         popover->dismiss();
         InstallerData::insert("disk", diskInformation);
+        InstallerData::insert("diskType", QStringLiteral("mount-list"));
         on_nextButton_clicked();
 
         ui->nextButton->setEnabled(true);

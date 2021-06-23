@@ -53,38 +53,44 @@
     <name>BootloaderState</name>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="38"/>
-        <location filename="../install/bootloaderstate.cpp" line="60"/>
+        <location filename="../install/bootloaderstate.cpp" line="77"/>
         <source>Configuring Bootloader...</source>
         <translation>Konfiguriere Bootloader...</translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="66"/>
+        <location filename="../install/bootloaderstate.cpp" line="83"/>
         <source>Failed to create the GRUB Configuration File</source>
         <translation>Erstellen der GRUB Konfiguration fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="88"/>
-        <location filename="../install/bootloaderstate.cpp" line="133"/>
+        <location filename="../install/bootloaderstate.cpp" line="102"/>
+        <source>Generating machine ID...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/bootloaderstate.cpp" line="123"/>
+        <location filename="../install/bootloaderstate.cpp" line="168"/>
         <source>Installing the bootloader...</source>
         <translation>Installiere Bootloader...</translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="95"/>
+        <location filename="../install/bootloaderstate.cpp" line="108"/>
+        <location filename="../install/bootloaderstate.cpp" line="130"/>
         <source>Failed to install systemd-boot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="140"/>
+        <location filename="../install/bootloaderstate.cpp" line="175"/>
         <source>Failed to install GRUB</source>
         <translation>GRUB-Installation fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="127"/>
+        <location filename="../install/bootloaderstate.cpp" line="162"/>
         <source>Installing bootloader to</source>
         <translation>Installiere Bootloader auf</translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="148"/>
+        <location filename="../install/bootloaderstate.cpp" line="183"/>
         <source>Skipping bootloader installation as requested by user</source>
         <translation>Überspringe Installation des Bootloaders auf Wunsch des Nutzers</translation>
     </message>
@@ -92,35 +98,71 @@
 <context>
     <name>DiskManagementState</name>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="55"/>
+        <location filename="../install/diskmanagementstate.cpp" line="57"/>
         <source>Erasing disk %1</source>
         <translation>Lösche Datenträger %1</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="61"/>
+        <location filename="../install/diskmanagementstate.cpp" line="63"/>
         <source>Failed to erase the disk</source>
         <translation>Löschen des Datenträgers fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="70"/>
+        <location filename="../install/diskmanagementstate.cpp" line="72"/>
+        <location filename="../install/diskmanagementstate.cpp" line="204"/>
         <source>Creating Boot Partition</source>
         <translation>Erstelle Boot Partition</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="87"/>
+        <location filename="../install/diskmanagementstate.cpp" line="88"/>
         <location filename="../install/diskmanagementstate.cpp" line="101"/>
+        <location filename="../install/diskmanagementstate.cpp" line="222"/>
+        <location filename="../install/diskmanagementstate.cpp" line="235"/>
         <source>Failed to create the boot partition</source>
         <translation>Erstellen der boot Partition fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="122"/>
+        <location filename="../install/diskmanagementstate.cpp" line="257"/>
         <source>Creating Root Partition</source>
         <translation>Erstelle Root Partition</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="138"/>
+        <location filename="../install/diskmanagementstate.cpp" line="137"/>
+        <location filename="../install/diskmanagementstate.cpp" line="272"/>
         <source>Failed to create the root partition</source>
         <translation>Erstellen der root Partition fehlgeschlagen</translation>
+    </message>
+    <message>
+        <location filename="../install/diskmanagementstate.cpp" line="166"/>
+        <source>Replacing partition %1 with boot block %2; first partition at offset %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/diskmanagementstate.cpp" line="169"/>
+        <source>Erasing partition %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/diskmanagementstate.cpp" line="173"/>
+        <location filename="../install/diskmanagementstate.cpp" line="186"/>
+        <source>Failed to erase the partition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/diskmanagementstate.cpp" line="180"/>
+        <source>Resizing partition %1 with boot block %2; partition will be %3 long</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/diskmanagementstate.cpp" line="183"/>
+        <source>Resizing partition %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/diskmanagementstate.cpp" line="195"/>
+        <source>New partitions will be located at %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -184,14 +226,72 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.cpp" line="68"/>
+        <location filename="../pages/diskpage.cpp" line="69"/>
         <source>Nonstandard Disk</source>
         <translation>Unkonventioneller Datenträger</translation>
     </message>
     <message>
-        <location filename="../pages/diskpage.cpp" line="68"/>
+        <location filename="../pages/diskpage.cpp" line="69"/>
         <source>You are installing %1 to a nonstandard disk. Installation is likely to fail. Do you wish to attempt to install to this disk anyway?</source>
         <translation>Du installierst %1 auf einem unkonventionellen Datenträger. Die installation schlägt eventuell fehl. Möchtest du trotzdem fortfahren?</translation>
+    </message>
+</context>
+<context>
+    <name>DiskTypePage</name>
+    <message>
+        <location filename="../pages/disktypepage.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.ui" line="35"/>
+        <source>Installation Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.ui" line="52"/>
+        <source>Erase this disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.ui" line="55"/>
+        <source>Everything on this disk will be lost</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.ui" line="98"/>
+        <source>Looking for additonal installation options...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.cpp" line="52"/>
+        <source>How are we installing %1 today?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.cpp" line="99"/>
+        <source>Modify %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.cpp" line="110"/>
+        <source>Shrink %1 to make space for %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.cpp" line="111"/>
+        <source>Install %1 alongside your existing installation of %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.cpp" line="131"/>
+        <source>Replace %1 with %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/disktypepage.cpp" line="132"/>
+        <source>Erase %1 and install %2 in its place</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -438,43 +538,43 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="86"/>
+        <location filename="../pages/issuespage.cpp" line="87"/>
         <source>Power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="86"/>
+        <location filename="../pages/issuespage.cpp" line="87"/>
         <source>It is highly recommended that you connect this device to power before you start installing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="92"/>
-        <source>Virtual Machine</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="92"/>
-        <source>Looks like you&apos;re installing %1 on a virtual machine. Performance on the installed system may suffer as a result.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="47"/>
+        <location filename="../pages/issuespage.cpp" line="46"/>
         <source>Ignore and Continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="47"/>
+        <location filename="../pages/issuespage.cpp" line="46"/>
         <source>Next</source>
         <translation type="unfinished">Weiter</translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="53"/>
+        <location filename="../pages/issuespage.cpp" line="52"/>
         <source>We&apos;re unable to install %1 on this device right now. Solve the issues below and then give it another go.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="55"/>
+        <location filename="../pages/issuespage.cpp" line="54"/>
         <source>The following issues may impact the installation. You should solve them before we continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/issuespage.cpp" line="93"/>
+        <source>Virtual Machine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/issuespage.cpp" line="93"/>
+        <source>Looks like you&apos;re installing %1 on a virtual machine. Performance on the installed system may suffer as a result.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -538,6 +638,29 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     </message>
 </context>
 <context>
+    <name>ProbeManager</name>
+    <message>
+        <location filename="../probe/probemanager.cpp" line="45"/>
+        <source>Could not create temporary directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../probe/probemanager.cpp" line="52"/>
+        <source>%1 is not a disk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../probe/probemanager.cpp" line="58"/>
+        <source>%1 is not a partition table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../probe/probemanager.cpp" line="79"/>
+        <source>Could not mount %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ProgressPage</name>
     <message>
         <location filename="../pages/progresspage.ui" line="35"/>
@@ -571,6 +694,27 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
         <location filename="../pages/readypage.cpp" line="40"/>
         <source>Install %1</source>
         <translation type="unfinished">Installiere %1</translation>
+    </message>
+</context>
+<context>
+    <name>SplitPopover</name>
+    <message>
+        <location filename="../popovers/splitpopover.ui" line="45"/>
+        <source>Each operating system requires space to run. Allocate space by dragging the slider below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/splitpopover.ui" line="68"/>
+        <location filename="../popovers/splitpopover.ui" line="78"/>
+        <location filename="../popovers/splitpopover.ui" line="92"/>
+        <location filename="../popovers/splitpopover.ui" line="105"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../popovers/splitpopover.ui" line="119"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

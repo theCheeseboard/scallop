@@ -20,6 +20,8 @@
 #include "issueswidget.h"
 #include "ui_issueswidget.h"
 
+#include <tlogger.h>
+
 struct IssuesWidgetPrivate {
     QList<tStatusFrame*> frames;
     bool haveError = false;
@@ -44,6 +46,8 @@ IssuesWidget::~IssuesWidget() {
 }
 
 void IssuesWidget::clearIssues() {
+    bool shouldEmitHasIssuesChanged = this->hasIssues();
+
     for (tStatusFrame* frame : d->frames) {
         ui->issuesLayout->removeWidget(frame);
         frame->deleteLater();
@@ -52,7 +56,7 @@ void IssuesWidget::clearIssues() {
     d->frames.clear();
     d->haveError = false;
 
-    emit hasIssuesChanged();
+    if (shouldEmitHasIssuesChanged) emit hasIssuesChanged();
     emit hasErrorIssueChanged();
 }
 
@@ -61,6 +65,8 @@ bool IssuesWidget::hasIssues() {
 }
 
 void IssuesWidget::addIssue(QString title, QString text, tStatusFrame::State type) {
+    tDebug("IssuesWidget") << "Issue found: " << title << ": " << text;
+    bool shouldEmitHasIssuesChanged = !this->hasIssues();
     tStatusFrame* frame = new tStatusFrame(this);
     frame->setTitle(title);
     frame->setText(text);
@@ -68,7 +74,7 @@ void IssuesWidget::addIssue(QString title, QString text, tStatusFrame::State typ
     ui->issuesLayout->addWidget(frame);
     d->frames.append(frame);
 
-    emit hasIssuesChanged();
+    if (shouldEmitHasIssuesChanged) emit hasIssuesChanged();
     if (type == tStatusFrame::Error) {
         d->haveError = true;
         emit hasErrorIssueChanged();

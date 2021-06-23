@@ -71,6 +71,7 @@ InstallerData* InstallerData::instance() {
 
 void InstallerData::insert(QString key, QJsonValue value) {
     instance()->d->data.insert(key, value);
+    emit instance()->installerDataChanged(key, value);
 }
 
 QJsonValue InstallerData::value(QString key) {
