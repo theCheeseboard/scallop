@@ -146,7 +146,7 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
             QString bootloaderDisk;
             QJsonObject diskDetails = InstallerData::value("disk").toObject();
             QString diskType = InstallerData::value("diskType").toString();
-            if (diskType == QStringLiteral("whole-disk")) {
+            if (diskType == QStringLiteral("whole-disk") || diskType == QStringLiteral("probe-replace-block") || diskType == QStringLiteral("probe-resize-block")) {
                 //Install on the disk we're installing the OS on
                 bootloaderDisk = diskDetails.value("block").toString();
             } else if (diskType == QStringLiteral("mount-list")) {
@@ -163,6 +163,12 @@ BootloaderState::BootloaderState(QState* parent) : QStateMachine(parent) {
 
                 QString systemRoot = InstallerData::valueTemp("systemRoot").toString();
                 QList<QPair<QString, QString>> mounts = InstallerData::valueTemp("mounts").value<QList<QPair<QString, QString>>>();
+
+                //Enable os-prober
+                QFile grubConfig(QDir(systemRoot).absoluteFilePath("etc/default/grub"));
+                grubConfig.open(QFile::WriteOnly | QFile::Append);
+                grubConfig.write("\n\nGRUB_DISABLE_OS_PROBER=false");
+                grubConfig.close();
 
                 //Install GRUB as BIOS
                 QTextStream(stdout) << tr("Installing the bootloader...") << "\n";

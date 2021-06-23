@@ -69,7 +69,7 @@
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="123"/>
-        <location filename="../install/bootloaderstate.cpp" line="168"/>
+        <location filename="../install/bootloaderstate.cpp" line="174"/>
         <source>Installing the bootloader...</source>
         <translation>Bootloader&apos;ı yükleme...</translation>
     </message>
@@ -80,7 +80,7 @@
         <translation>Systemd-boot yüklenemedi</translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="175"/>
+        <location filename="../install/bootloaderstate.cpp" line="181"/>
         <source>Failed to install GRUB</source>
         <translation>GRUB failed to load</translation>
     </message>
@@ -90,7 +90,7 @@
         <translation>Bootloader&apos;ı şuraya yükleme</translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="183"/>
+        <location filename="../install/bootloaderstate.cpp" line="189"/>
         <source>Skipping bootloader installation as requested by user</source>
         <translation>Kullanıcı tarafından talep edildiği gibi önyükleyici kurulumunu atlama</translation>
     </message>
@@ -117,19 +117,19 @@
         <location filename="../install/diskmanagementstate.cpp" line="88"/>
         <location filename="../install/diskmanagementstate.cpp" line="101"/>
         <location filename="../install/diskmanagementstate.cpp" line="222"/>
-        <location filename="../install/diskmanagementstate.cpp" line="235"/>
+        <location filename="../install/diskmanagementstate.cpp" line="238"/>
         <source>Failed to create the boot partition</source>
         <translation>Önyükleme bölümü oluşturulamadı</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="122"/>
-        <location filename="../install/diskmanagementstate.cpp" line="257"/>
+        <location filename="../install/diskmanagementstate.cpp" line="261"/>
         <source>Creating Root Partition</source>
         <translation>Kök Bölüm Oluşturma</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="137"/>
-        <location filename="../install/diskmanagementstate.cpp" line="272"/>
+        <location filename="../install/diskmanagementstate.cpp" line="287"/>
         <source>Failed to create the root partition</source>
         <translation>Kök bölüm oluşturulamadı</translation>
     </message>

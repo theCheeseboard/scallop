@@ -223,18 +223,22 @@ DiskManagementState::DiskManagementState(QState* parent) : QStateMachine(parent)
                     QTextStream(stderr) << message << "\n";
                 });
             } else {
-                //Create a BIOS Boot partition
-                partitionTable->createPartition(offset, 1048576 /* 1 MB */, "21686148-6449-6E6F-744E-656564454649" /* BIOS Boot */, "biosboot", {})->then([ = ](QDBusObjectPath object) {
-                    DiskObject* bootObject = DriveObjectManager::diskForPath(object);
-                    d->disks.insert("firmwareboot", bootObject);
-
+                //Create a BIOS Boot partition if required
+                if (partitionTable->type() == "dos") {
                     emit nextState();
-                })->error([ = ](QString message) {
-                    emit failure();
+                } else {
+                    partitionTable->createPartition(offset, 1048576 /* 1 MB */, "21686148-6449-6E6F-744E-656564454649" /* BIOS Boot */, "biosboot", {})->then([ = ](QDBusObjectPath object) {
+                        DiskObject* bootObject = DriveObjectManager::diskForPath(object);
+                        d->disks.insert("firmwareboot", bootObject);
 
-                    QTextStream(stderr) << tr("Failed to create the boot partition") << "\n";
-                    QTextStream(stderr) << message << "\n";
-                });
+                        emit nextState();
+                    })->error([ = ](QString message) {
+                        emit failure();
+
+                        QTextStream(stderr) << tr("Failed to create the boot partition") << "\n";
+                        QTextStream(stderr) << message << "\n";
+                    });
+                }
             }
         });
 
@@ -244,7 +248,7 @@ DiskManagementState::DiskManagementState(QState* parent) : QStateMachine(parent)
             PartitionTableInterface* partitionTable = disk->interface<PartitionTableInterface>();
             DiskObject* bootObject = d->disks.value("firmwareboot");
             quint64 offset = InstallerData::valueTemp("newBlocksOffset").toULongLong();
-            quint64 newOffset = offset + bootObject->interface<PartitionInterface>()->size();
+            quint64 newOffset = offset + (bootObject ? bootObject->interface<PartitionInterface>()->size() : 0);
 
             QVariantMap formatOptions;
             QJsonObject luksConfig = InstallerData::value("luks").toObject();
@@ -255,7 +259,18 @@ DiskManagementState::DiskManagementState(QState* parent) : QStateMachine(parent)
             }
 
             QTextStream(stdout) << tr("Creating Root Partition") << "\n";
-            partitionTable->createPartitionAndFormat(newOffset, 0, "4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709" /* Linux Root */, "root", {}, "ext4", formatOptions)->then([ = ](QDBusObjectPath object) {
+
+            QString type;
+            QString name;
+
+            if (partitionTable->type() == "dos") {
+                type = "0x83";
+            } else {
+                type = "4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709"; /* Linux Root */
+                name = "root";
+            }
+
+            partitionTable->createPartitionAndFormat(newOffset, 0, type, name, {}, "ext4", formatOptions)->then([ = ](QDBusObjectPath object) {
 
                 DiskObject* rootObject = DriveObjectManager::diskForPath(object);
                 EncryptedInterface* encrypted = rootObject->interface<EncryptedInterface>();
