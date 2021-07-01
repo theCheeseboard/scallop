@@ -11,7 +11,7 @@
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="81"/>
         <source>Set mount points for each partition you want to mount.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina pontos de mount para cada partição que você quer fazer mount.</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="178"/>
@@ -55,7 +55,7 @@
         <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="47"/>
         <source>%1 HQ</source>
         <comment>HQ for Headquarters</comment>
-        <translation type="unfinished"></translation>
+        <translation>Sede %1</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage2.cpp" line="48"/>
         <source>...just a little longer! I&apos;ll find the chosen temple this time, I promise!</source>
-        <translation type="unfinished"></translation>
+        <translation>...só um pouco mais! Eu vou achar o templo escolhido dessa vez, eu prometo!</translation>
     </message>
 </context>
 <context>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="49"/>
         <source>It&apos;s already 9:00. We can&apos;t be waiting all night.</source>
-        <translation type="unfinished"></translation>
+        <translation>Já são 9:00. Não podemos esperar toda a noite!</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="50"/>
         <source>Let&apos;s get some rest and we can try again in the morning.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vamos descansar e vamos tentar denovo amanhã.</translation>
     </message>
 </context>
 <context>
@@ -84,22 +84,22 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="60"/>
         <source>[CHOSEN TEMPLE FOUND!]</source>
-        <translation type="unfinished"></translation>
+        <translation>[TEMPLO ESCOLHIDO ENCONTRADO!]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="61"/>
         <source>[INSTALL THE %1 CUBE IN THE TEMPLE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[INSTALE O CUBO %1 NO TEMPLO]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="62"/>
         <source>[DO THIS, AND YOU WILL BE SHOWERED WITH RICHES]</source>
-        <translation type="unfinished"></translation>
+        <translation>[FAÇA ISSO E ENTÃO CHOVERÃO RIQUEZAS PARA VOCÊ]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="73"/>
         <source>Never mind then. Let&apos;s hit the road!</source>
-        <translation type="unfinished"></translation>
+        <translation>Então esqueça. Vamos lá!</translation>
     </message>
 </context>
 <context>
@@ -107,32 +107,32 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="69"/>
         <source>ARE YOU OKAY???</source>
-        <translation type="unfinished"></translation>
+        <translation>VOCÊ ESTÁ BEM???</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="70"/>
         <source>I&apos;m fine. Where are we?</source>
-        <translation type="unfinished"></translation>
+        <translation>Estou. Aonde estamos?</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="79"/>
         <source>[PLEASE INSTALL THE %1 CUBE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[POR FAVOR INSTALE O CUBO %1]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="82"/>
         <source>Quick, the %1 cube!</source>
-        <translation type="unfinished"></translation>
+        <translation>Rápido, o cubo %1!</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="122"/>
         <source>Did we do it??</source>
-        <translation type="unfinished"></translation>
+        <translation>Conseguimos??</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="139"/>
         <source>[%1 CUBE ACCEPTED]</source>
-        <translation type="unfinished"></translation>
+        <translation>[CUBO %1 ACEITO]</translation>
     </message>
 </context>
 <context>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../install/bootloaderstate.cpp" line="102"/>
         <source>Generating machine ID...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerando ID da máquina...</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="123"/>
@@ -171,7 +171,7 @@
         <location filename="../install/bootloaderstate.cpp" line="108"/>
         <location filename="../install/bootloaderstate.cpp" line="130"/>
         <source>Failed to install systemd-boot</source>
-        <translation type="unfinished"></translation>
+        <translation>A instalação do systemd-boot falhou</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="181"/>
@@ -194,12 +194,12 @@
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="141"/>
         <source>INSTALLATION COMPLETE</source>
-        <translation type="unfinished"></translation>
+        <translation>INSTALAÇÃO COMPLETA</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="154"/>
@@ -209,17 +209,17 @@
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="166"/>
         <source>Power Off</source>
-        <translation type="unfinished">Desligar</translation>
+        <translation>Desligar</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="176"/>
         <source>Reboot</source>
-        <translation type="unfinished">Reiniciar</translation>
+        <translation>Reiniciar</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="90"/>
         <source>Preparing for installation</source>
-        <translation type="unfinished">Preparando para a instalação</translation>
+        <translation>Preparando para a instalação</translation>
     </message>
 </context>
 <context>
@@ -263,33 +263,33 @@
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="166"/>
         <source>Replacing partition %1 with boot block %2; first partition at offset %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Trocando a partição %1 com boot block %2; primeira partition offset %3</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="169"/>
         <source>Erasing partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagando partição %1</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="173"/>
         <location filename="../install/diskmanagementstate.cpp" line="186"/>
         <source>Failed to erase the partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível apagar a partição</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="180"/>
         <source>Resizing partition %1 with boot block %2; partition will be %3 long</source>
-        <translation type="unfinished"></translation>
+        <translation>Redimensionando partição %1 com boot block %2; partição terá %3</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="183"/>
         <source>Resizing partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Redimensionando partição %1</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="195"/>
         <source>New partitions will be located at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Novas partições estarão em %1</translation>
     </message>
 </context>
 <context>
@@ -325,12 +325,12 @@
     <message>
         <location filename="../pages/diskpage.ui" line="159"/>
         <source>Advanced Partitioning Selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Particionamento Avançado Selecionado</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="194"/>
         <source>Use Automatic Partitioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar Particionamento Automático</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="264"/>
@@ -350,7 +350,7 @@
     <message>
         <location filename="../pages/diskpage.cpp" line="44"/>
         <source>You&apos;re using a custom disk configuration to install %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Você está usando uma configuração customizada de disco para instalar %1</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.cpp" line="69"/>
@@ -373,52 +373,52 @@
     <message>
         <location filename="../pages/disktypepage.ui" line="35"/>
         <source>Installation Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de Instalação</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="52"/>
         <source>Erase this disk</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagar esse disco</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="55"/>
         <source>Everything on this disk will be lost</source>
-        <translation type="unfinished"></translation>
+        <translation>Tudo nesse disco será perdido</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="98"/>
         <source>Looking for additonal installation options...</source>
-        <translation type="unfinished"></translation>
+        <translation>Procurando por outras opções de instalação...</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="52"/>
         <source>How are we installing %1 today?</source>
-        <translation type="unfinished"></translation>
+        <translation>Como podemos instalar %1 hoje?</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="99"/>
         <source>Modify %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificar %1</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="110"/>
         <source>Shrink %1 to make space for %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Diminuir %1 para criar espaço para %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="111"/>
         <source>Install %1 alongside your existing installation of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar %1 junto com a sua instalação já existente de %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="131"/>
         <source>Replace %1 with %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Trocar %1 com %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="132"/>
         <source>Erase %1 and install %2 in its place</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagar %1 e instalar %2 no seu lugar</translation>
     </message>
 </context>
 <context>
@@ -426,57 +426,57 @@
     <message>
         <location filename="../pages/encryptpage.ui" line="35"/>
         <source>Disk Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Criptografia de Disco</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.ui" line="59"/>
         <source>Enabling disk encryption is highly recommended. If you&apos;re unsure about disk encryption, some information is presented to you below. You should review this information before proceeding to ensure that you make an informed choice.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ativar a criptografia de disco é altamente recomendado. Se você não tem certeza sobre usar a criptografia de disco, algumas informações estão disponíveis abaixo. Você deve ler essas informações para ter certeza de que você faça uma decisão informada.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.ui" line="142"/>
         <source>Don&apos;t Use Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Não Usar Criptografia de Disco</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="38"/>
         <source>Your data will be protected</source>
-        <translation type="unfinished"></translation>
+        <translation>Os seus dados serão protegidos</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="39"/>
         <source>The installation disk will not be accessible by anyone without the password.</source>
-        <translation type="unfinished"></translation>
+        <translation>As informações no disco não serão acessível por qualquer um sem a senha.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="42"/>
         <source>Performance may be affected</source>
-        <translation type="unfinished"></translation>
+        <translation>O desempenho pode ser afetado</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="43"/>
         <source>Your disk may be ever so slightly slower while disk encryption is enabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>O seu disco pode ficar um pouco mais lento com a criptografia de disco ativada.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="46"/>
         <source>It&apos;s now or never</source>
-        <translation type="unfinished"></translation>
+        <translation>É agora ou nunca</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="47"/>
         <source>Once disk encryption is enabled, it can&apos;t be disabled. It also can&apos;t be enabled later, unless you reinstall %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Assim que a criptografia de disco seja ativada, ela não pode ser desativada. Também não é possível ativá-la depois, a não ser que você reinstale %1.</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="50"/>
         <source>Remember the password</source>
-        <translation type="unfinished"></translation>
+        <translation>Lembre-se da senha</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="51"/>
         <source>It&apos;ll be required each time this device is powered on.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ela é necessária toda vez que o computador for ligado.</translation>
     </message>
 </context>
 <context>
@@ -484,47 +484,47 @@
     <message>
         <location filename="../popovers/encryptpopover.ui" line="35"/>
         <source>Disk Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Criptografia de Disco</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="68"/>
         <source>ENCRYPTION PASSWORD</source>
-        <translation type="unfinished"></translation>
+        <translation>SENHA DA CRIPTOGRAFIA</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="75"/>
         <source>Choose a good password and remember it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha uma boa senha e lembre-se dela.</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="117"/>
         <source>Anyone using this device will need to know this password to start it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qualquer um que queira usar este dispositivo precisará desta senha para iniciá-lo.</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="96"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Senha</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="110"/>
         <source>Confirm Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmar Senha</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.ui" line="85"/>
         <source>Encrypt this Installation</source>
-        <translation type="unfinished"></translation>
+        <translation>Criptografar esta Instalação</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.cpp" line="35"/>
         <source>Heads up!</source>
-        <translation type="unfinished"></translation>
+        <translation>Atenção!</translation>
     </message>
     <message>
         <location filename="../popovers/encryptpopover.cpp" line="36"/>
         <source>It is imperative that you remember this password. You &lt;b&gt;WILL&lt;/b&gt; lose your data if you forget it.</source>
-        <translation type="unfinished"></translation>
+        <translation>É extremamente necessário que você se lembre dessa senha. Você &lt;b&gt;VAI PERDER&lt;/b&gt; todos os seus dados se você a esquecer.</translation>
     </message>
 </context>
 <context>
@@ -702,12 +702,12 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
     <message>
         <location filename="../pages/issuespage.cpp" line="93"/>
         <source>Virtual Machine</source>
-        <translation type="unfinished"></translation>
+        <translation>Máquina Virtual</translation>
     </message>
     <message>
         <location filename="../pages/issuespage.cpp" line="93"/>
         <source>Looks like you&apos;re installing %1 on a virtual machine. Performance on the installed system may suffer as a result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Parece que você está instalando %1 em uma máquina virtual. Por isso, o desempenho do sistema pode ser afetado.</translation>
     </message>
 </context>
 <context>
@@ -774,22 +774,22 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
     <message>
         <location filename="../probe/probemanager.cpp" line="45"/>
         <source>Could not create temporary directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível criar um diretório temporário</translation>
     </message>
     <message>
         <location filename="../probe/probemanager.cpp" line="52"/>
         <source>%1 is not a disk</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 não é um disco</translation>
     </message>
     <message>
         <location filename="../probe/probemanager.cpp" line="58"/>
         <source>%1 is not a partition table</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 não é uma tabela de partição</translation>
     </message>
     <message>
         <location filename="../probe/probemanager.cpp" line="79"/>
         <source>Could not mount %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível fazer o mount de %1</translation>
     </message>
 </context>
 <context>
@@ -833,7 +833,7 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
     <message>
         <location filename="../popovers/splitpopover.ui" line="45"/>
         <source>Each operating system requires space to run. Allocate space by dragging the slider below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cada sistema operacional precisa de espaço para funcionar. Aloque espaço usando o controle abaixo.</translation>
     </message>
     <message>
         <location filename="../popovers/splitpopover.ui" line="68"/>
@@ -846,7 +846,7 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
     <message>
         <location filename="../popovers/splitpopover.ui" line="119"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
