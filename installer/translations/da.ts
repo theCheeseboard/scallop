@@ -393,12 +393,12 @@
     <message>
         <location filename="../pages/disktypepage.cpp" line="110"/>
         <source>Shrink %1 to make space for %2</source>
-        <translation>Formindsk %1 for at lave plads til %1</translation>
+        <translation>Formindsk %1 for at lave plads til %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="111"/>
         <source>Install %1 alongside your existing installation of %2</source>
-        <translation>Installer %1 ved siden af Windows</translation>
+        <translation>Installer %1 ved siden af %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="131"/>
