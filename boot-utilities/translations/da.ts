@@ -87,7 +87,7 @@
     <message>
         <location filename="../powerpopover.ui" line="76"/>
         <source>Turns off your computer and turns it on again</source>
-        <translation type="unfinished"></translation>
+        <translation>Slukker din computer og tænder den igen</translation>
     </message>
 </context>
 </TS>
