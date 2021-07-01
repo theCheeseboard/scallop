@@ -18,6 +18,7 @@ SOURCES += \
     cactus-install-animation/sequencer/animationelement.cpp \
     cactus-install-animation/sequencer/functionelement.cpp \
     cactus-install-animation/sequencer/loopelement.cpp \
+    cactus-install-animation/sequencer/oneshotelement.cpp \
     cactus-install-animation/sequencer/parallelelement.cpp \
     cactus-install-animation/sequencer/pauseelement.cpp \
     cactus-install-animation/sequencer/randomelement.cpp \
@@ -71,6 +72,7 @@ HEADERS += \
     cactus-install-animation/sequencer/animationelement.h \
     cactus-install-animation/sequencer/functionelement.h \
     cactus-install-animation/sequencer/loopelement.h \
+    cactus-install-animation/sequencer/oneshotelement.h \
     cactus-install-animation/sequencer/parallelelement.h \
     cactus-install-animation/sequencer/pauseelement.h \
     cactus-install-animation/sequencer/randomelement.h \

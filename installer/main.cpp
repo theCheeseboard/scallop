@@ -50,6 +50,7 @@ int main(int argc, char* argv[]) {
 //        CactusInstallAnimationWindow* window = new CactusInstallAnimationWindow();
 //        window->resize(1920, 1080);
 //        window->show();
+
         MainWindow* w = new MainWindow();
         w->show();
     }

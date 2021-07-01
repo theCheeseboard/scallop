@@ -96,30 +96,24 @@ void AnimationStage6::start() {
             new FunctionElement([ = ] {
                 d->speed = QRandomGenerator::system()->bounded(1.0);
             }),
-            //Oneshot element: don't wait for this one to finish
-            new FunctionElement([ = ] {
-                RandomElement* el = new RandomElement({
-                    new FunctionElement(std::bind(generateElement, "object-building")),
-                    new FunctionElement(std::bind(generateElement, "object-building")),
-                    new FunctionElement(std::bind(generateElement, "object-building2")),
-                    new FunctionElement(std::bind(generateElement, "object-building2")),
-                    new FunctionElement(std::bind(generateElement, "object-tower")),
-                    new FunctionElement(std::bind(generateElement, "object-tower")),
-                    changeEnvironment(d->outdoorNight, d->carNight, d->roadNight),
-                    changeEnvironment(d->outdoorDay, d->carNight, d->roadNight),
-                    new SequentialElement({
-                        new AnimationElement(0, -30, 200, [ = ](QVariant value) {
-                            d->carTopOffset = value.toInt();
-                        }, QEasingCurve::OutCubic),
-                        new AnimationElement(-30, 0, 200, [ = ](QVariant value) {
-                            d->carTopOffset = value.toInt();
-                        }, QEasingCurve::InCubic)
-                    })
-                });
-                connect(el, &RandomElement::requestRender, this, &CactusAnimationStage::requestRender);
-                connect(el, &RandomElement::done, el, &RandomElement::deleteLater);
-                el->run();
-            }),
+            new OneshotElement(new RandomElement({
+                new FunctionElement(std::bind(generateElement, "object-building")),
+                new FunctionElement(std::bind(generateElement, "object-building")),
+                new FunctionElement(std::bind(generateElement, "object-building2")),
+                new FunctionElement(std::bind(generateElement, "object-building2")),
+                new FunctionElement(std::bind(generateElement, "object-tower")),
+                new FunctionElement(std::bind(generateElement, "object-tower")),
+                changeEnvironment(d->outdoorNight, d->carNight, d->roadNight),
+                changeEnvironment(d->outdoorDay, d->carNight, d->roadNight),
+                new SequentialElement({
+                    new AnimationElement(0, -30, 200, [ = ](QVariant value) {
+                        d->carTopOffset = value.toInt();
+                    }, QEasingCurve::OutCubic),
+                    new AnimationElement(-30, 0, 200, [ = ](QVariant value) {
+                        d->carTopOffset = value.toInt();
+                    }, QEasingCurve::InCubic)
+                })
+            })),
             new PauseElement(-3000)
         }), -1),
         new AnimationElement(1.0, 0.0, 500, [ = ](QVariant value) {

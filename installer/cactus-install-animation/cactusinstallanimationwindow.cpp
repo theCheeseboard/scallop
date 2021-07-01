@@ -27,6 +27,7 @@
 #include "installipcmanager.h"
 
 #include "stages/animationstages.h"
+#include "sequencer/soundelement.h"
 
 #include <tscrim.h>
 #include "pages/finishedpage.h"
@@ -185,3 +186,8 @@ bool CactusInstallAnimationWindow::eventFilter(QObject* watched, QEvent* event) 
 void CactusInstallAnimationWindow::resizeEvent(QResizeEvent* event) {
     d->drawWidget->resize(this->size());
 }
+
+void CactusInstallAnimationWindow::on_muteButton_toggled(bool checked) {
+    SoundElement::setMute(checked);
+}
+

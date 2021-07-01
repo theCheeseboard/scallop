@@ -17,28 +17,28 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#ifndef SOUNDELEMENT_H
-#define SOUNDELEMENT_H
+#ifndef ONESHOTELEMENT_H
+#define ONESHOTELEMENT_H
 
 #include "sequencerelement.h"
 
-struct SoundElementPrivate;
-class SoundElement : public SequencerElement {
+struct OneshotElementPrivate;
+class OneshotElement : public SequencerElement {
         Q_OBJECT
     public:
-        explicit SoundElement(QString soundFile, QObject* parent = nullptr);
-        ~SoundElement();
-
-        static void setMute(bool mute);
+        explicit OneshotElement(SequencerElement* element, QObject* parent = nullptr);
+        ~OneshotElement();
 
     signals:
 
     private:
-        SoundElementPrivate* d;
+        OneshotElementPrivate* d;
+
 
         // SequencerElement interface
     public:
         void run();
+        void render(QPainter* painter, QRect rect);
 };
 
-#endif // SOUNDELEMENT_H
+#endif // ONESHOTELEMENT_H

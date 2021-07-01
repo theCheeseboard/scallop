@@ -43,6 +43,8 @@ class CactusInstallAnimationWindow : public QDialog {
         void on_powerOffButton_clicked();
 
         // QObject interface
+        void on_muteButton_toggled(bool checked);
+
     public:
         bool eventFilter(QObject* watched, QEvent* event);
 

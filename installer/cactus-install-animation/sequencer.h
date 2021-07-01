@@ -31,6 +31,7 @@
 #include "sequencer/loopelement.h"
 #include "sequencer/randomelement.h"
 #include "sequencer/soundelement.h"
+#include "sequencer/oneshotelement.h"
 
 struct SequencerPrivate;
 class Sequencer : public QObject {

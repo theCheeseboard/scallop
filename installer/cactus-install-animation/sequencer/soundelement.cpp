@@ -23,7 +23,12 @@
 
 struct SoundElementPrivate {
     QSoundEffect* effect;
+    bool canPlay = false;
+
+    static bool mute;
 };
+
+bool SoundElementPrivate::mute = false;
 
 SoundElement::SoundElement(QString soundFile, QObject* parent) : SequencerElement(parent) {
     d = new SoundElementPrivate();
@@ -32,13 +37,25 @@ SoundElement::SoundElement(QString soundFile, QObject* parent) : SequencerElemen
     connect(d->effect, &QSoundEffect::playingChanged, this, [ = ] {
         if (!d->effect->isPlaying()) emit done();
     });
+    connect(d->effect, &QSoundEffect::statusChanged, this, [ = ] {
+        d->canPlay = d->effect->status() == QSoundEffect::Ready;
+    });
 }
 
 SoundElement::~SoundElement() {
     delete d;
 }
 
+void SoundElement::setMute(bool mute) {
+    SoundElementPrivate::mute = mute;
+}
+
 
 void SoundElement::run() {
-    d->effect->play();
+    d->effect->setVolume(d->mute ? 0 : 1);
+    if (!d->canPlay) {
+        emit done();
+    } else {
+        d->effect->play();
+    }
 }

@@ -26,5 +26,10 @@
         <file alias="cactus-man-throw-6.svg">cactus-install-animation/assets/cactus-man-throw-6.svg</file>
         <file alias="cactus-man-throw-7.svg">cactus-install-animation/assets/cactus-man-throw-7.svg</file>
         <file alias="cactus-man-throw-8.svg">cactus-install-animation/assets/cactus-man-throw-8.svg</file>
+        <file alias="text-blip.wav">cactus-install-animation/assets/text-blip.wav</file>
+        <file alias="text-blip-robot.wav">cactus-install-animation/assets/text-blip-robot.wav</file>
+        <file alias="text-end.wav">cactus-install-animation/assets/text-end.wav</file>
+        <file alias="text-start.wav">cactus-install-animation/assets/text-start.wav</file>
+        <file alias="bell.wav">cactus-install-animation/assets/bell.wav</file>
     </qresource>
 </RCC>

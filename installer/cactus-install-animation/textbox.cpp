@@ -61,26 +61,45 @@ void TextBox::trigger() {
 
     Sequencer* sequencer = new Sequencer(this);
 
-    sequencer->addElement(new AnimationElement(0, SC_DPI(800), 200, [ = ](QVariant value) {
-        d->maxWidth = value.toDouble();
-    }));
+    QString soundFile;
+    switch (d->type) {
+        case TextBox::NormalCharacter:
+            soundFile = "text-blip";
+            break;
+        case TextBox::RobotCharacter:
+            soundFile = "text-blip-robot";
+            break;
+
+    }
+
+    sequencer->addElement({
+        new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/text-start.wav"))),
+        new AnimationElement(0, SC_DPI(800), 200, [ = ](QVariant value) {
+            d->maxWidth = value.toDouble();
+        })
+    });
 
     for (const QString& text : qAsConst(d->textParts)) {
         sequencer->addElement(new FunctionElement([ = ] {
             d->currentText = "";
         }));
+
+        int i = 0;
         for (QChar c : text) {
             sequencer->addElement({
                 new FunctionElement([ = ] {
                     d->currentText += c;
                 }),
-                new PauseElement(50)
+                i % 5 == 0 ? static_cast<SequencerElement*>(new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/%1.wav").arg(soundFile)))) : new FunctionElement([] {}),
+                new PauseElement(20)
             });
+            i++;
         }
         sequencer->addElement(new PauseElement(3000));
     }
 
     sequencer->addElement({
+        new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/text-end.wav"))),
         new AnimationElement(SC_DPI(800), 0, 200, [ = ](QVariant value) {
             d->maxWidth = value.toDouble();
         }),

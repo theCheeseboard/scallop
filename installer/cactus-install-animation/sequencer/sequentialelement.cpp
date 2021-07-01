@@ -33,7 +33,7 @@ SequentialElement::SequentialElement(QList<SequencerElement*> elements, QObject*
         connect(element, &SequencerElement::requestRender, this, &SequentialElement::requestRender);
         connect(element, &SequencerElement::done, this, [ = ] {
             d->doneCount++;
-            if (d->elements.count() == d->doneCount) {
+            if (d->elements.count() <= d->doneCount) {
                 emit done();
             } else {
                 d->elements.at(d->doneCount)->run();

@@ -82,17 +82,17 @@
 <context>
     <name>AnimationStage4</name>
     <message>
-        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="61"/>
+        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="60"/>
         <source>[CHOSEN TEMPLE FOUND!]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="62"/>
+        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="61"/>
         <source>[INSTALL THE %1 CUBE IN THE TEMPLE]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="63"/>
+        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="62"/>
         <source>[DO THIS, AND YOU WILL BE SHOWERED WITH RICHES]</source>
         <translation type="unfinished"></translation>
     </message>
@@ -197,27 +197,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="111"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="141"/>
         <source>INSTALLATION COMPLETE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="124"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="154"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="136"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="166"/>
         <source>Power Off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="146"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="176"/>
         <source>Reboot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="89"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="90"/>
         <source>Preparing for installation</source>
         <translation type="unfinished"></translation>
     </message>

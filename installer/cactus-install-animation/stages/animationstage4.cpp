@@ -40,7 +40,6 @@ struct AnimationStage4Private {
 ANIMATION_STAGE_BOILERPLATE(AnimationStage4)
 
 void AnimationStage4::start() {
-
     d->sequencer = new Sequencer(this);
 
     d->sequencer->addElement({
@@ -65,7 +64,8 @@ void AnimationStage4::start() {
             }),
             new AnimationElement(1.0, 0.0, 500, [ = ](QVariant value) {
                 d->whiteFlashOpacity = value.toDouble();
-            })
+            }),
+            new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/bell.wav"))),
         }),
         new FunctionElement([ = ] {
             d->showBubbles = false;
