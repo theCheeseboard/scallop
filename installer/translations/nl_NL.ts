@@ -99,7 +99,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="73"/>
         <source>Never mind then. Let&apos;s hit the road!</source>
-        <translation>Laat matter zitten. Op avontuur!</translation>
+        <translation>Laat maar zitten. Op avontuur!</translation>
     </message>
 </context>
 <context>
