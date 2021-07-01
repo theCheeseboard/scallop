@@ -431,7 +431,7 @@
     <message>
         <location filename="../pages/encryptpage.ui" line="162"/>
         <source>Use Disk Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Sử dụng mã hóa đĩa</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="38"/>
@@ -828,7 +828,7 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
     <message>
         <location filename="../popovers/splitpopover.ui" line="35"/>
         <source>Allocate Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Chia dung lượng</translation>
     </message>
     <message>
         <location filename="../popovers/splitpopover.ui" line="45"/>
