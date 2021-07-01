@@ -6,7 +6,7 @@
     <message>
         <location filename="../languagepopover.ui" line="57"/>
         <source>Select a locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg sprog</translation>
     </message>
 </context>
 <context>
@@ -14,47 +14,47 @@
     <message>
         <location filename="../mainwindow.ui" line="103"/>
         <source>Available installation and recovery tools are shown below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilgængelige installations- og gendannelsesværktøjer er vist nedenunder.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="122"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprog</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="148"/>
         <source>Emergency</source>
-        <translation type="unfinished"></translation>
+        <translation>Nødsituation</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="180"/>
         <source>Manage Disks</source>
-        <translation type="unfinished"></translation>
+        <translation>Håndter diske</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="187"/>
         <source>View Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis filer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="194"/>
         <source>Open Terminal</source>
-        <translation type="unfinished"></translation>
+        <translation>Åben terminal</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="161"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukendt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="162"/>
         <source>Welcome to %1!</source>
-        <translation type="unfinished"></translation>
+        <translation>Velkommen til %1!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="163"/>
         <source>Install %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer %1</translation>
     </message>
 </context>
 <context>
