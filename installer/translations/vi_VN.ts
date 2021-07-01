@@ -159,7 +159,7 @@
     <message>
         <location filename="../install/bootloaderstate.cpp" line="102"/>
         <source>Generating machine ID...</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang tạo ID máy...</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="123"/>
@@ -263,33 +263,33 @@
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="166"/>
         <source>Replacing partition %1 with boot block %2; first partition at offset %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Sẽ thay phân vùng %1 với khối khởi động %2; phân vùng thứ nhất tại %3</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="169"/>
         <source>Erasing partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang xóa phân vùng %1</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="173"/>
         <location filename="../install/diskmanagementstate.cpp" line="186"/>
         <source>Failed to erase the partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể xóa phân vùng</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="180"/>
         <source>Resizing partition %1 with boot block %2; partition will be %3 long</source>
-        <translation type="unfinished"></translation>
+        <translation>Sẽ thay phân vùng %1 với khối khởi động %2; chiều dài phân vùng %3</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="183"/>
         <source>Resizing partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang định cỡ phân vùng %1</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="195"/>
         <source>New partitions will be located at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Phân vùng mới sẽ tạo tại %1</translation>
     </message>
 </context>
 <context>
@@ -373,52 +373,52 @@
     <message>
         <location filename="../pages/disktypepage.ui" line="35"/>
         <source>Installation Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiểu cài đặt</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="52"/>
         <source>Erase this disk</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa đĩa này</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="55"/>
         <source>Everything on this disk will be lost</source>
-        <translation type="unfinished"></translation>
+        <translation>Các dữ liệu trên đĩa này sẽ bị mất</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="98"/>
         <source>Looking for additonal installation options...</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang tìm thêm tùy chọn cài đặt...</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="52"/>
         <source>How are we installing %1 today?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn muốn cài %1 như sao hôm nay?</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="99"/>
         <source>Modify %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Thay đổi %1</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="110"/>
         <source>Shrink %1 to make space for %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Thu nhỏ %1 để làm chỗ cho %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="111"/>
         <source>Install %1 alongside your existing installation of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài %1 bên sau cài đật %2 tồn tại của bạn</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="131"/>
         <source>Replace %1 with %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Thay %1 cho %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="132"/>
         <source>Erase %1 and install %2 in its place</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa %1 và cài %2 trong chỗ để lại</translation>
     </message>
 </context>
 <context>
@@ -702,12 +702,12 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
     <message>
         <location filename="../pages/issuespage.cpp" line="93"/>
         <source>Virtual Machine</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy ảo</translation>
     </message>
     <message>
         <location filename="../pages/issuespage.cpp" line="93"/>
         <source>Looks like you&apos;re installing %1 on a virtual machine. Performance on the installed system may suffer as a result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Có vẻ như bạn đang cài %1 vào một máy ảo. Vì vậy, hiệu suất trên hệ thống đã cài đặt có thể bị ảnh hưởng.</translation>
     </message>
 </context>
 <context>
@@ -774,22 +774,22 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
     <message>
         <location filename="../probe/probemanager.cpp" line="45"/>
         <source>Could not create temporary directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể tạo thư mục tạm</translation>
     </message>
     <message>
         <location filename="../probe/probemanager.cpp" line="52"/>
         <source>%1 is not a disk</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 không phải đĩa</translation>
     </message>
     <message>
         <location filename="../probe/probemanager.cpp" line="58"/>
         <source>%1 is not a partition table</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 không phải bảng phân vùng</translation>
     </message>
     <message>
         <location filename="../probe/probemanager.cpp" line="79"/>
         <source>Could not mount %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể gắn %1</translation>
     </message>
 </context>
 <context>
@@ -833,7 +833,7 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
     <message>
         <location filename="../popovers/splitpopover.ui" line="45"/>
         <source>Each operating system requires space to run. Allocate space by dragging the slider below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mỗi HĐH cần dung lượng trống để chạy. Chia dung lượng giữa mỗi HĐH bởi cách kéo thanh trượt bên dưới.</translation>
     </message>
     <message>
         <location filename="../popovers/splitpopover.ui" line="68"/>
@@ -846,7 +846,7 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
     <message>
         <location filename="../popovers/splitpopover.ui" line="119"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
