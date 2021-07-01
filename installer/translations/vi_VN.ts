@@ -63,7 +63,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage2.cpp" line="48"/>
         <source>...just a little longer! I&apos;ll find the chosen temple this time, I promise!</source>
-        <translation>chỉ cần một tí nữa! Tôi sẽ tìm ngôi đền được chọn lần này, tôi hứa!</translation>
+        <translation>...chỉ cần một tí nữa! Tôi sẽ tìm ngôi đền được chọn lần này, tôi hứa!</translation>
     </message>
 </context>
 <context>
