@@ -6,22 +6,22 @@
     <message>
         <location filename="../downloadprogress.ui" line="58"/>
         <source>Preparing to Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Forbereder til nulstilling</translation>
     </message>
     <message>
         <location filename="../downloadprogress.ui" line="73"/>
         <source>We&apos;re preparing this device to be reset. Stay connected to the Internet. This will take a while.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vi forbereder til at nulstille denne enhed. Forbliv forbundet til internettet. Dette kan tage lidt tid.</translation>
     </message>
     <message>
         <location filename="../downloadprogress.cpp" line="60"/>
         <source>Reset Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Nulstilling fejlede</translation>
     </message>
     <message>
         <location filename="../downloadprogress.cpp" line="60"/>
         <source>We weren&apos;t able to download the recovery image. Please try again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vi kunne ikke downloade gendannelses</translation>
     </message>
     <message>
         <location filename="../downloadprogress.cpp" line="67"/>
