@@ -436,7 +436,7 @@
     <message>
         <location filename="../pages/encryptpage.ui" line="162"/>
         <source>Use Disk Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Brug diskkryptering</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="38"/>
@@ -833,7 +833,7 @@ Du kan åbne en fejlfindingslog med CTRL+L hvis du vil se hvad der gik galt.</tr
     <message>
         <location filename="../popovers/splitpopover.ui" line="35"/>
         <source>Allocate Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Alloker plads</translation>
     </message>
     <message>
         <location filename="../popovers/splitpopover.ui" line="45"/>
