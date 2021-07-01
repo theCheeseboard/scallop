@@ -55,7 +55,7 @@
         <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="47"/>
         <source>%1 HQ</source>
         <comment>HQ for Headquarters</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 Hoofdkwartier</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage2.cpp" line="48"/>
         <source>...just a little longer! I&apos;ll find the chosen temple this time, I promise!</source>
-        <translation type="unfinished"></translation>
+        <translation>...bijna klaar! Ik zal dit keer de uitverkoren tempel vinden, ik beloof het!</translation>
     </message>
 </context>
 <context>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="49"/>
         <source>It&apos;s already 9:00. We can&apos;t be waiting all night.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het is al 9:00. We kunnen niet de hele nacht wachten.</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="50"/>
         <source>Let&apos;s get some rest and we can try again in the morning.</source>
-        <translation type="unfinished"></translation>
+        <translation>Laten we uitrusten en dan kunnen we het in de ochtend nog een keer proberen.</translation>
     </message>
 </context>
 <context>
@@ -84,22 +84,22 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="60"/>
         <source>[CHOSEN TEMPLE FOUND!]</source>
-        <translation type="unfinished"></translation>
+        <translation>[UITVERKOREN TEMPEL GEVONDEN!]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="61"/>
         <source>[INSTALL THE %1 CUBE IN THE TEMPLE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[INSTALLEER DE %1 KUBUS IN DE TEMPEL]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="62"/>
         <source>[DO THIS, AND YOU WILL BE SHOWERED WITH RICHES]</source>
-        <translation type="unfinished"></translation>
+        <translation>[DOE DIT, EN U ZULT ZWEMMEN IN GOUD]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="73"/>
         <source>Never mind then. Let&apos;s hit the road!</source>
-        <translation type="unfinished"></translation>
+        <translation>Laat matter zitten. Op avontuur!</translation>
     </message>
 </context>
 <context>
@@ -107,32 +107,32 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="69"/>
         <source>ARE YOU OKAY???</source>
-        <translation type="unfinished"></translation>
+        <translation>GAAT HET GOED???</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="70"/>
         <source>I&apos;m fine. Where are we?</source>
-        <translation type="unfinished"></translation>
+        <translation>Het gaat wel. Waar zijn we?</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="79"/>
         <source>[PLEASE INSTALL THE %1 CUBE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[INSTALLEER ALSTUBLIEFT DE %1 KUBUS]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="82"/>
         <source>Quick, the %1 cube!</source>
-        <translation type="unfinished"></translation>
+        <translation>Snel, de %1 kubus!</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="122"/>
         <source>Did we do it??</source>
-        <translation type="unfinished"></translation>
+        <translation>Is het gelukt??</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="139"/>
         <source>[%1 CUBE ACCEPTED]</source>
-        <translation type="unfinished"></translation>
+        <translation>[%1 KUBUS GEACCEPTEERD]</translation>
     </message>
 </context>
 <context>
@@ -140,7 +140,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage8.cpp" line="78"/>
         <source>Welcome to %1!</source>
-        <translation type="unfinished">Welkom bij %1!</translation>
+        <translation>Welkom bij %1!</translation>
     </message>
 </context>
 <context>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../install/bootloaderstate.cpp" line="102"/>
         <source>Generating machine ID...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apparaat-ID wordt gemaakt...</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="123"/>
@@ -194,32 +194,32 @@
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="141"/>
         <source>INSTALLATION COMPLETE</source>
-        <translation type="unfinished"></translation>
+        <translation>INSTALLATIE AFGEROND</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="154"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
-        <translation type="unfinished">De volgende keer dat je dit apparaat start, zul je worden gevraagd om een gebruiker te maken, en wat systeeminstellingen aan te passen.</translation>
+        <translation>De volgende keer dat je dit apparaat start, zul je worden gevraagd om een gebruiker te maken, en wat systeeminstellingen aan te passen.</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="166"/>
         <source>Power Off</source>
-        <translation type="unfinished">Afsluiten</translation>
+        <translation>Afsluiten</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="176"/>
         <source>Reboot</source>
-        <translation type="unfinished">Opnieuw Opstarten</translation>
+        <translation>Opnieuw opstarten</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="90"/>
         <source>Preparing for installation</source>
-        <translation type="unfinished">Aan het voorbereiden op installatie</translation>
+        <translation>Aan het voorbereiden op installatie</translation>
     </message>
 </context>
 <context>
@@ -263,33 +263,33 @@
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="166"/>
         <source>Replacing partition %1 with boot block %2; first partition at offset %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Replacing partition %1 with boot block %2; first partition at offset %3</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="169"/>
         <source>Erasing partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Partitie %1 wordt verwijderd</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="173"/>
         <location filename="../install/diskmanagementstate.cpp" line="186"/>
         <source>Failed to erase the partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Partitie verwijderen is mislukt</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="180"/>
         <source>Resizing partition %1 with boot block %2; partition will be %3 long</source>
-        <translation type="unfinished"></translation>
+        <translation>Resizing partition %1 with boot block %2; partition will be %3 long</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="183"/>
         <source>Resizing partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Grootte van partitie %1 aan het aanpassen</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="195"/>
         <source>New partitions will be located at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>New partitions will be located at %1</translation>
     </message>
 </context>
 <context>
@@ -368,57 +368,57 @@
     <message>
         <location filename="../pages/disktypepage.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="35"/>
         <source>Installation Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Installatietype</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="52"/>
         <source>Erase this disk</source>
-        <translation type="unfinished"></translation>
+        <translation>Schijf verwijderen</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="55"/>
         <source>Everything on this disk will be lost</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle gegevens op deze schijf zullen worden veloren</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.ui" line="98"/>
         <source>Looking for additonal installation options...</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleren op andere installatiemogelijkheden...</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="52"/>
         <source>How are we installing %1 today?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoe gaan we %1 vandaag installeren?</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="99"/>
         <source>Modify %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Verander %1</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="110"/>
         <source>Shrink %1 to make space for %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Verklein %1 om plek te maken voor %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="111"/>
         <source>Install %1 alongside your existing installation of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Installeer %1 naast de bestaande installatie van %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="131"/>
         <source>Replace %1 with %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Vervang %1 met %2</translation>
     </message>
     <message>
         <location filename="../pages/disktypepage.cpp" line="132"/>
         <source>Erase %1 and install %2 in its place</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder %1 en installeer %2 op die plaats</translation>
     </message>
 </context>
 <context>
@@ -702,12 +702,12 @@ Je kunt een debug-log openen met CTRL+L als je uit wilt zoeken wat er mis ging.<
     <message>
         <location filename="../pages/issuespage.cpp" line="93"/>
         <source>Virtual Machine</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuele Machine</translation>
     </message>
     <message>
         <location filename="../pages/issuespage.cpp" line="93"/>
         <source>Looks like you&apos;re installing %1 on a virtual machine. Performance on the installed system may suffer as a result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het lijkt alsof je %1 op een virtuele machine installeert. Het geïnstalleerde systeem zou hierdoor minder goed kunnen presteren.</translation>
     </message>
 </context>
 <context>
@@ -774,22 +774,22 @@ Je kunt een debug-log openen met CTRL+L als je uit wilt zoeken wat er mis ging.<
     <message>
         <location filename="../probe/probemanager.cpp" line="45"/>
         <source>Could not create temporary directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Het maken van een tijdelijke map is niet gelukt</translation>
     </message>
     <message>
         <location filename="../probe/probemanager.cpp" line="52"/>
         <source>%1 is not a disk</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 is geen schijf</translation>
     </message>
     <message>
         <location filename="../probe/probemanager.cpp" line="58"/>
         <source>%1 is not a partition table</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 is geen partitie-indeling</translation>
     </message>
     <message>
         <location filename="../probe/probemanager.cpp" line="79"/>
         <source>Could not mount %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon %1 niet aanknopen</translation>
     </message>
 </context>
 <context>
@@ -815,7 +815,7 @@ Je kunt een debug-log openen met CTRL+L als je uit wilt zoeken wat er mis ging.<
     <message>
         <location filename="../pages/readypage.ui" line="35"/>
         <source>Preparing for lift-off...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aan het voorbereiden op lancering...</translation>
     </message>
     <message>
         <location filename="../pages/readypage.ui" line="42"/>
@@ -833,7 +833,7 @@ Je kunt een debug-log openen met CTRL+L als je uit wilt zoeken wat er mis ging.<
     <message>
         <location filename="../popovers/splitpopover.ui" line="45"/>
         <source>Each operating system requires space to run. Allocate space by dragging the slider below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elk besturingssysteem heeft opslag nodig om te werken. Verdeel opslag met de schuifregelaar hieronder.</translation>
     </message>
     <message>
         <location filename="../popovers/splitpopover.ui" line="68"/>
@@ -841,12 +841,12 @@ Je kunt een debug-log openen met CTRL+L als je uit wilt zoeken wat er mis ging.<
         <location filename="../popovers/splitpopover.ui" line="92"/>
         <location filename="../popovers/splitpopover.ui" line="105"/>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
     <message>
         <location filename="../popovers/splitpopover.ui" line="119"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -855,12 +855,12 @@ Je kunt een debug-log openen met CTRL+L als je uit wilt zoeken wat er mis ging.<
         <location filename="../install/unsquashstate.cpp" line="33"/>
         <location filename="../install/unsquashstate.cpp" line="44"/>
         <source>Unsquashing Filesystem</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestanden Uitpakken</translation>
     </message>
     <message>
         <location filename="../install/unsquashstate.cpp" line="52"/>
         <source>Unsquash Complete!</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitpakken Afgerond!</translation>
     </message>
 </context>
 <context>
