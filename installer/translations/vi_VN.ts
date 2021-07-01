@@ -76,7 +76,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="50"/>
         <source>Let&apos;s get some rest and we can try again in the morning.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thôi anh ơi, nghỉ đêm đi rồi mình thử lại vào buổi sáng.</translation>
     </message>
 </context>
 <context>
@@ -84,22 +84,22 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="60"/>
         <source>[CHOSEN TEMPLE FOUND!]</source>
-        <translation type="unfinished"></translation>
+        <translation>[TÌM THẤY NGÔI ĐỀN ĐƯỢC CHỌN!]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="61"/>
         <source>[INSTALL THE %1 CUBE IN THE TEMPLE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[CÀI KHỐI %1 VÀO NGÔI ĐỀN]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="62"/>
         <source>[DO THIS, AND YOU WILL BE SHOWERED WITH RICHES]</source>
-        <translation type="unfinished"></translation>
+        <translation>[LÀM ĐIỀU NÀY VÀ BẠN SẼ GẶP VỚI SỰ GIÀU CÓ]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="73"/>
         <source>Never mind then. Let&apos;s hit the road!</source>
-        <translation type="unfinished"></translation>
+        <translation>Đổi hướng anh ơi! Lên đường đi!</translation>
     </message>
 </context>
 <context>
@@ -107,32 +107,32 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="69"/>
         <source>ARE YOU OKAY???</source>
-        <translation type="unfinished"></translation>
+        <translation>ANH CÓ SAO KHÔNG???</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="70"/>
         <source>I&apos;m fine. Where are we?</source>
-        <translation type="unfinished"></translation>
+        <translation>Không sao anh. Mình đang ở đâu vậy?</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="79"/>
         <source>[PLEASE INSTALL THE %1 CUBE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[VUI LÒNG CÀI KHỐI %1]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="82"/>
         <source>Quick, the %1 cube!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhanh lên, cái khối %1!</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="122"/>
         <source>Did we do it??</source>
-        <translation type="unfinished"></translation>
+        <translation>Mình làm được chưa??</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="139"/>
         <source>[%1 CUBE ACCEPTED]</source>
-        <translation type="unfinished"></translation>
+        <translation>[CHẤP NHẬN KHỐI %1]</translation>
     </message>
 </context>
 <context>
@@ -140,7 +140,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage8.cpp" line="78"/>
         <source>Welcome to %1!</source>
-        <translation type="unfinished">Chào mừng bạn với %1!</translation>
+        <translation>Chào mừng bạn với %1!</translation>
     </message>
 </context>
 <context>
@@ -199,27 +199,27 @@
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="141"/>
         <source>INSTALLATION COMPLETE</source>
-        <translation type="unfinished"></translation>
+        <translation>CÀI ĐẶT ĐÃ HOÀN TẤT</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="154"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
-        <translation type="unfinished">Lần sau bạn khởi động thiết bị này, bạn sẽ bị yêu cầu tạo người dùng mới, và thiết lập hệ thống của bạn.</translation>
+        <translation>Lần sau bạn khởi động thiết bị này, bạn sẽ bị yêu cầu tạo người dùng mới, và thiết lập hệ thống của bạn.</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="166"/>
         <source>Power Off</source>
-        <translation type="unfinished">Tắt nguồn</translation>
+        <translation>Tắt nguồn</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="176"/>
         <source>Reboot</source>
-        <translation type="unfinished">Khởi động lại</translation>
+        <translation>Khởi động lại</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="90"/>
         <source>Preparing for installation</source>
-        <translation type="unfinished">Đang chuẩn bị cài đặt</translation>
+        <translation>Đang chuẩn bị cài đặt</translation>
     </message>
 </context>
 <context>
