@@ -50,6 +50,44 @@
     </message>
 </context>
 <context>
+    <name>AnimationStage1</name>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="47"/>
+        <source>%1 HQ</source>
+        <comment>HQ for Headquarters</comment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AnimationStage2</name>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage2.cpp" line="48"/>
+        <source>...so do you think any more people will install %1 today?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AnimationStage3</name>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="48"/>
+        <source>It&apos;s already 9:00 at night. I think we should wrap up for the night.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AnimationStage4</name>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="60"/>
+        <source>[%1 INSTALL DETECTED! DELIVER IMMEDIATELY!]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="69"/>
+        <source>Never mind then. Let&apos;s hit the road!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BootloaderState</name>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="38"/>
@@ -93,6 +131,19 @@
         <location filename="../install/bootloaderstate.cpp" line="189"/>
         <source>Skipping bootloader installation as requested by user</source>
         <translation>Kullanıcı tarafından talep edildiği gibi önyükleyici kurulumunu atlama</translation>
+    </message>
+</context>
+<context>
+    <name>CactusInstallAnimationWindow</name>
+    <message>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="46"/>
+        <source>Preparing for installation</source>
+        <translation type="unfinished">Kurulum için hazırlanıyor</translation>
     </message>
 </context>
 <context>
@@ -678,7 +729,7 @@ Neyin yanlış gittiğini bulmanız gerekirse, CTRL+L ile bir hata ayıklama gü
         <translation>Arkana yaslan ve rahatla. Bitirdiğimimde sana haber vereceğim.</translation>
     </message>
     <message>
-        <location filename="../pages/progresspage.cpp" line="31"/>
+        <location filename="../pages/progresspage.cpp" line="33"/>
         <source>Preparing for installation</source>
         <translation>Kurulum için hazırlanıyor</translation>
     </message>

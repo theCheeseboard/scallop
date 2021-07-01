@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de_DE" sourcelanguage="en_US">
+<TS version="2.1" sourcelanguage="en_US">
 <context>
     <name>AdvancedDiskPopover</name>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="57"/>
         <source>Advanced Disk Management</source>
-        <translation>Erweiterte Datenträgerverwaltung</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="81"/>
         <source>Set mount points for each partition you want to mount.</source>
-        <translation>Setze Einhängungspunkte für jede Partition die du einhängen willst.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="178"/>
         <source>BOOTLOADER</source>
-        <translation>BOOTLOADER</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="185"/>
         <source>Install bootloader onto this device:</source>
-        <translation>Installiere Bootloader auf diesem Gerät:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="218"/>
         <source>Edit Partitions</source>
-        <translation>Partitionen Bearbeiten</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="242"/>
         <source>Use this configuration</source>
-        <translation>Nutze diese Konfiguration</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="277"/>
         <source>Editing Partitions</source>
-        <translation>Editiere Partitionen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="287"/>
         <source>Once you&apos;re done, close the partition editor and come back here.</source>
-        <translation>Sobald du fertig bist, schließe die Partitionsverwalktung und kehre hierher zurück.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.cpp" line="53"/>
         <source>To continue, you&apos;ll need to set at least a partition for %1.</source>
-        <translation>Um fortzufahren musst du zumindest eine Partition für %1 setzen.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -93,23 +93,17 @@
         <location filename="../install/bootloaderstate.cpp" line="38"/>
         <location filename="../install/bootloaderstate.cpp" line="77"/>
         <source>Configuring Bootloader...</source>
-        <translation>Konfiguriere Bootloader...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="83"/>
         <source>Failed to create the GRUB Configuration File</source>
-        <translation>Erstellen der GRUB Konfiguration fehlgeschlagen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="102"/>
         <source>Generating machine ID...</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../install/bootloaderstate.cpp" line="123"/>
-        <location filename="../install/bootloaderstate.cpp" line="174"/>
-        <source>Installing the bootloader...</source>
-        <translation>Installiere Bootloader...</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="108"/>
@@ -118,19 +112,25 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/bootloaderstate.cpp" line="181"/>
-        <source>Failed to install GRUB</source>
-        <translation>GRUB-Installation fehlgeschlagen</translation>
+        <location filename="../install/bootloaderstate.cpp" line="123"/>
+        <location filename="../install/bootloaderstate.cpp" line="174"/>
+        <source>Installing the bootloader...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="162"/>
         <source>Installing bootloader to</source>
-        <translation>Installiere Bootloader auf</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/bootloaderstate.cpp" line="181"/>
+        <source>Failed to install GRUB</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="189"/>
         <source>Skipping bootloader installation as requested by user</source>
-        <translation>Überspringe Installation des Bootloaders auf Wunsch des Nutzers</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -151,18 +151,18 @@
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="57"/>
         <source>Erasing disk %1</source>
-        <translation>Lösche Datenträger %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="63"/>
         <source>Failed to erase the disk</source>
-        <translation>Löschen des Datenträgers fehlgeschlagen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="72"/>
         <location filename="../install/diskmanagementstate.cpp" line="204"/>
         <source>Creating Boot Partition</source>
-        <translation>Erstelle Boot Partition</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="88"/>
@@ -170,19 +170,19 @@
         <location filename="../install/diskmanagementstate.cpp" line="222"/>
         <location filename="../install/diskmanagementstate.cpp" line="238"/>
         <source>Failed to create the boot partition</source>
-        <translation>Erstellen der boot Partition fehlgeschlagen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="122"/>
         <location filename="../install/diskmanagementstate.cpp" line="261"/>
         <source>Creating Root Partition</source>
-        <translation>Erstelle Root Partition</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="137"/>
         <location filename="../install/diskmanagementstate.cpp" line="287"/>
         <source>Failed to create the root partition</source>
-        <translation>Erstellen der root Partition fehlgeschlagen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="166"/>
@@ -221,12 +221,12 @@
     <message>
         <location filename="../diskmodel.cpp" line="141"/>
         <source>Disk</source>
-        <translation>Datenträger</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../diskmodel.cpp" line="143"/>
         <source>Mount Point</source>
-        <translation>Einhängungspunkt</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -239,12 +239,12 @@
     <message>
         <location filename="../pages/diskpage.ui" line="121"/>
         <source>Show all drives</source>
-        <translation>Alle Datenträger anzeigen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="128"/>
         <source>All data on the selected disk will be erased, so make sure you&apos;re selecting the correct disk.</source>
-        <translation>Alle Daten auf dem gewählten Datenträger werden gelöscht, also stelle sicher, dass es der richtige ist.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="159"/>
@@ -259,17 +259,17 @@
     <message>
         <location filename="../pages/diskpage.ui" line="264"/>
         <source>Advanced...</source>
-        <translation>Erweitert...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="274"/>
         <source>Next</source>
-        <translation>Weiter</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/diskpage.cpp" line="43"/>
         <source>Select a location to install %1 to.</source>
-        <translation>Wähle ein Ziel um %1 zu installieren.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/diskpage.cpp" line="44"/>
@@ -279,12 +279,12 @@
     <message>
         <location filename="../pages/diskpage.cpp" line="69"/>
         <source>Nonstandard Disk</source>
-        <translation>Unkonventioneller Datenträger</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/diskpage.cpp" line="69"/>
         <source>You are installing %1 to a nonstandard disk. Installation is likely to fail. Do you wish to attempt to install to this disk anyway?</source>
-        <translation>Du installierst %1 auf einem unkonventionellen Datenträger. Die installation schlägt eventuell fehl. Möchtest du trotzdem fortfahren?</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -421,8 +421,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../popovers/encryptpopover.ui" line="117"/>
-        <source>Anyone using this device will need to know this password to start it.</source>
+        <location filename="../popovers/encryptpopover.ui" line="85"/>
+        <source>Encrypt this Installation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -436,8 +436,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../popovers/encryptpopover.ui" line="85"/>
-        <source>Encrypt this Installation</source>
+        <location filename="../popovers/encryptpopover.ui" line="117"/>
+        <source>Anyone using this device will need to know this password to start it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -456,22 +456,22 @@
     <message>
         <location filename="../popovers/eraseconfirmpopover.ui" line="51"/>
         <source>THIS IS IT</source>
-        <translation>DAS WAR&apos;S</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../popovers/eraseconfirmpopover.ui" line="58"/>
         <source>There&apos;s no going back after this. Once the selected disk is erased, all the data on it is gone forever.</source>
-        <translation>Hiernach gibt es kein Zurück. Sobald der Datenträger gelöscht wurde, sind alle Daten darauf für immer verloren.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../popovers/eraseconfirmpopover.ui" line="68"/>
         <source>Erase and Install</source>
-        <translation>Löschen und installieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../popovers/eraseconfirmpopover.cpp" line="30"/>
         <source>Erase Disk and Install %1</source>
-        <translation>Datenträger löschen und %1 installieren</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -479,17 +479,17 @@
     <message>
         <location filename="../pages/finishedpage.ui" line="57"/>
         <source>Installation Completed Successfully</source>
-        <translation>Installation Erfolgreich Abgeschlossen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/finishedpage.ui" line="64"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
-        <translation>Wenn du dein Gerät das nächste mal startest, wirst du gebeten einen neuen Nutzer anzulegen und einige Systemeinstellungen einzurichten.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/finishedpage.ui" line="121"/>
         <source>Power Off</source>
-        <translation>Ausschalten</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/finishedpage.ui" line="132"/>
@@ -589,16 +589,6 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/issuespage.cpp" line="87"/>
-        <source>Power</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pages/issuespage.cpp" line="87"/>
-        <source>It is highly recommended that you connect this device to power before you start installing.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../pages/issuespage.cpp" line="46"/>
         <source>Ignore and Continue</source>
         <translation type="unfinished"></translation>
@@ -606,7 +596,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../pages/issuespage.cpp" line="46"/>
         <source>Next</source>
-        <translation type="unfinished">Weiter</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/issuespage.cpp" line="52"/>
@@ -616,6 +606,16 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../pages/issuespage.cpp" line="54"/>
         <source>The following issues may impact the installation. You should solve them before we continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/issuespage.cpp" line="87"/>
+        <source>Power</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/issuespage.cpp" line="87"/>
+        <source>It is highly recommended that you connect this device to power before you start installing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -634,7 +634,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../mainwindow.cpp" line="39"/>
         <source>Install %1</source>
-        <translation>Installiere %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="76"/>
@@ -667,7 +667,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../popovers/mountpointpopover.ui" line="45"/>
         <source>Mount Point</source>
-        <translation type="unfinished">Einhängungspunkt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../popovers/mountpointpopover.ui" line="72"/>
@@ -744,7 +744,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../pages/readypage.cpp" line="40"/>
         <source>Install %1</source>
-        <translation type="unfinished">Installiere %1</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/installanim">
+        <file alias="hq-at-sunrise.svg">cactus-install-animation/assets/hq-at-sunrise.svg</file>
+        <file alias="standard-textbox.svg">cactus-install-animation/assets/standard-textbox.svg</file>
+        <file alias="hq-at-night.svg">cactus-install-animation/assets/hq-at-night.svg</file>
+        <file alias="inside-hq-night.svg">cactus-install-animation/assets/inside-hq-night.svg</file>
+        <file alias="inside-hq-night-emergency.svg">cactus-install-animation/assets/inside-hq-night-emergency.svg</file>
+        <file alias="inside-hq-night-emergency-bubbles.svg">cactus-install-animation/assets/inside-hq-night-emergency-bubbles.svg</file>
+        <file alias="outdoors-night.svg">cactus-install-animation/assets/outdoors-night.svg</file>
+        <file alias="car-night.svg">cactus-install-animation/assets/car-night.svg</file>
+        <file alias="road-night.svg">cactus-install-animation/assets/road-night.svg</file>
+    </qresource>
+</RCC>

@@ -1,4 +1,4 @@
-QT       += core gui thelib frisbee
+QT       += core gui thelib frisbee svg
 SHARE_APP_NAME = scallop/install-system
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -11,6 +11,23 @@ TARGET = scallop-install-system
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cactus-install-animation/cactusanimationstage.cpp \
+    cactus-install-animation/cactusinstallanimationwindow.cpp \
+    cactus-install-animation/sequencer.cpp \
+    cactus-install-animation/sequencer/animationelement.cpp \
+    cactus-install-animation/sequencer/functionelement.cpp \
+    cactus-install-animation/sequencer/parallelelement.cpp \
+    cactus-install-animation/sequencer/pauseelement.cpp \
+    cactus-install-animation/sequencer/sequencerelement.cpp \
+    cactus-install-animation/sequencer/sequentialelement.cpp \
+    cactus-install-animation/sequencer/textboxelement.cpp \
+    cactus-install-animation/stages/animationstage1.cpp \
+    cactus-install-animation/stages/animationstage2.cpp \
+    cactus-install-animation/stages/animationstage3.cpp \
+    cactus-install-animation/stages/animationstage4.cpp \
+    cactus-install-animation/stages/animationstage5.cpp \
+    cactus-install-animation/textbox.cpp \
+    cactus-install-animation/zoomsvgrenderer.cpp \
     diskmodel.cpp \
     flowcontroller.cpp \
     install/bootloaderstate.cpp \
@@ -40,6 +57,19 @@ SOURCES += \
     probe/probemanager.cpp
 
 HEADERS += \
+    cactus-install-animation/cactusanimationstage.h \
+    cactus-install-animation/cactusinstallanimationwindow.h \
+    cactus-install-animation/sequencer.h \
+    cactus-install-animation/sequencer/animationelement.h \
+    cactus-install-animation/sequencer/functionelement.h \
+    cactus-install-animation/sequencer/parallelelement.h \
+    cactus-install-animation/sequencer/pauseelement.h \
+    cactus-install-animation/sequencer/sequencerelement.h \
+    cactus-install-animation/sequencer/sequentialelement.h \
+    cactus-install-animation/sequencer/textboxelement.h \
+    cactus-install-animation/stages/animationstages.h \
+    cactus-install-animation/textbox.h \
+    cactus-install-animation/zoomsvgrenderer.h \
     diskmodel.h \
     flowcontroller.h \
     install/bootloaderstate.h \
@@ -68,6 +98,7 @@ HEADERS += \
     probe/probemanager.h
 
 FORMS += \
+    cactus-install-animation/cactusinstallanimationwindow.ui \
     mainwidget.ui \
     mainwindow.ui \
     pages/advanceddiskpopover.ui \
@@ -109,4 +140,5 @@ unix:!macx {
 }
 
 RESOURCES += \
+    cactus-animation-resources.qrc \
     resources.qrc

@@ -23,6 +23,8 @@
 #include "flowcontroller.h"
 #include "installipcmanager.h"
 
+#include "cactus-install-animation/cactusinstallanimationwindow.h"
+
 ProgressPage::ProgressPage(QWidget* parent) :
     QWidget(parent),
     ui(new Ui::ProgressPage) {
@@ -45,6 +47,14 @@ ProgressPage::ProgressPage(QWidget* parent) :
     });
     connect(InstallIpcManager::instance(), &InstallIpcManager::failure, this, [ = ] {
         FlowController::instance()->nextPage();
+    });
+
+    connect(FlowController::instance(), &FlowController::currentPageChanged, this, [ = ](QWidget * page) {
+        //TODO: Check if we should show the animation window
+        if (page == this) {
+            CactusInstallAnimationWindow* window = new CactusInstallAnimationWindow();
+            window->showFullScreen();
+        }
     });
 }
 

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   sodipodi:docname="car-night.svg"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   id="svg5"
+   version="1.1"
+   viewBox="0 0 507.99999 285.75001"
+   height="1080"
+   width="1920"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     units="px"
+     width="1920px"
+     inkscape:zoom="1.5554293"
+     inkscape:cx="1244.9939"
+     inkscape:cy="766.34791"
+     inkscape:window-width="2560"
+     inkscape:window-height="1403"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid824" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid1456"
+       color="#ff3fff"
+       opacity="1"
+       spacingx="508"
+       spacingy="285.75"
+       originx="254"
+       originy="142.875"
+       empcolor="#ff3fff"
+       empopacity="1" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round"
+       id="path5604"
+       cx="221.22864"
+       cy="197.30139"
+       r="14.346788" />
+    <circle
+       style="fill:#505050;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round"
+       id="path5604-23"
+       cx="221.22864"
+       cy="197.30139"
+       r="11.343406" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round"
+       id="path5604-2"
+       cx="282.71494"
+       cy="197.30139"
+       r="14.346788" />
+    <circle
+       style="fill:#505050;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round"
+       id="path5604-23-5"
+       cx="282.83945"
+       cy="197.30421"
+       r="11.343406" />
+    <rect
+       style="fill:#00000c;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round"
+       id="rect7423"
+       width="7.9375"
+       height="17.197916"
+       x="206.7935"
+       y="225.99585"
+       ry="3.96875"
+       transform="rotate(-15)" />
+    <path
+       id="path5284"
+       style="fill:#3b0000;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 840.01367,567.54102 -64.18359,96.27539 -75.83007,0 V 728 l 76.77343,0 c 7.82842,-26.25588 31.96909,-44.25497 59.36718,-44.26367 27.40388,0.002 51.55275,18.00224 59.38282,44.26367 h 113.63866 c 7.8284,-26.25589 31.9691,-44.25498 59.3672,-44.26367 27.4039,0.002 51.5527,18.00225 59.3828,44.26367 H 1185 v -64.18359 h -64.1836 l -80.2305,-96.27539 z M 850,580 h 100 v 84 H 805 Z m 120,0 h 65 l 67,84 H 970 Z"
+       transform="scale(0.26458333)"
+       sodipodi:nodetypes="ccccccccccccccccccccccccc" />
+  </g>
+</svg>
