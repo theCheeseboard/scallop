@@ -140,7 +140,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage8.cpp" line="78"/>
         <source>Welcome to %1!</source>
-        <translation type="unfinished">Bem-vindo a %1!</translation>
+        <translation>Bem-vindo a %1!</translation>
     </message>
 </context>
 <context>
@@ -199,7 +199,7 @@
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="155"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
-        <translation type="unfinished">A próxima vez que você começar o dispositivo, você vai criar um novo usuário e configurar o sistema.</translation>
+        <translation>A próxima vez que você começar o dispositivo, você vai criar um novo usuário e configurar o sistema.</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="167"/>
@@ -431,7 +431,7 @@
     <message>
         <location filename="../pages/encryptpage.ui" line="162"/>
         <source>Use Disk Encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar a Criptografia de Disco</translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="38"/>
@@ -828,7 +828,7 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
     <message>
         <location filename="../popovers/splitpopover.ui" line="35"/>
         <source>Allocate Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Alocar Espaço</translation>
     </message>
     <message>
         <location filename="../popovers/splitpopover.ui" line="45"/>
