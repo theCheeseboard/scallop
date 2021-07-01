@@ -55,7 +55,7 @@
         <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="47"/>
         <source>%1 HQ</source>
         <comment>HQ for Headquarters</comment>
-        <translation type="unfinished"></translation>
+        <translation>Trụ sở chính %1</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage2.cpp" line="48"/>
         <source>...just a little longer! I&apos;ll find the chosen temple this time, I promise!</source>
-        <translation type="unfinished"></translation>
+        <translation>chỉ cần một tí nữa! Tôi sẽ tìm ngôi đền được chọn lần này, tôi hứa!</translation>
     </message>
 </context>
 <context>
@@ -71,7 +71,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="49"/>
         <source>It&apos;s already 9:00. We can&apos;t be waiting all night.</source>
-        <translation type="unfinished"></translation>
+        <translation>9:00 rồi, anh. Anh đang muốn mình chờ cả đêm phải không anh?</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="50"/>
