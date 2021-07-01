@@ -62,27 +62,27 @@
     <message>
         <location filename="../powerpopover.ui" line="35"/>
         <source>Power Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Strøm</translation>
     </message>
     <message>
         <location filename="../powerpopover.ui" line="42"/>
         <source>What do you want to do now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvad ønsker du at gøre?</translation>
     </message>
     <message>
         <location filename="../powerpopover.ui" line="52"/>
         <source>Power Off</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluk</translation>
     </message>
     <message>
         <location filename="../powerpopover.ui" line="59"/>
         <source>Turns off your computer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Slukker din computer.</translation>
     </message>
     <message>
         <location filename="../powerpopover.ui" line="69"/>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Genstart</translation>
     </message>
     <message>
         <location filename="../powerpopover.ui" line="76"/>
