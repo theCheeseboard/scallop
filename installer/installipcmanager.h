@@ -31,6 +31,8 @@ class InstallIpcManager : public QObject {
         static InstallIpcManager* instance();
         static void startInstalling();
 
+        static bool finishedSuccessfully();
+
     signals:
         void messageChanged(QString message);
         void progressChanged(int progress);

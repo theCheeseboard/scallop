@@ -44,31 +44,13 @@
         delete d; \
     }
 
-//#define ANIMATION_INTERP(from, to, duration, changeCallback, then) { \
-//        tVariantAnimation* anim = new tVariantAnimation(); \
-//        anim->setStartValue(from); \
-//        anim->setEndValue(to); \
-//        anim->setDuration(duration); \
-//        anim->setEasingCurve(QEasingCurve::OutCubic); \
-//        QObject::connect(anim, &tVariantAnimation::valueChanged, this, [=](QVariant value) {changeCallback}); \
-//        QObject::connect(anim, &tVariantAnimation::finished, this, [=] { \
-//                anim->deleteLater(); \
-//                then; \
-//            }); \
-//        anim->start(); \
-//    }
-
-//#define ANIMATION_INTERP_BLOCKING(from, to, duration, changeCallback) { \
-//        QEventLoop* loop = new QEventLoop(); \
-//        ANIMATION_INTERP(from, to, duration, changeCallback, loop->exit()) \
-//        loop->exec(); \
-//        loop->deleteLater(); \
-//    }
-
 NEW_ANIMATION_STAGE(AnimationStage1)
 NEW_ANIMATION_STAGE(AnimationStage2)
 NEW_ANIMATION_STAGE(AnimationStage3)
 NEW_ANIMATION_STAGE(AnimationStage4)
 NEW_ANIMATION_STAGE(AnimationStage5)
+NEW_ANIMATION_STAGE(AnimationStage6)
+NEW_ANIMATION_STAGE(AnimationStage7)
+NEW_ANIMATION_STAGE(AnimationStage8)
 
 #endif // ANIMATIONSTAGES_H

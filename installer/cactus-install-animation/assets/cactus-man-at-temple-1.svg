@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   sodipodi:docname="cactus-man-at-temple-1.svg"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   id="svg5"
+   version="1.1"
+   viewBox="0 0 507.99999 285.75001"
+   height="1080"
+   width="1920"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     units="px"
+     width="1920px"
+     inkscape:zoom="0.77771465"
+     inkscape:cx="1200.3117"
+     inkscape:cy="716.20099"
+     inkscape:window-width="2560"
+     inkscape:window-height="1403"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid824" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid1456"
+       color="#ff3fff"
+       opacity="1"
+       spacingx="508"
+       spacingy="285.75"
+       originx="254"
+       originy="142.875"
+       empcolor="#ff3fff"
+       empopacity="1" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path924"
+       style="fill:#00000c;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="m 179.91667,189.11559 v 11.96774 c 3.36284,0.0113 5.94738,2.61669 5.94744,5.98258 a 5.983125,5.983125 0 0 0 0.004,0.21343 v 5.76657 11.96826 c -6e-5,3.31417 2.66514,5.98195 5.97948,5.98207 1.65728,-1.2e-4 3.15724,-0.66816 4.2385,-1.74977 1.08127,-1.08149 1.74718,-2.57519 1.74718,-4.2323 v -11.96516 -5.98258 h -0.003 c -8.5e-4,-9.83113 -8.08512,-17.9327 -17.91363,-17.95084 z" />
+    <path
+       id="path3701"
+       style="fill:#00000c;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="M 680 654.66211 L 680 654.69727 L 680.00391 654.66211 C 680.00227 654.66219 680.00157 654.66203 680 654.66211 z "
+       transform="scale(0.26458333)" />
+    <path
+       id="path3699"
+       style="fill:#00000c;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="m 161.94464,153.19685 -0.0103,5.2e-4 c -9.94308,6e-5 -17.94774,8.00478 -17.94774,17.94774 v 53.84271 c 0,9.94302 8.00478,17.94769 17.94774,17.94774 9.94296,-5e-5 17.94718,-8.00478 17.94723,-17.94774 l -0.003,-23.92722 a 5.9840092,5.9840092 0 0 0 0.0114,-5.2e-4 c 0.006,6.2e-4 0.0166,-0.001 0.0222,-0.005 l 0.004,0.0284 v -11.96774 c -6.9e-4,0 -0.001,0 -0.002,0 l 0.002,-0.0186 v -0.009 c -0.0105,5.4e-4 -0.0163,8.1e-4 -0.0217,0.005 a 5.9840092,5.9840092 0 0 0 -0.006,-5.1e-4 V 171.1423 c -5e-5,-4.97146 -1.99998,-9.45747 -5.24361,-12.70103 -3.24351,-3.24357 -7.72957,-5.2435 -12.70103,-5.24361 z m 8.97619,14.2844 a 4.233333,4.233333 0 0 1 4.23334,4.23333 4.233333,4.233333 0 0 1 -4.23334,4.23334 4.233333,4.233333 0 0 1 -4.23333,-4.23334 4.233333,4.233333 0 0 1 4.23333,-4.23333 z m -17.99166,0.26458 a 4.233333,4.233333 0 0 1 4.23333,4.23334 4.233333,4.233333 0 0 1 -4.23333,4.23333 4.233333,4.233333 0 0 1 -4.23334,-4.23333 4.233333,4.233333 0 0 1 4.23334,-4.23334 z m 9.03459,10.00146 -5.2e-4,0.006 c 3.17144,0 6.21084,1.25746 8.45375,3.49952 a 2.991563,2.991563 0 0 1 -2.07378,5.14387 2.991563,2.991563 0 0 1 -2.15284,-0.91415 c -1.12276,-1.1227 -2.63932,-1.74718 -4.22713,-1.74718 -1.58781,0 -3.10695,0.62449 -4.22972,1.74718 a 2.991563,2.991563 0 0 1 -4.29121,0.0729 2.991563,2.991563 0 0 1 -0.0114,-0.0171 2.991563,2.991563 0 0 1 0.076,-4.29121 c 2.24302,-2.24302 5.28462,-3.49959 8.45685,-3.49953 z" />
+  </g>
+</svg>

@@ -17,28 +17,27 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#include "pauseelement.h"
+#ifndef LOOPELEMENT_H
+#define LOOPELEMENT_H
 
-#include <QRandomGenerator>
-#include <QTimer>
+#include "sequencerelement.h"
 
-struct PauseElementPrivate {
-    int ms;
+struct LoopElementPrivate;
+class LoopElement : public SequencerElement {
+        Q_OBJECT
+    public:
+        explicit LoopElement(SequencerElement* toLoop, int loopTimes, QObject* parent = nullptr);
+        ~LoopElement();
+
+    signals:
+
+    private:
+        LoopElementPrivate* d;
+
+        // SequencerElement interface
+    public:
+        void run();
+        void render(QPainter* painter, QRect rect);
 };
 
-PauseElement::PauseElement(int ms, QObject* parent) : SequencerElement(parent) {
-    d = new PauseElementPrivate();
-    d->ms = ms;
-}
-
-PauseElement::~PauseElement() {
-    delete d;
-}
-
-void PauseElement::run() {
-    if (d->ms < 0) {
-        QTimer::singleShot(QRandomGenerator::system()->bounded(-d->ms), this, &PauseElement::done);
-    } else {
-        QTimer::singleShot(d->ms, this, &PauseElement::done);
-    }
-}
+#endif // LOOPELEMENT_H

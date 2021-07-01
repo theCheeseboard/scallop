@@ -45,6 +45,7 @@ ParallelElement::~ParallelElement() {
 }
 
 void ParallelElement::run() {
+    d->doneCount = 0;
     for (SequencerElement* element : qAsConst(d->elements)) element->run();
 }
 

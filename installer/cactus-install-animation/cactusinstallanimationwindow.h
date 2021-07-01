@@ -38,9 +38,17 @@ class CactusInstallAnimationWindow : public QDialog {
         Ui::CactusInstallAnimationWindow* ui;
         CactusInstallAnimationWindowPrivate* d;
 
+    private slots:
+        void on_rebootButton_clicked();
+        void on_powerOffButton_clicked();
+
+        // QObject interface
+    public:
+        bool eventFilter(QObject* watched, QEvent* event);
+
         // QWidget interface
     protected:
-        void paintEvent(QPaintEvent* event);
+        void resizeEvent(QResizeEvent* event);
 };
 
 #endif // CACTUSINSTALLANIMATIONWINDOW_H

@@ -45,7 +45,7 @@ void AnimationStage2::start() {
             d->backgroundOpacity = value.toDouble();
         }),
         new PauseElement(500),
-        new TextBoxElement(new TextBox(tr("...so do you think any more people will install %1 today?").arg(InstallerData::systemName()))),
+        new TextBoxElement(new TextBox({tr("...just a little longer! I'll find the chosen temple this time, I promise!")})),
         new PauseElement(100),
         new AnimationElement(1.0, 0.0, 500, [ = ](QVariant value) {
             d->backgroundOpacity = value.toDouble();

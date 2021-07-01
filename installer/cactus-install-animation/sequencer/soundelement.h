@@ -17,28 +17,26 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#include "pauseelement.h"
+#ifndef SOUNDELEMENT_H
+#define SOUNDELEMENT_H
 
-#include <QRandomGenerator>
-#include <QTimer>
+#include "sequencerelement.h"
 
-struct PauseElementPrivate {
-    int ms;
+struct SoundElementPrivate;
+class SoundElement : public SequencerElement {
+        Q_OBJECT
+    public:
+        explicit SoundElement(QString soundFile, QObject* parent = nullptr);
+        ~SoundElement();
+
+    signals:
+
+    private:
+        SoundElementPrivate* d;
+
+        // SequencerElement interface
+    public:
+        void run();
 };
 
-PauseElement::PauseElement(int ms, QObject* parent) : SequencerElement(parent) {
-    d = new PauseElementPrivate();
-    d->ms = ms;
-}
-
-PauseElement::~PauseElement() {
-    delete d;
-}
-
-void PauseElement::run() {
-    if (d->ms < 0) {
-        QTimer::singleShot(QRandomGenerator::system()->bounded(-d->ms), this, &PauseElement::done);
-    } else {
-        QTimer::singleShot(d->ms, this, &PauseElement::done);
-    }
-}
+#endif // SOUNDELEMENT_H

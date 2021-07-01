@@ -32,7 +32,7 @@ class TextBox : public QObject {
             RobotCharacter
         };
 
-        explicit TextBox(QString text, TextBoxType type = NormalCharacter, QObject* parent = nullptr);
+        explicit TextBox(QStringList textParts, TextBoxType type = NormalCharacter, QObject* parent = nullptr);
         ~TextBox();
 
         void trigger();

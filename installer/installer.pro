@@ -1,4 +1,4 @@
-QT       += core gui thelib frisbee svg
+QT       += core gui thelib frisbee svg multimedia
 SHARE_APP_NAME = scallop/install-system
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -13,19 +13,26 @@ TARGET = scallop-install-system
 SOURCES += \
     cactus-install-animation/cactusanimationstage.cpp \
     cactus-install-animation/cactusinstallanimationwindow.cpp \
+    cactus-install-animation/parallaxobject.cpp \
     cactus-install-animation/sequencer.cpp \
     cactus-install-animation/sequencer/animationelement.cpp \
     cactus-install-animation/sequencer/functionelement.cpp \
+    cactus-install-animation/sequencer/loopelement.cpp \
     cactus-install-animation/sequencer/parallelelement.cpp \
     cactus-install-animation/sequencer/pauseelement.cpp \
+    cactus-install-animation/sequencer/randomelement.cpp \
     cactus-install-animation/sequencer/sequencerelement.cpp \
     cactus-install-animation/sequencer/sequentialelement.cpp \
+    cactus-install-animation/sequencer/soundelement.cpp \
     cactus-install-animation/sequencer/textboxelement.cpp \
     cactus-install-animation/stages/animationstage1.cpp \
     cactus-install-animation/stages/animationstage2.cpp \
     cactus-install-animation/stages/animationstage3.cpp \
     cactus-install-animation/stages/animationstage4.cpp \
     cactus-install-animation/stages/animationstage5.cpp \
+    cactus-install-animation/stages/animationstage6.cpp \
+    cactus-install-animation/stages/animationstage7.cpp \
+    cactus-install-animation/stages/animationstage8.cpp \
     cactus-install-animation/textbox.cpp \
     cactus-install-animation/zoomsvgrenderer.cpp \
     diskmodel.cpp \
@@ -59,13 +66,17 @@ SOURCES += \
 HEADERS += \
     cactus-install-animation/cactusanimationstage.h \
     cactus-install-animation/cactusinstallanimationwindow.h \
+    cactus-install-animation/parallaxobject.h \
     cactus-install-animation/sequencer.h \
     cactus-install-animation/sequencer/animationelement.h \
     cactus-install-animation/sequencer/functionelement.h \
+    cactus-install-animation/sequencer/loopelement.h \
     cactus-install-animation/sequencer/parallelelement.h \
     cactus-install-animation/sequencer/pauseelement.h \
+    cactus-install-animation/sequencer/randomelement.h \
     cactus-install-animation/sequencer/sequencerelement.h \
     cactus-install-animation/sequencer/sequentialelement.h \
+    cactus-install-animation/sequencer/soundelement.h \
     cactus-install-animation/sequencer/textboxelement.h \
     cactus-install-animation/stages/animationstages.h \
     cactus-install-animation/textbox.h \

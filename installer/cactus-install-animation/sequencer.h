@@ -28,6 +28,9 @@
 #include "sequencer/textboxelement.h"
 #include "sequencer/parallelelement.h"
 #include "sequencer/sequentialelement.h"
+#include "sequencer/loopelement.h"
+#include "sequencer/randomelement.h"
+#include "sequencer/soundelement.h"
 
 struct SequencerPrivate;
 class Sequencer : public QObject {

@@ -62,29 +62,85 @@
     <name>AnimationStage2</name>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage2.cpp" line="48"/>
-        <source>...so do you think any more people will install %1 today?</source>
+        <source>...just a little longer! I&apos;ll find the chosen temple this time, I promise!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>AnimationStage3</name>
     <message>
-        <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="48"/>
-        <source>It&apos;s already 9:00 at night. I think we should wrap up for the night.</source>
+        <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="49"/>
+        <source>It&apos;s already 9:00. We can&apos;t be waiting all night.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="50"/>
+        <source>Let&apos;s get some rest and we can try again in the morning.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>AnimationStage4</name>
     <message>
-        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="60"/>
-        <source>[%1 INSTALL DETECTED! DELIVER IMMEDIATELY!]</source>
+        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="61"/>
+        <source>[CHOSEN TEMPLE FOUND!]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="69"/>
+        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="62"/>
+        <source>[INSTALL THE %1 CUBE IN THE TEMPLE]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="63"/>
+        <source>[DO THIS, AND YOU WILL BE SHOWERED WITH RICHES]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="73"/>
         <source>Never mind then. Let&apos;s hit the road!</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AnimationStage7</name>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="69"/>
+        <source>ARE YOU OKAY???</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="70"/>
+        <source>I&apos;m fine. Where are we?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="79"/>
+        <source>[PLEASE INSTALL THE %1 CUBE]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="82"/>
+        <source>Quick, the %1 cube!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="122"/>
+        <source>Did we do it??</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="139"/>
+        <source>[%1 CUBE ACCEPTED]</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AnimationStage8</name>
+    <message>
+        <location filename="../cactus-install-animation/stages/animationstage8.cpp" line="78"/>
+        <source>Welcome to %1!</source>
+        <translation type="unfinished">Chào mừng bạn với %1!</translation>
     </message>
 </context>
 <context>
@@ -141,7 +197,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="46"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="111"/>
+        <source>INSTALLATION COMPLETE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="124"/>
+        <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
+        <translation type="unfinished">Lần sau bạn khởi động thiết bị này, bạn sẽ bị yêu cầu tạo người dùng mới, và thiết lập hệ thống của bạn.</translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="136"/>
+        <source>Power Off</source>
+        <translation type="unfinished">Tắt nguồn</translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="146"/>
+        <source>Reboot</source>
+        <translation type="unfinished">Khởi động lại</translation>
+    </message>
+    <message>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="89"/>
         <source>Preparing for installation</source>
         <translation type="unfinished">Đang chuẩn bị cài đặt</translation>
     </message>
@@ -554,7 +630,7 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
 <context>
     <name>InstallIpcManager</name>
     <message>
-        <location filename="../installipcmanager.cpp" line="41"/>
+        <location filename="../installipcmanager.cpp" line="46"/>
         <source>Starting Installation...</source>
         <translation>Bắt đầu cài đặt...</translation>
     </message>

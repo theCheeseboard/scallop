@@ -9,5 +9,22 @@
         <file alias="outdoors-night.svg">cactus-install-animation/assets/outdoors-night.svg</file>
         <file alias="car-night.svg">cactus-install-animation/assets/car-night.svg</file>
         <file alias="road-night.svg">cactus-install-animation/assets/road-night.svg</file>
+        <file alias="outdoors-day.svg">cactus-install-animation/assets/outdoors-day.svg</file>
+        <file alias="object-building.svg">cactus-install-animation/assets/object-building.svg</file>
+        <file alias="object-building2.svg">cactus-install-animation/assets/object-building2.svg</file>
+        <file alias="object-tower.svg">cactus-install-animation/assets/object-tower.svg</file>
+        <file alias="car-crash.wav">cactus-install-animation/assets/car-crash.wav</file>
+        <file alias="temple.svg">cactus-install-animation/assets/temple.svg</file>
+        <file alias="temple-reveal.svg">cactus-install-animation/assets/temple-reveal.svg</file>
+        <file alias="cactus-man-at-temple-1.svg">cactus-install-animation/assets/cactus-man-at-temple-1.svg</file>
+        <file alias="cactus-man-throw-1.svg">cactus-install-animation/assets/cactus-man-throw-1.svg</file>
+        <file alias="cactus-man-at-temple-2.svg">cactus-install-animation/assets/cactus-man-at-temple-2.svg</file>
+        <file alias="cactus-man-throw-2.svg">cactus-install-animation/assets/cactus-man-throw-2.svg</file>
+        <file alias="cactus-man-throw-3.svg">cactus-install-animation/assets/cactus-man-throw-3.svg</file>
+        <file alias="cactus-man-throw-4.svg">cactus-install-animation/assets/cactus-man-throw-4.svg</file>
+        <file alias="cactus-man-throw-5.svg">cactus-install-animation/assets/cactus-man-throw-5.svg</file>
+        <file alias="cactus-man-throw-6.svg">cactus-install-animation/assets/cactus-man-throw-6.svg</file>
+        <file alias="cactus-man-throw-7.svg">cactus-install-animation/assets/cactus-man-throw-7.svg</file>
+        <file alias="cactus-man-throw-8.svg">cactus-install-animation/assets/cactus-man-throw-8.svg</file>
     </qresource>
 </RCC>

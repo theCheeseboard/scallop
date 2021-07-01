@@ -26,7 +26,7 @@
 #include "sequencer.h"
 
 struct TextBoxPrivate {
-    QString text;
+    QStringList textParts;
     TextBox::TextBoxType type;
     ZoomSvgRenderer* boxRenderer;
 
@@ -37,9 +37,9 @@ struct TextBoxPrivate {
     bool isRunning = false;
 };
 
-TextBox::TextBox(QString text, TextBoxType type, QObject* parent) : QObject(parent) {
+TextBox::TextBox(QStringList textParts, TextBoxType type, QObject* parent) : QObject(parent) {
     d = new TextBoxPrivate();
-    d->text = text;
+    d->textParts = textParts;
     d->type = type;
 
     switch (type) {
@@ -65,17 +65,22 @@ void TextBox::trigger() {
         d->maxWidth = value.toDouble();
     }));
 
-    for (QChar c : qAsConst(d->text)) {
-        sequencer->addElement({
-            new FunctionElement([ = ] {
-                d->currentText += c;
-            }),
-            new PauseElement(50)
-        });
+    for (const QString& text : qAsConst(d->textParts)) {
+        sequencer->addElement(new FunctionElement([ = ] {
+            d->currentText = "";
+        }));
+        for (QChar c : text) {
+            sequencer->addElement({
+                new FunctionElement([ = ] {
+                    d->currentText += c;
+                }),
+                new PauseElement(50)
+            });
+        }
+        sequencer->addElement(new PauseElement(3000));
     }
 
     sequencer->addElement({
-        new PauseElement(3000),
         new AnimationElement(SC_DPI(800), 0, 200, [ = ](QVariant value) {
             d->maxWidth = value.toDouble();
         }),

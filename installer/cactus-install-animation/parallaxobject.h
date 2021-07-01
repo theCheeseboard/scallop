@@ -17,28 +17,27 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#include "pauseelement.h"
+#ifndef PARALLAXOBJECT_H
+#define PARALLAXOBJECT_H
 
-#include <QRandomGenerator>
-#include <QTimer>
+#include <QObject>
+#include "zoomsvgrenderer.h"
 
-struct PauseElementPrivate {
-    int ms;
+struct ParallaxObjectPrivate;
+class ParallaxObject : public QObject {
+        Q_OBJECT
+    public:
+        explicit ParallaxObject(ZoomSvgRenderer* renderer, double speed, QObject* parent = nullptr);
+        ~ParallaxObject();
+
+        void render(QPainter* painter, QRect rect);
+
+    signals:
+        void requestRender();
+        void done();
+
+    private:
+        ParallaxObjectPrivate* d;
 };
 
-PauseElement::PauseElement(int ms, QObject* parent) : SequencerElement(parent) {
-    d = new PauseElementPrivate();
-    d->ms = ms;
-}
-
-PauseElement::~PauseElement() {
-    delete d;
-}
-
-void PauseElement::run() {
-    if (d->ms < 0) {
-        QTimer::singleShot(QRandomGenerator::system()->bounded(-d->ms), this, &PauseElement::done);
-    } else {
-        QTimer::singleShot(d->ms, this, &PauseElement::done);
-    }
-}
+#endif // PARALLAXOBJECT_H

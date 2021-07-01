@@ -26,10 +26,15 @@
 
 struct InstallIpcManagerPrivate {
     QProcess* installerProcess;
+    bool finishedSuccessfully = false;
 };
 
 InstallIpcManager::InstallIpcManager(QObject* parent) : QObject(parent) {
     d = new InstallIpcManagerPrivate();
+
+    connect(this, &InstallIpcManager::success, this, [ = ] {
+        d->finishedSuccessfully = true;
+    });
 }
 
 InstallIpcManager* InstallIpcManager::instance() {
@@ -84,4 +89,8 @@ void InstallIpcManager::startInstalling() {
     installerProcess->start("sudo", {QCoreApplication::applicationFilePath(), "--install"});
     installerProcess->write(InstallerData::exportData());
     installerProcess->closeWriteChannel();
+}
+
+bool InstallIpcManager::finishedSuccessfully() {
+    return instance()->d->finishedSuccessfully;
 }

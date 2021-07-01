@@ -47,9 +47,9 @@ int main(int argc, char* argv[]) {
         p->probe(parser.value("probe"));
         return 0;
     } else {
-        CactusInstallAnimationWindow* window = new CactusInstallAnimationWindow();
-        window->resize(1920, 1080);
-        window->show();
+//        CactusInstallAnimationWindow* window = new CactusInstallAnimationWindow();
+//        window->resize(1920, 1080);
+//        window->show();
         MainWindow* w = new MainWindow();
         w->show();
     }

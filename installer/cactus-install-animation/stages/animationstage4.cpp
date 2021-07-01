@@ -57,7 +57,11 @@ void AnimationStage4::start() {
                 new FunctionElement([ = ] {d->renderOffset = QPoint(-50, -50);}),
                 new PauseElement(50),
                 new FunctionElement([ = ] {d->renderOffset = QPoint(0, 0);}),
-                new TextBoxElement(new TextBox(tr("[%1 INSTALL DETECTED! DELIVER IMMEDIATELY!]").arg(InstallerData::systemName()).toUpper(), TextBox::RobotCharacter)),
+                new TextBoxElement(new TextBox({
+                    tr("[CHOSEN TEMPLE FOUND!]"),
+                    tr("[INSTALL THE %1 CUBE IN THE TEMPLE]").arg(InstallerData::systemName()).toUpper(),
+                    tr("[DO THIS, AND YOU WILL BE SHOWERED WITH RICHES]")
+                }, TextBox::RobotCharacter)),
             }),
             new AnimationElement(1.0, 0.0, 500, [ = ](QVariant value) {
                 d->whiteFlashOpacity = value.toDouble();
@@ -66,7 +70,7 @@ void AnimationStage4::start() {
         new FunctionElement([ = ] {
             d->showBubbles = false;
         }),
-        new TextBoxElement(new TextBox(tr("Never mind then. Let's hit the road!"))),
+        new TextBoxElement(new TextBox({tr("Never mind then. Let's hit the road!")})),
         new ParallelElement({
             new AnimationElement(0.0, -0.5, 1000, [ = ](QVariant value) {
                 d->renderOffsetHeightPerc = value.toDouble();

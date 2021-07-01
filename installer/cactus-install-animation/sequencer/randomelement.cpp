@@ -17,42 +17,34 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#include "sequentialelement.h"
+#include "randomelement.h"
 
+#include <QRandomGenerator>
 #include <QRect>
 
-struct SequentialElementPrivate {
+struct RandomElementPrivate {
     QList<SequencerElement*> elements;
-    int doneCount = 0;
 };
 
-SequentialElement::SequentialElement(QList<SequencerElement*> elements, QObject* parent) : SequencerElement(parent) {
-    d = new SequentialElementPrivate();
+RandomElement::RandomElement(QList<SequencerElement*> elements, QObject* parent) : SequencerElement(parent) {
+    d = new RandomElementPrivate();
     d->elements = elements;
     for (SequencerElement* element : qAsConst(elements)) {
-        connect(element, &SequencerElement::requestRender, this, &SequentialElement::requestRender);
-        connect(element, &SequencerElement::done, this, [ = ] {
-            d->doneCount++;
-            if (d->elements.count() == d->doneCount) {
-                emit done();
-            } else {
-                d->elements.at(d->doneCount)->run();
-            }
-        });
+        connect(element, &SequencerElement::requestRender, this, &SequencerElement::requestRender);
+        connect(element, &SequencerElement::done, this, &RandomElement::done);
     }
 }
 
-SequentialElement::~SequentialElement() {
+RandomElement::~RandomElement() {
     for (SequencerElement* element : qAsConst(d->elements)) element->deleteLater();
     delete d;
 }
 
-
-void SequentialElement::run() {
-    d->doneCount = 0;
-    d->elements.first()->run();
+void RandomElement::run() {
+    SequencerElement* selected = d->elements.at(QRandomGenerator::system()->bounded(d->elements.length()));
+    selected->run();
 }
 
-void SequentialElement::render(QPainter* painter, QRect rect) {
+void RandomElement::render(QPainter* painter, QRect rect) {
     for (SequencerElement* element : qAsConst(d->elements)) element->render(painter, rect);
 }

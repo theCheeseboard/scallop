@@ -20,6 +20,9 @@
 #include "cactusinstallanimationwindow.h"
 #include "ui_cactusinstallanimationwindow.h"
 
+#include <QShortcut>
+#include <tlogger.h>
+
 #include "cactusanimationstage.h"
 #include "installipcmanager.h"
 
@@ -32,6 +35,8 @@
 struct CactusInstallAnimationWindowPrivate {
     QList<CactusAnimationStage*> stages;
     int currentStage = 0;
+
+    QWidget* drawWidget;
 };
 
 CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
@@ -40,26 +45,25 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
     ui->setupUi(this);
     d = new CactusInstallAnimationWindowPrivate();
 
+    QShortcut* debugLogShortcut = new QShortcut(QKeySequence(Qt::ControlModifier | Qt::Key_L), this);
+    connect(debugLogShortcut, &QShortcut::activated, this, [ = ] {
+        tLogger::openDebugLogWindow();
+    });
+
+    d->drawWidget = new QWidget(this);
+    d->drawWidget->move(0, 0);
+    d->drawWidget->resize(this->size());
+    d->drawWidget->show();
+    d->drawWidget->installEventFilter(this);
+    d->drawWidget->lower();
+
     FinishedPage* finishedPage = new FinishedPage();
     finishedPage->setVisible(false);
 
-    ui->installDescription->setText(tr("Preparing for installation"));
-    connect(InstallIpcManager::instance(), &InstallIpcManager::messageChanged, this, [ = ](QString message) {
-        ui->installDescription->setText(message);
-    });
-    connect(InstallIpcManager::instance(), &InstallIpcManager::progressChanged, this, [ = ](int progress) {
-        if (progress < 0) {
-            ui->progressBar->setMaximum(0);
-        } else {
-            ui->progressBar->setMaximum(100);
-            ui->progressBar->setValue(progress);
-        }
-    });
-    connect(InstallIpcManager::instance(), &InstallIpcManager::success, this, [ = ] {
-        //Cue the success animation
-    });
-    connect(InstallIpcManager::instance(), &InstallIpcManager::failure, this, [ = ] {
-        //Show a failure dialog
+    ui->stackedWidget->setCurrentAnimation(tStackedWidget::Lift);
+
+    auto showFinishedPage = [ = ] {
+//        tScrim::scrimForWidget(this)->setBlurEnabled(false);
         tScrim::scrimForWidget(this)->show();
 
         QFrame* frame = new QFrame(this);
@@ -76,12 +80,33 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
         geom.moveCenter(QRect(QPoint(0, 0), this->size()).center());
         frame->setGeometry(geom);
 
+        frame->setAutoFillBackground(true);
         frame->show();
         frame->raise();
         finishedPage->show();
+    };
+
+    ui->installDescription->setText(tr("Preparing for installation"));
+    connect(InstallIpcManager::instance(), &InstallIpcManager::messageChanged, this, [ = ](QString message) {
+        ui->installDescription->setText(message);
+    });
+    connect(InstallIpcManager::instance(), &InstallIpcManager::progressChanged, this, [ = ](int progress) {
+        if (progress < 0) {
+            ui->progressBar->setMaximum(0);
+        } else {
+            ui->progressBar->setMaximum(100);
+            ui->progressBar->setValue(progress);
+        }
+    });
+    connect(InstallIpcManager::instance(), &InstallIpcManager::success, this, [ = ] {
+        //Cue the success animation
+        ui->stackedWidget->setCurrentWidget(ui->installCompletePage);
+    });
+    connect(InstallIpcManager::instance(), &InstallIpcManager::failure, this, [ = ] {
+        showFinishedPage();
     });
 
-    QTimer::singleShot(10000, InstallIpcManager::instance(), &InstallIpcManager::failure);
+//    QTimer::singleShot(60000, InstallIpcManager::instance(), &InstallIpcManager::success);
 
     QPalette pal = this->palette();
     pal.setColor(QPalette::Window, Qt::black);
@@ -90,17 +115,23 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
 
     d->stages = {
         new AnimationStage1(),
-//        new AnimationStage2(),
-//        new AnimationStage3(),
+        new AnimationStage2(),
+        new AnimationStage3(),
         new AnimationStage4(),
-        new AnimationStage5()
+        new AnimationStage5(),
+        new AnimationStage6(),
+        new AnimationStage7(),
+        new AnimationStage8()
     };
     for (CactusAnimationStage* stage : d->stages) {
         connect(stage, &CactusAnimationStage::stageComplete, this, [ = ] {
-            if (d->currentStage == d->stages.count() - 1) return;
-            d->currentStage++;
-            d->stages.at(d->currentStage)->start();
-            this->update();
+            if (d->currentStage == d->stages.count() - 1) {
+                showFinishedPage();
+            } else {
+                d->currentStage++;
+                d->stages.at(d->currentStage)->start();
+                this->update();
+            }
         });
         connect(stage, &CactusAnimationStage::requestRender, this, [ = ] {
             this->update();
@@ -128,7 +159,29 @@ CactusInstallAnimationWindow::~CactusInstallAnimationWindow() {
     delete ui;
 }
 
-void CactusInstallAnimationWindow::paintEvent(QPaintEvent* event) {
-    QPainter painter(this);
-    d->stages.at(d->currentStage)->render(&painter, this->size());
+void CactusInstallAnimationWindow::on_rebootButton_clicked() {
+    QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", "Reboot");
+    message.setArguments({true});
+    QDBusConnection::systemBus().call(message);
+}
+
+
+void CactusInstallAnimationWindow::on_powerOffButton_clicked() {
+    QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", "PowerOff");
+    message.setArguments({true});
+    QDBusConnection::systemBus().call(message);
+}
+
+
+
+bool CactusInstallAnimationWindow::eventFilter(QObject* watched, QEvent* event) {
+    if (watched == d->drawWidget && event->type() == QEvent::Paint) {
+        QPainter painter(d->drawWidget);
+        d->stages.at(d->currentStage)->render(&painter, d->drawWidget->size());
+    }
+    return QDialog::eventFilter(watched, event);
+}
+
+void CactusInstallAnimationWindow::resizeEvent(QResizeEvent* event) {
+    d->drawWidget->resize(this->size());
 }

@@ -25,31 +25,27 @@
 #include "../textbox.h"
 #include <tpromise.h>
 
-struct AnimationStage3Private {
-    double backgroundOpacity = 0;
-    double whiteFlashOpacity = 0;
-    ZoomSvgRenderer* backgroundRenderer = new ZoomSvgRenderer(":/installanim/inside-hq-night.svg");
+struct AnimationStage8Private {
     Sequencer* sequencer;
-
-    QPoint renderOffset;
+    double opacity = 0;
+    int textOffset = 0;
 };
 
-ANIMATION_STAGE_BOILERPLATE(AnimationStage3)
+ANIMATION_STAGE_BOILERPLATE(AnimationStage8)
 
-void AnimationStage3::start() {
-
+void AnimationStage8::start() {
     d->sequencer = new Sequencer(this);
-    d->sequencer->addElement(new AnimationElement(0.0, 1.0, 500, [ = ](QVariant value) {
-        d->backgroundOpacity = value.toDouble();
-    }));
 
     d->sequencer->addElement({
-        new PauseElement(500),
-        new TextBoxElement(new TextBox({
-            tr("It's already 9:00. We can't be waiting all night."),
-            tr("Let's get some rest and we can try again in the morning.")
-        })),
-        new PauseElement(100)
+        new ParallelElement({
+            new AnimationElement(0.0, 1.0, 3000, [ = ](QVariant value) {
+                d->opacity = value.toDouble();
+            }, QEasingCurve::InCubic),
+            new AnimationElement(100, 0, 3000, [ = ](QVariant value) {
+                d->textOffset = value.toInt();
+            }, QEasingCurve::OutCubic)
+        }),
+        new PauseElement(300)
     });
 
     connect(d->sequencer, &Sequencer::requestRender, this, &CactusAnimationStage::requestRender);
@@ -57,19 +53,27 @@ void AnimationStage3::start() {
     d->sequencer->start();
 }
 
-void AnimationStage3::render(QPainter* painter, QSize size) {
+void AnimationStage8::render(QPainter* painter, QSize size) {
     QRect renderRect(0, 0, size.width(), size.height());
 
-    painter->fillRect(renderRect, Qt::black);
-    painter->setPen(Qt::white);
-    painter->setOpacity(d->backgroundOpacity);
-
-    QRect backgroundRect = renderRect;
-    backgroundRect.setTopLeft(backgroundRect.topLeft() + d->renderOffset);
-    d->backgroundRenderer->render(painter, backgroundRect);
-
-    d->sequencer->render(painter, renderRect);
-
-    painter->setOpacity(d->whiteFlashOpacity);
     painter->fillRect(renderRect, Qt::white);
+
+    QFont font("JetBrains Mono");
+    font.setPixelSize(size.height() / 20);
+    painter->setFont(font);
+
+    QFontMetrics metrics(font);
+
+    painter->setPen(Qt::black);
+    painter->setOpacity(d->opacity);
+
+    QRect textRect;
+    textRect.setWidth(size.width());
+    textRect.setHeight(metrics.height());
+    textRect.moveCenter(renderRect.center());
+    textRect.moveBottom(renderRect.center().y());
+
+    textRect.moveTop(textRect.top() + d->textOffset);
+
+    painter->drawText(textRect, Qt::AlignCenter, tr("Welcome to %1!").arg(InstallerData::systemName()));
 }
