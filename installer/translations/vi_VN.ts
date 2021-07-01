@@ -361,11 +361,6 @@
 <context>
     <name>DiskTypePage</name>
     <message>
-        <location filename="../pages/disktypepage.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../pages/disktypepage.ui" line="35"/>
         <source>Installation Type</source>
         <translation>Kiểu cài đặt</translation>
