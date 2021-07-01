@@ -89,17 +89,17 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="61"/>
         <source>[INSTALL THE %1 CUBE IN THE TEMPLE]</source>
-        <translation>[INSTALLER %1-</translation>
+        <translation>[INSTALLER %1-KUBEN I TEMPLET]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="62"/>
         <source>[DO THIS, AND YOU WILL BE SHOWERED WITH RICHES]</source>
-        <translation type="unfinished"></translation>
+        <translation>[GØR DETTE, OG DU VIL BLIVE BADET I RIGDOMME]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="73"/>
         <source>Never mind then. Let&apos;s hit the road!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nåh, det må vente. Lad os komme afsted!</translation>
     </message>
 </context>
 <context>
@@ -107,32 +107,32 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="69"/>
         <source>ARE YOU OKAY???</source>
-        <translation type="unfinished"></translation>
+        <translation>ER DU OKAY???</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="70"/>
         <source>I&apos;m fine. Where are we?</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg har det fint. Hvor er vi?</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="79"/>
         <source>[PLEASE INSTALL THE %1 CUBE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[VÆR VENLIG AT INSTALLER %1-KUBEN]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="82"/>
         <source>Quick, the %1 cube!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hurtigt, %1-kuben!</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="122"/>
         <source>Did we do it??</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjorde vi det??</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="139"/>
         <source>[%1 CUBE ACCEPTED]</source>
-        <translation type="unfinished"></translation>
+        <translation>[%1-KUBE ACCEPTERET]</translation>
     </message>
 </context>
 <context>
@@ -140,7 +140,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage8.cpp" line="78"/>
         <source>Welcome to %1!</source>
-        <translation type="unfinished"></translation>
+        <translation>Velkommen til %1!</translation>
     </message>
 </context>
 <context>
@@ -149,44 +149,44 @@
         <location filename="../install/bootloaderstate.cpp" line="38"/>
         <location filename="../install/bootloaderstate.cpp" line="77"/>
         <source>Configuring Bootloader...</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurerer bootloader...</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="83"/>
         <source>Failed to create the GRUB Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke konfigurere GRUB</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="102"/>
         <source>Generating machine ID...</source>
-        <translation type="unfinished"></translation>
+        <translation>Genererer computer-ID...</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="108"/>
         <location filename="../install/bootloaderstate.cpp" line="130"/>
         <source>Failed to install systemd-boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke installere bootloaderen</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="123"/>
         <location filename="../install/bootloaderstate.cpp" line="174"/>
         <source>Installing the bootloader...</source>
-        <translation type="unfinished"></translation>
+        <translation>Installerer bootloaderen...</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="162"/>
         <source>Installing bootloader to</source>
-        <translation type="unfinished"></translation>
+        <translation>Installerer bootloaderen på</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="181"/>
         <source>Failed to install GRUB</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke installere GRUB</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="189"/>
         <source>Skipping bootloader installation as requested by user</source>
-        <translation type="unfinished"></translation>
+        <translation>Springer installation af bootloader over som anmodet af bruger</translation>
     </message>
 </context>
 <context>
@@ -194,32 +194,32 @@
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>DIALOG</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="141"/>
         <source>INSTALLATION COMPLETE</source>
-        <translation type="unfinished"></translation>
+        <translation>INSTALLATION FÆRDIG</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="154"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Næste gang du starter enheden vil du blive bedt om at lave en ny bruger og vælge nogle indstillinger.</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="166"/>
         <source>Power Off</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluk</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="176"/>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Genstart</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="90"/>
         <source>Preparing for installation</source>
-        <translation type="unfinished"></translation>
+        <translation>Forbereder installation</translation>
     </message>
 </context>
 <context>
@@ -227,18 +227,18 @@
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="57"/>
         <source>Erasing disk %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Formaterer disk %1</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="63"/>
         <source>Failed to erase the disk</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke formatere disken</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="72"/>
         <location filename="../install/diskmanagementstate.cpp" line="204"/>
         <source>Creating Boot Partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Laver opstarts-partition</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="88"/>
@@ -246,50 +246,50 @@
         <location filename="../install/diskmanagementstate.cpp" line="222"/>
         <location filename="../install/diskmanagementstate.cpp" line="238"/>
         <source>Failed to create the boot partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke lave opstarts-partitionen</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="122"/>
         <location filename="../install/diskmanagementstate.cpp" line="261"/>
         <source>Creating Root Partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Laver rod-partition</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="137"/>
         <location filename="../install/diskmanagementstate.cpp" line="287"/>
         <source>Failed to create the root partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke lave rod-partitionen</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="166"/>
         <source>Replacing partition %1 with boot block %2; first partition at offset %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstatter partition %1 med opstarts-blok %1; første partition ved offset %3</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="169"/>
         <source>Erasing partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Formaterer partition %1</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="173"/>
         <location filename="../install/diskmanagementstate.cpp" line="186"/>
         <source>Failed to erase the partition</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke formatere partitionen</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="180"/>
         <source>Resizing partition %1 with boot block %2; partition will be %3 long</source>
-        <translation type="unfinished"></translation>
+        <translation>Ændrer størrelsen på partition %1 med opstarts-blok %2 til %3</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="183"/>
         <source>Resizing partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ændrer størrelsen på %1</translation>
     </message>
     <message>
         <location filename="../install/diskmanagementstate.cpp" line="195"/>
         <source>New partitions will be located at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nye partitioner vil blive indsat ved %1</translation>
     </message>
 </context>
 <context>
@@ -297,12 +297,12 @@
     <message>
         <location filename="../diskmodel.cpp" line="141"/>
         <source>Disk</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk</translation>
     </message>
     <message>
         <location filename="../diskmodel.cpp" line="143"/>
         <source>Mount Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Indsættelsespunkt</translation>
     </message>
 </context>
 <context>
@@ -310,22 +310,22 @@
     <message>
         <location filename="../pages/diskpage.ui" line="35"/>
         <source>Where to today?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvorhen i dag?</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="121"/>
         <source>Show all drives</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis alle drev</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="128"/>
         <source>All data on the selected disk will be erased, so make sure you&apos;re selecting the correct disk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt dataen på den valgte disk vil blive slettet, så vær sikker på at du har valgt den rigtige disk.</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="159"/>
         <source>Advanced Partitioning Selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Avanceret diskhåndtering valgt</translation>
     </message>
     <message>
         <location filename="../pages/diskpage.ui" line="194"/>
