@@ -21,12 +21,12 @@
     <message>
         <location filename="../downloadprogress.cpp" line="60"/>
         <source>We weren&apos;t able to download the recovery image. Please try again later.</source>
-        <translation>Vi kunne ikke downloade gendannelses</translation>
+        <translation>Vi kunne ikke downloade gendannelsesbilledet. Prøv igen senere.</translation>
     </message>
     <message>
         <location filename="../downloadprogress.cpp" line="67"/>
         <source>Downloaded %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloadet %1 ud af %2</translation>
     </message>
 </context>
 <context>
@@ -34,22 +34,22 @@
     <message>
         <location filename="../finalresetpopover.ui" line="51"/>
         <source>THIS IS IT</source>
-        <translation type="unfinished"></translation>
+        <translation>DET ER NU</translation>
     </message>
     <message>
         <location filename="../finalresetpopover.ui" line="58"/>
         <source>There&apos;s no going back after this. Once this device is reset, all your data is gone forever.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan ikke vende tilbage efter dette. Når enheden er nulstillet, så vil alt din data være væk for evigt.</translation>
     </message>
     <message>
         <location filename="../finalresetpopover.ui" line="68"/>
         <source>Reboot and reset this device</source>
-        <translation type="unfinished"></translation>
+        <translation>Genstart og nulstil denne enhed</translation>
     </message>
     <message>
         <location filename="../finalresetpopover.cpp" line="28"/>
         <source>Reset this device</source>
-        <translation type="unfinished"></translation>
+        <translation>Nulstil denne enhed</translation>
     </message>
 </context>
 <context>
@@ -58,33 +58,33 @@
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.ui" line="125"/>
         <source>Reset this device</source>
-        <translation type="unfinished"></translation>
+        <translation>Nulstil denne enhed</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="154"/>
         <source>Yes, reset this device</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, nulstil denne enhed</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="157"/>
         <source>All data will be deleted and this device will restart.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt din data vil blive slettet og denne enhed vil blive genstartet.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="164"/>
         <source>No, don&apos;t reset this device</source>
-        <translation type="unfinished"></translation>
+        <translation>Nej, nulstil ikke denne enhed</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="167"/>
         <source>Your data will be preserved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Din data vil blive bevaret.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="97"/>
         <location filename="../mainwindow.cpp" line="99"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukendt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="102"/>
@@ -99,7 +99,17 @@ Resetting this device will erase all personal data **for all accounts.** This in
 **READY TO DO THIS?**
 
 To get the ball rolling, we&apos;ll restart this device and start removing all the data on it. Once the reset is complete, a new copy of %1 will be installed. This process can take a while.</source>
-        <translation type="unfinished"></translation>
+        <translation>**SPÆND SIKKERHEDSSELEN**
+
+Nulstilling af denne enhed vil slette alt personlig data **for alle konti.** Dette inkluderer:
+- Dokumenter
+- Billeder
+- Installerede programmer
+- Ændrede indstillinger
+
+**ER DU KLAR?**
+
+For at få nulstillingen kørende, vil vi genstarte denne enhed og fjerne alt data på den. Når dette er færdigt vil en nå kopi af %1 blive installeret. Dette kan tage lidt tid.</translation>
     </message>
 </context>
 <context>
@@ -107,7 +117,7 @@ To get the ball rolling, we&apos;ll restart this device and start removing all t
     <message>
         <location filename="../main.cpp" line="31"/>
         <source>System Configuration Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Systemkonfigureringsværktøj</translation>
     </message>
 </context>
 </TS>
