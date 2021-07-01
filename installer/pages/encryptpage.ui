@@ -159,7 +159,7 @@
      <item>
       <widget class="QPushButton" name="encryptButton">
        <property name="text">
-        <string notr="true">Use Disk Encryption</string>
+        <string>Use Disk Encryption</string>
        </property>
        <property name="icon">
         <iconset theme="go-next">

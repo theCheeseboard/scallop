@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string notr="true">Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -50,7 +50,8 @@
         <string notr="true"/>
        </property>
        <property name="icon">
-        <iconset theme="audio-volume-muted"/>
+        <iconset theme="audio-volume-muted">
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -166,7 +167,8 @@
              <string>Power Off</string>
             </property>
             <property name="icon">
-             <iconset theme="system-shutdown"/>
+             <iconset theme="system-shutdown">
+              <normaloff>.</normaloff>.</iconset>
             </property>
            </widget>
           </item>
@@ -176,7 +178,8 @@
              <string>Reboot</string>
             </property>
             <property name="icon">
-             <iconset theme="system-reboot"/>
+             <iconset theme="system-reboot">
+              <normaloff>.</normaloff>.</iconset>
             </property>
            </widget>
           </item>

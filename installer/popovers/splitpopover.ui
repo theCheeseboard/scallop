@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string/>
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -32,7 +32,7 @@
    <item>
     <widget class="tTitleLabel" name="titleLabel">
      <property name="text">
-      <string notr="true">Allocate Space</string>
+      <string>Allocate Space</string>
      </property>
     </widget>
    </item>
@@ -65,7 +65,7 @@
           <item>
            <widget class="QLabel" name="otherSystemName">
             <property name="text">
-             <string>TextLabel</string>
+             <string notr="true">TextLabel</string>
             </property>
            </widget>
           </item>
@@ -75,7 +75,7 @@
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string notr="true">TextLabel</string>
             </property>
            </widget>
           </item>
@@ -89,7 +89,7 @@
           <item>
            <widget class="QLabel" name="thisSystemName">
             <property name="text">
-             <string>TextLabel</string>
+             <string notr="true">TextLabel</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -102,7 +102,7 @@
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string notr="true">TextLabel</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

@@ -192,27 +192,22 @@
 <context>
     <name>CactusInstallAnimationWindow</name>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="14"/>
-        <source>Dialog</source>
-        <translation>Diálogo</translation>
-    </message>
-    <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="141"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="142"/>
         <source>INSTALLATION COMPLETE</source>
         <translation>INSTALAÇÃO COMPLETA</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="154"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="155"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
         <translation type="unfinished">A próxima vez que você começar o dispositivo, você vai criar um novo usuário e configurar o sistema.</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="166"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="167"/>
         <source>Power Off</source>
         <translation>Desligar</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="176"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="178"/>
         <source>Reboot</source>
         <translation>Reiniciar</translation>
     </message>
@@ -437,6 +432,11 @@
         <location filename="../pages/encryptpage.ui" line="142"/>
         <source>Don&apos;t Use Encryption</source>
         <translation>Não Usar Criptografia de Disco</translation>
+    </message>
+    <message>
+        <location filename="../pages/encryptpage.ui" line="162"/>
+        <source>Use Disk Encryption</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pages/encryptpage.cpp" line="38"/>
@@ -831,17 +831,14 @@ Você pode abrir um log de debug com CRTL+L se você precisa o que deu errado.</
 <context>
     <name>SplitPopover</name>
     <message>
+        <location filename="../popovers/splitpopover.ui" line="35"/>
+        <source>Allocate Space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../popovers/splitpopover.ui" line="45"/>
         <source>Each operating system requires space to run. Allocate space by dragging the slider below.</source>
         <translation>Cada sistema operacional precisa de espaço para funcionar. Aloque espaço usando o controle abaixo.</translation>
-    </message>
-    <message>
-        <location filename="../popovers/splitpopover.ui" line="68"/>
-        <location filename="../popovers/splitpopover.ui" line="78"/>
-        <location filename="../popovers/splitpopover.ui" line="92"/>
-        <location filename="../popovers/splitpopover.ui" line="105"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../popovers/splitpopover.ui" line="119"/>
