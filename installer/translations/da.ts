@@ -6,47 +6,47 @@
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="57"/>
         <source>Advanced Disk Management</source>
-        <translation type="unfinished"></translation>
+        <translation>Avanceret diskhåndtering</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="81"/>
         <source>Set mount points for each partition you want to mount.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg hvor hver partition skal indsættes på filsystemet.</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="178"/>
         <source>BOOTLOADER</source>
-        <translation type="unfinished"></translation>
+        <translation>BOOTLOADER</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="185"/>
         <source>Install bootloader onto this device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer bootloader på denne enhed:</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="218"/>
         <source>Edit Partitions</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger partitioner</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="242"/>
         <source>Use this configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Brug denne konfiguration</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="277"/>
         <source>Editing Partitions</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigerer partitioner</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.ui" line="287"/>
         <source>Once you&apos;re done, close the partition editor and come back here.</source>
-        <translation type="unfinished"></translation>
+        <translation>Luk vinduet når du er færdig.</translation>
     </message>
     <message>
         <location filename="../pages/advanceddiskpopover.cpp" line="53"/>
         <source>To continue, you&apos;ll need to set at least a partition for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du er nødt til at lave mindst en partition til %1.</translation>
     </message>
 </context>
 <context>
@@ -55,7 +55,7 @@
         <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="47"/>
         <source>%1 HQ</source>
         <comment>HQ for Headquarters</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1-hovedkvarter</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage2.cpp" line="48"/>
         <source>...just a little longer! I&apos;ll find the chosen temple this time, I promise!</source>
-        <translation type="unfinished"></translation>
+        <translation>...vi er så tæt på! Jeg lover at jeg nok skal finde det udvalgte tempel denne gang!</translation>
     </message>
 </context>
 <context>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="49"/>
         <source>It&apos;s already 9:00. We can&apos;t be waiting all night.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klokken er allerede ni. Vi kan ikke vente hele natten.</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="50"/>
         <source>Let&apos;s get some rest and we can try again in the morning.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lad os få noget søvn, og så prøver vi igen i morgen.</translation>
     </message>
 </context>
 <context>
@@ -84,12 +84,12 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="60"/>
         <source>[CHOSEN TEMPLE FOUND!]</source>
-        <translation type="unfinished"></translation>
+        <translation>[UDVALGTE TEMPEL FUNDET!]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="61"/>
         <source>[INSTALL THE %1 CUBE IN THE TEMPLE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[INSTALLER %1-</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="62"/>
