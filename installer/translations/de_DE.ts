@@ -55,7 +55,7 @@
         <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="47"/>
         <source>%1 HQ</source>
         <comment>HQ for Headquarters</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 HQ</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage2.cpp" line="48"/>
         <source>...just a little longer! I&apos;ll find the chosen temple this time, I promise!</source>
-        <translation type="unfinished"></translation>
+        <translation>...nur noch etwas länger! Diesmal werde ich den auserwählten Tempel finden, versprochen!</translation>
     </message>
 </context>
 <context>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="49"/>
         <source>It&apos;s already 9:00. We can&apos;t be waiting all night.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es ist schon 21 Uhr. Wir können nicht die ganze Nacht warten.</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage3.cpp" line="50"/>
         <source>Let&apos;s get some rest and we can try again in the morning.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass uns etwas ausruhen, wir können es morgen nochmal versuchen.</translation>
     </message>
 </context>
 <context>
@@ -84,22 +84,22 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="60"/>
         <source>[CHOSEN TEMPLE FOUND!]</source>
-        <translation type="unfinished"></translation>
+        <translation>[AUSERWÄHLTER TEMPEL GEFUNDEN!]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="61"/>
         <source>[INSTALL THE %1 CUBE IN THE TEMPLE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[INSTALLIERT DEN %1 WÜRFEL IM TEMPEL]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="62"/>
         <source>[DO THIS, AND YOU WILL BE SHOWERED WITH RICHES]</source>
-        <translation type="unfinished"></translation>
+        <translation>[TUT DAS UND DAS GELD WIRD REGNEN]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage4.cpp" line="73"/>
         <source>Never mind then. Let&apos;s hit the road!</source>
-        <translation type="unfinished"></translation>
+        <translation>Egal Dann. Lass uns los fahren!</translation>
     </message>
 </context>
 <context>
@@ -107,32 +107,32 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="69"/>
         <source>ARE YOU OKAY???</source>
-        <translation type="unfinished"></translation>
+        <translation>BIST DU OK???</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="70"/>
         <source>I&apos;m fine. Where are we?</source>
-        <translation type="unfinished"></translation>
+        <translation>Mir geht es gut. Wo sind wir?</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="79"/>
         <source>[PLEASE INSTALL THE %1 CUBE]</source>
-        <translation type="unfinished"></translation>
+        <translation>[BITTE SETZT DEN %1 WÜRFEL EIN]</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="82"/>
         <source>Quick, the %1 cube!</source>
-        <translation type="unfinished"></translation>
+        <translation>Schnell, gib mir den %1 Würfel!</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="122"/>
         <source>Did we do it??</source>
-        <translation type="unfinished"></translation>
+        <translation>Haben wir es geschafft??</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/stages/animationstage7.cpp" line="139"/>
         <source>[%1 CUBE ACCEPTED]</source>
-        <translation type="unfinished"></translation>
+        <translation>[%1 WÜRFEL AKZEPTIERT]</translation>
     </message>
 </context>
 <context>
@@ -140,7 +140,7 @@
     <message>
         <location filename="../cactus-install-animation/stages/animationstage8.cpp" line="78"/>
         <source>Welcome to %1!</source>
-        <translation type="unfinished"></translation>
+        <translation>Willkommen zu %1!</translation>
     </message>
 </context>
 <context>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../install/bootloaderstate.cpp" line="102"/>
         <source>Generating machine ID...</source>
-        <translation type="unfinished"></translation>
+        <translation>Generiere Maschinen-ID...</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="123"/>
@@ -171,7 +171,7 @@
         <location filename="../install/bootloaderstate.cpp" line="108"/>
         <location filename="../install/bootloaderstate.cpp" line="130"/>
         <source>Failed to install systemd-boot</source>
-        <translation type="unfinished"></translation>
+        <translation>systemd-boot Installation fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../install/bootloaderstate.cpp" line="181"/>
@@ -194,17 +194,17 @@
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="142"/>
         <source>INSTALLATION COMPLETE</source>
-        <translation type="unfinished"></translation>
+        <translation>INSTALLATION FERTIGGESTELLT</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="155"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
-        <translation type="unfinished">Wenn du dein Gerät das nächste mal startest, wirst du gebeten einen neuen Nutzer anzulegen und einige Systemeinstellungen einzurichten.</translation>
+        <translation>Wenn du dein Gerät das nächste mal startest, wirst du gebeten einen neuen Nutzer anzulegen und einige Systemeinstellungen einzurichten.</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="167"/>
         <source>Power Off</source>
-        <translation type="unfinished">Ausschalten</translation>
+        <translation>Ausschalten</translation>
     </message>
     <message>
         <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="178"/>
@@ -677,7 +677,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../pages/issuespage.cpp" line="46"/>
         <source>Next</source>
-        <translation type="unfinished">Weiter</translation>
+        <translation>Weiter</translation>
     </message>
     <message>
         <location filename="../pages/issuespage.cpp" line="52"/>
@@ -738,7 +738,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../popovers/mountpointpopover.ui" line="45"/>
         <source>Mount Point</source>
-        <translation type="unfinished">Einhängungspunkt</translation>
+        <translation>Einhängungspunkt</translation>
     </message>
     <message>
         <location filename="../popovers/mountpointpopover.ui" line="72"/>
@@ -815,7 +815,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
     <message>
         <location filename="../pages/readypage.cpp" line="40"/>
         <source>Install %1</source>
-        <translation type="unfinished">Installiere %1</translation>
+        <translation>Installiere %1</translation>
     </message>
 </context>
 <context>
