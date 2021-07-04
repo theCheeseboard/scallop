@@ -61,7 +61,8 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
     FinishedPage* finishedPage = new FinishedPage();
     finishedPage->setVisible(false);
 
-    ui->stackedWidget->setCurrentAnimation(tStackedWidget::Lift);
+    ui->stackedWidget->setCurrentAnimation(tStackedWidget::Fade);
+    ui->stackedWidget->setCurrentWidget(ui->blankPage, false);
 
     auto showFinishedPage = [ = ] {
 //        tScrim::scrimForWidget(this)->setBlurEnabled(false);
@@ -149,7 +150,10 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
     });
     connect(anim, &tVariantAnimation::finished, this, [ = ] {
         anim->deleteLater();
-        d->stages.first()->start();
+        QTimer::singleShot(1000, this, [ = ] {
+            ui->stackedWidget->setCurrentWidget(ui->installingPage);
+            d->stages.first()->start();
+        });
     });
     anim->start();
     this->setWindowOpacity(0);

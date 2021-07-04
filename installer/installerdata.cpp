@@ -23,11 +23,15 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QDir>
+#include <QIcon>
+#include <QPainter>
+#include <QSvgRenderer>
 
 struct InstallerDataPrivate {
     QJsonObject data;
     QVariantMap tempData;
     QString systemName;
+    QString systemIconPath;
 };
 
 InstallerData::InstallerData(QObject* parent) : QObject(parent) {
@@ -59,6 +63,7 @@ InstallerData::InstallerData(QObject* parent) : QObject(parent) {
         information.close();
 
         d->systemName = values.value("PRETTY_NAME", tr("Unknown"));
+        if (values.contains("LOGO")) d->systemIconPath = QStringLiteral("/usr/share/pixmaps/%1.svg").arg(values.value("LOGO", ""));
     } else {
         d->systemName = tr("Unknown");
     }
@@ -84,6 +89,23 @@ void InstallerData::remove(QString key) {
 
 QString InstallerData::systemName() {
     return instance()->d->systemName;
+}
+
+QSize InstallerData::systemIconSize() {
+    QSvgRenderer renderer(instance()->d->systemIconPath);
+    return renderer.defaultSize();
+}
+
+QPixmap InstallerData::systemIcon(QSize size) {
+    QPixmap px(size);
+    px.fill(Qt::transparent);
+
+    QPainter painter(&px);
+
+    QSvgRenderer renderer(instance()->d->systemIconPath);
+    renderer.render(&painter);
+    painter.end();
+    return px;
 }
 
 quint64 InstallerData::minimumMemory() {

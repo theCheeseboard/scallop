@@ -45,7 +45,7 @@ void AnimationStage8::start() {
                 d->textOffset = value.toInt();
             }, QEasingCurve::OutCubic)
         }),
-        new PauseElement(300)
+        new PauseElement(2000)
     });
 
     connect(d->sequencer, &Sequencer::requestRender, this, &CactusAnimationStage::requestRender);

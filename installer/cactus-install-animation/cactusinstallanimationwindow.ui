@@ -105,6 +105,7 @@
         <property name="currentIndex">
          <number>0</number>
         </property>
+        <widget class="QWidget" name="blankPage"/>
         <widget class="QWidget" name="installingPage">
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>

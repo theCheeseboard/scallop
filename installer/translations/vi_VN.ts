@@ -52,7 +52,7 @@
 <context>
     <name>AnimationStage1</name>
     <message>
-        <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="47"/>
+        <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="55"/>
         <source>%1 HQ</source>
         <comment>HQ for Headquarters</comment>
         <translation>Trụ sở chính %1</translation>
@@ -192,27 +192,27 @@
 <context>
     <name>CactusInstallAnimationWindow</name>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="142"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="143"/>
         <source>INSTALLATION COMPLETE</source>
         <translation>CÀI ĐẶT ĐÃ HOÀN TẤT</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="155"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="156"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
         <translation>Lần sau bạn khởi động thiết bị này, bạn sẽ bị yêu cầu tạo người dùng mới, và thiết lập hệ thống của bạn.</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="167"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="168"/>
         <source>Power Off</source>
         <translation>Tắt nguồn</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="178"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="179"/>
         <source>Reboot</source>
         <translation>Khởi động lại</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="90"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="91"/>
         <source>Preparing for installation</source>
         <translation>Đang chuẩn bị cài đặt</translation>
     </message>
@@ -651,8 +651,8 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
 <context>
     <name>InstallerData</name>
     <message>
-        <location filename="../installerdata.cpp" line="61"/>
-        <location filename="../installerdata.cpp" line="63"/>
+        <location filename="../installerdata.cpp" line="65"/>
+        <location filename="../installerdata.cpp" line="68"/>
         <source>Unknown</source>
         <translation>Không xác định</translation>
     </message>

@@ -52,7 +52,7 @@
 <context>
     <name>AnimationStage1</name>
     <message>
-        <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="47"/>
+        <location filename="../cactus-install-animation/stages/animationstage1.cpp" line="55"/>
         <source>%1 HQ</source>
         <comment>HQ for Headquarters</comment>
         <translation>%1-hovedkvarter</translation>
@@ -192,27 +192,27 @@
 <context>
     <name>CactusInstallAnimationWindow</name>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="142"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="143"/>
         <source>INSTALLATION COMPLETE</source>
         <translation>INSTALLATION FÆRDIG</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="155"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="156"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
         <translation>Næste gang du starter enheden vil du blive bedt om at lave en ny bruger og vælge nogle indstillinger.</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="167"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="168"/>
         <source>Power Off</source>
         <translation>Sluk</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="178"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="179"/>
         <source>Reboot</source>
         <translation>Genstart</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="90"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="91"/>
         <source>Preparing for installation</source>
         <translation>Forbereder installation</translation>
     </message>
@@ -651,8 +651,8 @@ Du kan åbne en fejlfindingslog med CTRL+L hvis du vil se hvad der gik galt.</tr
 <context>
     <name>InstallerData</name>
     <message>
-        <location filename="../installerdata.cpp" line="61"/>
-        <location filename="../installerdata.cpp" line="63"/>
+        <location filename="../installerdata.cpp" line="65"/>
+        <location filename="../installerdata.cpp" line="68"/>
         <source>Unknown</source>
         <translation>Ukendt</translation>
     </message>

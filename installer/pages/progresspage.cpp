@@ -52,6 +52,7 @@ ProgressPage::ProgressPage(QWidget* parent) :
     connect(FlowController::instance(), &FlowController::currentPageChanged, this, [ = ](QWidget * page) {
         //TODO: Check if we should show the animation window
         if (page == this) {
+            if (QApplication::queryKeyboardModifiers() & Qt::ShiftModifier) return;
             CactusInstallAnimationWindow* window = new CactusInstallAnimationWindow();
             window->showFullScreen();
         }

@@ -42,6 +42,8 @@ class InstallerData : public QObject {
         static QVariant valueTemp(QString key);
 
         static QString systemName();
+        static QSize systemIconSize();
+        static QPixmap systemIcon(QSize size);
         static quint64 minimumMemory();
         static bool isEfi();
 

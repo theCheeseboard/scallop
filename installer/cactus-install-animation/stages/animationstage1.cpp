@@ -22,18 +22,26 @@
 #include "installerdata.h"
 #include <tpromise.h>
 #include "../sequencer.h"
+#include "../zoomsvgrenderer.h"
 
 struct AnimationStage1Private {
     QString line1Text;
     QString line2Text;
     double opacity = 1;
     Sequencer* sequencer;
+
+    double logoOpacity = 1;
 };
 
 ANIMATION_STAGE_BOILERPLATE(AnimationStage1)
 
 void AnimationStage1::start() {
     d->sequencer = new Sequencer(this);
+
+    d->sequencer->addElement(new AnimationElement(1.0, 0.0, 500, [ = ](QVariant value) {
+        d->logoOpacity = value.toDouble();
+    }));
+
     for (QChar c : QLocale().toString(QDate::currentDate())) {
         d->sequencer->addElement({
             new FunctionElement([ = ] {
@@ -85,4 +93,14 @@ void AnimationStage1::render(QPainter* painter, QSize size) {
     painter->drawText(textRect, Qt::AlignCenter, d->line1Text);
     textRect.moveTop(renderRect.center().y());
     painter->drawText(textRect, Qt::AlignCenter, d->line2Text);
+
+    painter->setOpacity(d->logoOpacity);
+
+    QSize systemIconSize = InstallerData::systemIconSize();
+    systemIconSize.scale(qMin(size.width(), SC_DPI(300)), qMin(size.height(), SC_DPI(300)), Qt::KeepAspectRatio);
+
+    QRect systemIconRect;
+    systemIconRect.setSize(systemIconSize);
+    systemIconRect.moveCenter(renderRect.center());
+    painter->drawPixmap(systemIconRect, InstallerData::systemIcon(systemIconSize));
 }
