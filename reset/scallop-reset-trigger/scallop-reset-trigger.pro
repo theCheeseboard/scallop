@@ -12,9 +12,7 @@ CONFIG -= app_bundle
 SOURCES += \
         main.cpp
 
-equals(SCALLOP_PACKAGED_LOCATION, "") {
-    SCALLOP_PACKAGED_LOCATION="/opt/cactus-recovery-media/rootfs.squashfs"
-}
+include(../../vars.pri)
 
 unix:!macx {
     CONFIG += link_pkgconfig
@@ -24,7 +22,6 @@ unix:!macx {
     include(/usr/share/the-libs/pri/buildmaster.pri)
 
     DEFINES += SYSTEM_LIBRARY_DIRECTORY=\\\"$$THELIBS_INSTALL_LIB\\\"
-    DEFINES += SCALLOP_PACKAGED_LOCATION=\\\"$$SCALLOP_PACKAGED_LOCATION\\\"
 
     target.path = $$THELIBS_INSTALL_BIN
 

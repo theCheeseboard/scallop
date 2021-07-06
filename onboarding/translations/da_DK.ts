@@ -57,12 +57,12 @@
         <translation>Det var alt!</translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="61"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="48"/>
         <source>We hope you enjoy using theDesk!</source>
         <translation>Vi håber at du nyder at bruge theDesk!</translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="86"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="73"/>
         <source>Get Started</source>
         <translation>Kom i gang</translation>
     </message>

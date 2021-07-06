@@ -46,10 +46,6 @@ void FinishedPage::on_exitButton_clicked() {
     QApplication::exit();
 }
 
-void FinishedPage::on_startOverButton_clicked() {
-
-}
-
 void FinishedPage::on_rebootButton_2_clicked() {
     ui->rebootButton->click();
 }

@@ -44,8 +44,10 @@ TextBox::TextBox(QStringList textParts, TextBoxType type, QObject* parent) : QOb
 
     switch (type) {
         case TextBox::NormalCharacter:
-        case TextBox::RobotCharacter:
             d->boxRenderer = new ZoomSvgRenderer(":/installanim/standard-textbox.svg");
+            break;
+        case TextBox::RobotCharacter:
+            d->boxRenderer = new ZoomSvgRenderer(":/installanim/robot-textbox.svg");
             break;
     }
 

@@ -81,6 +81,8 @@ InstallManager::InstallManager(QObject* parent) : QObject(parent) {
     bootloaderState->addTransition(bootloaderState, &BootloaderState::finished, cleanupState);
 
     diskState->addTransition(diskState, &DiskManagementState::failure, errorCleanupState);
+    mountState->addTransition(mountState, &MountState::failure, errorCleanupState);
+    unsquashState->addTransition(unsquashState, &UnsquashState::failure, errorCleanupState);
     bootloaderState->addTransition(bootloaderState, &BootloaderState::failure, errorCleanupState);
     cleanupState->addTransition(this, &InstallManager::cleanupDone, finalState);
     errorCleanupState->addTransition(this, &InstallManager::cleanupDone, errorFinalState);

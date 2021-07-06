@@ -76,6 +76,7 @@ void MountState::onEntry(QEvent* event) {
                     emit mountNext();
                 } else {
                     qDebug() << "Error";
+                    emit failure();
                 }
                 proc->deleteLater();
             });

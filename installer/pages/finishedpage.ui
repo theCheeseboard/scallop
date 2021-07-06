@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>545</width>
+    <width>546</width>
     <height>418</height>
    </rect>
   </property>
@@ -287,17 +287,6 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
            </property>
            <property name="icon">
             <iconset theme="application-exit">
-             <normaloff>.</normaloff>.</iconset>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="startOverButton">
-           <property name="text">
-            <string>Start Over</string>
-           </property>
-           <property name="icon">
-            <iconset theme="view-refresh">
              <normaloff>.</normaloff>.</iconset>
            </property>
           </widget>

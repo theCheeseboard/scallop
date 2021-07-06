@@ -43,7 +43,7 @@ MountPointPopover::MountPointPopover(DiskObject* disk, QString currentMountPoint
     menu->addSection(tr("Common Mount Points"));
     ADD_MOUNT_MENU_ITEM("/")
     ADD_MOUNT_MENU_ITEM("/boot")
-    ADD_MOUNT_MENU_ITEM("/boot/efi")
+    ADD_MOUNT_MENU_ITEM("/efi")
     ADD_MOUNT_MENU_ITEM("/home")
     ADD_MOUNT_MENU_ITEM("/var")
     ADD_MOUNT_MENU_ITEM("/etc")

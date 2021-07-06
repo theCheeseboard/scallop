@@ -31,5 +31,6 @@
         <file alias="text-end.wav">cactus-install-animation/assets/text-end.wav</file>
         <file alias="text-start.wav">cactus-install-animation/assets/text-start.wav</file>
         <file alias="bell.wav">cactus-install-animation/assets/bell.wav</file>
+        <file alias="robot-textbox.svg">cactus-install-animation/assets/robot-textbox.svg</file>
     </qresource>
 </RCC>

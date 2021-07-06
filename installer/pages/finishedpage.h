@@ -36,8 +36,6 @@ class FinishedPage : public QWidget {
     private slots:
         void on_exitButton_clicked();
 
-        void on_startOverButton_clicked();
-
         void on_rebootButton_2_clicked();
 
         void on_rebootButton_clicked();

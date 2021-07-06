@@ -1,0 +1,15 @@
+equals(SCALLOP_ROOTFS_LOCATION, "") {
+    SCALLOP_ROOTFS_LOCATION="https://packages.vicr123.com/cactus/rootfs/x86_64/latest.squashfs"
+}
+
+equals(SCALLOP_PACKAGED_LOCATION, "") {
+    SCALLOP_PACKAGED_LOCATION="/opt/cactus-recovery-media/rootfs.squashfs"
+}
+
+equals(SCALLOP_VENDOR_WATERMARK_LOCATION, "") {
+    SCALLOP_VENDOR_WATERMARK_LOCATION="/usr/share/plymouth/themes/bgrt-cactus/watermark.png"
+}
+
+DEFINES += SCALLOP_ROOTFS_LOCATION=\\\"$$SCALLOP_ROOTFS_LOCATION\\\"
+DEFINES += SCALLOP_PACKAGED_LOCATION=\\\"$$SCALLOP_PACKAGED_LOCATION\\\"
+DEFINES += SCALLOP_VENDOR_WATERMARK_LOCATION=\\\"$$SCALLOP_VENDOR_WATERMARK_LOCATION\\\"

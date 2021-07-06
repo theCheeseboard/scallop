@@ -31,6 +31,7 @@ class MountState : public QStateMachine {
 
     signals:
         void mountNext();
+        void failure();
 
     private:
         MountStatePrivate* d;

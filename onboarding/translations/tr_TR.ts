@@ -57,12 +57,12 @@
         <translation>Biz bittik!</translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="61"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="48"/>
         <source>We hope you enjoy using theDesk!</source>
         <translation>Biz theDesk kullanarak beğeneceğinizi umuyoruz!</translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="86"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="73"/>
         <source>Get Started</source>
         <translation>Başlamak</translation>
     </message>

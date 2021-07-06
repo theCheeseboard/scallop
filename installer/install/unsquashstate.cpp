@@ -21,6 +21,10 @@
 
 #include <QTextStream>
 #include <QProcess>
+#include <QFile>
+#include <QDir>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 #include "installerdata.h"
 
 UnsquashState::UnsquashState(QState* parent) : QState(parent) {
@@ -29,6 +33,15 @@ UnsquashState::UnsquashState(QState* parent) : QState(parent) {
 
 
 void UnsquashState::onEntry(QEvent* event) {
+    QString squashfsFile = SCALLOP_PACKAGED_LOCATION;
+    if (QFile::exists(squashfsFile)) {
+        performUnsquash(squashfsFile);
+    } else {
+        performDownload();
+    }
+}
+
+void UnsquashState::performUnsquash(QString squashfsFile) {
     //Start unsquashing the filesystem
     QTextStream(stdout) << tr("Unsquashing Filesystem") << "\n";
 
@@ -52,5 +65,35 @@ void UnsquashState::onEntry(QEvent* event) {
         QTextStream(stdout) << "\r" << tr("Unsquash Complete!") << " | 100%\n";
         emit finished();
     });
-    proc->start("unsquashfs", {"-f", "-d", InstallerData::valueTemp("systemRoot").toString(), "/opt/cactus-recovery-media/rootfs.squashfs"});
+    proc->start("unsquashfs", {"-f", "-d", InstallerData::valueTemp("systemRoot").toString(), squashfsFile});
+}
+
+void UnsquashState::performDownload() {
+    //We need to download the squashfs file!
+    QTextStream(stdout) << tr("Downloading %1").arg(InstallerData::systemName()) << "\n";
+
+    QFile* temporarySquashFile = new QFile(QDir(InstallerData::valueTemp("systemRoot").toString()).absoluteFilePath("rootfs.squashfs"));
+    temporarySquashFile->open(QFile::WriteOnly);
+
+    QNetworkAccessManager* mgr = new QNetworkAccessManager();
+    QNetworkReply* reply = mgr->get(QNetworkRequest(QUrl(SCALLOP_ROOTFS_LOCATION)));
+    connect(reply, &QNetworkReply::downloadProgress, this, [ = ](qint64 progress, qint64 total) {
+        QString percentage = QString::number(static_cast<int>(static_cast<double>(progress) / total * 100));
+        QTextStream(stdout) << "\r" << tr("Downloading %1 (%2 of %3)").arg(InstallerData::systemName(), QLocale().formattedDataSize(progress), QLocale().formattedDataSize(total)) << " | " << percentage.rightJustified(3) + "%";
+    });
+    connect(reply, &QNetworkReply::readyRead, this, [ = ] {
+        temporarySquashFile->write(reply->readAll());
+    });
+    connect(reply, &QNetworkReply::finished, this, [ = ] {
+        temporarySquashFile->close();
+
+        if (reply->error() == QNetworkReply::NoError) {
+            performUnsquash(temporarySquashFile->fileName());
+            connect(this, &UnsquashState::finished, this, [ = ] {
+                temporarySquashFile->remove();
+            });
+        } else {
+            emit failure();
+        }
+    });
 }

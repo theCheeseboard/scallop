@@ -38,6 +38,9 @@
 
 #include <tlogger.h>
 
+#include <Context>
+#include <Sink>
+
 int main(int argc, char* argv[]) {
     if (geteuid() != 0) {
         QTextStream(stdout) << "This program must be run as root.\n";
@@ -93,6 +96,16 @@ int main(int argc, char* argv[]) {
     tSettings::registerDefaults(a.applicationDirPath() + "/defaults.conf");
     tSettings::registerDefaults("/etc/scallop/onboarding/defaults.conf");
     tSettings::registerDefaults("/etc/theSuite/theDesk/defaults.conf");
+
+    //Turn up the volume
+    QObject::connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::sinkAdded, [ = ](PulseAudioQt::Sink * sink) {
+        sink->setVolume(PulseAudioQt::normalVolume() * 0.5);
+        sink->setMuted(false);
+    });
+    for (PulseAudioQt::Sink* sink : PulseAudioQt::Context::instance()->sinks()) {
+        sink->setVolume(PulseAudioQt::normalVolume() * 0.5);
+        sink->setMuted(false);
+    }
 
     //Read seeded settings
     if (QFile::exists("/etc/scallop/seeded-settings")) {

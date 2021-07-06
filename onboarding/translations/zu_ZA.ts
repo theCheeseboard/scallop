@@ -57,12 +57,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="61"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="48"/>
         <source>We hope you enjoy using theDesk!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="86"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="73"/>
         <source>Get Started</source>
         <translation type="unfinished"></translation>
     </message>

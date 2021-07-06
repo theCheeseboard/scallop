@@ -1,10 +1,25 @@
-QT       += core gui thelib frisbee svg multimedia
+QT       += core gui thelib frisbee svg multimedia network
 SHARE_APP_NAME = scallop/install-system
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 TARGET = scallop-install-system
+
+LIBS += -lKF5PulseAudioQt
+INCLUDEPATH += /usr/include/KF5/KF5PulseAudioQt/PulseAudioQt
+
+CONFIG += link_pkgconfig
+PKGCONFIG += libnm
+
+qtHaveModule(NetworkManagerQt) {
+    QT += NetworkManagerQt
+} else {
+    INCLUDEPATH += /usr/include/KF5/NetworkManagerQt/
+    LIBS += -lKF5NetworkManagerQt
+}
+
+include(../vars.pri)
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -55,6 +70,7 @@ SOURCES += \
     pages/encryptpage.cpp \
     pages/finishedpage.cpp \
     pages/issuespage.cpp \
+    pages/networkpage.cpp \
     pages/progresspage.cpp \
     pages/readypage.cpp \
     pages/welcomepage.cpp \
@@ -101,6 +117,7 @@ HEADERS += \
     pages/encryptpage.h \
     pages/finishedpage.h \
     pages/issuespage.h \
+    pages/networkpage.h \
     pages/progresspage.h \
     pages/readypage.h \
     pages/welcomepage.h \
@@ -120,6 +137,7 @@ FORMS += \
     pages/encryptpage.ui \
     pages/finishedpage.ui \
     pages/issuespage.ui \
+    pages/networkpage.ui \
     pages/progresspage.ui \
     pages/readypage.ui \
     pages/welcomepage.ui \

@@ -25,17 +25,7 @@ FORMS += \
     finalresetpopover.ui \
     mainwindow.ui
 
-equals(SCALLOP_ROOTFS_LOCATION, "") {
-    SCALLOP_ROOTFS_LOCATION="https://packages.vicr123.com/cactus/rootfs/x86_64/latest.squashfs"
-}
-
-equals(SCALLOP_PACKAGED_LOCATION, "") {
-    SCALLOP_PACKAGED_LOCATION="/opt/cactus-recovery-media/rootfs.squashfs"
-}
-
-equals(SCALLOP_VENDOR_WATERMARK_LOCATION, "") {
-    SCALLOP_VENDOR_WATERMARK_LOCATION="/usr/share/plymouth/themes/bgrt-cactus/watermark.png"
-}
+include(../../vars.pri)
 
 unix:!macx {
     CONFIG += link_pkgconfig
@@ -45,9 +35,6 @@ unix:!macx {
     include(/usr/share/the-libs/pri/buildmaster.pri)
 
     DEFINES += SYSTEM_LIBRARY_DIRECTORY=\\\"$$THELIBS_INSTALL_LIB\\\"
-    DEFINES += SCALLOP_ROOTFS_LOCATION=\\\"$$SCALLOP_ROOTFS_LOCATION\\\"
-    DEFINES += SCALLOP_PACKAGED_LOCATION=\\\"$$SCALLOP_PACKAGED_LOCATION\\\"
-    DEFINES += SCALLOP_VENDOR_WATERMARK_LOCATION=\\\"$$SCALLOP_VENDOR_WATERMARK_LOCATION\\\"
 
     target.path = $$THELIBS_INSTALL_BIN
 

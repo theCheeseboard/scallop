@@ -37,18 +37,18 @@ QList<QDBusObjectPath> users() {
     //Determine if there are any accounts on this system
     QDBusMessage listMessage = QDBusMessage::createMethodCall("org.freedesktop.Accounts", "/org/freedesktop/Accounts", "org.freedesktop.Accounts", "ListCachedUsers");
     QDBusMessage listReply = QDBusConnection::systemBus().call(listMessage);
-    QDBusArgument listArg = listReply.arguments().first().value<QDBusArgument>();
+    QDBusArgument listArg = listReply.arguments().at(0).value<QDBusArgument>();
     QList<QDBusObjectPath> userPaths;
     listArg >> userPaths;
 
     QList<QDBusObjectPath> remove;
 
-    for (QDBusObjectPath path : userPaths) {
+    for (const QDBusObjectPath& path : qAsConst(userPaths)) {
         QDBusInterface interface("org.freedesktop.Accounts", path.path(), "org.freedesktop.Accounts.User", QDBusConnection::systemBus());
         if (interface.property("SystemAccount").toBool()) remove.append(path);
     }
 
-    for (QDBusObjectPath path : remove) {
+    for (const QDBusObjectPath& path : remove) {
         userPaths.removeOne(path);
     }
 
@@ -97,7 +97,7 @@ int main(int argc, char* argv[]) {
         } else {
             //Use the user with the lowest uid
             qulonglong uid = -1;
-            for (QDBusObjectPath path : users) {
+            for (const QDBusObjectPath& path : qAsConst(users)) {
                 QDBusInterface interface("org.freedesktop.Accounts", path.path(), "org.freedesktop.Accounts.User", QDBusConnection::systemBus());
                 qulonglong newUid = interface.property("Uid").toULongLong();
                 if (newUid < uid) uid = newUid;

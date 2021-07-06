@@ -57,12 +57,12 @@
         <translation>Dat was alles!</translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="61"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="48"/>
         <source>We hope you enjoy using theDesk!</source>
         <translation>We hopen dat u veel plezier heeft met theDesk!</translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="86"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.ui" line="73"/>
         <source>Get Started</source>
         <translation>Ga aan de slag</translation>
     </message>

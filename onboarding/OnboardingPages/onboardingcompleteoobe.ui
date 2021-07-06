@@ -43,19 +43,6 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="iconLabel">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>:/thedesk/desktop/icons/cactus.svg</pixmap>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QLabel" name="thankYouMessage">
      <property name="text">
       <string>We hope you enjoy using theDesk!</string>
@@ -114,6 +101,19 @@
       </size>
      </property>
     </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="iconLabel">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>:/thedesk/desktop/icons/cactus.svg</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

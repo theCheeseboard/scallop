@@ -1,7 +1,7 @@
 /****************************************
  *
  *   INSERT-PROJECT-NAME-HERE - INSERT-GENERIC-NAME-HERE
- *   Copyright (C) 2020 Victor Tran
+ *   Copyright (C) 2021 Victor Tran
  *
  *   This program is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -17,27 +17,37 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#ifndef UNSQUASHSTATE_H
-#define UNSQUASHSTATE_H
+#ifndef NETWORKPAGE_H
+#define NETWORKPAGE_H
 
-#include <QState>
+#include <QWidget>
 
-class UnsquashState : public QState {
+namespace Ui {
+    class NetworkPage;
+}
+
+class QListWidgetItem;
+struct NetworkPagePrivate;
+class NetworkPage : public QWidget {
         Q_OBJECT
+
     public:
-        explicit UnsquashState(QState* parent = nullptr);
+        explicit NetworkPage(QWidget* parent = nullptr);
+        ~NetworkPage();
 
-    signals:
-        void finished();
-        void failure();
+    private slots:
+        void on_nextButton_clicked();
 
-        // QAbstractState interface
-    protected:
-        void onEntry(QEvent* event);
+        void on_titleLabel_backButtonClicked();
+
+        void on_networkList_itemActivated(QListWidgetItem* item);
 
     private:
-        void performUnsquash(QString squashfsFile);
-        void performDownload();
+        Ui::NetworkPage* ui;
+        NetworkPagePrivate* d;
+
+        void updateWirelessDevice();
+        void updateAPs();
 };
 
-#endif // UNSQUASHSTATE_H
+#endif // NETWORKPAGE_H

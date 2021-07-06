@@ -27,6 +27,7 @@
 #include "flowcontroller.h"
 
 #include "pages/welcomepage.h"
+#include "pages/networkpage.h"
 #include "pages/issuespage.h"
 #include "pages/diskpage.h"
 #include "pages/disktypepage.h"
@@ -96,6 +97,7 @@ MainWidget::MainWidget(QWidget* parent) :
     });
 
     ui->stackedWidget->addWidget(new WelcomePage());
+    ui->stackedWidget->addWidget(new NetworkPage());
     ui->stackedWidget->addWidget(new IssuesPage());
     ui->stackedWidget->addWidget(new DiskPage());
     ui->stackedWidget->addWidget(new DiskTypePage());

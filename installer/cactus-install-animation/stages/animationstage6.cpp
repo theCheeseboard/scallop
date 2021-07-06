@@ -80,6 +80,7 @@ void AnimationStage6::start() {
                 d->bgRenderer = background;
                 d->carRenderer = car;
                 d->roadRenderer = road;
+                d->transitionProgress = 1;
                 d->transitioning = true;
             }),
             new AnimationElement(1.0, 0.0, 2000, [ = ](QVariant value) {

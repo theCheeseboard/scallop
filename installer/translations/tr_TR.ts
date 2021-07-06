@@ -212,7 +212,7 @@
         <translation type="unfinished">Yeniden başlat</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="91"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="104"/>
         <source>Preparing for installation</source>
         <translation type="unfinished">Kurulum için hazırlanıyor</translation>
     </message>
@@ -599,11 +599,6 @@ Neyin yanlış gittiğini bulmanız gerekirse, CTRL+L ile bir hata ayıklama gü
         <translation>Vazgeç</translation>
     </message>
     <message>
-        <location filename="../pages/finishedpage.ui" line="297"/>
-        <source>Start Over</source>
-        <translation>Baştan Başla</translation>
-    </message>
-    <message>
         <location filename="../pages/finishedpage.cpp" line="31"/>
         <source>Sorry, we couldn&apos;t install %1.</source>
         <translation>Üzgünüz, %1&apos;i yükleyemedik.</translation>
@@ -633,17 +628,17 @@ Neyin yanlış gittiğini bulmanız gerekirse, CTRL+L ile bir hata ayıklama gü
 <context>
     <name>InstallManager</name>
     <message>
-        <location filename="../install/installmanager.cpp" line="102"/>
+        <location filename="../install/installmanager.cpp" line="104"/>
         <source>Installation complete!</source>
         <translation>Kurulum tamamlandı!</translation>
     </message>
     <message>
-        <location filename="../install/installmanager.cpp" line="107"/>
+        <location filename="../install/installmanager.cpp" line="109"/>
         <source>Installation failed!</source>
         <translation>Yükleme başarısız!</translation>
     </message>
     <message>
-        <location filename="../install/installmanager.cpp" line="123"/>
+        <location filename="../install/installmanager.cpp" line="125"/>
         <source>Finishing up...</source>
         <translation>Bitiriyoru...</translation>
     </message>
@@ -765,6 +760,64 @@ Neyin yanlış gittiğini bulmanız gerekirse, CTRL+L ile bir hata ayıklama gü
     </message>
 </context>
 <context>
+    <name>NetworkPage</name>
+    <message>
+        <location filename="../pages/networkpage.ui" line="35"/>
+        <source>Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.ui" line="98"/>
+        <source>Connected! Continue the installation by clicking next.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.ui" line="121"/>
+        <source>Next</source>
+        <translation type="unfinished">Sonraki</translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.cpp" line="46"/>
+        <source>An Internet connection is required to install %1. Connect a network cable or select a wireless network to continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.cpp" line="136"/>
+        <source>Security Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.cpp" line="136"/>
+        <source>Please input the security key for the network %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.cpp" line="146"/>
+        <source>Unsupported Security Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.cpp" line="147"/>
+        <source>To connect to this network, you&apos;ll need to use a terminal.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.cpp" line="202"/>
+        <source>Could not connect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.cpp" line="203"/>
+        <source>Could not connect to the network.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pages/networkpage.cpp" line="204"/>
+        <source>Ensure that the network security key is correct and that the device is not too far away from the access point.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ProbeManager</name>
     <message>
         <location filename="../probe/probemanager.cpp" line="45"/>
@@ -844,15 +897,25 @@ Neyin yanlış gittiğini bulmanız gerekirse, CTRL+L ile bir hata ayıklama gü
 <context>
     <name>UnsquashState</name>
     <message>
-        <location filename="../install/unsquashstate.cpp" line="33"/>
-        <location filename="../install/unsquashstate.cpp" line="44"/>
+        <location filename="../install/unsquashstate.cpp" line="73"/>
+        <source>Downloading %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../install/unsquashstate.cpp" line="46"/>
+        <location filename="../install/unsquashstate.cpp" line="57"/>
         <source>Unsquashing Filesystem</source>
         <translation>Unquashing Dosya Sistemi</translation>
     </message>
     <message>
-        <location filename="../install/unsquashstate.cpp" line="52"/>
+        <location filename="../install/unsquashstate.cpp" line="65"/>
         <source>Unsquash Complete!</source>
         <translation>Unsquash Tamamlandı!</translation>
+    </message>
+    <message>
+        <location filename="../install/unsquashstate.cpp" line="82"/>
+        <source>Downloading %1 (%2 of %3)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

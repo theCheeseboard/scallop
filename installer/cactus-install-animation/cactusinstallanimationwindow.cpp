@@ -33,6 +33,9 @@
 #include "pages/finishedpage.h"
 #include <QTimer>
 
+#include <Context>
+#include <Sink>
+
 struct CactusInstallAnimationWindowPrivate {
     QList<CactusAnimationStage*> stages;
     int currentStage = 0;
@@ -64,8 +67,18 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
     ui->stackedWidget->setCurrentAnimation(tStackedWidget::Fade);
     ui->stackedWidget->setCurrentWidget(ui->blankPage, false);
 
+    //Turn up the volume
+    QObject::connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::sinkAdded, [ = ](PulseAudioQt::Sink * sink) {
+        sink->setVolume(PulseAudioQt::normalVolume() * 0.5);
+        sink->setMuted(false);
+    });
+    for (PulseAudioQt::Sink* sink : PulseAudioQt::Context::instance()->sinks()) {
+        sink->setVolume(PulseAudioQt::normalVolume() * 0.5);
+        sink->setMuted(false);
+    }
+
     auto showFinishedPage = [ = ] {
-//        tScrim::scrimForWidget(this)->setBlurEnabled(false);
+        tScrim::scrimForWidget(this)->setBlurEnabled(false);
         tScrim::scrimForWidget(this)->show();
 
         QFrame* frame = new QFrame(this);
