@@ -764,57 +764,57 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
     <message>
         <location filename="../pages/networkpage.ui" line="35"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Mạng</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.ui" line="98"/>
         <source>Connected! Continue the installation by clicking next.</source>
-        <translation type="unfinished"></translation>
+        <translation>Đã kết nối! Bạn có thể tiếp tục bây giờ.</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.ui" line="121"/>
         <source>Next</source>
-        <translation type="unfinished">Tiếp</translation>
+        <translation>Tiếp</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.cpp" line="46"/>
         <source>An Internet connection is required to install %1. Connect a network cable or select a wireless network to continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn cần kết nối với Internet để cài đặt %1. Cắm một cáp mạng hoặc chọn một mạng không dây để tiếp tục.</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.cpp" line="136"/>
         <source>Security Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Mật khẩu</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.cpp" line="136"/>
         <source>Please input the security key for the network %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vui lòng điền vào mật khẩu cho mạng %1.</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.cpp" line="146"/>
         <source>Unsupported Security Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Thiết lập bảo mật không được hỗ trợ</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.cpp" line="147"/>
         <source>To connect to this network, you&apos;ll need to use a terminal.</source>
-        <translation type="unfinished"></translation>
+        <translation>Để kết nối với mạng này, bạn cần sử dụng bộ đầu cuối.</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.cpp" line="202"/>
         <source>Could not connect</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể kết nối</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.cpp" line="203"/>
         <source>Could not connect to the network.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể kết nối với mạng đó.</translation>
     </message>
     <message>
         <location filename="../pages/networkpage.cpp" line="204"/>
         <source>Ensure that the network security key is correct and that the device is not too far away from the access point.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vui lòng đảm bảo mật khẩu đúng và thiết bị này nằm gần điểm truy cập.</translation>
     </message>
 </context>
 <context>
@@ -899,7 +899,7 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
     <message>
         <location filename="../install/unsquashstate.cpp" line="73"/>
         <source>Downloading %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang tải xuống %1</translation>
     </message>
     <message>
         <location filename="../install/unsquashstate.cpp" line="46"/>
@@ -915,7 +915,7 @@ Bạn có thể mở một nhật ký gỡ lỗi với CTRL+L nếu bạn cần 
     <message>
         <location filename="../install/unsquashstate.cpp" line="82"/>
         <source>Downloading %1 (%2 of %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang tải xuống %1 (%2 trên %3)</translation>
     </message>
 </context>
 <context>
