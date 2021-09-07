@@ -124,14 +124,12 @@ int main(int argc, char* argv[]) {
     mkinitProc->start("mkinitcpio", {"-p", "linux"});
     mkinitProc->waitForFinished(-1);
 
+    //Ensure all changes are written to disk
+    sync();
+
     //Reboot the computer
     //Don't use systemd as it might not be working right now
-    sync();
     reboot(RB_AUTOBOOT);
-
-//    QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", "Reboot");
-//    message.setArguments({false});
-//    QDBusConnection::systemBus().call(message);
 
     return 0;
 }

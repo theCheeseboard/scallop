@@ -1,0 +1,29 @@
+{
+    "name": "Scallop",
+    "subprojects": [
+        {
+            "name": "Scallop Boot Utilities",
+            "type": "qt",
+            "path": "/boot-utilities/translations/{lang}.ts",
+            "baseLang": "en_US"
+        },
+        {
+            "name": "Scallop Installer",
+            "type": "qt",
+            "path": "/installer/translations/{lang}.ts",
+            "baseLang": "en_US"
+        },
+        {
+            "name": "Scallop Onboarding",
+            "type": "qt",
+            "path": "/onboarding/translations/{lang}.ts",
+            "baseLang": "en_US"
+        },
+        {
+            "name": "Scallop Reset",
+            "type": "qt",
+            "path": "/reset/scallop-reset-ui/translations/{lang}.ts",
+            "baseLang": "en_US"
+        }
+    ]
+}
