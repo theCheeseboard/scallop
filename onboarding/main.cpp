@@ -130,7 +130,7 @@ int main(int argc, char* argv[]) {
     });
 
     PluginManager::instance()->scanPlugins();
-    OnboardingController::performOnboarding();
+    OnboardingController::performOnboarding(true);
 
     return 0;
 }
