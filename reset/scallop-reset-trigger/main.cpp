@@ -19,15 +19,15 @@
  * *************************************/
 #include <QCoreApplication>
 
-#include <QFileInfo>
-#include <QFile>
-#include <QTextStream>
+#include <PolkitQt1/Authority>
+#include <PolkitQt1/Subject>
 #include <QCommandLineParser>
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDir>
-#include <polkit-qt5-1/PolkitQt1/Authority>
-#include <polkit-qt5-1/PolkitQt1/Subject>
+#include <QFile>
+#include <QFileInfo>
+#include <QTextStream>
 
 int main(int argc, char* argv[]) {
     QCoreApplication::setSetuidAllowed(true);
@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
             QFile::link("/var/lib/scallop-reset/offline", "/system-update");
 
             if (parser.isSet("reboot")) {
-                //Reboot the system
+                // Reboot the system
 
                 QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", "Reboot");
                 message.setArguments({false});

@@ -212,7 +212,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="104"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.cpp" line="106"/>
         <source>Preparing for installation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -220,69 +220,69 @@
 <context>
     <name>DiskManagementState</name>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="57"/>
+        <location filename="../install/diskmanagementstate.cpp" line="60"/>
         <source>Erasing disk %1</source>
         <translation>Lösche Datenträger %1</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="63"/>
+        <location filename="../install/diskmanagementstate.cpp" line="68"/>
         <source>Failed to erase the disk</source>
         <translation>Löschen des Datenträgers fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="72"/>
-        <location filename="../install/diskmanagementstate.cpp" line="204"/>
+        <location filename="../install/diskmanagementstate.cpp" line="76"/>
+        <location filename="../install/diskmanagementstate.cpp" line="209"/>
         <source>Creating Boot Partition</source>
         <translation>Erstelle Boot Partition</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="88"/>
-        <location filename="../install/diskmanagementstate.cpp" line="101"/>
-        <location filename="../install/diskmanagementstate.cpp" line="222"/>
-        <location filename="../install/diskmanagementstate.cpp" line="238"/>
+        <location filename="../install/diskmanagementstate.cpp" line="93"/>
+        <location filename="../install/diskmanagementstate.cpp" line="107"/>
+        <location filename="../install/diskmanagementstate.cpp" line="228"/>
+        <location filename="../install/diskmanagementstate.cpp" line="245"/>
         <source>Failed to create the boot partition</source>
         <translation>Erstellen der boot Partition fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="122"/>
-        <location filename="../install/diskmanagementstate.cpp" line="261"/>
+        <location filename="../install/diskmanagementstate.cpp" line="128"/>
+        <location filename="../install/diskmanagementstate.cpp" line="268"/>
         <source>Creating Root Partition</source>
         <translation>Erstelle Root Partition</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="137"/>
-        <location filename="../install/diskmanagementstate.cpp" line="287"/>
+        <location filename="../install/diskmanagementstate.cpp" line="143"/>
+        <location filename="../install/diskmanagementstate.cpp" line="293"/>
         <source>Failed to create the root partition</source>
         <translation>Erstellen der root Partition fehlgeschlagen</translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="166"/>
+        <location filename="../install/diskmanagementstate.cpp" line="172"/>
         <source>Replacing partition %1 with boot block %2; first partition at offset %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="169"/>
+        <location filename="../install/diskmanagementstate.cpp" line="175"/>
         <source>Erasing partition %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="173"/>
-        <location filename="../install/diskmanagementstate.cpp" line="186"/>
+        <location filename="../install/diskmanagementstate.cpp" line="180"/>
+        <location filename="../install/diskmanagementstate.cpp" line="200"/>
         <source>Failed to erase the partition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="180"/>
+        <location filename="../install/diskmanagementstate.cpp" line="187"/>
         <source>Resizing partition %1 with boot block %2; partition will be %3 long</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="183"/>
+        <location filename="../install/diskmanagementstate.cpp" line="190"/>
         <source>Resizing partition %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../install/diskmanagementstate.cpp" line="195"/>
+        <location filename="../install/diskmanagementstate.cpp" line="197"/>
         <source>New partitions will be located at %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -594,7 +594,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/finishedpage.cpp" line="31"/>
+        <location filename="../pages/finishedpage.cpp" line="33"/>
         <source>Sorry, we couldn&apos;t install %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -749,7 +749,7 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
 <context>
     <name>MountState</name>
     <message>
-        <location filename="../install/mountstate.cpp" line="69"/>
+        <location filename="../install/mountstate.cpp" line="71"/>
         <source>Mounting:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -777,37 +777,37 @@ You can open a debug log with CTRL+L if you need to find out what went wrong.</s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/networkpage.cpp" line="136"/>
+        <location filename="../pages/networkpage.cpp" line="137"/>
         <source>Security Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/networkpage.cpp" line="136"/>
+        <location filename="../pages/networkpage.cpp" line="137"/>
         <source>Please input the security key for the network %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/networkpage.cpp" line="146"/>
+        <location filename="../pages/networkpage.cpp" line="148"/>
         <source>Unsupported Security Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/networkpage.cpp" line="147"/>
+        <location filename="../pages/networkpage.cpp" line="149"/>
         <source>To connect to this network, you&apos;ll need to use a terminal.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/networkpage.cpp" line="202"/>
+        <location filename="../pages/networkpage.cpp" line="199"/>
         <source>Could not connect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/networkpage.cpp" line="203"/>
+        <location filename="../pages/networkpage.cpp" line="200"/>
         <source>Could not connect to the network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pages/networkpage.cpp" line="204"/>
+        <location filename="../pages/networkpage.cpp" line="201"/>
         <source>Ensure that the network security key is correct and that the device is not too far away from the access point.</source>
         <translation type="unfinished"></translation>
     </message>

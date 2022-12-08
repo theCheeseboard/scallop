@@ -20,27 +20,29 @@
 #include "cactusinstallanimationwindow.h"
 #include "ui_cactusinstallanimationwindow.h"
 
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QShortcut>
 #include <tlogger.h>
 
 #include "cactusanimationstage.h"
 #include "installipcmanager.h"
 
-#include "stages/animationstages.h"
 #include "sequencer/soundelement.h"
+#include "stages/animationstages.h"
 
-#include <tscrim.h>
 #include "pages/finishedpage.h"
 #include <QTimer>
+#include <tscrim.h>
 
-#include <Context>
-#include <Sink>
+#include <PulseAudioQt/Context>
+#include <PulseAudioQt/Sink>
 
 struct CactusInstallAnimationWindowPrivate {
-    QList<CactusAnimationStage*> stages;
-    int currentStage = 0;
+        QList<CactusAnimationStage*> stages;
+        int currentStage = 0;
 
-    QWidget* drawWidget;
+        QWidget* drawWidget;
 };
 
 CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
@@ -50,7 +52,7 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
     d = new CactusInstallAnimationWindowPrivate();
 
     QShortcut* debugLogShortcut = new QShortcut(QKeySequence(Qt::ControlModifier | Qt::Key_L), this);
-    connect(debugLogShortcut, &QShortcut::activated, this, [ = ] {
+    connect(debugLogShortcut, &QShortcut::activated, this, [=] {
         tLogger::openDebugLogWindow();
     });
 
@@ -67,8 +69,8 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
     ui->stackedWidget->setCurrentAnimation(tStackedWidget::Fade);
     ui->stackedWidget->setCurrentWidget(ui->blankPage, false);
 
-    //Turn up the volume
-    QObject::connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::sinkAdded, [ = ](PulseAudioQt::Sink * sink) {
+    // Turn up the volume
+    QObject::connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::sinkAdded, [=](PulseAudioQt::Sink* sink) {
         sink->setVolume(PulseAudioQt::normalVolume() * 0.5);
         sink->setMuted(false);
     });
@@ -77,7 +79,7 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
         sink->setMuted(false);
     }
 
-    auto showFinishedPage = [ = ] {
+    auto showFinishedPage = [=] {
         tScrim::scrimForWidget(this)->setBlurEnabled(false);
         tScrim::scrimForWidget(this)->show();
 
@@ -102,10 +104,10 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
     };
 
     ui->installDescription->setText(tr("Preparing for installation"));
-    connect(InstallIpcManager::instance(), &InstallIpcManager::messageChanged, this, [ = ](QString message) {
+    connect(InstallIpcManager::instance(), &InstallIpcManager::messageChanged, this, [=](QString message) {
         ui->installDescription->setText(message);
     });
-    connect(InstallIpcManager::instance(), &InstallIpcManager::progressChanged, this, [ = ](int progress) {
+    connect(InstallIpcManager::instance(), &InstallIpcManager::progressChanged, this, [=](int progress) {
         if (progress < 0) {
             ui->progressBar->setMaximum(0);
         } else {
@@ -113,15 +115,15 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
             ui->progressBar->setValue(progress);
         }
     });
-    connect(InstallIpcManager::instance(), &InstallIpcManager::success, this, [ = ] {
-        //Cue the success animation
+    connect(InstallIpcManager::instance(), &InstallIpcManager::success, this, [=] {
+        // Cue the success animation
         ui->stackedWidget->setCurrentWidget(ui->installCompletePage);
     });
-    connect(InstallIpcManager::instance(), &InstallIpcManager::failure, this, [ = ] {
+    connect(InstallIpcManager::instance(), &InstallIpcManager::failure, this, [=] {
         showFinishedPage();
     });
 
-//    QTimer::singleShot(60000, InstallIpcManager::instance(), &InstallIpcManager::success);
+    //    QTimer::singleShot(60000, InstallIpcManager::instance(), &InstallIpcManager::success);
 
     QPalette pal = this->palette();
     pal.setColor(QPalette::Window, Qt::black);
@@ -136,10 +138,9 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
         new AnimationStage5(),
         new AnimationStage6(),
         new AnimationStage7(),
-        new AnimationStage8()
-    };
+        new AnimationStage8()};
     for (CactusAnimationStage* stage : d->stages) {
-        connect(stage, &CactusAnimationStage::stageComplete, this, [ = ] {
+        connect(stage, &CactusAnimationStage::stageComplete, this, [=] {
             if (d->currentStage == d->stages.count() - 1) {
                 showFinishedPage();
             } else {
@@ -148,7 +149,7 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
                 this->update();
             }
         });
-        connect(stage, &CactusAnimationStage::requestRender, this, [ = ] {
+        connect(stage, &CactusAnimationStage::requestRender, this, [=] {
             this->update();
         });
     }
@@ -158,12 +159,12 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
     anim->setEndValue(1.0);
     anim->setEasingCurve(QEasingCurve::OutCubic);
     anim->setDuration(500);
-    connect(anim, &tVariantAnimation::valueChanged, this, [ = ](QVariant value) {
+    connect(anim, &tVariantAnimation::valueChanged, this, [=](QVariant value) {
         this->setWindowOpacity(value.toDouble());
     });
-    connect(anim, &tVariantAnimation::finished, this, [ = ] {
+    connect(anim, &tVariantAnimation::finished, this, [=] {
         anim->deleteLater();
-        QTimer::singleShot(1000, this, [ = ] {
+        QTimer::singleShot(1000, this, [=] {
             ui->stackedWidget->setCurrentWidget(ui->installingPage);
             d->stages.first()->start();
         });
@@ -183,14 +184,11 @@ void CactusInstallAnimationWindow::on_rebootButton_clicked() {
     QDBusConnection::systemBus().call(message);
 }
 
-
 void CactusInstallAnimationWindow::on_powerOffButton_clicked() {
     QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", "PowerOff");
     message.setArguments({true});
     QDBusConnection::systemBus().call(message);
 }
-
-
 
 bool CactusInstallAnimationWindow::eventFilter(QObject* watched, QEvent* event) {
     if (watched == d->drawWidget && event->type() == QEvent::Paint) {
@@ -207,4 +205,3 @@ void CactusInstallAnimationWindow::resizeEvent(QResizeEvent* event) {
 void CactusInstallAnimationWindow::on_muteButton_toggled(bool checked) {
     SoundElement::setMute(checked);
 }
-

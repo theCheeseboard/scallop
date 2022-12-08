@@ -20,6 +20,9 @@
 #include "powerpopover.h"
 #include "ui_powerpopover.h"
 
+#include <QDBusConnection>
+#include <QDBusMessage>
+
 PowerPopover::PowerPopover(QWidget* parent) :
     QWidget(parent),
     ui(new Ui::PowerPopover) {

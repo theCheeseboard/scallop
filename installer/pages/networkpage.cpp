@@ -20,19 +20,19 @@
 #include "networkpage.h"
 #include "ui_networkpage.h"
 
-#include <QFile>
 #include "flowcontroller.h"
 #include "installerdata.h"
+#include <QFile>
 
-#include <tmessagebox.h>
 #include <tinputdialog.h>
+#include <tmessagebox.h>
 
 #include <NetworkManagerQt/Manager>
-#include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/Utils>
+#include <NetworkManagerQt/WirelessDevice>
 
 struct NetworkPagePrivate {
-    NetworkManager::WirelessDevice::Ptr wlDev;
+        NetworkManager::WirelessDevice::Ptr wlDev;
 };
 
 NetworkPage::NetworkPage(QWidget* parent) :
@@ -45,19 +45,19 @@ NetworkPage::NetworkPage(QWidget* parent) :
     ui->titleLabel->setBackButtonShown(true);
     ui->descriptionLabel->setText(tr("An Internet connection is required to install %1. Connect a network cable or select a wireless network to continue.").arg(InstallerData::systemName()));
 
-    FlowController::instance()->setSkipPage(this, [ = ] {
+    FlowController::instance()->setSkipPage(this, [=] {
         if (QFile::exists(SCALLOP_PACKAGED_LOCATION)) return true;
         return false;
     });
 
     ui->connectedLabel->setVisible(false);
     ui->nextButton->setEnabled(false);
-    connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this, [ = ](NetworkManager::Connectivity connectivity) {
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this, [=](NetworkManager::Connectivity connectivity) {
         ui->nextButton->setEnabled(connectivity == NetworkManager::Connectivity::Full);
         ui->connectedLabel->setVisible(ui->nextButton->isEnabled());
     });
     QDBusPendingCallWatcher* watcher = new QDBusPendingCallWatcher(NetworkManager::checkConnectivity());
-    connect(watcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [=] {
         ui->nextButton->setEnabled(watcher->reply().arguments().first().toInt() == NetworkManager::Connectivity::Full);
         ui->connectedLabel->setVisible(ui->nextButton->isEnabled());
         watcher->deleteLater();
@@ -125,34 +125,32 @@ void NetworkPage::on_networkList_itemActivated(QListWidgetItem* item) {
     QString key;
     switch (securityType) {
         case NetworkManager::NoneSecurity:
-            //Nothing needs to be done here
+            // Nothing needs to be done here
             break;
         case NetworkManager::StaticWep:
         case NetworkManager::DynamicWep:
         case NetworkManager::WpaPsk:
         case NetworkManager::Wpa2Psk:
-        case NetworkManager::SAE: {
-            bool ok;
-            key = tInputDialog::getText(this, tr("Security Key"), tr("Please input the security key for the network %1.").arg(QLocale().quoteString(ap->ssid())), QLineEdit::Password, "", &ok);
-            if (!ok) return;
-        }
-        break;
+        case NetworkManager::SAE:
+            {
+                bool ok;
+                key = tInputDialog::getText(this, tr("Security Key"), tr("Please input the security key for the network %1.").arg(QLocale().quoteString(ap->ssid())), QLineEdit::Password, "", &ok);
+                if (!ok) return;
+            }
+            break;
         case NetworkManager::WpaEap:
         case NetworkManager::Wpa2Eap:
         case NetworkManager::Leap:
         case NetworkManager::UnknownSecurity:
-        default: {
-            tMessageBox* box = new tMessageBox(this);
-            box->setWindowTitle(tr("Unsupported Security Settings"));
-            box->setText(tr("To connect to this network, you'll need to use a terminal."));
-            connect(box, &tMessageBox::finished, this, [ = ] {
-                box->deleteLater();
-            });
-            box->open();
-            break;
-        }
+        default:
+            {
+                tMessageBox* box = new tMessageBox(this);
+                box->setTitleBarText(tr("Unsupported Security Settings"));
+                box->setMessageText(tr("To connect to this network, you'll need to use a terminal."));
+                box->exec(true);
+                break;
+            }
     }
-
 
     NetworkManager::ConnectionSettings settings(NetworkManager::ConnectionSettings::Wireless);
     NetworkManager::WirelessSetting::Ptr wirelessSettings = settings.setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
@@ -164,7 +162,7 @@ void NetworkPage::on_networkList_itemActivated(QListWidgetItem* item) {
 
     switch (securityType) {
         case NetworkManager::NoneSecurity:
-            //Don't need to set anything special here
+            // Don't need to set anything special here
             break;
         case NetworkManager::StaticWep:
         case NetworkManager::DynamicWep:
@@ -194,18 +192,14 @@ void NetworkPage::on_networkList_itemActivated(QListWidgetItem* item) {
 
     wirelessSettings->setInitialized(true);
 
-
     QDBusPendingCallWatcher* watcher = new QDBusPendingCallWatcher(NetworkManager::addAndActivateConnection(settings.toMap(), d->wlDev->uni(), ""));
-    connect(watcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [=] {
         if (watcher->isError()) {
             tMessageBox* box = new tMessageBox(this);
-            box->setWindowTitle(tr("Could not connect"));
-            box->setText(tr("Could not connect to the network."));
+            box->setTitleBarText(tr("Could not connect"));
+            box->setMessageText(tr("Could not connect to the network."));
             box->setInformativeText(tr("Ensure that the network security key is correct and that the device is not too far away from the access point."));
-            connect(box, &tMessageBox::finished, this, [ = ] {
-                box->deleteLater();
-            });
-            box->open();
+            box->exec(true);
         }
     });
 }

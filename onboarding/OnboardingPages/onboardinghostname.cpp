@@ -20,90 +20,98 @@
 #include "onboardinghostname.h"
 #include "ui_onboardinghostname.h"
 
-#include <statemanager.h>
+#include <QDBusConnection>
+#include <QDBusMessage>
+#include <QDBusPendingCall>
 #include <onboardingmanager.h>
+#include <statemanager.h>
 
-OnboardingHostname::OnboardingHostname(QWidget* parent) :
-    OnboardingPage(parent),
-    ui(new Ui::OnboardingHostname) {
-    ui->setupUi(this);
+OnboardingHostname::OnboardingHostname(QWidget *parent)
+    : OnboardingPage(parent), ui(new Ui::OnboardingHostname) {
+  ui->setupUi(this);
 
-    ui->titleLabel->setBackButtonShown(true);
+  ui->titleLabel->setBackButtonShown(true);
 }
 
-OnboardingHostname::~OnboardingHostname() {
-    delete ui;
-}
+OnboardingHostname::~OnboardingHostname() { delete ui; }
 
 void OnboardingHostname::on_titleLabel_backButtonClicked() {
-    StateManager::onboardingManager()->previousStep();
+  StateManager::onboardingManager()->previousStep();
 }
 
 void OnboardingHostname::on_nextButton_clicked() {
-    QDBusMessage prettyMessage = QDBusMessage::createMethodCall("org.freedesktop.hostname1", "/org/freedesktop/hostname1", "org.freedesktop.hostname1", "SetPrettyHostname");
-    prettyMessage.setArguments({ui->hostnameEdit->text(), true});
-    QDBusConnection::systemBus().asyncCall(prettyMessage);
+  QDBusMessage prettyMessage = QDBusMessage::createMethodCall(
+      "org.freedesktop.hostname1", "/org/freedesktop/hostname1",
+      "org.freedesktop.hostname1", "SetPrettyHostname");
+  prettyMessage.setArguments({ui->hostnameEdit->text(), true});
+  QDBusConnection::systemBus().asyncCall(prettyMessage);
 
-    QDBusMessage staticMessage = QDBusMessage::createMethodCall("org.freedesktop.hostname1", "/org/freedesktop/hostname1", "org.freedesktop.hostname1", "SetStaticHostname");
-    staticMessage.setArguments({generateStaticHostname(ui->hostnameEdit->text()), true});
-    QDBusConnection::systemBus().asyncCall(staticMessage);
+  QDBusMessage staticMessage = QDBusMessage::createMethodCall(
+      "org.freedesktop.hostname1", "/org/freedesktop/hostname1",
+      "org.freedesktop.hostname1", "SetStaticHostname");
+  staticMessage.setArguments(
+      {generateStaticHostname(ui->hostnameEdit->text()), true});
+  QDBusConnection::systemBus().asyncCall(staticMessage);
 
-    StateManager::onboardingManager()->nextStep();
+  StateManager::onboardingManager()->nextStep();
 }
 
 QString OnboardingHostname::generateStaticHostname(QString hostname) {
-    QString allowedCharacters = QStringLiteral("abcdefghijklmnopqrstuvwxyz0123456789-");
-    QString ignoredCharacters = QStringLiteral("'\"");
-    QString staticHostname;
-    bool allowHyphen = false;
-    for (QChar c : hostname) {
-        c = c.toLower();
+  QString allowedCharacters =
+      QStringLiteral("abcdefghijklmnopqrstuvwxyz0123456789-");
+  QString ignoredCharacters = QStringLiteral("'\"");
+  QString staticHostname;
+  bool allowHyphen = false;
+  for (QChar c : hostname) {
+    c = c.toLower();
 
-        if (ignoredCharacters.contains(c)) continue;
+    if (ignoredCharacters.contains(c))
+      continue;
 
-        if (allowedCharacters.contains(c)) {
-            staticHostname.append(c);
-            allowHyphen = true;
-            continue;
-        }
-
-        bool haveCharacter = false;
-        for (QChar ch : c.decomposition()) {
-            if (allowedCharacters.contains(ch)) {
-                staticHostname.append(ch);
-                allowHyphen = true;
-                haveCharacter = true;
-                continue;
-            }
-        }
-        if (haveCharacter) continue;
-
-        if (allowHyphen) {
-            allowHyphen = false;
-            staticHostname.append("-");
-        }
+    if (allowedCharacters.contains(c)) {
+      staticHostname.append(c);
+      allowHyphen = true;
+      continue;
     }
 
-    if (staticHostname.endsWith("-")) staticHostname.remove(staticHostname.length() - 1, 1);
-    staticHostname.truncate(63);
-    if (staticHostname.isEmpty()) return QStringLiteral("localhost");
-    return staticHostname;
+    bool haveCharacter = false;
+    for (QChar ch : c.decomposition()) {
+      if (allowedCharacters.contains(ch)) {
+        staticHostname.append(ch);
+        allowHyphen = true;
+        haveCharacter = true;
+        continue;
+      }
+    }
+    if (haveCharacter)
+      continue;
+
+    if (allowHyphen) {
+      allowHyphen = false;
+      staticHostname.append("-");
+    }
+  }
+
+  if (staticHostname.endsWith("-"))
+    staticHostname.remove(staticHostname.length() - 1, 1);
+  staticHostname.truncate(63);
+  if (staticHostname.isEmpty())
+    return QStringLiteral("localhost");
+  return staticHostname;
 }
 
 QString OnboardingHostname::name() {
-    return QStringLiteral("OnboardingHostname");
+  return QStringLiteral("OnboardingHostname");
 }
 
-QString OnboardingHostname::displayName() {
-    return tr("Device Name");
-}
+QString OnboardingHostname::displayName() { return tr("Device Name"); }
 
-void OnboardingHostname::on_hostnameEdit_textChanged(const QString& arg1) {
-    if (arg1.isEmpty()) {
-        ui->nextButton->setEnabled(false);
-        ui->networkCompatibleName->setText("");
-    } else {
-        ui->nextButton->setEnabled(true);
-        ui->networkCompatibleName->setText(generateStaticHostname(arg1));
-    }
+void OnboardingHostname::on_hostnameEdit_textChanged(const QString &arg1) {
+  if (arg1.isEmpty()) {
+    ui->nextButton->setEnabled(false);
+    ui->networkCompatibleName->setText("");
+  } else {
+    ui->nextButton->setEnabled(true);
+    ui->networkCompatibleName->setText(generateStaticHostname(arg1));
+  }
 }

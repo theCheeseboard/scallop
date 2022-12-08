@@ -24,7 +24,7 @@
 
 int main(int argc, char* argv[]) {
     tApplication a(argc, argv);
-    a.setShareDir("/usr/share/scallop/reset/ui");
+    a.setApplicationShareDir("scallop/reset/ui");
     a.installTranslators();
 
     a.setApplicationVersion("1.0");

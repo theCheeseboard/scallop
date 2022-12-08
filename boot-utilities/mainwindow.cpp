@@ -20,31 +20,30 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QFile>
-#include <QProcess>
-#include <QPainter>
-#include <QGraphicsOpacityEffect>
-#include <Wm/desktopwm.h>
-#include <TimeDate/desktoptimedate.h>
-#include <Background/backgroundcontroller.h>
-#include <tvariantanimation.h>
-#include <tpopover.h>
-#include <tapplication.h>
-#include "powerpopover.h"
 #include "languagepopover.h"
+#include "powerpopover.h"
+#include <Background/backgroundcontroller.h>
+#include <QFile>
+#include <QGraphicsOpacityEffect>
+#include <QPainter>
+#include <QProcess>
+#include <TimeDate/desktoptimedate.h>
+#include <Wm/desktopwm.h>
+#include <tapplication.h>
+#include <tpopover.h>
+#include <tvariantanimation.h>
 
 struct MainWindowPrivate {
-    QGraphicsOpacityEffect* effect;
-    QGraphicsOpacityEffect* exitEffect;
-    BackgroundController* bg;
-    QPixmap background;
+        QGraphicsOpacityEffect* effect;
+        QGraphicsOpacityEffect* exitEffect;
+        BackgroundController* bg;
+        QPixmap background;
 
-    QTranslator* localTranslator;
+        QTranslator* localTranslator;
 };
 
-MainWindow::MainWindow(QWidget* parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow) {
+MainWindow::MainWindow(QWidget* parent) :
+    QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     d = new MainWindowPrivate();
@@ -82,7 +81,6 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
-
 void MainWindow::on_exitButton_clicked() {
     PowerPopover* powerPopover = new PowerPopover();
     tPopover* popover = new tPopover(powerPopover);
@@ -96,7 +94,7 @@ void MainWindow::on_exitButton_clicked() {
 
 void MainWindow::on_installButton_clicked() {
     QProcess* proc = new QProcess();
-    connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [ = ](int exitCode, QProcess::ExitStatus exitStatus) {
+    connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [=](int exitCode, QProcess::ExitStatus exitStatus) {
         setUtilitiesAvailable(true);
     });
     proc->start("scallop-install-system", QStringList());
@@ -113,11 +111,11 @@ void MainWindow::setUtilitiesAvailable(bool utilitiesAvailable) {
     anim->setEndValue(utilitiesAvailable ? 1.0 : 0.0);
     anim->setDuration(500);
     anim->setEasingCurve(QEasingCurve::OutCubic);
-    connect(anim, &tVariantAnimation::valueChanged, this, [ = ](QVariant value) {
+    connect(anim, &tVariantAnimation::valueChanged, this, [=](QVariant value) {
         d->effect->setOpacity(value.toReal());
         d->exitEffect->setOpacity(value.toReal());
     });
-    connect(anim, &tVariantAnimation::finished, this, [ = ] {
+    connect(anim, &tVariantAnimation::finished, this, [=] {
         ui->frame->setVisible(utilitiesAvailable);
         ui->exitButton->setVisible(utilitiesAvailable);
     });
@@ -125,15 +123,14 @@ void MainWindow::setUtilitiesAvailable(bool utilitiesAvailable) {
 }
 
 void MainWindow::updateBackground() {
-    d->bg->getCurrentBackground(this->size())->then([ = ](BackgroundController::BackgroundData backgroundData) {
+    d->bg->getCurrentBackground(this->size())->then([=](BackgroundController::BackgroundData backgroundData) {
         d->background = backgroundData.px;
         ui->centralwidget->update();
     });
 }
 
 void MainWindow::updateLabels() {
-
-    //Get distribution information
+    // Get distribution information
     QString osreleaseFile = "";
     if (QFile("/etc/os-release").exists()) {
         osreleaseFile = "/etc/os-release";
@@ -153,7 +150,7 @@ void MainWindow::updateLabels() {
 
             QString key = line.left(equalsIndex);
             QString value = line.mid(equalsIndex + 1);
-            if (value.startsWith("\"") && value.endsWith("\"")) value = value.mid(1, value.count() - 2);
+            if (value.startsWith("\"") && value.endsWith("\"")) value = value.mid(1, value.size() - 2);
             values.insert(key, value);
         }
         information.close();
@@ -165,7 +162,7 @@ void MainWindow::updateLabels() {
 }
 
 void MainWindow::updateTranslations(QLocale locale) {
-    d->localTranslator->load(locale.name(), tApplication::shareDir() + "/translations");
+    d->localTranslator->load(locale.name(), tApplication::shareDirs().at(0) + "/translations");
     tApplication::installTranslator(d->localTranslator);
 }
 
@@ -208,7 +205,7 @@ void MainWindow::on_languageButton_clicked() {
     tPopover* popover = new tPopover(powerPopover);
     popover->setPopoverWidth(SC_DPI(400));
     connect(powerPopover, &LanguagePopover::rejected, popover, &tPopover::dismiss);
-    connect(powerPopover, &LanguagePopover::accepted, popover, [ = ](QLocale locale) {
+    connect(powerPopover, &LanguagePopover::accepted, popover, [=](QLocale locale) {
         QLocale::setDefault(locale);
 
         QString localeName = locale.name() + ".UTF-8";
@@ -225,7 +222,6 @@ void MainWindow::on_languageButton_clicked() {
     popover->show(this);
     powerPopover->setFocus();
 }
-
 
 void MainWindow::changeEvent(QEvent* event) {
     if (event->type() == QEvent::LanguageChange) {

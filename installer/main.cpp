@@ -17,19 +17,19 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#include "mainwindow.h"
 #include "install/installmanager.h"
+#include "mainwindow.h"
 #include "probe/probemanager.h"
 
-#include <tapplication.h>
 #include <QCommandLineParser>
 #include <scalloplib.h>
+#include <tapplication.h>
 
 #include <cactus-install-animation/cactusinstallanimationwindow.h>
 
 int main(int argc, char* argv[]) {
     tApplication a(argc, argv);
-    a.setShareDir("/usr/share/scallop/install-system");
+    a.setApplicationShareDir("scallop/install-system");
     a.installTranslators();
 
     ScallopLib::init();
@@ -47,9 +47,9 @@ int main(int argc, char* argv[]) {
         p->probe(parser.value("probe"));
         return 0;
     } else {
-//        CactusInstallAnimationWindow* window = new CactusInstallAnimationWindow();
-//        window->resize(1920, 1080);
-//        window->show();
+        //        CactusInstallAnimationWindow* window = new CactusInstallAnimationWindow();
+        //        window->resize(1920, 1080);
+        //        window->show();
 
         MainWindow* w = new MainWindow();
         w->show();

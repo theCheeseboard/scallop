@@ -5,26 +5,28 @@
     <name>DownloadProgress</name>
     <message>
         <location filename="../downloadprogress.ui" line="58"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_downloadprogress.h" line="122"/>
         <source>Preparing to Reset</source>
         <translation>Forbereder til nulstilling</translation>
     </message>
     <message>
         <location filename="../downloadprogress.ui" line="73"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_downloadprogress.h" line="123"/>
         <source>We&apos;re preparing this device to be reset. Stay connected to the Internet. This will take a while.</source>
         <translation>Vi forbereder til at nulstille denne enhed. Forbliv forbundet til internettet. Dette kan tage lidt tid.</translation>
     </message>
     <message>
-        <location filename="../downloadprogress.cpp" line="60"/>
+        <location filename="../downloadprogress.cpp" line="61"/>
         <source>Reset Failed</source>
         <translation>Nulstilling fejlede</translation>
     </message>
     <message>
-        <location filename="../downloadprogress.cpp" line="60"/>
+        <location filename="../downloadprogress.cpp" line="61"/>
         <source>We weren&apos;t able to download the recovery image. Please try again later.</source>
         <translation>Vi kunne ikke downloade gendannelsesbilledet. Prøv igen senere.</translation>
     </message>
     <message>
-        <location filename="../downloadprogress.cpp" line="67"/>
+        <location filename="../downloadprogress.cpp" line="68"/>
         <source>Downloaded %1 of %2</source>
         <translation>Downloadet %1 ud af %2</translation>
     </message>
@@ -33,16 +35,19 @@
     <name>FinalResetPopover</name>
     <message>
         <location filename="../finalresetpopover.ui" line="51"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_finalresetpopover.h" line="99"/>
         <source>THIS IS IT</source>
         <translation>DET ER NU</translation>
     </message>
     <message>
         <location filename="../finalresetpopover.ui" line="58"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_finalresetpopover.h" line="100"/>
         <source>There&apos;s no going back after this. Once this device is reset, all your data is gone forever.</source>
         <translation>Du kan ikke vende tilbage efter dette. Når enheden er nulstillet, så vil alt din data være væk for evigt.</translation>
     </message>
     <message>
         <location filename="../finalresetpopover.ui" line="68"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_finalresetpopover.h" line="101"/>
         <source>Reboot and reset this device</source>
         <translation>Genstart og nulstil denne enhed</translation>
     </message>
@@ -57,37 +62,43 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.ui" line="125"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_mainwindow.h" line="154"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_mainwindow.h" line="156"/>
         <source>Reset this device</source>
         <translation>Nulstil denne enhed</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="154"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_mainwindow.h" line="157"/>
         <source>Yes, reset this device</source>
         <translation>Ja, nulstil denne enhed</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="157"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_mainwindow.h" line="158"/>
         <source>All data will be deleted and this device will restart.</source>
         <translation>Alt din data vil blive slettet og denne enhed vil blive genstartet.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="164"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_mainwindow.h" line="159"/>
         <source>No, don&apos;t reset this device</source>
         <translation>Nej, nulstil ikke denne enhed</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="167"/>
+        <location filename="../../../../build-scallop-Chroot_6-Debug/reset/scallop-reset-ui/scallopresetui_autogen/include/ui_mainwindow.h" line="160"/>
         <source>Your data will be preserved.</source>
         <translation>Din data vil blive bevaret.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="97"/>
-        <location filename="../mainwindow.cpp" line="99"/>
+        <location filename="../mainwindow.cpp" line="96"/>
+        <location filename="../mainwindow.cpp" line="98"/>
         <source>Unknown</source>
         <translation>Ukendt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="102"/>
+        <location filename="../mainwindow.cpp" line="101"/>
         <source>**BUCKLE UP!**
 
 Resetting this device will erase all personal data **for all accounts.** This includes:

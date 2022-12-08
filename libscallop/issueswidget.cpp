@@ -23,8 +23,8 @@
 #include <tlogger.h>
 
 struct IssuesWidgetPrivate {
-    QList<tStatusFrame*> frames;
-    bool haveError = false;
+        QList<tStatusFrame*> frames;
+        bool haveError = false;
 };
 
 IssuesWidget::IssuesWidget(QWidget* parent) :
@@ -35,7 +35,7 @@ IssuesWidget::IssuesWidget(QWidget* parent) :
     d = new IssuesWidgetPrivate();
     ui->stackedWidget->setCurrentAnimation(tStackedWidget::Fade);
 
-    connect(this, &IssuesWidget::hasIssuesChanged, this, [ = ] {
+    connect(this, &IssuesWidget::hasIssuesChanged, this, [=] {
         ui->stackedWidget->setCurrentWidget(this->hasIssues() ? ui->issuesPage : ui->noIssuesPage);
     });
 }

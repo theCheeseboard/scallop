@@ -19,16 +19,18 @@
  * *************************************/
 #include "mountstate.h"
 
-#include <driveobjectmanager.h>
-#include <DriveObjects/diskobject.h>
-#include <DriveObjects/blockinterface.h>
 #include "installerdata.h"
+#include <DriveObjects/blockinterface.h>
+#include <DriveObjects/diskobject.h>
+#include <QFinalState>
+#include <driveobjectmanager.h>
 
 struct MountStatePrivate {
-    QTemporaryDir mountDir;
+        QTemporaryDir mountDir;
 };
 
-MountState::MountState(QState* parent) : QStateMachine(parent) {
+MountState::MountState(QState* parent) :
+    QStateMachine(parent) {
     d = new MountStatePrivate();
     d->mountDir.setAutoRemove(false);
 }
@@ -38,11 +40,11 @@ MountState::~MountState() {
 }
 
 void MountState::onEntry(QEvent* event) {
-    //Add states
+    // Add states
     QList<QPair<QString, QString>> mounts = InstallerData::valueTemp("mounts").value<QList<QPair<QString, QString>>>();
 
-    //Sort the mounts by length
-    std::sort(mounts.begin(), mounts.end(), [ = ](QPair<QString, QString> first, QPair<QString, QString> second) {
+    // Sort the mounts by length
+    std::sort(mounts.begin(), mounts.end(), [=](QPair<QString, QString> first, QPair<QString, QString> second) {
         return first.first.length() < second.first.length();
     });
 
@@ -51,7 +53,7 @@ void MountState::onEntry(QEvent* event) {
     QState* previousState = nullptr;
     for (QPair<QString, QString> mount : mounts) {
         QState* state = new QState();
-        connect(state, &QState::entered, this, [ = ] {
+        connect(state, &QState::entered, this, [=] {
             DiskObject* mountDrive;
 
             if (mount.second.startsWith("/org/freedesktop/UDisks2")) {
@@ -65,13 +67,13 @@ void MountState::onEntry(QEvent* event) {
 
             QDir::root().mkpath(mountPath);
 
-            //Mount the drive
+            // Mount the drive
             QTextStream(stderr) << tr("Mounting:") << " " << block << " -> " << mountPath << "\n";
 
             QProcess* proc = new QProcess();
             proc->setProcessChannelMode(QProcess::ForwardedChannels);
             proc->start("mount", {block, mountPath});
-            connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [ = ](int exitCode, QProcess::ExitStatus exitStatus) {
+            connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [=](int exitCode, QProcess::ExitStatus exitStatus) {
                 if (exitCode == 0) {
                     emit mountNext();
                 } else {

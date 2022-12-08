@@ -22,6 +22,8 @@
 
 #include "installerdata.h"
 #include "installipcmanager.h"
+#include <QDBusConnection>
+#include <QDBusMessage>
 
 FinishedPage::FinishedPage(QWidget* parent) :
     QWidget(parent),
@@ -30,10 +32,10 @@ FinishedPage::FinishedPage(QWidget* parent) :
 
     ui->failureDescription->setText(tr("Sorry, we couldn't install %1.").arg(InstallerData::systemName()));
 
-    connect(InstallIpcManager::instance(), &InstallIpcManager::success, this, [ = ] {
+    connect(InstallIpcManager::instance(), &InstallIpcManager::success, this, [=] {
         ui->stackedWidget->setCurrentWidget(ui->successPage);
     });
-    connect(InstallIpcManager::instance(), &InstallIpcManager::failure, this, [ = ] {
+    connect(InstallIpcManager::instance(), &InstallIpcManager::failure, this, [=] {
         ui->stackedWidget->setCurrentWidget(ui->failurePage);
     });
 }

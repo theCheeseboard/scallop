@@ -20,13 +20,13 @@
 #include "mainwindow.h"
 
 #include <QProcess>
-#include <tapplication.h>
 #include <Wm/desktopwm.h>
+#include <tapplication.h>
 
 int main(int argc, char* argv[]) {
-    qputenv("QT_QPA_PLATFORMTHEME", "thedesk-platform");
+    //    qputenv("QT_QPA_PLATFORMTHEME", "thedesk-platform");
     tApplication a(argc, argv);
-    a.setShareDir("/usr/share/scallop/boot-utilities");
+    a.setApplicationShareDir("scallop/boot-utilities");
     a.installTranslators();
 
     DesktopWm::instance();

@@ -18,18 +18,18 @@
  *
  * *************************************/
 
-#include <tapplication.h>
-#include <statemanager.h>
-#include <localemanager.h>
-#include <powermanager.h>
-#include <onboardingmanager.h>
-#include <tsettings.h>
 #include <QProcess>
-#include <plugins/pluginmanager.h>
-#include <onboarding/onboardingcontroller.h>
-#include <unistd.h>
-#include <pwd.h>
 #include <grp.h>
+#include <localemanager.h>
+#include <onboarding/onboardingcontroller.h>
+#include <onboardingmanager.h>
+#include <plugins/pluginmanager.h>
+#include <powermanager.h>
+#include <pwd.h>
+#include <statemanager.h>
+#include <tapplication.h>
+#include <tsettings.h>
+#include <unistd.h>
 
 #include "endsession.h"
 
@@ -38,8 +38,8 @@
 
 #include <tlogger.h>
 
-#include <Context>
-#include <Sink>
+#include <PulseAudioQt/Context>
+#include <PulseAudioQt/Sink>
 
 int main(int argc, char* argv[]) {
     if (geteuid() != 0) {
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
     initgroups(setupUserInformation->pw_name, setupUserInformation->pw_gid);
     int uidSetReturn = setuid(setupUserInformation->pw_uid);
     if (uidSetReturn != 0) {
-        //Bail
+        // Bail
         QTextStream(stdout) << "Could not drop privileges\n";
         return 1;
     }
@@ -62,14 +62,15 @@ int main(int argc, char* argv[]) {
     QTemporaryDir runDir;
     qputenv("XDG_RUNTIME_DIR", runDir.path().toUtf8());
 
-    //Start a D-Bus daemon
+    // Start a D-Bus daemon
     QProcess dbus;
     dbus.start("dbus-launch", QStringList());
     dbus.waitForFinished();
     QString dbusOutput = dbus.readAll();
     for (const QString& line : dbusOutput.split("\n")) {
         QStringList parts = line.split("=");
-        if (parts.count() == 2) qputenv(parts.first().toUtf8().data(), parts.at(1).toUtf8());
+        if (parts.count() == 2)
+            qputenv(parts.first().toUtf8().data(), parts.at(1).toUtf8());
     }
 
     QProcess pulseProc;
@@ -80,7 +81,7 @@ int main(int argc, char* argv[]) {
     a.setOrganizationName("theSuite");
     a.setOrganizationDomain("vicr123.com");
     a.setApplicationName("theDesk");
-    a.setShareDir("/usr/share/scallop/onboarding");
+    a.setApplicationShareDir("scallop/onboarding");
     a.installTranslators();
 
     QProcess kwinProc;
@@ -88,17 +89,18 @@ int main(int argc, char* argv[]) {
     kwinProc.waitForStarted();
 
     StateManager::instance();
-    StateManager::localeManager()->addTranslationSet({
-        a.applicationDirPath() + "/translations",
-        "/usr/share/thedesk/translations"
-    });
+    StateManager::localeManager()->addTranslationSet(
+        {a.applicationDirPath() + "/translations",
+            "/usr/share/thedesk/translations"});
 
     tSettings::registerDefaults(a.applicationDirPath() + "/defaults.conf");
     tSettings::registerDefaults("/etc/scallop/onboarding/defaults.conf");
     tSettings::registerDefaults("/etc/theSuite/theDesk/defaults.conf");
 
-    //Turn up the volume
-    QObject::connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::sinkAdded, [ = ](PulseAudioQt::Sink * sink) {
+    // Turn up the volume
+    QObject::connect(PulseAudioQt::Context::instance(),
+        &PulseAudioQt::Context::sinkAdded,
+        [=](PulseAudioQt::Sink* sink) {
         sink->setVolume(PulseAudioQt::normalVolume() * 0.5);
         sink->setMuted(false);
     });
@@ -107,27 +109,32 @@ int main(int argc, char* argv[]) {
         sink->setMuted(false);
     }
 
-    //Read seeded settings
+    // Read seeded settings
     if (QFile::exists("/etc/scallop/seeded-settings")) {
         QSettings seedFile("/etc/scallop/seeded-settings", QSettings::IniFormat);
         QString language = seedFile.value("Scallop/language").toString();
 
-
         QLocale locale(language);
         LocaleManager* localeManager = StateManager::localeManager();
-        if (localeManager->locales().contains(locale)) localeManager->removeLocale(locale);
+        if (localeManager->locales().contains(locale))
+            localeManager->removeLocale(locale);
         localeManager->prependLocale(locale);
     }
 
-    QObject::connect(StateManager::powerManager(), &PowerManager::powerOffConfirmationRequested, [ = ] {
+    QObject::connect(StateManager::powerManager(),
+        &PowerManager::powerOffConfirmationRequested,
+        [=] {
         EndSession::showDialog();
     });
-    QObject::connect(StateManager::onboardingManager(), &OnboardingManager::onboardingRequired, [ = ] {
-        StateManager::onboardingManager()->addOnboardingStep(new OnboardingCompleteOobe());
-        StateManager::onboardingManager()->addOnboardingStep(new OnboardingHostname());
+    QObject::connect(StateManager::onboardingManager(),
+        &OnboardingManager::onboardingRequired, [=] {
+            StateManager::onboardingManager()->addOnboardingStep(
+                new OnboardingCompleteOobe());
+            StateManager::onboardingManager()->addOnboardingStep(
+                new OnboardingHostname());
 
-        StateManager::onboardingManager()->setDateVisible(false);
-    });
+            StateManager::onboardingManager()->setDateVisible(false);
+        });
 
     PluginManager::instance()->scanPlugins();
     OnboardingController::performOnboarding(true);

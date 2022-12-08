@@ -20,16 +20,17 @@
 #include "downloadprogress.h"
 #include "ui_downloadprogress.h"
 
-#include <QFile>
-#include <QNetworkReply>
-#include <QNetworkAccessManager>
-#include <QMessageBox>
-#include <QProcess>
+#include <QDBusConnection>
 #include <QDBusMessage>
-#include <the-libs_global.h>
+#include <QFile>
+#include <QMessageBox>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QProcess>
+#include <libcontemporary_global.h>
 
 struct DownloadProgressPrivate {
-    QNetworkAccessManager mgr;
+        QNetworkAccessManager mgr;
 };
 
 DownloadProgress::DownloadProgress(QString destFileName, QWidget* parent) :
@@ -43,30 +44,30 @@ DownloadProgress::DownloadProgress(QString destFileName, QWidget* parent) :
     QFile* destFile = new QFile(destFileName);
     destFile->open(QFile::WriteOnly);
 
-    QNetworkRequest request(QUrl(SCALLOP_ROOTFS_LOCATION));
+    QNetworkRequest request((QUrl(SCALLOP_ROOTFS_LOCATION)));
     QNetworkReply* reply = d->mgr.get(request);
-    connect(reply, &QNetworkReply::finished, this, [ = ] {
+    connect(reply, &QNetworkReply::finished, this, [=] {
         destFile->close();
 
         if (reply->error() == QNetworkReply::NoError) {
-            //Proceed to reboot the device
+            // Proceed to reboot the device
             QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", "Reboot");
             message.setArguments({false});
             QDBusConnection::systemBus().call(message);
         } else {
-            //Undo the reset trigger
+            // Undo the reset trigger
             QProcess::startDetached("scallop-reset-trigger", {"--undo-trigger"});
             destFile->remove();
             QMessageBox::critical(this, tr("Reset Failed"), tr("We weren't able to download the recovery image. Please try again later."));
             QApplication::exit();
         }
     });
-    connect(reply, &QNetworkReply::downloadProgress, this, [ = ](qint64 bytesReceived, qint64 bytesTotal) {
+    connect(reply, &QNetworkReply::downloadProgress, this, [=](qint64 bytesReceived, qint64 bytesTotal) {
         ui->downloadProgress->setMaximum(bytesTotal);
         ui->downloadProgress->setValue(bytesReceived);
         ui->downloadProgressLabel->setText(tr("Downloaded %1 of %2").arg(QLocale().formattedDataSize(bytesReceived), QLocale().formattedDataSize(bytesTotal)));
     });
-    connect(reply, &QNetworkReply::readyRead, this, [ = ] {
+    connect(reply, &QNetworkReply::readyRead, this, [=] {
         destFile->write(reply->readAll());
     });
 
@@ -88,7 +89,6 @@ DownloadProgress::~DownloadProgress() {
     delete d;
     delete ui;
 }
-
 
 void DownloadProgress::resizeEvent(QResizeEvent* event) {
     ui->topSpacer->changeSize(0, this->height() * 0.35, QSizePolicy::Preferred, QSizePolicy::Fixed);

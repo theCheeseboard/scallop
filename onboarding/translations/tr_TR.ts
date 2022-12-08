@@ -5,46 +5,55 @@
     <name>EndSession</name>
     <message>
         <location filename="../endsession.ui" line="35"/>
+        <location filename="../../../build-scallop-Chroot_6-Debug/onboarding/scalloponboarding_autogen/include/ui_endsession.h" line="141"/>
         <source>End Session</source>
         <translation>Oturum sonu</translation>
     </message>
     <message>
         <location filename="../endsession.ui" line="76"/>
+        <location filename="../../../build-scallop-Chroot_6-Debug/onboarding/scalloponboarding_autogen/include/ui_endsession.h" line="142"/>
         <source>What would you like to do now?</source>
         <translation>Şimdi ne yapmak istersin?</translation>
     </message>
     <message>
         <location filename="../endsession.ui" line="88"/>
+        <location filename="../../../build-scallop-Chroot_6-Debug/onboarding/scalloponboarding_autogen/include/ui_endsession.h" line="143"/>
         <source>Power Off</source>
         <translation>Kapat</translation>
     </message>
     <message>
         <location filename="../endsession.ui" line="95"/>
+        <location filename="../../../build-scallop-Chroot_6-Debug/onboarding/scalloponboarding_autogen/include/ui_endsession.h" line="144"/>
         <source>Turns off your computer.</source>
         <translation>Bilgisayarınızı kapatır.</translation>
     </message>
     <message>
         <location filename="../endsession.ui" line="105"/>
+        <location filename="../../../build-scallop-Chroot_6-Debug/onboarding/scalloponboarding_autogen/include/ui_endsession.h" line="145"/>
         <source>Reboot</source>
         <translation>Yeniden başlat</translation>
     </message>
     <message>
         <location filename="../endsession.ui" line="112"/>
+        <location filename="../../../build-scallop-Chroot_6-Debug/onboarding/scalloponboarding_autogen/include/ui_endsession.h" line="146"/>
         <source>Turns off your computer and turns it on again</source>
         <translation>Bilgisayarınızı kapatır ve tekrar açar</translation>
     </message>
     <message>
         <location filename="../endsession.ui" line="119"/>
+        <location filename="../../../build-scallop-Chroot_6-Debug/onboarding/scalloponboarding_autogen/include/ui_endsession.h" line="147"/>
         <source>Suspend</source>
         <translation>Askıya al</translation>
     </message>
     <message>
         <location filename="../endsession.ui" line="126"/>
+        <location filename="../../../build-scallop-Chroot_6-Debug/onboarding/scalloponboarding_autogen/include/ui_endsession.h" line="148"/>
         <source>Puts your computer in a low power state so it reopens quickly</source>
         <translation>Bilgisayarınızı düşük güç durumuna geçirir, böylece hızlı bir şekilde yeniden açılır</translation>
     </message>
     <message>
         <location filename="../endsession.ui" line="133"/>
+        <location filename="../../../build-scallop-Chroot_6-Debug/onboarding/scalloponboarding_autogen/include/ui_endsession.h" line="149"/>
         <source>Exit</source>
         <translation>Vazgeç</translation>
     </message>
@@ -67,19 +76,19 @@
         <translation>Başlamak</translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="58"/>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="64"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="59"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="72"/>
         <source>We hope you enjoy using %1!</source>
         <translation>%1&apos;i kullanmaktan keyif alacağınızı umuyoruz!</translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="58"/>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="64"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="60"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="72"/>
         <source>your new device</source>
         <translation>yeni cihazın</translation>
     </message>
     <message>
-        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="77"/>
+        <location filename="../OnboardingPages/onboardingcompleteoobe.cpp" line="82"/>
         <source>Done</source>
         <translation>Bitti</translation>
     </message>
@@ -88,7 +97,7 @@
     <name>OnboardingHostname</name>
     <message>
         <location filename="../OnboardingPages/onboardinghostname.ui" line="35"/>
-        <location filename="../OnboardingPages/onboardinghostname.cpp" line="98"/>
+        <location filename="../OnboardingPages/onboardinghostname.cpp" line="107"/>
         <source>Device Name</source>
         <translation>Cihaz adı</translation>
     </message>

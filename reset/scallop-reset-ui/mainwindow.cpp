@@ -20,26 +20,25 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QScreen>
-#include <QProcess>
-#include <QFile>
-#include <tpopover.h>
+#include "downloadprogress.h"
+#include "finalresetpopover.h"
 #include <QDir>
+#include <QFile>
+#include <QProcess>
+#include <QScreen>
 #include <QToolButton>
 #include <tcsdtools.h>
-#include "finalresetpopover.h"
-#include "downloadprogress.h"
+#include <tpopover.h>
 
-#include <polkit-qt5-1/PolkitQt1/Authority>
-#include <polkit-qt5-1/PolkitQt1/Subject>
+#include <PolkitQt1/Authority>
+#include <PolkitQt1/Subject>
 
 struct MainWindowPrivate {
-    tCsdTools csd;
+        tCsdTools csd;
 };
 
-MainWindow::MainWindow(QWidget* parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow) {
+MainWindow::MainWindow(QWidget* parent) :
+    QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     QRect geometry;
@@ -55,7 +54,7 @@ MainWindow::MainWindow(QWidget* parent)
     QToolButton* closeButton = new QToolButton();
     closeButton->setIcon(QIcon(":/tcsdtools/close.svg"));
     closeButton->setIconSize(SC_DPI_T(QSize(24, 24), QSize));
-    connect(closeButton, &QToolButton::clicked, this, [ = ] {
+    connect(closeButton, &QToolButton::clicked, this, [=] {
         this->close();
     });
 
@@ -68,7 +67,7 @@ MainWindow::MainWindow(QWidget* parent)
     ui->menuButton->setIcon(QIcon::fromTheme("scallop-reset", QIcon(":/icons/scallop-reset.svg")));
     ui->menuButton->setIconSize(SC_DPI_T(QSize(24, 24), QSize));
 
-    //Get distribution information
+    // Get distribution information
     QString systemName;
     QString osreleaseFile = "";
     if (QFile("/etc/os-release").exists()) {
@@ -100,15 +99,14 @@ MainWindow::MainWindow(QWidget* parent)
     }
 
     const char* untranslated = QT_TR_NOOP(
-            "**BUCKLE UP!**\n\n"
-            "Resetting this device will erase all personal data **for all accounts.** This includes:\n"
-            "- Documents\n"
-            "- Pictures\n"
-            "- Installed apps\n"
-            "- Any changed settings\n\n"
-            "**READY TO DO THIS?**\n\n"
-            "To get the ball rolling, we'll restart this device and start removing all the data on it. Once the reset is complete, a new copy of %1 will be installed. This process can take a while."
-        );
+        "**BUCKLE UP!**\n\n"
+        "Resetting this device will erase all personal data **for all accounts.** This includes:\n"
+        "- Documents\n"
+        "- Pictures\n"
+        "- Installed apps\n"
+        "- Any changed settings\n\n"
+        "**READY TO DO THIS?**\n\n"
+        "To get the ball rolling, we'll restart this device and start removing all the data on it. Once the reset is complete, a new copy of %1 will be installed. This process can take a while.");
 
     ui->descriptionLabel->setText(tr(untranslated).arg(systemName));
     ui->descriptionLabel->setTextFormat(Qt::MarkdownText);
@@ -133,8 +131,8 @@ void MainWindow::on_resetButton_clicked() {
         popover->setPopoverWidth(SC_DPI(-200));
         popover->setPopoverSide(tPopover::Bottom);
         connect(jp, &FinalResetPopover::rejected, popover, &tPopover::dismiss);
-        connect(jp, &FinalResetPopover::accepted, popover, [ = ] {
-            //Perform the reset
+        connect(jp, &FinalResetPopover::accepted, popover, [=] {
+            // Perform the reset
             bool requireDownload = !QFile::exists(SCALLOP_PACKAGED_LOCATION);
             QStringList resetTriggerArgs = {"--trigger"};
 
@@ -161,4 +159,3 @@ void MainWindow::on_resetButton_clicked() {
         popover->show(this->window());
     }
 }
-

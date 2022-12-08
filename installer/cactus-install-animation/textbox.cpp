@@ -19,25 +19,26 @@
  * *************************************/
 #include "textbox.h"
 
-#include <QRect>
-#include <QPainter>
-#include <the-libs_global.h>
-#include "zoomsvgrenderer.h"
 #include "sequencer.h"
+#include "zoomsvgrenderer.h"
+#include <QPainter>
+#include <QRect>
+#include <libcontemporary_global.h>
 
 struct TextBoxPrivate {
-    QStringList textParts;
-    TextBox::TextBoxType type;
-    ZoomSvgRenderer* boxRenderer;
+        QStringList textParts;
+        TextBox::TextBoxType type;
+        ZoomSvgRenderer* boxRenderer;
 
-    double maxWidth = 0;
+        double maxWidth = 0;
 
-    QString currentText;
+        QString currentText;
 
-    bool isRunning = false;
+        bool isRunning = false;
 };
 
-TextBox::TextBox(QStringList textParts, TextBoxType type, QObject* parent) : QObject(parent) {
+TextBox::TextBox(QStringList textParts, TextBoxType type, QObject* parent) :
+    QObject(parent) {
     d = new TextBoxPrivate();
     d->textParts = textParts;
     d->type = type;
@@ -71,44 +72,38 @@ void TextBox::trigger() {
         case TextBox::RobotCharacter:
             soundFile = "text-blip-robot";
             break;
-
     }
 
-    sequencer->addElement({
-        new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/text-start.wav"))),
-        new AnimationElement(0, SC_DPI(800), 200, [ = ](QVariant value) {
+    sequencer->addElement({new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/text-start.wav"))),
+        new AnimationElement(0, SC_DPI(800), 200, [=](QVariant value) {
             d->maxWidth = value.toDouble();
-        })
-    });
+        })});
 
     for (const QString& text : qAsConst(d->textParts)) {
-        sequencer->addElement(new FunctionElement([ = ] {
+        sequencer->addElement(new FunctionElement([=] {
             d->currentText = "";
         }));
 
         int i = 0;
         for (QChar c : text) {
-            sequencer->addElement({
-                new FunctionElement([ = ] {
-                    d->currentText += c;
+            sequencer->addElement({new FunctionElement([=] {
+                                       d->currentText += c;
+                                   }),
+                i % 5 == 0 ? static_cast<SequencerElement*>(new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/%1.wav").arg(soundFile)))) : new FunctionElement([] {
                 }),
-                i % 5 == 0 ? static_cast<SequencerElement*>(new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/%1.wav").arg(soundFile)))) : new FunctionElement([] {}),
-                new PauseElement(20)
-            });
+                new PauseElement(20)});
             i++;
         }
         sequencer->addElement(new PauseElement(3000));
     }
 
-    sequencer->addElement({
-        new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/text-end.wav"))),
-        new AnimationElement(SC_DPI(800), 0, 200, [ = ](QVariant value) {
+    sequencer->addElement({new OneshotElement(new SoundElement(QStringLiteral("qrc:/installanim/text-end.wav"))),
+        new AnimationElement(SC_DPI(800), 0, 200, [=](QVariant value) {
             d->maxWidth = value.toDouble();
         }),
-        new FunctionElement([ = ] {
+        new FunctionElement([=] {
             d->isRunning = false;
-        })
-    });
+        })});
 
     connect(sequencer, &Sequencer::requestRender, this, &TextBox::requestRender);
     connect(sequencer, &Sequencer::done, this, &TextBox::done);

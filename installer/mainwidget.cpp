@@ -20,25 +20,25 @@
 #include "mainwidget.h"
 #include "ui_mainwidget.h"
 
-#include <tlogger.h>
 #include <QShortcut>
+#include <tlogger.h>
 
-#include <the-libs_global.h>
 #include "flowcontroller.h"
+#include <libcontemporary_global.h>
 
-#include "pages/welcomepage.h"
-#include "pages/networkpage.h"
-#include "pages/issuespage.h"
 #include "pages/diskpage.h"
 #include "pages/disktypepage.h"
 #include "pages/encryptpage.h"
-#include "pages/readypage.h"
-#include "pages/progresspage.h"
 #include "pages/finishedpage.h"
+#include "pages/issuespage.h"
+#include "pages/networkpage.h"
+#include "pages/progresspage.h"
+#include "pages/readypage.h"
+#include "pages/welcomepage.h"
 
 struct MainWidgetPrivate {
-    QSet<QWidget*> skipped;
-    QMap<QWidget*, std::function<bool()>> skipFunctions;
+        QSet<QWidget*> skipped;
+        QMap<QWidget*, std::function<bool()>> skipFunctions;
 };
 
 MainWidget::MainWidget(QWidget* parent) :
@@ -47,52 +47,52 @@ MainWidget::MainWidget(QWidget* parent) :
     ui->setupUi(this);
 
     d = new MainWidgetPrivate();
-//    this->setFixedSize(SC_DPI_T(QSize(800, 600), QSize));
+    //    this->setFixedSize(SC_DPI_T(QSize(800, 600), QSize));
     ui->stackedWidget->setCurrentAnimation(tStackedWidget::SlideHorizontal);
 
     QShortcut* debugLogShortcut = new QShortcut(QKeySequence(Qt::ControlModifier | Qt::Key_L), this);
-    connect(debugLogShortcut, &QShortcut::activated, this, [ = ] {
+    connect(debugLogShortcut, &QShortcut::activated, this, [=] {
         tLogger::openDebugLogWindow();
     });
 
-    connect(FlowController::instance(), &FlowController::nextPage, this, [ = ] {
+    connect(FlowController::instance(), &FlowController::nextPage, this, [=] {
         int showPage = ui->stackedWidget->currentIndex() + 1;
         while (shouldSkipPage(showPage)) {
             showPage++;
         }
 
         if (showPage >= ui->stackedWidget->count()) {
-            //Do something!
+            // Do something!
             tWarn("MainWidget") << "Reached the end of the flow!";
         } else {
             ui->stackedWidget->setCurrentIndex(showPage);
         }
     });
-    connect(FlowController::instance(), &FlowController::previousPage, this, [ = ] {
+    connect(FlowController::instance(), &FlowController::previousPage, this, [=] {
         int showPage = ui->stackedWidget->currentIndex() - 1;
         while (shouldSkipPage(showPage)) {
             showPage--;
         }
 
         if (showPage < 0) {
-            //Do something!
+            // Do something!
             tWarn("MainWidget") << "Reached the start of the flow!";
         } else {
             ui->stackedWidget->setCurrentIndex(showPage);
         }
     });
-    connect(FlowController::instance(), QOverload<QWidget*, bool>::of(&FlowController::setSkipPage), this, [ = ](QWidget * page, bool skip) {
+    connect(FlowController::instance(), QOverload<QWidget*, bool>::of(&FlowController::setSkipPage), this, [=](QWidget* page, bool skip) {
         if (skip) {
             d->skipped.insert(page);
         } else {
             d->skipped.remove(page);
         }
     });
-    connect(FlowController::instance(), QOverload<QWidget*, std::function<bool()>>::of(&FlowController::setSkipPage), this, [ = ](QWidget * page, std::function<bool()> function) {
+    connect(FlowController::instance(), QOverload<QWidget*, std::function<bool()>>::of(&FlowController::setSkipPage), this, [=](QWidget* page, std::function<bool()> function) {
         d->skipFunctions.insert(page, function);
     });
 
-    connect(ui->stackedWidget, &tStackedWidget::switchingFrame, this, [ = ](int page) {
+    connect(ui->stackedWidget, &tStackedWidget::switchingFrame, this, [=](int page) {
         emit FlowController::instance()->currentPageChanged(ui->stackedWidget->widget(page));
     });
 

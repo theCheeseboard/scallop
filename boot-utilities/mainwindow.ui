@@ -55,6 +55,9 @@
     </item>
     <item row="2" column="1">
      <widget class="QFrame" name="frame">
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -266,7 +269,6 @@
            <property name="font">
             <font>
              <pointsize>15</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
