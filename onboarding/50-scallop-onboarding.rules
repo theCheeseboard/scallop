@@ -1,16 +1,13 @@
 polkit.addRule(function(action, subject) {
-    let actionIds = [
-        "org.freedesktop.accounts.user-administration",
-        "org.freedesktop.login1.power-off",
-        "org.freedesktop.login1.reboot",
-        "org.freedesktop.login1.suspend",
-        "org.freedesktop.timedate1.set-timezone",
-        "org.freedesktop.timedate1.set-time",
-        "org.freedesktop.timedate1.set-ntp",
-        "org.freedesktop.hostname1.set-hostname",
-        "org.freedesktop.hostname1.set-static-hostname"
-    ];
-    if (subject.isInGroup("setup") && actionIds.includes(action.id)) {
-        return polkit.Result.YES;
+    if (subject.isInGroup("setup")) {
+        if (action.id == "org.freedesktop.accounts.user-administration") return polkit.Result.YES;
+        if (action.id == "org.freedesktop.login1.power-off") return polkit.Result.YES;
+        if (action.id == "org.freedesktop.login1.reboot") return polkit.Result.YES;
+        if (action.id == "org.freedesktop.login1.suspend") return polkit.Result.YES;
+        if (action.id == "org.freedesktop.timedate1.set-timezone") return polkit.Result.YES;
+        if (action.id == "org.freedesktop.timedate1.set-time") return polkit.Result.YES;
+        if (action.id == "org.freedesktop.timedate1.set-ntp") return polkit.Result.YES;
+        if (action.id == "org.freedesktop.hostname1.set-hostname") return polkit.Result.YES;
+        if (action.id == "org.freedesktop.hostname1.set-static-hostname") return polkit.Result.YES;
     }
 });

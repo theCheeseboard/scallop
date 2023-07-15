@@ -1,6 +1,6 @@
 project(scallopinstaller VERSION 1.0.0 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia Svg Network StateMachine)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia Svg Network StateMachine)
 find_package(libcontemporary REQUIRED)
 find_package(libthefrisbee REQUIRED)
 find_package(KF5PulseAudioQt REQUIRED)
@@ -136,14 +136,14 @@ add_executable(scallopinstaller ${SOURCES} ${HEADERS})
 
 set_target_properties(scallopinstaller PROPERTIES
         CNTP_DATA_SUBDIR "scallop/install-system"
-        OUTPUT_NAME "scallop-install-system"
+        OUTPUT_NAME "scallop-installer"
 )
 
 cntp_init(scallopinstaller 20)
 cntp_translate(scallopinstaller)
 cntp_target_name(scallopinstaller "Scallop Installer")
 
-target_link_libraries(scallopinstaller Qt6::Widgets Qt6::Multimedia Qt6::Svg Qt6::Network Qt6::StateMachine KF5::PulseAudioQt KF5::NetworkManagerQt libcontemporary libthefrisbee libscallop)
+target_link_libraries(scallopinstaller Qt::Widgets Qt::Multimedia Qt::Svg Qt::Network Qt::StateMachine KF5::PulseAudioQt KF5::NetworkManagerQt libcontemporary libthefrisbee libscallop)
 target_include_directories(scallopinstaller PUBLIC ../libscallop/)
 target_compile_definitions(scallopinstaller
     PRIVATE SCALLOP_ROOTFS_LOCATION="${SCALLOP_ROOTFS_LOCATION}"

@@ -97,7 +97,7 @@ void MainWindow::on_installButton_clicked() {
     connect(proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [=](int exitCode, QProcess::ExitStatus exitStatus) {
         setUtilitiesAvailable(true);
     });
-    proc->start("scallop-install-system", QStringList());
+    proc->start("scallop-installer", QStringList());
 
     setUtilitiesAvailable(false);
 }
@@ -122,11 +122,10 @@ void MainWindow::setUtilitiesAvailable(bool utilitiesAvailable) {
     anim->start();
 }
 
-void MainWindow::updateBackground() {
-    d->bg->getCurrentBackground(this->size())->then([=](BackgroundController::BackgroundData backgroundData) {
-        d->background = backgroundData.px;
-        ui->centralwidget->update();
-    });
+QCoro::Task<> MainWindow::updateBackground() {
+    auto backgroundData = co_await d->bg->getCurrentBackground(this->size());
+    d->background = backgroundData.px;
+    ui->centralwidget->update();
 }
 
 void MainWindow::updateLabels() {

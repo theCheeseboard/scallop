@@ -1,6 +1,6 @@
 project(scallopbootutil VERSION 1.0.0 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(libcontemporary REQUIRED)
 find_package(libtdesktopenvironment REQUIRED)
 
@@ -31,9 +31,9 @@ set_target_properties(scallopbootutil PROPERTIES
 
 cntp_init(scallopbootutil 20)
 cntp_translate(scallopbootutil)
-cntp_target_name(scallopbootutil "Scallop Installer")
+cntp_target_name(scallopbootutil "Scallop Boot Utilities")
 
-target_link_libraries(scallopbootutil Qt6::Widgets libcontemporary libtdesktopenvironment libscallop)
+target_link_libraries(scallopbootutil Qt::Widgets libcontemporary libtdesktopenvironment libscallop)
 target_include_directories(scallopbootutil PUBLIC ../libscallop/)
 target_compile_definitions(scallopbootutil
     PRIVATE SCALLOP_ROOTFS_LOCATION="${SCALLOP_ROOTFS_LOCATION}"

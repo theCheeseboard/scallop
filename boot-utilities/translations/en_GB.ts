@@ -49,17 +49,17 @@
         <translation>Available installation and recovery tools are shown below.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="160"/>
+        <location filename="../mainwindow.cpp" line="159"/>
         <source>Install %1</source>
         <translation>Install %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="158"/>
+        <location filename="../mainwindow.cpp" line="157"/>
         <source>Unknown</source>
         <translation>Unknown</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="159"/>
+        <location filename="../mainwindow.cpp" line="158"/>
         <source>Welcome to %1!</source>
         <translation>Welcome to %1!</translation>
     </message>

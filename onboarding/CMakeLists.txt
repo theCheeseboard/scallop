@@ -1,6 +1,6 @@
 project(scalloponboarding VERSION 1.0.0 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(libcontemporary REQUIRED)
 find_package(libthedesk REQUIRED)
 find_package(libtdesktopenvironment REQUIRED)
@@ -37,7 +37,7 @@ cntp_target_name(scalloponboarding "Scallop Onboarding")
 cntp_defaults_file(scalloponboarding
     DEFAULTS_FILE scalloponboarding.conf)
 
-target_link_libraries(scalloponboarding Qt6::Widgets KF5::PulseAudioQt libcontemporary libtdesktopenvironment libthedesk)
+target_link_libraries(scalloponboarding Qt::Widgets KF5::PulseAudioQt libcontemporary libtdesktopenvironment libthedesk)
 
 install(TARGETS scalloponboarding
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

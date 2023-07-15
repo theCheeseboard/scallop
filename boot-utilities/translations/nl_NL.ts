@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <TS version="2.1" language="nl_NL">
   <context>
     <name>LanguagePopover</name>
@@ -48,19 +48,19 @@
       <source>Available installation and recovery tools are shown below.</source>
     </message>
     <message>
-      <translation>Installeer %1</translation>
-      <location filename="../mainwindow.cpp" line="160" />
-      <source>Install %1</source>
+        <location filename="../mainwindow.cpp" line="159"/>
+        <source>Install %1</source>
+        <translation>Installeer %1</translation>
     </message>
     <message>
-      <translation>Onbekend</translation>
-      <location filename="../mainwindow.cpp" line="158" />
-      <source>Unknown</source>
+        <location filename="../mainwindow.cpp" line="157"/>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-      <translation>Welkom bij %1!</translation>
-      <location filename="../mainwindow.cpp" line="159" />
-      <source>Welcome to %1!</source>
+        <location filename="../mainwindow.cpp" line="158"/>
+        <source>Welcome to %1!</source>
+        <translation type="unfinished"></translation>
     </message>
   </context>
   <context>
@@ -103,3 +103,4 @@
     </message>
   </context>
 </TS>
+

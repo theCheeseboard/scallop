@@ -20,6 +20,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QCoroTask>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -54,7 +55,7 @@ class MainWindow : public QMainWindow {
         MainWindowPrivate* d;
 
         void setUtilitiesAvailable(bool utilitiesAvailable);
-        void updateBackground();
+        QCoro::Task<> updateBackground();
         void updateLabels();
         void updateTranslations(QLocale locale);
 

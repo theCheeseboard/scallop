@@ -1,6 +1,6 @@
 project(scallopofflinereset VERSION 1.0.0 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Core DBus)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core DBus)
 
 set(SOURCES
     main.cpp
@@ -21,9 +21,9 @@ set_target_properties(scallopofflinereset PROPERTIES
 
 cntp_init(scallopofflinereset 20)
 cntp_translate(scallopofflinereset)
-cntp_target_name(scallopofflinereset "Scallop Reset Trigger")
+cntp_target_name(scallopofflinereset "Scallop Offline Reset")
 
-target_link_libraries(scallopofflinereset Qt6::Core Qt6::DBus)
+target_link_libraries(scallopofflinereset Qt::Core Qt::DBus)
 
 install(TARGETS scallopofflinereset
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

@@ -1,6 +1,6 @@
 project(scallopresetui VERSION 1.0.0 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Network DBus)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network DBus)
 find_package(libcontemporary REQUIRED)
 find_package(PolkitQt6-1 REQUIRED)
 
@@ -33,9 +33,9 @@ set_target_properties(scallopresetui PROPERTIES
 
 cntp_init(scallopresetui 20)
 cntp_translate(scallopresetui)
-cntp_target_name(scallopresetui "Scallop Onboarding")
+cntp_target_name(scallopresetui "Scallop Reset")
 
-target_link_libraries(scallopresetui Qt6::Widgets Qt6::Network Qt6::DBus PolkitQt6-1::Core PolkitQt6-1::Agent libcontemporary)
+target_link_libraries(scallopresetui Qt::Widgets Qt::Network Qt::DBus PolkitQt6-1::Core PolkitQt6-1::Agent libcontemporary)
 target_compile_definitions(scallopresetui
     PRIVATE SCALLOP_ROOTFS_LOCATION="${SCALLOP_ROOTFS_LOCATION}"
     PRIVATE SCALLOP_VENDOR_WATERMARK_LOCATION="${SCALLOP_VENDOR_WATERMARK_LOCATION}"

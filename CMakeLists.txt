@@ -6,6 +6,8 @@ project(scallop VERSION 1.0.0 LANGUAGES CXX)
 set(SCALLOP_ROOTFS_LOCATION "https://packages.vicr123.com/cactus/rootfs/x86_64/latest.squashfs" CACHE STRING "Location to download the root squashfs from, if not installed locally")
 set(SCALLOP_PACKAGED_LOCATION "/opt/cactus-recovery-media/rootfs.squashfs" CACHE STRING "Location of the root squashfs file on disk")
 
+find_package(QT REQUIRED NAMES Qt6)
+
 add_subdirectory(libscallop)
 add_subdirectory(boot-utilities)
 add_subdirectory(installer)

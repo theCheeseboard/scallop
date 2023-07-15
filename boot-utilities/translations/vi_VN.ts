@@ -49,17 +49,17 @@
         <translation>Các tiện ích cho cài đặt và khôi phục sẽ hiện lên dưới đây.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="160"/>
+        <location filename="../mainwindow.cpp" line="159"/>
         <source>Install %1</source>
         <translation>Cài đặt %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="158"/>
+        <location filename="../mainwindow.cpp" line="157"/>
         <source>Unknown</source>
         <translation>Không xác định</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="159"/>
+        <location filename="../mainwindow.cpp" line="158"/>
         <source>Welcome to %1!</source>
         <translation>Chào mừng bạn với %1!</translation>
     </message>
