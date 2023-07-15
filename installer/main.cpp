@@ -37,6 +37,7 @@ int main(int argc, char* argv[]) {
     QCommandLineParser parser;
     parser.addOption({"install", "Install the system using a descriptor of the install process."});
     parser.addOption({"probe", "Probe a disk to determine the currently installed systems.", "disk"});
+    parser.addOption({"debug-animation", "Play the installer animation"});
     parser.addHelpOption();
     parser.process(a);
 
@@ -46,11 +47,12 @@ int main(int argc, char* argv[]) {
         ProbeManager* p = new ProbeManager();
         p->probe(parser.value("probe"));
         return 0;
+    } else if (parser.isSet("debug-animation")) {
+        CactusInstallAnimationWindow* window = new CactusInstallAnimationWindow();
+        window->triggerInstallationEndAfterDelay();
+        window->exec();
+        return 0;
     } else {
-        //        CactusInstallAnimationWindow* window = new CactusInstallAnimationWindow();
-        //        window->resize(1920, 1080);
-        //        window->show();
-
         MainWindow* w = new MainWindow();
         w->show();
     }

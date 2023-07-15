@@ -34,6 +34,8 @@ class CactusInstallAnimationWindow : public QDialog {
         explicit CactusInstallAnimationWindow(QWidget* parent = nullptr);
         ~CactusInstallAnimationWindow();
 
+        void triggerInstallationEndAfterDelay();
+
     private:
         Ui::CactusInstallAnimationWindow* ui;
         CactusInstallAnimationWindowPrivate* d;

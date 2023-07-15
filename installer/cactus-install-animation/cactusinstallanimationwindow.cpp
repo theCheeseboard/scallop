@@ -123,8 +123,6 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
         showFinishedPage();
     });
 
-    //    QTimer::singleShot(60000, InstallIpcManager::instance(), &InstallIpcManager::success);
-
     QPalette pal = this->palette();
     pal.setColor(QPalette::Window, Qt::black);
     pal.setColor(QPalette::WindowText, Qt::white);
@@ -176,6 +174,10 @@ CactusInstallAnimationWindow::CactusInstallAnimationWindow(QWidget* parent) :
 CactusInstallAnimationWindow::~CactusInstallAnimationWindow() {
     delete d;
     delete ui;
+}
+
+void CactusInstallAnimationWindow::triggerInstallationEndAfterDelay() {
+    QTimer::singleShot(60000, InstallIpcManager::instance(), &InstallIpcManager::success);
 }
 
 void CactusInstallAnimationWindow::on_rebootButton_clicked() {

@@ -192,22 +192,22 @@
 <context>
     <name>CactusInstallAnimationWindow</name>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="143"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="142"/>
         <source>INSTALLATION COMPLETE</source>
         <translation>INSTALLATIE AFGEROND</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="156"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="155"/>
         <source>The next time you start this device, you&apos;ll be asked to create a new user and set up some system settings.</source>
         <translation>De volgende keer dat je dit apparaat start, zul je worden gevraagd om een gebruiker te maken, en wat systeeminstellingen aan te passen.</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="168"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="167"/>
         <source>Power Off</source>
         <translation>Afsluiten</translation>
     </message>
     <message>
-        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="179"/>
+        <location filename="../cactus-install-animation/cactusinstallanimationwindow.ui" line="178"/>
         <source>Reboot</source>
         <translation>Opnieuw opstarten</translation>
     </message>
