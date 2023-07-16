@@ -26,7 +26,7 @@ cntp_target_name(scallopofflinereset "Scallop Offline Reset")
 target_link_libraries(scallopofflinereset Qt::Core Qt::DBus)
 
 install(TARGETS scallopofflinereset
-        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR}
         BUNDLE DESTINATION /Applications)
 
 install(DIRECTORY systemd/

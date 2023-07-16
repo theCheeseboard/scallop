@@ -33,7 +33,7 @@ set_target_properties(scallopresetui PROPERTIES
 
 cntp_init(scallopresetui 20)
 cntp_translate(scallopresetui)
-cntp_target_name(scallopresetui "Scallop Reset")
+cntp_target_name(scallopresetui "Scallop Reset UI")
 
 target_link_libraries(scallopresetui Qt::Widgets Qt::Network Qt::DBus PolkitQt6-1::Core PolkitQt6-1::Agent libcontemporary)
 target_compile_definitions(scallopresetui
