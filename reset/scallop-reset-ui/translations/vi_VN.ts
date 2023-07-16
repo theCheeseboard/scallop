@@ -97,7 +97,17 @@
       <source>Unknown</source>
     </message>
     <message>
-      <translation></translation>
+      <translation>**CÀI DÂY ĂN TOÀN!**
+
+Hoạt động đất lại thiết bị này sẽ xóa các dự liệu riêng tư **cho các tài khoản.** Điều này bảo gồm:
+- Tài liệu
+- Ảnh hình
+- Cac ứng dụng đã cài đặt
+- Cai đặt nào đã bị thay đổi
+
+**SẢN SÀNG LÀM HOẠT ĐỘNG NÀY KHONG?**
+
+Để bắt đầu, chúng tôi sẽ khởi động thiết bị này lại và bắt đầu xóa các dự liệu. Sau khi hoạt động đặt lại hoàn thành, một bản %1 mới sẽ bị cài đặt. Quá trình này có thể mất một lúc.</translation>
       <location filename="../mainwindow.cpp" line="101" />
       <source>**BUCKLE UP!**
 
@@ -115,7 +125,7 @@ To get the ball rolling, we'll restart this device and start removing all the da
   <context>
     <name>main</name>
     <message>
-      <translation></translation>
+      <translation>Tiện ích cấu hình hệ thống</translation>
       <location filename="../main.cpp" line="31" />
       <source>System Configuration Tool</source>
     </message>
